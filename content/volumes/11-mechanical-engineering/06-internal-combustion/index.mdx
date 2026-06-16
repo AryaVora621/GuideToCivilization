@@ -1,0 +1,303 @@
+---
+title: "Internal Combustion Engine: Fuel Burning Inside the Cylinder"
+volume: 33
+chapter: 6
+difficulty: long-term
+prerequisites:
+  - "Vol 33, Ch 5 — Steam Engine (understanding how engines convert heat to motion)"
+  - "Vol 29: Physics — Heat, pressure, and combustion"
+unlocks:
+  - "mechanical-engineering/blueprints-and-drawings"
+  - "automotive/basic-vehicles"
+tags: [mechanical-engineering, internal-combustion-engine, fuel, spark, piston, cylinder]
+summary: "An internal combustion engine burns fuel inside the cylinder, directly heating the gases that push the piston. More efficient than steam engines, but requires precise control and fuel refinement."
+---
+
+## Overview
+
+Unlike a steam engine (which burns fuel outside and transmits heat through steam), an internal combustion engine burns fuel directly inside the cylinder. The hot gases from combustion push the piston, producing power.
+
+Internal combustion engines are more efficient (25-35% vs. 10-25% for steam engines) and more compact. However, they require precise fuel, timing, and spark—more complex than steam engines.
+
+## Prerequisites
+
+- Understanding of steam engines and piston mechanisms (Vol 33, Ch 5)
+- Understanding of thermodynamics and combustion (Vol 29)
+- Metalworking and machining skills
+- Access to refined fuel (gasoline, kerosene, or alcohol)
+
+## Materials & Tools
+
+### For Building an Internal Combustion Engine
+
+- **Cylinder:** Iron or aluminum, smooth bore (same as steam engine)
+- **Piston and rod:** Iron or aluminum (same as steam engine)
+- **Valves:** Inlet valve (fuel + air) and exhaust valve (burnt gases)
+- **Spark plug:** Creates a spark to ignite the fuel (electrical device)
+- **Fuel injector or carburetor:** Mixes fuel and air
+- **Crankshaft and flywheel:** Converts piston motion to rotation (same as steam engine)
+- **Electrical system:** Battery, ignition coil, spark plug wiring (for spark timing)
+
+## Step-by-Step Instructions
+
+### Part 1: Basic Engine Cycle
+
+An internal combustion engine operates in four strokes (in a four-stroke engine):
+
+**Stroke 1: Intake**
+1. Piston moves down
+2. Inlet valve opens
+3. Fuel-air mixture enters the cylinder
+4. Exhaust valve closed
+
+**Stroke 2: Compression**
+1. Piston moves up
+2. Both valves closed
+3. Fuel-air mixture is compressed to high pressure
+4. Pressure increases temperature (preparing for ignition)
+
+**Stroke 3: Power (Combustion)**
+1. At the top of the compression stroke, a spark ignites the fuel-air mixture
+2. Combustion releases heat rapidly
+3. Hot, expanding gases push the piston down powerfully
+4. Both valves closed (trapping the combustion gases)
+5. This is the only stroke that produces power
+
+**Stroke 4: Exhaust**
+1. Piston moves up
+2. Exhaust valve opens
+3. Burnt gases are pushed out
+4. Inlet valve closed
+5. Cycle repeats
+
+**Why four strokes?** The engine must cycle through intake, compression, combustion, and exhaust. A four-stroke engine produces power once per two revolutions (only the power stroke adds energy).
+
+### Part 2: Building the Fuel and Air System
+
+**Step 1: Design the carburetor (simple fuel mixer).**
+
+A carburetor mixes fuel and air in the right proportion for combustion.
+
+**Simple gravity-fed carburetor:**
+1. Fuel tank above the engine
+2. Fuel flows down through a small opening (jet) into a mixing chamber
+3. Air is drawn into the mixing chamber (by the piston's intake stroke)
+4. Air and fuel mix as they flow into the cylinder
+5. A float valve (like a toilet tank) maintains a constant fuel level in the chamber
+
+**Carburetor tuning:**
+1. The jet size controls fuel flow (larger jet = richer mixture)
+2. Too much fuel = rough running, black smoke, fouled plugs
+3. Too little fuel = poor power, engine stalls
+4. Optimal mixture: about 1 part fuel to 15 parts air (by weight)
+
+**Step 2: Prepare fuel.**
+
+Post-collapse fuel might be:
+- **Gasoline** (from refining crude oil)
+- **Kerosene** (refined petroleum)
+- **Ethanol** (from fermenting plant material)
+- **Vegetable oil** (less efficient, requires modifications)
+
+All require refining to remove impurities that gum up the engine.
+
+**Fuel quality:**
+1. Must be pure (no water or sediment)
+2. Must vaporize easily (volatile enough to burn, not so volatile that it boils in the tank)
+3. Must not gum up (some fuels polymerize over time, forming sticky deposits)
+
+### Part 3: Building the Ignition System
+
+**Step 1: Understand spark timing.**
+
+The spark must occur at the right moment in the cycle—just before the piston reaches the top of the compression stroke.
+
+**Timing:**
+1. Too early: Pre-ignition (combustion pushes the piston down before it reaches the top; wastes energy)
+2. Too late: Delayed combustion (pressure builds after the power stroke starts; less efficient)
+3. Perfect: Just before the piston tops out (maximum pressure when the piston moves down)
+
+**Step 2: Build a simple ignition system (using electrical spark).**
+
+An electrical spark at high voltage can ignite the fuel-air mixture.
+
+**Components:**
+1. **Battery:** Low voltage (6-12V typical)
+2. **Ignition coil:** Transforms low voltage to high voltage (10,000+ volts)
+3. **Distributor:** Routes the high voltage spark to the right cylinder at the right time
+4. **Spark plug:** A gap where the spark jumps and ignites the fuel
+
+**Spark timing mechanism:**
+1. A mechanical timer (cam or governor) controlled by engine speed
+2. As the engine spins faster, the timing adjusts (via weights or springs)
+3. The timer tells the ignition coil when to fire
+
+**Alternative: Magneto ignition (mechanical, no battery):**
+1. A rotating magnet generates electrical current
+2. The coil is triggered by a mechanical switch (no battery needed)
+3. Works reliably without electricity
+4. More suitable for post-collapse (no dependency on batteries)
+
+### Part 4: Building Valves and Valve Timing
+
+**Step 1: Design the inlet and exhaust valves.**
+
+Valves control the flow of fuel-air mixture and burnt gases.
+
+**Valve design:**
+1. A conical or flat face with a stem
+2. The valve sits in a port opening
+3. A spring pushes the valve closed
+4. A rod (called the "valve lifter") opens the valve at the right time
+
+**Valve timing:**
+1. Inlet valve: Opens before the intake stroke (slightly) and closes after
+2. Exhaust valve: Opens near the end of the power stroke and closes at the start of intake
+
+**Overlapping (advanced):**
+1. Briefly, both valves are open (exhaust valve closing, inlet valve opening)
+2. This scavenges the cylinder of remaining exhaust and improves air filling
+3. More efficient, but requires precise timing
+
+**Step 2: Build a cam-operated valve system.**
+
+A cam (a lobe on a rotating shaft) pushes the valve open.
+
+**Cam design:**
+1. The camshaft rotates at half the crankshaft speed (two rotations per engine cycle)
+2. Lobes on the shaft push valve lifters
+3. As a lobe rotates under the lifter, it pushes the valve open
+4. A spring pushes the valve closed when the lobe passes
+
+**Synchronization:**
+1. The camshaft must rotate in precise timing with the crankshaft
+2. Gears connect the crankshaft and camshaft (typically a 2:1 ratio)
+3. Misalignment ruins engine performance
+
+### Part 5: Assembling a Single-Cylinder Engine
+
+**Step 1: Build the basic structure.**
+
+1. Mount the cylinder on a strong frame
+2. Install the piston and crankshaft (same as steam engine)
+3. Mount the crankshaft in bearings
+4. Install the flywheel for smoothness
+
+**Step 2: Install fuel and air systems.**
+
+1. Mount the carburetor above the cylinder
+2. Connect a fuel line from the tank to the carburetor
+3. Connect the intake port to the carburetor
+
+**Step 3: Install ignition and spark plug.**
+
+1. Mount the battery (if using electrical ignition)
+2. Mount the ignition coil and distributor
+3. Install the spark plug in the cylinder head
+
+**Step 4: Install valves and valve train.**
+
+1. Mount the cylinder head with the valve ports
+2. Install the inlet and exhaust valves
+3. Mount the camshaft and gears
+4. Connect the crankshaft and camshaft with a timed gear set
+
+**Step 5: Connect to machinery.**
+
+1. Mount a gear on the crankshaft
+2. Drive other gears to power machinery (same as steam engine)
+
+### Part 6: Operating and Tuning
+
+**Step 1: Start-up.**
+
+1. Fill the fuel tank
+2. Close the choke (enriches the fuel mixture for cold start)
+3. Set the throttle to a low position
+4. Crank the engine manually or with a starter motor
+5. Once running, open the choke gradually
+
+**Step 2: Tune the carburetor.**
+
+1. Start with a baseline adjustment (typically one-and-a-half turns open on the fuel screw)
+2. Listen to the engine while adjusting the fuel screw
+3. Too lean (not enough fuel): Thin, high-pitched sound; weak power
+4. Just right: Even, smooth rumble
+5. Too rich (too much fuel): Thick, coughing sound; black smoke
+6. Adjust the throttle as the engine warms up
+
+**Step 3: Adjust spark timing.**
+
+1. Start at a baseline (typically 10-15 degrees before top-dead-center)
+2. Listen while adjusting
+3. Early spark (too advanced): Pinging or knocking (fuel detonates pre-ignition)
+4. Late spark (too retarded): Weak, sluggish power
+5. Correct timing: Smooth operation with good power
+
+**Step 4: Load and power regulation.**
+
+1. The throttle controls fuel flow and thus power
+2. Wider throttle = more fuel-air mixture = higher power and speed
+3. Narrower throttle = less mixture = lower power and speed
+4. The engine speed should be stable under load (regulated by the governor or manual throttle adjustment)
+
+### Part 7: Multi-Cylinder Engines
+
+A single-cylinder engine produces power once per two crankshaft rotations (jerky, with dead spots).
+
+Multiple cylinders improve smoothness and power:
+
+**Two-cylinder engine:**
+1. Two cylinders offset on the crankshaft
+2. Power strokes alternate (one cylinder fires while the other is intake or exhaust)
+3. Smoother than single-cylinder
+
+**Four-cylinder engine:**
+1. Four cylinders
+2. Power stroke every half rotation (very smooth)
+3. Commonly used in automobiles
+4. More complex but much more efficient
+
+**Coordination:**
+1. All cylinders must fire in sequence
+2. The distributor (spark timing system) routes sparks to cylinders in firing order
+3. The camshaft must have lobes for all cylinders, timed precisely
+
+## Verification
+
+A properly functioning internal combustion engine shows:
+
+- **Smooth start:** Engine starts easily with the choke and crank
+- **Even idle:** Engine runs smoothly at low speed, not surging or dying
+- **Good acceleration:** Throttle response is quick; power delivery is smooth
+- **Proper exhaust:** Clear exhaust (light gray or white), not black smoke
+- **Consistent speed:** Engine speed is stable under constant load
+- **No pinging:** No pre-ignition knocking
+- **Clean plugs:** Spark plugs show normal burning (tan or light brown deposits)
+
+A poorly functioning engine shows:
+
+- **Hard start:** Takes many cranks to start; needs excessive choke
+- **Rough idle:** Shaking, surging, or misfires at low speed
+- **Poor acceleration:** Hesitation or coughing when throttle opens
+- **Black exhaust:** Unburned fuel (rich mixture or old plugs)
+- **Variable speed:** Engine speed surges or drops erratically
+- **Pinging:** Pre-ignition knocking (advancing the spark helps)
+- **Fouled plugs:** Plugs covered in black soot or gaps too wide
+
+## Common Mistakes
+
+- **Wrong fuel type:** Using low-octane fuel in a high-compression engine causes pinging and damage. Match fuel to engine specifications.
+- **Poor carburetor tuning:** Too much or too little fuel ruins performance. Take time to tune the carburetor properly.
+- **Incorrect spark timing:** Too early causes pinging; too late causes poor power. Adjust carefully.
+- **Valve timing off:** If the camshaft is installed 180 degrees out, the engine won't run at all. Double-check timing.
+- **Worn spark plugs:** Old plugs with wide gaps fail to ignite the mixture. Replace regularly.
+- **Lean running:** Too little fuel damages the engine (overheating, seized piston). Run slightly rich rather than lean.
+- **Ignoring engine knock:** Pinging indicates pre-ignition, which damages the engine. Address the cause (lower octane fuel, advanced spark timing).
+
+## Cross-References
+
+- See Vol 33, Ch 5 — Steam Engine (comparing engines and thermodynamic principles)
+- See Vol 33, Ch 1 — Simple Machines (understanding piston and crankshaft mechanisms)
+- See Vol 29: Physics, Ch 2 — Heat and Thermodynamics (combustion and energy)
+- See automotive chapters (applying engines to vehicles)

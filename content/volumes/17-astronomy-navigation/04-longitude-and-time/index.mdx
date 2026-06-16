@@ -1,0 +1,311 @@
+---
+title: "Longitude and Time: Finding Your East-West Position"
+volume: 34
+chapter: 4
+difficulty: long-term
+prerequisites:
+  - "Vol 34, Ch 1 — Celestial Sphere (understanding right ascension and local sidereal time)"
+  - "Vol 34, Ch 2 — Star Identification (identifying reference stars)"
+  - "Vol 2, Ch 3 — Observation and Measurement (measuring angles and time)"
+unlocks:
+  - "navigation/complete-position-finding"
+  - "timekeeping/longitude-methods"
+tags: [astronomy, navigation, longitude, time, coordinate-systems]
+summary: "Longitude is your position east or west. Unlike latitude, finding longitude requires accurate timekeeping. The lunar distance method and precise chronometers are the classical approaches for maritime navigation."
+---
+
+## Overview
+
+Latitude (north-south) can be found from star observations alone. Longitude (east-west) requires knowing the time precisely—a difficult problem that stumped navigators for centuries.
+
+Without electric clocks or radio time signals, post-collapse navigators must choose between: (1) keeping a precise mechanical chronometer, (2) using lunar distance observations, or (3) accepting modest longitude uncertainty.
+
+## Prerequisites
+
+- Understanding of right ascension and sidereal time (Vol 34, Ch 1)
+- Understanding of the moon's orbital motion
+- Ability to measure angles precisely
+- Access to astronomical tables
+- Mathematical skill (trigonometry and logarithms)
+
+## Materials & Tools
+
+- Chronometer or precise clock (for method 1)
+- Sextant for measuring angles (for method 2)
+- Star catalogs with right ascensions
+- Lunar distance tables
+- Astronomical almanac or ephemeris
+- Mathematical tables or calculator
+- Notebook for calculations
+
+## Step-by-Step Instructions
+
+### Part 1: Understanding the Problem
+
+**Step 1: Why longitude is hard.**
+
+Longitude is defined by time:
+- Earth rotates 360 degrees in 24 hours
+- Earth rotates 15 degrees per hour
+- Earth rotates 0.25 degrees per minute
+- A 1-minute error in timekeeping = 0.25-degree longitude error (about 28 km at the equator)
+
+**For accurate longitude, you need accurate time.**
+
+**Step 2: Know your reference meridian.**
+
+Longitude is measured from a reference (0-degree meridian). Modern convention uses Greenwich, England.
+
+**Post-collapse, any reference works:**
+- Choose the meridian of your home port or city
+- Measure all longitudes relative to that meridian
+- When meeting other navigators, agree on a common reference
+
+### Part 2: The Chronometer Method
+
+**Step 1: Keep track of Greenwich Mean Time (or your reference time).**
+
+A chronometer is a precise mechanical clock kept on shipboard.
+
+**Before departing:**
+1. Set the chronometer to Greenwich time (or agreed reference time)
+2. Keep it in a temperature-stable location
+3. Wind it regularly (some chronometers need daily winding)
+4. Protect it from vibrations
+
+**Step 2: Observe local noon (sun at highest point).**
+
+1. Watch the sun's position throughout the day
+2. When the sun reaches its highest point, record the chronometer time
+3. The chronometer time is "Greenwich time" (if it's accurate)
+4. The time difference = local hour angle = longitude
+
+**Conversion:**
+- Longitude (degrees) = (chronometer time - local time) × 15 degrees per hour
+
+**Example:**
+- Local noon occurs when the chronometer reads 3:15 PM (Greenwich time)
+- Time difference = 3 hours 15 minutes = 3.25 hours
+- Longitude = 3.25 × 15 = 48.75° West (behind Greenwich)
+
+**The observer is about 48.75° west of the Greenwich meridian.**
+
+**Step 3: Maintain chronometer accuracy.**
+
+Chronometers drift over time. A good chronometer drifts less than 1 second per day.
+
+**Monitoring drift:**
+1. Observe local noon daily
+2. Calculate the chronometer error each day
+3. Plot the error over time
+4. If the error grows steadily, note the rate (e.g., "losing 1 second per day")
+
+**Correcting for drift:**
+1. Apply a correction factor to the chronometer reading
+2. Example: If losing 1 second per day, after 30 days the chronometer is 30 seconds slow; add 30 seconds to the reading
+
+### Part 3: The Lunar Distance Method
+
+**Step 1: Understand the principle.**
+
+The moon moves about 13 degrees eastward per day, passing near different stars.
+
+**The procedure:**
+1. Measure the angle between the moon and a known star
+2. Compare to predicted values in astronomical tables
+3. Find the time when that angle occurs
+4. Knowing the time = knowing the longitude
+
+**Why this works:**
+- The moon's position changes predictably with time
+- If you observe the moon's position relative to stars, you can look up the exact time
+- Knowing the time tells you the longitude
+
+**Step 2: Prepare lunar distance tables.**
+
+Lunar distance is the angle between the moon and a reference star.
+
+**Reference stars for lunar distances:**
+- Spica (brightest in tables)
+- Aldebaran
+- Antares
+- Polaris
+- Regulus
+- Others (any bright star)
+
+**Tables show:**
+- For each hour of Greenwich time, the predicted lunar distance
+- Tables span 6-12 months and must be updated regularly (from an ephemeris)
+
+**Step 3: Observe the lunar distance.**
+
+**Requirements:**
+- Moon is visible (not too close to new moon)
+- Reference star is visible
+- Sextant for measuring the angle
+
+**Procedure:**
+1. At least 2-3 hours before or after local noon (when the moon and star aren't too close)
+2. Measure the angle between the moon's center and the star's center using a sextant
+3. Record the angle to the nearest arcminute (0.017 degrees)
+4. Note the chronometer time when the measurement was taken
+
+**Step 4: Correct the observed distance.**
+
+Raw sextant measurements include errors:
+
+**Corrections needed:**
+1. **Sextant error** (typically 0-2 arcminutes): Subtract from reading
+2. **Refraction** (about 0.5 degrees near horizon, less at altitude): Subtract from reading
+3. **Parallax** (the moon's position differs slightly depending on observer location on Earth): Depends on latitude and moon altitude
+4. **Semidiameter** (the moon and star have angular size): Subtract half-sizes
+
+**Correcting for refraction and parallax requires:**
+- Moon's altitude (measured with sextant)
+- Observer's latitude
+- Mathematical tables or calculation
+
+**Simplified approach:**
+- For rough navigation, ignore parallax and semidiameter corrections
+- Accuracy is reduced to about 1-2 degrees longitude, but the method still works
+
+**Step 5: Look up the time in lunar tables.**
+
+**Using pre-computed tables:**
+1. Calculate the corrected lunar distance
+2. Look up this distance in the lunar distance tables
+3. Find the Greenwich time when this distance occurred
+4. This is the Greenwich time at the moment of observation
+
+**Example:**
+- Observed lunar distance (corrected): 62°15'
+- Tables show this distance at 14:30 Greenwich time
+- Local chronometer time was 10:30 (the time observed, if no chronometer)
+- Time difference = 4 hours
+- Longitude = 4 × 15 = 60° West
+
+### Part 4: Lunar Distance Procedure with Worked Example
+
+**Step 1: Prepare materials.**
+
+Assuming a working lunar distance table (from an ephemeris):
+- Date: June 15, 2026
+- Reference star: Spica
+- Observer's chronometer: Available (but may be inaccurate)
+
+**Step 2: Observe the lunar distance.**
+
+- Moon altitude: 45°
+- Star altitude: 30°
+- Sextant reading (moon to star): 68°22'
+- Chronometer time: 18:45 (6:45 PM on June 15)
+
+**Step 3: Apply corrections.**
+
+Corrections:
+- Sextant error: -1' (subtract 1 arcminute)
+- Refraction (average of moon and star altitudes, ~37.5°): -1' (very small at this altitude)
+- Parallax and semidiameter: Ignored (for rough navigation)
+
+Corrected distance: 68°22' - 1' - 1' = 68°20'
+
+**Step 4: Look up in tables.**
+
+Lunar distance tables for June 15 (Spica reference):
+- 18:00 GMT: Distance = 68°05'
+- 18:30 GMT: Distance = 68°18'
+- 19:00 GMT: Distance = 68°31'
+
+Interpolating: The corrected distance of 68°20' corresponds to approximately 18:33 GMT.
+
+**Step 5: Calculate longitude.**
+
+- Greenwich time (from tables): 18:33
+- Chronometer time (observed): 18:45
+- Difference: 18:45 - 18:33 = 12 minutes = 0.2 hours
+- Longitude = 0.2 × 15 = 3° East
+
+**The observer is about 3° east of the reference meridian.**
+
+### Part 5: Building a Lunar Distance Table
+
+**Step 1: Understand what's needed.**
+
+If no published lunar distance table is available, one can be constructed from an ephemeris (a reference giving moon and star positions).
+
+**For each day:**
+1. Calculate the moon's RA and Dec (from ephemeris)
+2. Calculate the reference star's RA and Dec (constant, from star catalog)
+3. Calculate the angle between them using spherical trigonometry
+4. Record this angle against Greenwich time
+
+**Step 2: Use spherical trigonometry.**
+
+The angle between two celestial objects on the celestial sphere:
+
+cos(distance) = sin(Dec₁) × sin(Dec₂) + cos(Dec₁) × cos(Dec₂) × cos(RA₂ - RA₁)
+
+Where:
+- RA, Dec are right ascension and declination
+- distance is the angular separation
+
+**This calculation requires:**
+- Mathematical tables or calculator
+- Understanding of spherical trigonometry
+
+**Simplified alternative:**
+- Use an ephemeris that already lists lunar distances (easier)
+
+### Part 6: Combining Methods
+
+**Step 1: Use both methods together.**
+
+A navigator with both a chronometer and lunar distance observations can:
+
+**Method 1: Chronometer, if accurate:**
+- Provides longitude directly
+- Faster than lunar distances
+- Requires good timekeeping
+
+**Method 2: Lunar distances, if chronometer is unreliable:**
+- Provides time (hence longitude)
+- More work but doesn't require an accurate chronometer
+- Reduces accumulating chronometer error
+
+**Step 2: Cross-check and average.**
+
+If both methods are used:
+1. Calculate longitude from chronometer method
+2. Calculate longitude from lunar distance method
+3. If results differ by over 2-3 degrees, recheck observations
+4. Average the results if both are reliable
+
+## Verification
+
+A successful longitude measurement results in:
+
+- **Chronometer method:** Uncertainty of 1-2 degrees (assuming chronometer drifts predictably)
+- **Lunar distance method:** Uncertainty of 1-2 degrees (without parallax correction); under 1 degree (with parallax correction)
+- **Combined method:** Uncertainty under 1 degree
+
+A failed measurement shows:
+
+- **Implausible drift:** Chronometer loses or gains over 30 seconds per day (indicates problem)
+- **Inconsistent lunar distances:** Repeated observations differ by over 1 degree (indicates poor measurement or calculation)
+- **Large discrepancy:** Chronometer and lunar distance methods disagree by over 5 degrees (one method has an error)
+
+## Common Mistakes
+
+- **Confusing sidereal time and solar time:** Sidereal time (based on stars) differs from solar time (based on sun) by about 4 minutes per day
+- **Wrong reference star:** Using the wrong star makes the lunar distance table lookup impossible
+- **Forgetting to apply corrections:** Sextant, refraction, and parallax corrections are essential for accuracy
+- **Chronometer drift:** Assuming the chronometer is perfect when it drifts 1+ second per day
+- **Reading tables incorrectly:** Lunar distance tables require careful interpolation
+- **Mixed unit errors:** Confusing hours with degrees when converting time to longitude
+
+## Cross-References
+
+- See Vol 34, Ch 1 — Celestial Sphere (understanding sidereal time and celestial coordinates)
+- See Vol 34, Ch 2 — Star Identification (choosing reference stars)
+- See Vol 34, Ch 3 — Latitude from Observation (finding complete position)
+- See timekeeping chapters (building accurate clocks and timekeeping methods)

@@ -1,0 +1,191 @@
+---
+title: "Probability & Statistics: Making Decisions with Data"
+volume: 3
+chapter: 7
+difficulty: core
+prerequisites:
+  - "Vol 3: Mathematics — arithmetic and algebra"
+unlocks:
+  - "Vol 5: Chemistry — experimental design"
+  - "Vol 8: Agriculture — crop yield analysis"
+tags: [mathematics, probability, statistics, data-analysis, decision-making]
+summary: "Statistics describes data; probability predicts the future. Together they enable evidence-based decisions: does this crop seed perform better? Is this medicine effective? How confident can we be?"
+---
+
+## Overview
+
+Probability and statistics are the mathematics of uncertainty. Probability predicts future events based on theory; statistics analyzes past events based on data. Together they enable rational decision-making when faced with incomplete information.
+
+## Prerequisites
+
+- Arithmetic and basic algebra
+- Understanding of fractions and percentages
+
+## Part 1: Probability Fundamentals
+
+### What is probability?
+
+Probability is the likelihood of an event occurring. It ranges from 0 (impossible) to 1 (certain).
+
+**Probability = (favorable outcomes) / (total possible outcomes)**
+
+### Example: Rolling a die
+
+A six-sided die has 6 possible outcomes. The probability of rolling a 4 is 1/6 ≈ 0.167 or 16.7%.
+
+### Rule: Addition
+
+If events are mutually exclusive (cannot both occur), the probability of one or the other is the sum of their individual probabilities.
+
+**Example:** Probability of rolling either a 4 or a 5 on a die = 1/6 + 1/6 = 2/6 = 1/3.
+
+### Rule: Multiplication
+
+If events are independent (one does not affect the other), the probability of both occurring is the product of their probabilities.
+
+**Example:** Probability of rolling two sixes in a row = 1/6 × 1/6 = 1/36 ≈ 0.028 or 2.8%.
+
+## Part 2: Basic Statistics
+
+### Describing data
+
+**Mean (average):** Sum all values, divide by the count.
+
+**Example:** Test scores: 70, 80, 90. Mean = (70+80+90)/3 = 80.
+
+**Median (middle value):** Sort values, find the middle.
+
+**Example:** Scores 70, 80, 90. Median = 80.
+
+**Mode (most frequent):** The value that appears most often.
+
+**Example:** Heights 5ft, 6ft, 5ft, 5ft. Mode = 5ft.
+
+**Range:** Highest minus lowest value.
+
+**Example:** Scores 70, 80, 90. Range = 90-70 = 20.
+
+**Standard deviation:** Measures how spread out data is.
+
+A small standard deviation means values cluster near the mean. A large standard deviation means values are scattered.
+
+### Representing data
+
+**Frequency table:** Lists values and how often they occur.
+
+| Value | Frequency |
+|-------|-----------|
+| 70    | 2         |
+| 80    | 5         |
+| 90    | 3         |
+
+**Histogram:** A chart showing frequency distribution.
+
+**Example:** A bar chart with test scores on x-axis, number of students on y-axis.
+
+## Part 3: Distributions
+
+### Normal distribution (bell curve)
+
+Many natural phenomena follow a normal distribution: heights, test scores, crop yields.
+
+**Properties:**
+- Symmetrical around the mean
+- Most values cluster near the mean
+- Rare values appear at the extremes
+- About 68% of values fall within 1 standard deviation of the mean
+- About 95% fall within 2 standard deviations
+
+### Using the normal distribution
+
+If crop yields follow a normal distribution with mean 100 bushels and standard deviation 10, then:
+- About 68% of crops yield between 90 and 110 bushels
+- About 95% yield between 80 and 120 bushels
+- Only about 2.5% yield below 80 bushels
+
+This predicts which yields are likely and which are unusually poor or good.
+
+## Part 4: Hypothesis Testing
+
+### The idea
+
+Compare an observed result to what we expect by chance. If the difference is larger than random chance would predict, conclude something real is happening.
+
+### Steps
+
+1. **State the hypothesis:** "This seed variety produces higher yields."
+2. **Collect data:** Grow both varieties, record yields.
+3. **Calculate statistics:** Mean yield of each variety, standard deviation, sample size.
+4. **Assess significance:** Are the results different enough to conclude the seed really is better, or could they differ by random chance?
+
+### Example
+
+**Hypothesis:** Fertilizer A increases crop yield.
+
+**Experiment:** Grow 50 plots with fertilizer A, 50 without.
+- With A: mean 110 bushels, std dev 10
+- Without A: mean 100 bushels, std dev 10
+
+The difference (10 bushels) is larger than the standard deviation, suggesting the fertilizer likely works.
+
+### Null hypothesis
+
+The "null hypothesis" assumes no difference: "Fertilizer A has no effect." If the data strongly contradicts the null hypothesis, we accept the alternative: "Fertilizer A does increase yield."
+
+## Part 5: Confidence and Error
+
+### Confidence interval
+
+A range of values that likely contains the true value. For example: "The average yield is 105 bushels with a 95% confidence interval of 100–110."
+
+This means: if we repeated the experiment many times, 95% of the confidence intervals would contain the true average.
+
+### Types of error
+
+**Type I error:** Rejecting a true null hypothesis (false positive). Concluding a treatment works when it doesn't.
+
+**Type II error:** Accepting a false null hypothesis (false negative). Concluding a treatment doesn't work when it does.
+
+A significance level (often 0.05 or 5%) sets the acceptable risk of Type I error. This means a 5% chance of concluding something works when it doesn't.
+
+## Part 6: Practical Applications
+
+### Medical trials
+
+A new medicine is tested on 200 patients. 160 recover (80%). Without medicine, 60% typically recover. Is the difference significant?
+
+With 80% recovery vs 60% expected, and a large sample size, this is likely significant (not random chance). The medicine probably works.
+
+### Agricultural decisions
+
+Comparing seed varieties: Does variety A yield more than variety B? Compare means, standard deviations, sample sizes. If variety A mean is significantly higher, plant variety A.
+
+### Quality control
+
+Manufacturing: if 2 out of 1000 items are defective, is this normal variation or a sign of a problem?
+
+## Verification
+
+Understanding probability and statistics is demonstrated by:
+
+1. **Calculating basic probabilities:** Correctly finding probability of events.
+2. **Computing statistics:** Accurately calculating mean, median, standard deviation.
+3. **Interpreting data:** Understanding what statistics reveal about real-world situations.
+4. **Making evidence-based decisions:** Using data to choose between options.
+
+## Common Mistakes
+
+1. **Confusing correlation with causation:** Just because two variables are related does not mean one causes the other.
+2. **Cherry-picking data:** Selecting only data that supports your conclusion.
+3. **Ignoring sample size:** Small samples are less reliable than large samples.
+4. **Assuming independence:** Events that seem independent may be related.
+
+## Cross-References
+
+- **Vol 3: Mathematics — Algebra** — Foundation for statistical calculations.
+- **Vol 5: Chemistry — Experimental Design** — Using statistics to validate experiments.
+- **Vol 8: Agriculture — Crop Analysis** — Applying statistics to farming decisions.
+
+---
+
+**Data without statistics is just noise; statistics without data is just speculation.** Combine them: collect reliable data and analyze it rigorously to make decisions that work.

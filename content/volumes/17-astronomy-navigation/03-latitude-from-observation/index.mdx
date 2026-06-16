@@ -1,448 +1,281 @@
 ---
-title: "Latitude from Observation: Finding Your Position"
-volume: 30
+title: "Latitude from Observation: Finding Your North-South Position"
+volume: 34
 chapter: 3
-difficulty: long-term
+difficulty: medium
 prerequisites:
-  - "Vol 30, Ch 1 — Celestial Sphere (altitude, declination, poles)"
-  - "Vol 30, Ch 2 — Star Identification (bright stars, constellations)"
-  - "Vol 3: Survival — basic navigation"
+  - "Vol 34, Ch 1 — Celestial Sphere (understanding declination and altitude)"
+  - "Vol 34, Ch 2 — Star Identification (identifying key navigation stars)"
+  - "Vol 2, Ch 3 — Observation and Measurement (measuring angles)"
 unlocks:
-  - "navigation/finding-position"
-  - "exploration/long-distance-travel"
-  - "cartography/mapping"
-tags: [astronomy, navigation, latitude, position-finding, instruments]
-summary: "Celestial objects' positions reveal your latitude. Understanding this helps you find your location without maps or instruments—or with simple handmade tools."
+  - "navigation/maritime-navigation"
+  - "Vol 34, Ch 4 — Longitude and Time (complete position finding)"
+tags: [astronomy, navigation, latitude, position-finding, measurement]
+summary: "Latitude is your north-south position on Earth. Multiple methods exist to determine latitude from star observations. The Polaris method is simplest in the Northern Hemisphere; the noon sun method works anywhere."
 ---
 
 ## Overview
 
-Your latitude on Earth controls which stars you can see and their positions in the sky. By observing celestial objects, you can determine your latitude. Understanding this helps you:
+Latitude is your position north or south of the equator, ranging from 0 degrees (equator) to 90 degrees (poles).
 
-1. **Find your location:** Know your approximate latitude without maps
-2. **Navigate long distances:** Maintain constant latitude while traveling east-west
-3. **Verify position:** Cross-check other navigation methods
-4. **Explore confidently:** Travel to known latitudes
-5. **Share position:** Communicate your location to others
-
-This chapter teaches practical latitude measurement.
+Unlike longitude (which requires precise timekeeping), latitude can be determined from the night sky using simple geometry. This made latitude-finding the foundation of pre-modern navigation.
 
 ## Prerequisites
 
-- Understanding of altitude and declination
-- Ability to identify bright stars
-- Ability to estimate angles by hand
-- Basic geometry and simple math
-- Ability to observe sun position at noon
+- Understanding of altitude (angle above the horizon)
+- Understanding of declination (star positions on the celestial sphere)
+- Ability to measure angles to at least 1-degree precision
+- Knowledge of basic geometry and trigonometry
+- Clear skies for observation
 
 ## Materials & Tools
 
-**No-equipment method:**
-- Eyes and hand for angle measurement
-- Notebook for recording
-- Basic understanding of star positions
+- Measuring device:
+  - Sextant (most precise, ~1 arcminute)
+  - Astrolabe (medieval instrument, ~1 degree)
+  - Cross-staff (simple, ~1 degree)
+  - Improvised: hand-span method (rough, ~5-10 degrees)
+- Reference materials: star catalogs with declinations
+- Notebook for calculations
+- Mathematical tables or calculator
 
-**Simple instruments:**
-- Straight stick (1-2 meters)
-- Stone or stick marker
-- Water level or plumb bob
+## Step-by-Step Instructions
 
-**Better instruments:**
-- Quadrant (quarter-circle with angle markings)
-- Astrolabe (rotating disk with sights)
-- Sextant (can measure angles directly)
+### Part 1: The Polaris Method (Northern Hemisphere)
 
-## Part 1: Using Polaris (Northern Hemisphere)
+**Step 1: Understand the principle.**
 
-### The Key Relationship
+Polaris is very close to the north celestial pole. Its altitude above the horizon equals the observer's latitude (to within about 1 degree).
 
-**Fundamental rule:** The altitude of Polaris above the horizon equals your latitude.
+**Why this works:**
+1. The celestial pole is 90 degrees above the horizon at the North Pole (latitude 90°)
+2. The celestial pole is 0 degrees above the horizon at the equator (latitude 0°)
+3. At any latitude, the celestial pole is (latitude) degrees above the horizon
+4. Polaris is very close to the celestial pole, so its altitude ≈ latitude
 
-**Why?** Polaris marks the north celestial pole. Your latitude determines how high that pole is in your sky.
+**Step 2: Locate Polaris.**
 
-**Examples:**
-- At equator (latitude 0°): Polaris on the horizon (altitude 0°)
-- At 45°N: Polaris 45° above horizon
-- At 60°N: Polaris 60° above horizon
-- At north pole (90°N): Polaris directly overhead (altitude 90°)
+(See Vol 34, Ch 2 for detailed instructions)
 
-**Accuracy:** Within about 1 degree due to Polaris not being exactly at the pole.
+Quick method: Find the Big Dipper, extend the line through its end stars toward Polaris.
 
-### Measuring Altitude by Hand
+**Step 3: Measure Polaris's altitude.**
 
-**Fist method (rough):**
-- Extend arm with fist toward horizon
-- One fist width = approximately 10 degrees
-- Stack fists from horizon to Polaris
-- Count fists = approximate latitude
+Using a sextant:
+1. Position the sextant so the horizon is visible in the lower half of the eyepiece
+2. Move the index arm until Polaris appears in the upper half, aligned with the horizon
+3. Read the angle on the sextant scale
+4. This is the altitude
 
-**Accuracy:** ±5 degrees typical
+Using a cross-staff:
+1. Hold the cross-staff at arm's length
+2. Align the bottom bar with the horizon
+3. Slide the cross-piece until its top aligns with Polaris
+4. Measure the angle between the bottom bar and cross-piece
 
-**Finger method (better):**
-- Extend arm with index and middle fingers together
-- Width between fingertips = approximately 1 degree
-- Count fingers from horizon to Polaris
-- More precise but slow for large angles
+Using hand-span method (rough):
+1. Extend your arm
+2. Your fist width is about 10 degrees
+3. Count how many fist-widths from horizon to Polaris
+4. Multiply by 10 to estimate altitude
 
-**Accuracy:** ±1-2 degrees
+**Step 4: Account for Polaris's offset.**
 
-**Angle-measuring tool (best):**
-Create a simple quadrant (see Part 3 below)
-- Accuracy: ±0.5 degrees with care
+Polaris is not exactly at the celestial pole. Its offset is small but noticeable:
+1. Polaris is about 0.7 degrees from the pole (in 2026)
+2. For rough navigation, ignore this error
+3. For precision, subtract 0.7 degrees if Polaris is above the pole, add if below
+4. (The offset direction and magnitude change slowly due to precession)
 
-### Time Considerations
+**Step 5: Record your latitude.**
 
-**Important fact:** Polaris's altitude depends on where you measure it from (always due north), but that altitude is constant throughout the night.
+The altitude of Polaris = your latitude (approximately).
 
-**Best time to measure:** When Polaris is due north (crosses the meridian).
+**Example:** If Polaris appears 42 degrees above the horizon, you are at latitude 42°N.
 
-**Determining meridian crossing:** 
-- Polaris appears highest when due south (wait, this is wrong for Polaris)
-- Actually, Polaris never sets; it rotates around the north celestial pole
-- Measure Polaris's altitude when it's directly above/below the pole (on the meridian)
+### Part 2: The Noon Sun Method (Works Everywhere)
 
-**Practical advice:** Measure Polaris altitude multiple times, average the results.
+**Step 1: Understand the principle.**
 
-### Accounting for Polaris's Offset
+The sun reaches its highest point (culmination) at local noon. The sun's altitude at noon depends on declination and latitude.
 
-Polaris is not exactly at the north celestial pole (about 0.75 degrees away).
+**Formula:**
+Latitude = 90° - (sun altitude at noon) - (sun declination)
 
-**Effect:** Polaris's altitude varies slightly as it rotates around the true pole.
+(Sign convention: North is positive, South is negative)
 
-**Correction:**
-- Maximum altitude: Your latitude + 0.75 degrees
-- Minimum altitude: Your latitude - 0.75 degrees
-- Average: Your latitude (approximately)
+**Why this works:**
+1. The sun's declination changes with seasons (0° at equinoxes, +23.5° at summer solstice, -23.5° at winter solstice)
+2. At the equator, the sun is 90° above the horizon when on the observer's meridian
+3. As you move north, the sun's altitude decreases by the same angle (your latitude)
 
-**For navigation:** The small 1.5-degree total variation is acceptable for most purposes. If precision needed, measure multiple times and average.
+**Step 2: Determine the sun's declination.**
 
-## Part 2: Using the Southern Cross (Southern Hemisphere)
+The sun's declination varies throughout the year:
+- January 1: Dec ≈ -23°
+- April 1: Dec ≈ 0°
+- July 1: Dec ≈ +23°
+- October 1: Dec ≈ 0°
 
-### Finding the South Celestial Pole
+(More precise values from astronomical almanacs)
 
-The Southern Cross points toward the south celestial pole, but you must calculate its position.
+**Step 3: Observe the sun's altitude at noon.**
 
-**Method:**
-1. Identify Southern Cross (Crux) constellation
-2. Find the long axis (two brightest stars)
-3. Extend this line 4.5× the length of the cross
-4. Note: There's no bright star at the pole like Polaris in the north
+**Safety:** Never look directly at the sun. Use a projection method or dark filter.
 
-**Finding the pole more precisely:**
-1. Locate Southern Cross
-2. Locate nearby bright star Achernar
-3. The south celestial pole lies roughly in the area between these
-4. Use both as references to triangulate
+**Projection method:**
+1. Use a shadow stick or sextant
+2. Measure the angle of the sun's rays at local noon
 
-### Latitude from South Pole Altitude
+**Sextant method:**
+1. At local noon, measure the sun's altitude with a sextant
+2. Record the value
 
-**Same rule as north:** Altitude of south celestial pole = Your latitude (southern hemisphere).
+**Shadow stick method:**
+1. Erect a vertical stick of known height
+2. At noon, measure the shadow length
+3. Calculate the angle: tan(altitude) = stick height / shadow length
+4. Find altitude using trigonometric tables
 
-**Measurement:**
-1. Determine where the pole is (using cross and Achernar)
-2. Measure altitude to that point
-3. That altitude = Your latitude
-
-**Accuracy:** ±2 degrees typical (less precise than Polaris method due to fainter reference points).
+**Step 4: Calculate latitude.**
 
-## Part 3: Using the Sun's Altitude
-
-### Method Overview
-
-The Sun's altitude at solar noon depends on latitude and time of year.
-
-**Relationship:**
-- Altitude = 90 degrees - |latitude - sun's declination|
-- Therefore: Latitude = 90 degrees - altitude + declination
-
-**Advantages:**
-- Easy to measure (sun is bright)
-- Works without knowing specific stars
-- Works anywhere on Earth
-
-**Disadvantages:**
-- Need to know sun's declination (varies with date)
-- Need to find solar noon accurately
-- Can't observe at night
-
-### Finding Solar Noon
-
-Solar noon is when the sun reaches its highest point in the sky, crossing the meridian (due south in northern hemisphere, due north in southern).
-
-**Method 1: Watch the sun**
-1. Observe sun's position throughout the day
-2. Note when it appears highest (smallest shadow cast by stick)
-3. That moment is solar noon
-
-**Method 2: Use a gnomon (stick)**
-1. Place vertical stick in ground
-2. Mark shadow tip hourly
-3. Shadow is shortest at solar noon
-4. This method also gives direction (true south/north)
-
-**Accuracy:** ±15 minutes typical
-
-### Sun's Declination
-
-The sun's declination changes throughout the year, from -23.5° (winter solstice) to +23.5° (summer solstice).
-
-**Key dates:**
-- March 20 (vernal equinox): Declination = 0°
-- June 20 (summer solstice): Declination = +23.5°
-- September 22 (autumnal equinox): Declination = 0°
-- December 21 (winter solstice): Declination = -23.5°
-
-**Finding current declination:**
-- If you know the date, use a table or calculate
-- Alternative: Use sun's actual position to infer approximate declination
-
-**Table of approximate solar declination:**
-- January: -20°
-- February: -11°
-- March: 0°
-- April: +12°
-- May: +20°
-- June: +23°
-- July: +21°
-- August: +13°
-- September: 0°
-- October: -10°
-- November: -19°
-- December: -23°
-
-### Calculation Example
-
-**Scenario:** You measure sun's altitude at solar noon as 60 degrees. It's June 20 (summer solstice, declination +23.5°).
-
-**Calculation:**
-1. Altitude = 60°
-2. Sun's declination = +23.5°
-3. Latitude = 90° - (altitude - declination)
-4. Latitude = 90° - (60° - 23.5°)
-5. Latitude = 90° - 36.5°
-6. Latitude = 53.5°N
-
-**Interpretation:** You're at approximately 53.5°N latitude (similar to Edinburgh, Scotland or central Canada).
-
-### Finding Altitude of the Sun
-
-**Stick shadow method:**
-1. Place stick vertically in level ground
-2. Measure length of shadow
-3. At solar noon: Angle = arctangent(stick height / shadow length)
-4. Use right triangle: altitude angle is complement of shadow angle
-
-**Hand measurement:**
-- Extend arm at 90 degrees to stick
-- Hold thumb and fingers apart
-- Adjust until span equals angle to sun
-- Measure that angle in hand-widths
-
-**Water level method:**
-1. Fill container with water until surface is level
-2. Place at an angle
-3. The water's surface shows the horizontal
-4. Measure angle between horizontal and sun's reflection
-
-**Quadrant (see Part 4):**
-- Direct measurement tool designed for this
-
-## Part 4: Building Simple Instruments
-
-### The Cross-Staff (Simple)
-
-**Materials:**
-- Straight stick (1 meter long)
-- Smaller cross-stick (30 cm long)
-- Knife or file to notch the main stick
-
-**Construction:**
-1. Drill or notch a hole through the main stick at its midpoint
-2. Insert the cross-stick through the hole so it can slide
-3. Notches or marks on the main stick mark angle increments
-
-**Using a cross-staff:**
-1. Hold the main stick horizontal
-2. Sight along it toward Polaris
-3. Slide cross-stick until top aligns with Polaris
-4. Position determines the angle
-
-**Calibration:**
-- Test against known angles (using hand measurements)
-- Mark the stick with angle values
-
-### The Quadrant
-
-A quadrant is a quarter-circle marked with angles 0-90 degrees.
-
-**Materials:**
-- Wood or cardboard
-- Two straight edges (one for baseline, one for sighting)
-- String with plumb bob
-- Protractor or angle markings
-
-**Construction:**
-1. Cut a quarter-circle from wood (radius 30-50 cm)
-2. Mark degree markings around the curved edge
-3. Attach one straight edge along the vertical side
-4. Attach another straight edge (sighting arm) at the corner
-5. Hang a plumb bob from the corner
-6. Sighting arm and plumb bob point toward the object being measured
-
-**Using a quadrant:**
-1. Hold vertically
-2. Look along the sighting arm at the target (e.g., Polaris)
-3. Plumb bob hangs freely
-4. Read the angle where the string crosses the marked arc
-
-**Accuracy:** ±0.5-1 degree with careful construction
-
-### The Astrolabe (Advanced)
-
-An astrolabe is a rotating disk with sights and a reference circle. It's more complex but very accurate.
-
-**Basic components:**
-- Circular disk marked with 360 degrees
-- Rotating sighting arm (alidade)
-- Plumb bob reference
-- Star positions marked on disk (for advanced use)
-
-**Using an astrolabe for latitude:**
-1. Align disk so 0° faces down
-2. Sight toward Polaris using rotating arm
-3. Plumb bob indicates angle on the disk
-4. That angle = Your latitude
-
-**Construction:** Requires precision metalwork or careful woodworking. Often used as a decorative tool as much as functional.
-
-### The Sextant (Professional)
-
-A sextant is a precision instrument that measures angles up to 120 degrees.
-
-**Key features:**
-- Mirrors that double the measured angle for better precision
-- Graduated arc showing 0-120 degrees
-- Eyepiece with telescope option
-- Adjustment screws for fine-tuning
-
-**Using a sextant:**
-1. Look through the eyepiece
-2. Position the sun, star, or horizon in the mirror
-3. Adjust the arm until the object reflects into view
-4. Read the angle from the graduations
-
-**Accuracy:** ±0.1 degree with proper technique
-
-**Construction:** Requires skilled craftsmanship or salvage from existing instruments. Not practical to build from scratch post-collapse.
-
-## Part 5: Methods Without Instruments
-
-### Noon Sun Position Method
-
-**Concept:** The sun's position at noon (time relative to true noon, shadow length) reveals latitude.
-
-**Requirements:**
-- Know approximate date
-- Measure sun's shadow length at local noon
-- Determine direction of shadow (true south/north)
-
-**Execution:**
-1. Place vertical stick in ground
-2. Track shadow throughout day
-3. When shadow is shortest, it's solar noon
-4. At that moment, measure shadow angle
-5. Use sun declination table and calculation (see Part 3)
-
-**Accuracy:** ±2-3 degrees without instruments
-
-### Circumpolar Star Method
-
-**Concept:** The height of circumpolar stars (stars that never set) varies with latitude.
-
-**How it works:**
-1. Watch a bright circumpolar star (like Big Dipper)
-2. Measure its altitude when at its lowest point (due north, near horizon)
-3. That altitude ≈ Your latitude - 45 degrees
-4. Therefore: Latitude ≈ Altitude + 45 degrees
-
-**Requires:** Multiple observations and careful hand measurement.
-
-**Accuracy:** ±3-5 degrees
-
-## Part 6: Improving Accuracy
-
-### Multiple Measurements
-
-**Best practice:** Take multiple measurements over several nights.
-
-**Procedure:**
-1. Measure latitude using primary method
-2. Repeat the next clear night
-3. Average the results
-4. Estimate uncertainty (variation between measurements)
-
-**Benefit:** Reduces random errors from wind, ground unevenness, eye strain.
-
-### Cross-Checking Methods
-
-Use two different methods, compare results.
+Latitude = 90° - (sun altitude) - (sun declination)
 
 **Example:**
-- Method 1: Polaris altitude = 50.2°
-- Method 2: Sun's altitude at noon = 50.1°
-- Conclusion: Latitude ≈ 50°N, uncertainty ±0.5°
+- Observation date: July 1 (sun declination = +23°)
+- Sun altitude at noon: 60°
+- Latitude = 90° - 60° - 23° = 7°N
 
-**Benefit:** Identifies systematic errors in single method.
+The observer is at latitude 7°N (near the equator).
 
-### Accounting for Refraction
+**Another example:**
+- Observation date: January 1 (sun declination = -23°)
+- Sun altitude at noon: 25°
+- Latitude = 90° - 25° - (-23°) = 88°N
 
-Atmospheric refraction makes objects appear slightly higher than they actually are, especially near the horizon.
+The observer is at latitude 88°N (far north).
 
-**Effect:** About 0.5 degrees near horizon, negligible at high angles.
+### Part 3: Using Other Stars (Circumpolar Stars)
 
-**Correction:** For Polaris (which is high in the sky), ignore refraction.
+**Step 1: Understand the method.**
 
-**For sun near horizon:** Subtract 0.5 degrees from measured altitude.
+Any star with a known declination can be used to find latitude, but stars near the meridian (due south or north) are easiest.
+
+**Principle:**
+- Latitude = altitude of star - star declination
+- (If star is above celestial equator, declination is positive)
+- (If star is below, declination is negative)
+
+**Step 2: Observe a star at culmination.**
+
+A star culminates (reaches its highest point) when it crosses the meridian (due south in Northern Hemisphere, due north in Southern).
+
+**How to tell when a star culminates:**
+- Observe the star's position for several hours
+- It moves in an arc from east to west
+- At culmination, it is directly above a cardinal direction and stops rising
+
+**Step 3: Measure the star's altitude at culmination.**
+
+Use the same techniques as for Polaris (sextant, cross-staff, or hand-span).
+
+**Step 4: Calculate latitude.**
+
+Latitude = star altitude - star declination
+
+**Example:**
+- Star: Vega (declination +38°47')
+- Altitude at culmination: 50°
+- Latitude = 50° - 38° = 12°N
+
+The observer is at latitude 12°N.
+
+### Part 4: Southern Hemisphere Methods
+
+**Step 1: Find the south celestial pole.**
+
+Unlike Polaris in the north, there is no bright star near the south celestial pole. Instead:
+
+**Method 1: Use the Southern Cross (Crux):**
+1. Find the Southern Cross (four bright stars in a cross shape)
+2. Extend a line down from the long axis about 4 times its length
+3. This points toward the south celestial pole
+
+**Method 2: Use the False Cross (easier):**
+1. The False Cross is less useful but nearby
+2. The Southern Cross is the better choice
+
+**Step 2: Measure the pole's altitude.**
+
+Since the pole is invisible, extend a line from nearby stars toward where the pole should be.
+
+**Step 3: Use the noon sun method.**
+
+This works the same way in the Southern Hemisphere:
+- Latitude = 90° - (sun altitude) - (sun declination)
+- Result is negative (south) if you're south of the equator
+
+### Part 5: Refining Latitude Measurements
+
+**Step 1: Correct for sextant error.**
+
+Sextants have systematic errors:
+1. Collimation error: The mirrors aren't perfectly aligned (typical: 0-2 arcminutes)
+2. Perpendicularity error: The index mirror isn't perfectly perpendicular (typical: 0-5 arcminutes)
+3. Side error: The sextant reads slightly differently on the left vs. right side
+
+**Correction:**
+- Manufacturer should provide calibration data
+- Alternatively, observe the sun's diameter (known to be 0.53°) and measure it; if the result differs, note the error
+
+**Step 2: Account for atmospheric refraction.**
+
+Light bends as it enters the atmosphere, making objects appear higher than they actually are.
+
+**Effect:**
+- Near the horizon: Refraction is about 0.5 degrees
+- At 45 degrees altitude: Refraction is about 1 arcminute
+- At the zenith: No refraction
+
+**For latitude finding, ignore refraction near the meridian (small effect).**
+
+**Step 3: Account for observer height above sea level.**
+
+The horizon appears lower at higher elevations, affecting altitude measurements.
+
+**Effect:**
+- At sea level: No correction
+- At 1000 m elevation: About 3 arcminutes lower horizon
+- At 10,000 m elevation: About 10 arcminutes lower horizon
+
+**For rough navigation, ignore this correction.**
 
 ## Verification
 
-**Understanding latitude measurement means:**
+A successful latitude measurement results in:
 
-1. You can estimate latitude using Polaris or sun altitude
-2. You can build a simple angle-measuring tool (quadrant or cross-staff)
-3. You understand the relationship between celestial altitude and latitude
-4. You can calculate latitude from sun's altitude and declination
-5. You can determine solar noon using a gnomon
-6. You can verify your latitude using multiple methods
+- **Polaris method:** Accuracy of 1-2 degrees with improvised tools, 0.1 degrees with a sextant
+- **Noon sun method:** Accuracy of 1-2 degrees with improvised tools, 0.1 degrees with a sextant
+- **Consistency:** Repeated measurements agree within the tool's precision
 
----
+A failed measurement shows:
+
+- **Large spread:** Repeated measurements differ by over 5 degrees
+- **Implausible result:** Latitude over 90 degrees or negative when positive is expected
+- **Systematic error:** All measurements offset by a consistent amount
 
 ## Common Mistakes
 
-1. **Confusing altitude with azimuth:** Altitude is angle above horizon; azimuth is compass direction. You need altitude for latitude.
-
-2. **Measuring Polaris's altitude when it's not due north:** Always measure Polaris when it's on the meridian (highest or lowest point) for most accurate result.
-
-3. **Forgetting to account for sun's declination:** Sun's altitude depends on both latitude AND date. Must include declination in calculation.
-
-4. **Assuming shadow angle equals altitude angle:** Shadow angle and sun altitude angle are complementary (add to 90°). Don't confuse them.
-
-5. **Not verifying solar noon:** Using clock time instead of actual solar noon can introduce large errors (up to 15 degrees depending on longitude).
-
-6. **Ignoring hand-measurement limitations:** Hand measurements have ±5 degree errors. Use them for rough checks, not precise navigation.
-
-7. **Not repeating measurements:** Single measurements have random errors. Always repeat on multiple nights and average.
-
-8. **Forgetting about light pollution:** Dim stars fade in bright locations. Move to darker sites for better observations.
-
-9. **Expecting perfect accuracy without instruments:** Even careful hand measurements give ±1-2 degree accuracy. That's good enough for navigation but not surveying.
-
----
+- **Confusing altitude with declination:** Altitude is measured from your horizon; declination is on the celestial sphere
+- **Forgetting sun angle reversal:** The sun's declination changes; use the correct value for your observation date
+- **Measuring at wrong time:** Latitude from the noon sun is only accurate at local noon (when sun is highest)
+- **Not accounting for time zones:** Local noon (highest sun) differs from clock noon if you're far from your time zone's meridian
+- **Using invisible stars in daylight:** Some bright stars are invisible during twilight; observe at proper darkness
+- **Ignoring refraction near horizon:** Refraction errors are large near the horizon; measure stars higher up if possible
 
 ## Cross-References
 
-- See Vol 30, Ch 1 — Celestial Sphere (altitude and declination)
-- See Vol 30, Ch 2 — Star Identification (locating Polaris)
-- See Vol 30, Ch 4 — Longitude and Time (complete position-finding)
-- See Vol 22: Architecture & Structural Engineering (precise angle measurement for construction)
-- See Vol 3: Survival (basic navigation)
+- See Vol 34, Ch 1 — Celestial Sphere (understanding altitude and declination)
+- See Vol 34, Ch 2 — Star Identification (finding key stars)
+- See Vol 34, Ch 4 — Longitude and Time (determining complete position)
+- See navigation chapters (applying latitude finding)

@@ -86,6 +86,14 @@ Recommendation: preserve as NEW canonical chapters (add DB rows + fix frontmatte
 - Project paused for the night at 112/316 (35% — was 35 at session start). Awaiting user wake / budget refuel.
 - Maintenance-only mode now: each 2h sweep just keeps DB clean (release stale, mark verified-unmarked) + dev up. No nudges unless an agent replies or new completions appear.
 
+## Sweep 7 (2026-06-16 12:22 UTC) — Phase 1 COMPLETE, GitHub+Vercel live
+- 166 done / 150 pending. **Phase 1 (Vols 1-8) fully complete.** Remaining: P2=23, P3=39, P4-5=88.
+- GitHub repo connected (AryaVora621/GuideToCivilization), Vercel auto-deploy working. Live: https://guide-to-civilization.vercel.app
+- COMMITS: author "Arya Vora", NO Co-Authored-By trailer (user requirement). tasks.db is gitignored.
+- Recurring build-breaker: agents write "<10%"/"<38°C"; MDX fails Vercel build on <digit. Fix in every sweep: grep -rlE '<[0-9]' + perl 's/<(?=\d)/&lt;/g'. Rule broadcast to all agents.
+- This sweep: released stale claim 34-ceramics/06-firing-temperatures (no file, 1h34m); 0 git changes (nothing new to push); nudged agents 1/3/4 (idle ~48min).
+- Cron now job 3f8a664b (every 2h) includes push+deploy-verify.
+
 ## Watch items for next iteration
 1. Stale claims: release any `claimed` row older than ~25 min where the file is <500 words (dead/renamed agent).
 2. Inconsistent agent_id values pollute tracking (agent-A/B/C, "4", agent-test). Encourage canonical agent-1..4.
