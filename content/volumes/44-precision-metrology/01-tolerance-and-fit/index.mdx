@@ -1,0 +1,405 @@
+---
+title: "Tolerance and Fit: The Language of Precision Manufacturing"
+volume: 40
+chapter: 1
+difficulty: intermediate
+prerequisites:
+  - "Vol 11: Mechanical Engineering — Basic machine tool operation and mechanical drawings"
+  - "Vol 35: Manufacturing — Production processes and quality control"
+  - "Vol 40: Precision Metrology — Understanding measurement uncertainty"
+unlocks:
+  - "Vol 40, Ch 2 — Measurement Techniques and Instruments"
+  - "Vol 40, Ch 3 — Statistical Quality Control"
+  - "Vol 40, Ch 4 — Geometric Dimensioning and Tolerancing"
+tags: [metrology, tolerances, manufacturing, precision, quality-control]
+summary: "Tolerance and fit define how precisely parts must be manufactured to function correctly together. A tolerance specifies the acceptable range of a dimension; a fit describes how two parts come together. Understanding tolerance systems (ISO, ANSI) and fit types (clearance, transition, interference) is essential for designing parts that can be manufactured reliably and economically."
+---
+
+## Overview
+
+When you draw a line to represent the diameter of a shaft, you specify a number: 10 mm. But no manufacturing process can produce exactly 10.000000 mm. Every process has variation. A machined shaft might measure anywhere from 9.98 mm to 10.02 mm—it varies.
+
+The question becomes: what variation is acceptable? If a shaft runs in a bearing hole, and the hole is too loose (too large), the bearing will rattle and wear rapidly. If the hole is too tight, friction will generate excessive heat, and the bearing will seize.
+
+**Tolerance** is the answer to this question. A tolerance specifies the allowable range of a dimension. **Fit** describes what happens when two parts come together—whether they can slide freely, whether they grip tightly, or whether they're somewhere in between.
+
+Understanding tolerance and fit is the foundation of precision manufacturing. Without clear tolerance specifications, parts that should fit together will either fail functionally (too loose) or be impossible to assemble (too tight). Understanding tolerances also allows designers to balance two competing goals: precision (which is expensive) and economy (which favors loose tolerances that are easier to manufacture).
+
+## Prerequisites
+
+- Ability to read technical drawings and interpret dimension symbols
+- Understanding of basic machining processes: drilling, boring, milling, turning (Vol 11)
+- Knowledge of measurement techniques and precision (Vol 40)
+- Familiarity with manufacturing cost and process capabilities
+- Understanding of assembly processes: fitting, pressing, bolting
+
+## Materials & Tools
+
+### For Understanding (Theory)
+
+- Engineering drawings with dimension and tolerance callouts
+- Tolerance tables (ISO 286 for metric, ANSI B4.1 for inch)
+- Fit tables showing typical clearances and interferences
+- Comparison of different tolerance grades and their achievable cost
+
+### For Practical Application (Manufacturing)
+
+- Calipers or micrometers: for measuring produced parts
+- Go/no-go gauges: for rapid inspection of tolerance compliance
+- Bore gauges: for measuring internal holes precisely
+- Dial indicators: for measuring runout and perpendicularity
+- Surface plates and angle blocks: for setting up reference dimensions
+
+## Step-by-Step Instructions
+
+### Part 1: Understanding Tolerance Basics
+
+**Step 1: Define nominal dimension.**
+
+The nominal dimension is the intended size, the number you put on the drawing.
+
+Example: You want a shaft 10 mm in diameter. 10 mm is the nominal dimension.
+
+**Step 2: Choose an upper and lower limit.**
+
+Manufacturing variation means the actual part will be slightly larger or smaller than nominal. You specify acceptable limits:
+
+- **Upper limit (UL):** The maximum acceptable size
+- **Lower limit (LL):** The minimum acceptable size
+
+Example:
+- Nominal: 10 mm
+- Upper limit: 10.02 mm
+- Lower limit: 9.98 mm
+
+Any shaft between 9.98 mm and 10.02 mm is acceptable. This gives a range of 0.04 mm, which is the tolerance.
+
+**Step 3: Calculate tolerance (range).**
+
+Tolerance = Upper Limit − Lower Limit
+
+In the example:
+Tolerance = 10.02 − 9.98 = 0.04 mm (often written as ±0.02 mm, meaning nominal ± 0.02)
+
+**Step 4: Understand bilateral and unilateral tolerances.**
+
+**Bilateral tolerance:** Tolerance is split equally above and below nominal
+- Notation: 10 ±0.02 mm
+- UL = 10 + 0.02 = 10.02 mm
+- LL = 10 − 0.02 = 9.98 mm
+
+**Unilateral tolerance:** Tolerance is asymmetric
+- Example: 10 +0.03/−0.01 mm
+- UL = 10 + 0.03 = 10.03 mm
+- LL = 10 − 0.01 = 9.99 mm
+
+Unilateral tolerances are used when:
+- One direction is critical (e.g., a hole must not be too large or function fails, but a slightly undersized hole is acceptable)
+- Process capability is asymmetric
+
+### Part 2: Fits Between Two Parts
+
+A fit describes what happens when two parts come together. Consider a shaft (male part) in a hole (female part).
+
+**Step 1: Define basic size.**
+
+The basic size is the nominal dimension common to both parts. For a shaft and hole fit, both have the same nominal diameter, say 10 mm.
+
+**Step 2: Choose fit type.**
+
+Three main fit types exist:
+
+**Clearance fit:**
+- The hole is always larger than the shaft
+- Parts slide together freely with space between them
+- Used when parts must move relative to each other (bearings, sliding joints)
+- Example: Shaft nominal 10 mm, hole nominal 10 mm, but hole tolerance makes it 10.03–10.05 mm and shaft makes it 9.97–9.99 mm
+- Always a gap between parts
+
+**Transition fit:**
+- The hole and shaft tolerances overlap
+- Assembled parts may have slight clearance or slight interference, depending on actual sizes
+- Used when parts sometimes need to slide but may be pressed in
+- Unpredictable—two assembled units might fit differently
+
+**Interference fit:**
+- The shaft is always larger than the hole (or equals/exceeds it)
+- Parts must be pressed together with force
+- Creates a tight grip; often used for fixed assemblies (gears on shafts, bearings pressed into housings)
+- Example: Shaft 10.02–10.04 mm, hole 9.98–10.00 mm; shaft is always bigger
+
+**Step 3: Understand clearance notation.**
+
+**Minimum clearance** = Smallest shaft − Largest hole
+
+Example:
+- Shaft: 9.97 mm (smallest) to 9.99 mm (largest)
+- Hole: 10.03 mm (smallest) to 10.05 mm (largest)
+- Minimum clearance = 9.97 − 10.05 = **−0.08 mm (interference!)** This is actually an interference fit in this case because the minimum shaft is smaller than the minimum hole, but the maximum shaft (9.99) is still less than the minimum hole (10.03).
+
+Let me recalculate:
+- Minimum clearance = Smallest hole − Largest shaft = 10.03 − 9.99 = **0.04 mm**
+- Maximum clearance = Largest hole − Smallest shaft = 10.05 − 9.97 = **0.08 mm**
+
+This gives a clearance range of 0.04–0.08 mm, which is appropriate for a free-sliding fit.
+
+**Maximum interference** (negative of minimum clearance):
+- For an interference fit, the shaft is larger than the hole
+- Maximum interference = Largest shaft − Smallest hole
+- Example: Shaft 10.02–10.04 mm, hole 9.98–10.00 mm
+- Maximum interference = 10.04 − 9.98 = **0.06 mm** (the tightest press-fit)
+- Minimum interference = 10.02 − 10.00 = **0.02 mm** (the loosest press-fit)
+
+### Part 3: ISO Tolerance System
+
+Industrial manufacturing uses standardized tolerance systems to specify precision in a language that everyone understands. The ISO tolerance system is the international standard.
+
+**Step 1: Understand tolerance grades (IT grades).**
+
+ISO divides tolerance into **grades**, ranked from finest (hardest to achieve) to coarsest (easiest):
+
+- **IT01, IT0, IT1:** Extremely tight tolerances (under 0.002 mm); for precision instruments
+- **IT2, IT3:** Very tight (0.002–0.01 mm); for high-precision parts
+- **IT4, IT5:** Tight (0.01–0.05 mm); for precision machinery
+- **IT6, IT7:** Medium (0.05–0.15 mm); typical for machined parts
+- **IT8, IT9:** Loose (0.15–0.5 mm); for rough machining, general engineering
+- **IT10, IT11:** Very loose (under 0.5–2 mm); for castings, rough parts
+- **IT12 and higher:** Extremely loose; for rough work
+
+**Selection criteria:** Choose the finest tolerance that can be economically achieved by your manufacturing process.
+
+**Step 2: Understand tolerance letters (A–ZC).**
+
+Position within the tolerance band is specified by letters. The letters denote whether the tolerance is placed above, below, or around the nominal dimension.
+
+**For shafts (external dimensions):** Letters a–z
+- **a–c:** Tolerances positioned below nominal (shaft undersized)
+- **d–k:** Tolerances mostly below nominal or symmetric
+- **l–m:** Tolerances mostly above nominal
+- **n–z:** Tolerances positioned above nominal (shaft oversized)
+
+**For holes (internal dimensions):** Letters A–Z
+- Similar system but capital letters
+- **A–C:** Hole oversized
+- **D–K:** Various positions
+- **L–M:** Hole mostly undersized
+- **N–Z:** Hole undersized
+
+**Example notation:**
+- 10 g6: shaft, tolerance grade 6, position g
+- 10 H7: hole, tolerance grade 7, position H
+
+**Step 3: Use fit tables.**
+
+Standard fit tables provide recommended tolerance combinations for common fits. Tables specify the hole tolerance (upper half) and shaft tolerance (lower half) for each fit type.
+
+**Common ISO fits:**
+
+| Fit | Hole | Shaft | Type | Use |
+|-----|------|-------|------|-----|
+| H7/g6 | 10 H7 | 10 g6 | Clearance | Smooth sliding (bearing in housing) |
+| H7/h6 | 10 H7 | 10 h6 | Clearance | Sliding fit (shaft in bearing) |
+| H7/k6 | 10 H7 | 10 k6 | Transition | Push fit (can be pressed by hand) |
+| H7/p6 | 10 H7 | 10 p6 | Interference | Press fit (requires press machine) |
+
+Reading a table: H7/g6 means:
+- H7 = hole tolerance: let's say 10.00 to 10.018 mm
+- g6 = shaft tolerance: let's say 9.975 to 9.989 mm
+- Result: clearance of 0.011–0.043 mm (smooth sliding)
+
+### Part 4: Practical Application in Design and Manufacturing
+
+**Step 1: Choose fit based on function.**
+
+1. **Free-sliding fit (like H7/g6):** Use when parts must move relative to each other with no binding
+   - Bearings in housings
+   - Pivot pins in brackets
+   - Sliding couplings
+
+2. **Sliding fit (like H7/h6):** Use when parts should slide with minimal clearance
+   - Shafts in plain bearings
+   - Sliding members that must be smooth
+
+3. **Push fit (like H7/k6):** Use when parts can be pressed together by hand
+   - Gears on shafts (if not permanent)
+   - Coupling hubs
+   - Keys in keyways
+
+4. **Press fit (like H7/p6):** Use when parts need a permanent, strong connection
+   - Bearings pressed into housings
+   - Bushings in engine blocks
+   - Permanent couplings
+
+**Step 2: Communicate tolerances on drawings.**
+
+Engineering drawings must clearly specify dimensions and tolerances. Standard notations:
+
+```
+10 ±0.02       (bilateral tolerance)
+10 +0.03/−0.01 (unilateral tolerance)
+10 H7          (ISO tolerance, look up limits in tables)
+∅10 H7         (diameter symbol followed by ISO tolerance)
+```
+
+**Step 3: Verify capability.**
+
+Before production, verify that your manufacturing process can achieve the required tolerance.
+
+**Process capability index (Cpk):** Rough rule of thumb:
+- Cpk > 1.33: Process is capable (6-sigma quality)
+- Cpk 1.0–1.33: Marginal capability
+- Cpk < 1.0: Process cannot reliably meet tolerance
+
+A turning operation typically achieves IT6–IT7. A milling operation achieves IT7–IT8. Grinding can achieve IT5–IT6. Casting achieves IT10–IT12.
+
+**Step 4: Inspect and verify.**
+
+After manufacturing, parts must be checked to ensure they meet tolerance.
+
+**Three inspection methods:**
+
+1. **Calipers or micrometers:** Measure individual parts; verify upper and lower limits
+2. **Go/no-go gauges:** Quick pass/fail check; faster than measurement
+3. **Statistical sampling:** Test a sample of parts from a batch; if sample passes, batch is assumed good
+
+### Part 5: Designing Tolerances for Economy
+
+**Step 1: Understand the cost of tolerance.**
+
+Tighter tolerances cost more because:
+- Require more precise machines (lathes with tighter spindle runout, milling machines with better bearing preload)
+- Take longer to achieve (slower feeds, extra setup time)
+- Have higher scrap rate (parts that are slightly out of tolerance are scrapped)
+- Require more frequent tool changes (wear accumulates faster at tight tolerance)
+
+General rule: Each improvement in tolerance grade (e.g., IT8 to IT7) increases manufacturing cost by 30–50%.
+
+**Step 2: Apply tolerance only where needed.**
+
+- Critical dimensions (affecting function or safety): tighter tolerance (IT6–IT7)
+- Non-critical dimensions (appearance or not affecting function): looser tolerance (IT8–IT9)
+
+Example: A shaft journal that runs in a bearing needs IT6–IT7. The opposite end that's just clamped in a chuck can be IT8 or IT9.
+
+**Step 3: Use bilateral tolerances symmetrically for normal variations.**
+
+- Use ±0.02 mm if both directions are equally important
+- Use unilateral (like +0.03/−0.01) if one direction is critical
+
+**Step 4: Accumulation of tolerances (stack-up).**
+
+When multiple tolerances are added (dimensional chain), they add up:
+
+Example: A bracket is assembled from three plates:
+- Plate 1 thickness: 10 ±0.2 mm
+- Plate 2 thickness: 10 ±0.2 mm
+- Plate 3 thickness: 10 ±0.2 mm
+- Total thickness: 30 ±0.6 mm (not ±0.2)
+
+**Worst-case stack:** 30 + 0.2 + 0.2 + 0.2 = 30.6 mm (maximum) / 30 − 0.2 − 0.2 − 0.2 = 29.4 mm (minimum)
+
+This is often too loose. Solutions:
+- Tighten individual tolerances (cost increases)
+- Use statistical tolerance (parts rarely hit extreme limits; statistically, total is tighter)
+- Design to minimize stack-up (reference from one surface, not chain multiple dimensions)
+
+## Worked Examples
+
+### Example 1: Calculating Clearance
+
+You're designing a simple pulley on a shaft.
+
+**Shaft:** nominal 10 mm
+- Tolerance: ±0.01 mm
+- Actual range: 9.99–10.01 mm
+
+**Pulley hole:** nominal 10 mm
+- Tolerance: +0.03/−0.01 mm
+- Actual range: 9.99–10.03 mm
+
+**Clearance calculation:**
+- Minimum clearance = Smallest hole − Largest shaft = 9.99 − 10.01 = −0.02 mm (interference!)
+
+This doesn't work; there's a risk of interference (shaft too large for hole). Redesign:
+
+**Pulley hole revised:** +0.05/−0.01 mm (10.04–9.99 mm)
+- Minimum clearance = 9.99 − 10.01 = −0.02 mm (still bad!)
+
+Try larger hole tolerance:
+
+**Pulley hole, second revision:** +0.05/0 mm (10.05–10.00 mm)
+- Minimum clearance = 10.00 − 10.01 = −0.01 mm (still risky)
+
+Third attempt:
+
+**Shaft tolerance:** 9.99–10.00 mm (−0.01/−0.00, which is asymmetric)
+**Pulley hole:** +0.03/0 mm (10.03–10.00 mm)
+- Minimum clearance = 10.00 − 10.00 = 0 mm (just barely)
+- Maximum clearance = 10.03 − 9.99 = 0.04 mm
+
+This gives 0–0.04 mm clearance, acceptable for a sliding pulley.
+
+### Example 2: ISO Tolerance Lookup
+
+You specify "10 H7/g6" for a bearing-in-housing fit. What are the actual dimensions?
+
+From ISO 286 tables (metric, 10 mm basic size):
+
+- **H7:** +0/−0.015 mm → 10.000 to 9.985 mm (hole)
+- **g6:** −0.009 to −0.020 mm → 9.991 to 9.980 mm (shaft)
+
+Actually, looking up more carefully:
+- **H7 hole:** 10.000 to +0.015, so 10.015 down to 10.000
+- **g6 shaft:** −0.009 to −0.020, so 9.991 down to 9.980
+
+Clearances:
+- Minimum: 10.000 − 9.991 = 0.009 mm
+- Maximum: 10.015 − 9.980 = 0.035 mm
+
+This gives 0.009–0.035 mm clearance, ideal for smooth sliding.
+
+### Example 3: Cost-Benefit of Tight Tolerance
+
+You're manufacturing 1000 brake rotors. The rotor thickness affects braking feel.
+
+**Option A: Loose tolerance ±0.5 mm**
+- Machining cost: $2 per rotor
+- Quality: Some users complain about inconsistent braking feel
+- Scrap rate: 0% (almost all parts pass)
+
+**Option B: Tight tolerance ±0.1 mm**
+- Machining cost: $8 per rotor (4× more)
+- Quality: Consistent braking feel; customer satisfaction improves
+- Scrap rate: 2% (tighter tolerance = some parts fail)
+- Effective cost: $8 / 0.98 = $8.16 per rotor
+
+**Option B costs 4.08× more but improves quality.** Worth it for brakes; not worth it for brackets.
+
+## Verification Criteria
+
+Proper tolerance specification is verified by:
+
+1. **Functional fit:** Assembled parts fit together as intended (free-sliding if designed for it, tight if designed for press-fit)
+2. **Repeatability:** Multiple assemblies behave identically (confirms tolerance was right)
+3. **Cost-appropriate:** Manufacturing process is suitable for the tolerance; parts don't need rework
+4. **Documentation:** Drawing clearly specifies dimensions and tolerances; no ambiguity
+
+## Common Mistakes
+
+1. **Uniform tight tolerance on all dimensions:** Increases cost unnecessarily. Only critical dimensions need tight tolerance. **Fix:** Analyze each dimension; apply tight tolerance only where function requires it.
+
+2. **Unilateral tolerance in wrong direction:** Tolerance placed where it causes assembly problems. **Fix:** Think through assembly and worst-case scenarios before choosing tolerance direction.
+
+3. **Ignoring stack-up:** Specifying tight tolerances on individual parts, but total assembly is out of tolerance because of accumulation. **Fix:** Use dimensional chain analysis; distribute tolerance carefully across multiple parts.
+
+4. **Over-specification for non-critical fits:** Specifying H7/g6 (costly) when H7/h8 (cheaper) would work. **Fix:** Use H7/g6 for precision work; use H7/h8 or looser for non-critical fits.
+
+5. **Metric/inch confusion:** Specifying 10 mm (= 0.394 inches) when 0.5 inches was intended. **Fix:** Use only one system on a project; clearly label units.
+
+## Cross-References
+
+- Vol 11: Mechanical Engineering — Machine tool capability and precision
+- Vol 35: Manufacturing — Production processes and their tolerances
+- Vol 40, Ch 2: Measurement Techniques and Instruments (how to verify tolerances)
+- Vol 40, Ch 3: Statistical Quality Control (sampling and acceptance)
+- Vol 40, Ch 4: Geometric Dimensioning and Tolerancing (advanced tolerance specifications)

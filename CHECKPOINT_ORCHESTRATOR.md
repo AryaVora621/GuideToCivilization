@@ -61,6 +61,9 @@ Phase 1 (Vols 1-8) ✓ DONE. Then Vols 14-20, then 21-33, then Phase 4-5 (33-45)
 When a lane is exhausted, agent runs `claim-next` with no arg to take anything left.
 
 ## CURRENT STATE (update each sweep)
-- 2026-06-16 17:40 UTC: **203 / 316 done**, 111 pending, 0 active, 0 drift, build green (commit 14acb1a live).
-- All 4 agent sessions were just /cleared by user (to save tokens) — re-briefed via AGENT_BRIEF.md.
+- 2026-06-16 17:58 UTC: **226 / 316 done**, 87 pending, 4 active, 0 drift, build GREEN (commit 4c246dc live).
+  - This sweep: committed+pushed 2 batches (24 files), deploy verified green twice. Agents 1-4 all actively writing.
+  - Fixed orphan: agent-1 wrote 17-astronomy/06-telescope-mounts colliding w/ canonical 06-telescope-construction → renumbered to 07-telescope-mounts, added to DB as done (now vol 17 has 7 ch). Re-briefed agent-1 on exact-id rule (ack'd).
+  - Dev server restarted on :3000 (was down). Cron 3f8a664b (every 2h :07) alive.
+- 2026-06-16 17:40 UTC: 203/316 done, 111 pending. All 4 agents /cleared by user, re-briefed via AGENT_BRIEF.md.
 - Pattern: agents burst ~15-20 chapters then idle ~1.5h.

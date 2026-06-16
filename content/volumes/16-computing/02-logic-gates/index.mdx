@@ -1,0 +1,327 @@
+---
+title: "Logic Gates: Building Blocks of Digital Computation"
+volume: 44
+chapter: 2
+difficulty: intermediate
+prerequisites:
+  - "Vol 44, Ch 1 — Binary and Boolean Logic (Boolean algebra and truth tables)"
+  - "Vol 12: Electrical Engineering — Transistors and electronic switches"
+  - "Vol 11: Mechanical Engineering — Basic relay operation (for electromechanical gates)"
+unlocks:
+  - "Vol 44, Ch 3 — Combinational Logic (building complex circuits)"
+  - "Vol 44, Ch 4 — Sequential Logic (memory and state machines)"
+  - "Vol 41: Semiconductor Technology — Integrated circuit fabrication"
+tags: [computing, logic-gates, boolean-algebra, digital-logic, electronics]
+summary: "Logic gates are physical devices that implement Boolean operations. A logic gate accepts one or more binary inputs and produces a binary output based on a logical rule. AND gates require all inputs true; OR gates require at least one; NOT inverts. More complex gates (NAND, NOR, XOR) are built from combinations. Logic gates are the atomic building blocks from which every digital computer is constructed."
+---
+
+## Overview
+
+A logic gate is a device that implements a Boolean operation. It accepts one or more binary inputs (each either 0 or 1, false or true) and produces a binary output according to a logical rule.
+
+The simplest logic gate is the NOT gate: it inverts the input. If you apply a 1 (true), it outputs a 0 (false), and vice versa. An AND gate outputs a 1 only if all inputs are 1; an OR gate outputs a 1 if at least one input is 1.
+
+At the physical level, logic gates are built from transistors (in modern electronics) or relays (in older electromechanical systems). A transistor is an electronic switch: apply a control voltage, and it either allows current through (switch is "on") or blocks it (switch is "off").
+
+By connecting transistors in specific configurations, you can build logic gates. By combining logic gates, you build multiplexers, adders, counters, and eventually entire computers. Understanding logic gates is the bridge between mathematics (Boolean algebra) and physical reality (circuits made of transistors and wires).
+
+## Prerequisites
+
+- Understanding of Boolean algebra: true/false, AND/OR/NOT operations (Vol 44, Ch 1)
+- Knowledge of electrical circuits: voltage, current, resistance (Vol 12)
+- Familiarity with transistors as electronic switches (Vol 12)
+- Understanding of truth tables and how to read them
+- Ability to interpret schematic diagrams
+
+## Materials & Tools
+
+### For Understanding (Theory)
+
+- Logic gate datasheets (pinout, electrical specifications)
+- Truth tables for each gate type
+- Boolean algebra reference (De Morgan's laws, distributive property)
+- Schematic symbols for each gate type
+
+### For Experimental Work (Practical)
+
+**Transistor-based gates (discrete):**
+- Transistors (BJT such as 2N3904, or FET such as 2N7000): for switching
+- Resistors: pull-up/pull-down resistors to set logical levels
+- Power supply: 5V or 12V DC
+- Breadboard: for temporary circuit assembly
+- LEDs: for visual indication of gate output
+- Multimeter: for measuring voltage levels
+
+**Integrated circuit gates (practical):**
+- IC logic chips: 7408 (AND), 7432 (OR), 7404 (NOT), 7400 (NAND), 7402 (NOR), 7486 (XOR)
+- Breadboard, jumper wires, power supply
+- LEDs, resistors, switches for input/output indication
+
+**Electromechanical gates (relay-based):**
+- Relays: 5V or 12V coil voltage
+- Push buttons: for input signals
+- Light bulbs or LEDs: for output indication
+- Battery or power supply
+
+## Step-by-Step Instructions
+
+### Part 1: NOT Gate (Inverter)
+
+The NOT gate is the simplest logic gate. It has one input and one output. Output = NOT(Input).
+
+**Truth table:**
+
+| Input | Output |
+|-------|--------|
+| 0 | 1 |
+| 1 | 0 |
+
+**Physical implementation with a transistor:**
+
+1. Use an npn transistor (e.g., 2N3904)
+2. Connect the collector to +5V through a pull-up resistor (e.g., 1 kΩ)
+3. Connect the emitter to ground
+4. Input signal to the base through a base resistor (e.g., 10 kΩ)
+5. Output taken from the collector
+
+**Operation:**
+- When input (base) is 0V (logic 0): transistor is OFF (no current flows); output = +5V (logic 1)
+- When input (base) is +5V (logic 1): transistor is ON (conducts current); output = approximately 0.2V (logic 0)
+
+**Step-by-step construction:**
+1. Place transistor on breadboard
+2. Connect a 10 kΩ resistor from the input source to the base
+3. Connect a 1 kΩ resistor from +5V to the collector
+4. Connect the emitter to ground
+5. Connect the output to the collector (before the pull-up resistor)
+6. Apply a logic 0 (0V) to input; measure output (should be ~5V)
+7. Apply a logic 1 (5V) to input; measure output (should be ~0.2V)
+
+### Part 2: AND Gate
+
+AND gate has two or more inputs. Output = 1 only if **all** inputs are 1.
+
+**Truth table (2-input):**
+
+| Input A | Input B | Output |
+|---------|---------|--------|
+| 0 | 0 | 0 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+
+**Physical implementation:**
+
+An AND gate can be built from NAND and NOT gates (see later), or by using series transistors:
+
+1. Two npn transistors in series
+2. Input A to the base of transistor 1 (via 10 kΩ resistor)
+3. Input B to the base of transistor 2 (via 10 kΩ resistor)
+4. Collector of transistor 1 to emitter of transistor 2
+5. +5V through pull-up resistor to collector of transistor 2
+6. Output from the collector of transistor 2; emitter of transistor 2 to ground
+
+**Operation:**
+- Output is high (+5V) only if **both** transistors are ON (both inputs high)
+- If either transistor is OFF, output is low
+
+**Practical approach (easier):**
+
+Build from integrated circuits:
+1. Use a 7408 AND IC chip (contains four independent 2-input AND gates)
+2. Pin 14: +5V power supply
+3. Pin 7: Ground
+4. Inputs: connect to pins (varies by gate; see datasheet)
+5. Output: read from output pin
+6. Verify with truth table: apply all four combinations of inputs and confirm output matches table
+
+### Part 3: OR Gate
+
+OR gate has two or more inputs. Output = 1 if **at least one** input is 1.
+
+**Truth table (2-input):**
+
+| Input A | Input B | Output |
+|---------|---------|--------|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 1 |
+
+**Physical implementation with transistors:**
+
+Two transistors in **parallel**:
+1. Both emitters connected to ground
+2. Both collectors connected together to a pull-up resistor and +5V
+3. Input A to base of transistor 1
+4. Input B to base of transistor 2
+5. Output from the common collector point
+
+**Operation:**
+- Output is high if **either or both** transistors are ON
+- Output is low only if both transistors are OFF (both inputs low)
+
+**IC implementation:**
+1. Use a 7432 OR IC (contains four 2-input OR gates)
+2. Power, ground, inputs, outputs (follow 7408 pattern)
+
+### Part 4: NAND Gate (AND-NOT)
+
+NAND = NOT(AND). Output is low only if all inputs are high.
+
+**Truth table (2-input):**
+
+| Input A | Input B | Output |
+|---------|---------|--------|
+| 0 | 0 | 1 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
+
+**Importance:** NAND gates are **universal**—any Boolean function can be implemented using only NAND gates. This makes NAND the gate of choice for integrated circuit designers.
+
+**Implementation:**
+- From AND + NOT: cascade an AND gate into a NOT gate
+- Or use parallel transistors with pull-up, then invert (NOT)
+
+**IC:** 7400 (contains four 2-input NAND gates)
+
+### Part 5: NOR Gate (OR-NOT)
+
+NOR = NOT(OR). Output is high only if all inputs are low.
+
+**Truth table (2-input):**
+
+| Input A | Input B | Output |
+|---------|---------|--------|
+| 0 | 0 | 1 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 0 |
+
+**Importance:** Like NAND, NOR is also universal. Any Boolean function can be built from NOR gates alone.
+
+**Implementation:**
+- From OR + NOT: cascade an OR gate into a NOT
+- Parallel transistors with pull-up (like OR), but output taken from before pull-up and inverted
+
+**IC:** 7402 (contains four 2-input NOR gates)
+
+### Part 6: XOR Gate (Exclusive OR)
+
+XOR outputs high if inputs **differ** (one is 1, the other is 0). If both are the same (both 0 or both 1), output is 0.
+
+**Truth table (2-input):**
+
+| Input A | Input B | Output |
+|---------|---------|--------|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
+
+**Implementation:**
+- From AND/OR/NOT: XOR = (A AND NOT B) OR (B AND NOT A)
+- Requires multiple gates; not directly implementable from a single transistor configuration
+
+**IC:** 7486 (contains four 2-input XOR gates)
+
+**Application:** XOR is essential for binary addition (sum bit in an adder) and for comparing two bits (is A ≠ B?).
+
+### Part 7: Truth Table Verification Procedure
+
+For any logic gate, verification is straightforward:
+
+1. Build or prepare the gate (transistor circuit or IC)
+2. Set input A to 0, input B to 0
+3. Measure or observe output; record in truth table
+4. Set input A to 0, input B to 1
+5. Measure output; record
+6. Continue for all 2^n combinations (n = number of inputs)
+7. Compare measured output to expected truth table
+
+**Expected output levels:**
+- Logic 0: 0V (or under 0.4V in TTL logic)
+- Logic 1: +5V (or over 2.4V in TTL logic)
+
+## Worked Examples
+
+### Example 1: Building a 3-Input AND Gate
+
+You have 7408 IC chips (2-input AND). You need a 3-input AND gate. Connect them in **cascade**:
+
+1. Connect inputs A and B to a 7408 AND gate; output is AB
+2. Connect output AB and input C to a second 7408 AND gate
+3. Final output = (A AND B) AND C = A AND B AND C
+
+This works because AND is **associative**: (A AND B) AND C = A AND (B AND C).
+
+**Verification:**
+- Output is 1 only when A = 1, B = 1, C = 1
+- All other combinations give output = 0
+
+### Example 2: Building an OR Gate from NAND Gates
+
+You have only NAND gates (7400 IC) but need an OR gate. Use De Morgan's Law:
+
+A OR B = NOT(NOT(A) AND NOT(B))
+
+**Implementation:**
+1. Invert A using a NAND gate with A and A (both inputs tied together); output = NOT(A)
+2. Invert B using another NAND gate the same way; output = NOT(B)
+3. AND the inverted signals using a NAND gate with inputs NOT(A) and NOT(B); output = NOT(A) AND NOT(B)
+4. Invert the result using a NAND gate (both inputs tied together); output = NOT(NOT(A) AND NOT(B)) = A OR B
+
+**Total:** Four NAND gates to build one OR gate.
+
+**Lesson:** NAND's universality allows building any gate, but it may take multiple NAND gates to match a simpler direct implementation.
+
+### Example 3: XOR Truth Table with Logic Circuits
+
+Build XOR from AND, OR, and NOT gates:
+
+XOR(A, B) = (A AND NOT B) OR (NOT A AND B)
+
+**Implementation:**
+1. Create NOT A using a NOT gate
+2. Create NOT B using a NOT gate
+3. AND A with NOT B; output = A AND NOT B
+4. AND NOT A with B; output = NOT A AND B
+5. OR the two AND outputs; final output = (A AND NOT B) OR (NOT A AND B)
+
+**Verification with truth table:**
+- A=0, B=0: (0 AND 1) OR (1 AND 0) = 0 OR 0 = 0 ✓
+- A=0, B=1: (0 AND 0) OR (1 AND 1) = 0 OR 1 = 1 ✓
+- A=1, B=0: (1 AND 1) OR (0 AND 0) = 1 OR 0 = 1 ✓
+- A=1, B=1: (1 AND 0) OR (0 AND 1) = 0 OR 0 = 0 ✓
+
+## Verification Criteria
+
+A logic gate is working correctly if:
+
+1. **Truth table compliance:** All input combinations produce the correct output
+2. **Voltage levels:** Logic 0 is under 0.4V (or under 2V for some technologies); logic 1 is over 2.4V (or over 3V)
+3. **Timing (if specified):** Output responds to input changes within specified propagation delay (typically nanoseconds for IC gates)
+4. **Fan-out capability:** Output can drive the specified number of gate inputs without voltage degradation
+
+## Common Mistakes
+
+1. **Incorrect truth table memorization:** Confusing AND (all inputs must be 1) with OR (any input can be 1). **Fix:** Write out truth tables; don't rely on memory.
+
+2. **Mixing up gate logic symbols:** Misidentifying a NAND as AND in a schematic. **Fix:** Always check datasheets; TTL symbol has a bubble on the output for NAND/NOR (inversion).
+
+3. **Missing pull-up or pull-down resistors:** Transistor logic requires proper bias. **Fix:** Always include resistors; typical values are 1–10 kΩ for pull-up/down.
+
+4. **Incorrect cascading:** Assuming gates can be cascaded without accounting for fan-out (drive strength). **Fix:** Verify that output of one gate can drive the input(s) of the next; if not, add a buffer.
+
+5. **Breadboard wiring errors:** Jumper wires incorrectly placed; shorts or open circuits. **Fix:** Double-check each connection; use a continuity tester.
+
+6. **TTL voltage thresholds:** Applying marginal voltages (e.g., 1.5V for logic 1, which is ambiguous). **Fix:** Ensure logic 0 is well under 0.4V, logic 1 well over 2.4V.
+
+## Cross-References
+
+- Vol 44, Ch 1: Binary and Boolean Logic (Boolean algebra fundamentals)
+- Vol 44, Ch 3: Combinational Logic (building larger circuits from gates)
+- Vol 44, Ch 4: Sequential Logic (memory and clocked circuits)
+- Vol 12: Electrical Engineering — Transistors and basic circuits
+- Vol 41: Semiconductor Technology — How gates are fabricated on silicon
