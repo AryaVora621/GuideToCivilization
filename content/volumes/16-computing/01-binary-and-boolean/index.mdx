@@ -1,0 +1,331 @@
+---
+title: "Binary and Boolean Logic: The Foundation of Computing"
+volume: 16
+chapter: 1
+difficulty: core
+prerequisites:
+  - "Vol 3: Mathematics — number systems and logic"
+unlocks:
+  - "Vol 16: Computing — logic gates and circuits"
+  - "Vol 16: Computing — information encoding"
+  - "Vol 37: Electrical Engineering — digital electronics"
+tags: [computing, binary, boolean, logic, foundations, information-theory]
+summary: "All computation is built on two fundamental concepts: binary (yes/no, on/off, true/false) and boolean logic (AND, OR, NOT). Understanding these enables you to design circuits, encode information, and create computing machines."
+---
+
+## Overview
+
+Computation is the process of transforming information according to rules. The foundation of all computation is binary—two states, two choices. Boolean logic describes how to combine binary values to produce new binary values. Together, binary and boolean logic are the foundation of all computing: from mechanical calculators to digital computers.
+
+This chapter teaches binary number systems and boolean logic operations, the building blocks of all computation.
+
+## Prerequisites
+
+- Understanding of number systems (Vol 3: Mathematics)
+- Logical reasoning and set theory concepts
+- Ability to work with symbols and abstract systems
+
+## Materials & Tools
+
+### For learning and practice
+- Paper and pencil (for notation and calculation)
+- Objects representing on/off states (two coins, two different colors, two positions)
+- Logic puzzle or game materials (useful for developing intuition)
+
+### For application
+- Understanding of how to represent information in binary
+- Knowledge of how to use logic gates (see Vol 16, Ch 2)
+
+## Part 1: Binary Number System
+
+### What is binary?
+
+Binary is a number system using only two digits: 0 and 1. In contrast, the decimal (base-10) system uses digits 0–9. Binary is also called base-2.
+
+Each position in a binary number represents a power of 2:
+
+```
+2^7  2^6  2^5  2^4  2^3  2^2  2^1  2^0
+128   64   32   16    8    4    2    1
+```
+
+### Converting binary to decimal
+
+To convert a binary number to decimal, multiply each binary digit by its place value (power of 2) and sum:
+
+**Example: Binary 1011 to decimal**
+
+```
+1011 (binary) = 1*(2^3) + 0*(2^2) + 1*(2^1) + 1*(2^0)
+              = 1*8 + 0*4 + 1*2 + 1*1
+              = 8 + 0 + 2 + 1
+              = 11 (decimal)
+```
+
+### Converting decimal to binary
+
+To convert a decimal number to binary, repeatedly divide by 2 and record the remainder:
+
+**Example: Decimal 11 to binary**
+
+```
+11 ÷ 2 = 5 remainder 1
+5 ÷ 2 = 2 remainder 1
+2 ÷ 2 = 1 remainder 0
+1 ÷ 2 = 0 remainder 1
+
+Read remainders from bottom to top: 1011 (binary)
+```
+
+### Binary addition
+
+Binary addition follows the same rules as decimal addition, but with only two digits:
+
+- 0 + 0 = 0
+- 0 + 1 = 1
+- 1 + 0 = 1
+- 1 + 1 = 10 (0 with a carry of 1)
+- 1 + 1 + 1 (with carry) = 11 (1 with a carry of 1)
+
+**Example: Adding 1011 + 0110**
+
+```
+  1011  (decimal 11)
++ 0110  (decimal 6)
+------
+ 10001  (decimal 17)
+```
+
+Working right to left:
+- 1 + 0 = 1
+- 1 + 1 = 10 (write 0, carry 1)
+- 0 + 1 + 1 (carry) = 10 (write 0, carry 1)
+- 1 + 0 + 1 (carry) = 10 (write 10)
+
+Result: 10001
+
+### Representing negative numbers
+
+Binary can represent negative numbers in several ways:
+
+**Sign-magnitude:** The leftmost bit indicates the sign (0 for positive, 1 for negative), and the remaining bits represent the magnitude.
+- Example: 1011 could represent negative 11 (in 4-bit sign-magnitude).
+
+**Two's complement:** The most common method in digital systems. To negate a number, invert all bits (0 becomes 1, 1 becomes 0) and add 1.
+- Example: To represent negative 5, start with 0101 (5), invert to get 1010, add 1 to get 1011 (negative 5 in two's complement).
+
+## Part 2: Boolean Logic
+
+### What is boolean logic?
+
+Boolean logic is a system of reasoning using only two values: true or false (often represented as 1 or 0). Three fundamental operations are AND, OR, and NOT.
+
+### AND operation
+
+AND combines two values. The output is true (1) only if both inputs are true (1).
+
+Truth table:
+
+```
+A | B | A AND B
+--|---|--------
+0 | 0 |    0
+0 | 1 |    0
+1 | 0 |    0
+1 | 1 |    1
+```
+
+**Example in English:** "You can go to the party if you are old enough AND you have permission." Both conditions must be true.
+
+**Symbol:** A · B or A ∧ B or A AND B
+
+### OR operation
+
+OR combines two values. The output is true (1) if at least one input is true (1).
+
+Truth table:
+
+```
+A | B | A OR B
+--|---|-------
+0 | 0 |   0
+0 | 1 |   1
+1 | 0 |   1
+1 | 1 |   1
+```
+
+**Example in English:** "You can have tea OR coffee." At least one must be available.
+
+**Symbol:** A + B or A ∨ B or A OR B
+
+### NOT operation
+
+NOT reverses a value. The output is the opposite of the input.
+
+Truth table:
+
+```
+A | NOT A
+--|------
+0 |   1
+1 |   0
+```
+
+**Example in English:** "NOT tired" means awake (or at least not tired).
+
+**Symbol:** ¬A or A' or NOT A
+
+### Combinations and expressions
+
+Boolean operations can be combined to create complex logical expressions.
+
+**Example: (A OR B) AND (NOT C)**
+
+This expression is true if:
+- (A is true OR B is true) AND C is false
+
+Truth table (3 variables):
+
+```
+A | B | C | A OR B | NOT C | (A OR B) AND (NOT C)
+--|---|---|--------|-------|-------------------
+0 | 0 | 0 |   0    |   1   |         0
+0 | 0 | 1 |   0    |   0   |         0
+0 | 1 | 0 |   1    |   1   |         1
+0 | 1 | 1 |   1    |   0   |         0
+1 | 0 | 0 |   1    |   1   |         1
+1 | 0 | 1 |   1    |   0   |         0
+1 | 1 | 0 |   1    |   1   |         1
+1 | 1 | 1 |   1    |   0   |         0
+```
+
+### De Morgan's Laws
+
+Two useful equivalences in boolean logic:
+
+- NOT (A AND B) = (NOT A) OR (NOT B)
+- NOT (A OR B) = (NOT A) AND (NOT B)
+
+**Example:** "NOT (you are hungry AND you are tired)" is equivalent to "(you are not hungry) OR (you are not tired)."
+
+These laws simplify complex logical expressions.
+
+### XOR (Exclusive OR)
+
+Although not as fundamental as AND, OR, and NOT, XOR is useful in computation.
+
+XOR outputs true (1) if inputs are different (one true, one false).
+
+Truth table:
+
+```
+A | B | A XOR B
+--|---|--------
+0 | 0 |    0
+0 | 1 |    1
+1 | 0 |    1
+1 | 1 |    0
+```
+
+**Example in English:** "You can have cake XOR ice cream" (one or the other, not both).
+
+**Definition in terms of AND, OR, NOT:**
+- A XOR B = (A OR B) AND (NOT (A AND B))
+- Or: A XOR B = (A AND (NOT B)) OR ((NOT A) AND B)
+
+## Part 3: Practical Applications
+
+### Controlling a light
+
+Boolean logic can control physical systems. Example: A light should be on if:
+
+- (Switch A is ON OR Switch B is ON) AND the timer is active
+
+This can be represented as:
+- Light = (A OR B) AND Timer
+
+### Majority voting circuit
+
+A voting system with three inputs (three judges, each voting 0 or 1). The output is true if at least two inputs are true (a majority).
+
+Expression:
+- Output = (A AND B) OR (A AND C) OR (B AND C)
+
+This evaluates to true if any two (or all three) inputs are true.
+
+### Error detection
+
+If you transmit one bit of information, adding a check bit (parity bit) can detect if the bit was flipped during transmission.
+
+- Transmitted: original bit + parity bit (parity = original XOR previous-bits)
+- Received: check if parity matches the received data
+
+If there's a mismatch, an error occurred during transmission.
+
+## Part 4: Simplification of Logical Expressions
+
+Complex logical expressions can often be simplified using boolean algebra laws.
+
+### Common laws
+
+**Idempotent:**
+- A OR A = A
+- A AND A = A
+
+**Commutative:**
+- A OR B = B OR A
+- A AND B = B AND A
+
+**Associative:**
+- (A OR B) OR C = A OR (B OR C)
+- (A AND B) AND C = A AND (B AND C)
+
+**Distributive:**
+- A AND (B OR C) = (A AND B) OR (A AND C)
+- A OR (B AND C) = (A OR B) AND (A OR C)
+
+**Absorption:**
+- A OR (A AND B) = A
+- A AND (A OR B) = A
+
+**Complement:**
+- A OR (NOT A) = 1 (always true)
+- A AND (NOT A) = 0 (always false)
+
+### Example: Simplifying (A OR B) AND (A OR (NOT B))
+
+Using the distributive law (in reverse):
+- (A OR B) AND (A OR (NOT B)) = A OR (B AND (NOT B))
+- = A OR 0 (since B AND (NOT B) is always false)
+- = A
+
+The simplified expression is just A.
+
+## Verification
+
+Understanding binary and boolean logic is demonstrated by:
+
+1. **Converting between binary and decimal:** Accurately converting both ways.
+2. **Evaluating boolean expressions:** Given values for variables, correctly determining the output.
+3. **Creating truth tables:** Systematically listing all possible inputs and outputs.
+4. **Simplifying expressions:** Using boolean algebra to reduce expressions to simpler forms.
+5. **Designing logic for control:** Creating boolean expressions that describe desired system behavior.
+
+## Common Mistakes
+
+1. **Confusing OR with XOR:** OR is inclusive (A or B or both); XOR is exclusive (A or B but not both).
+2. **Incorrect operator precedence:** NOT has highest precedence, then AND, then OR. Use parentheses when unsure.
+3. **Inverted De Morgan's Laws:** Remember: NOT (A AND B) = (NOT A) OR (NOT B), not (NOT A) AND (NOT B).
+4. **Forgetting the carry in binary addition:** Carries propagate left; include them in your calculation.
+5. **Assuming binary only uses 0 and 1:** Binary representation requires a specified width (number of bits), which determines the range of representable numbers.
+
+## Cross-References
+
+- **Vol 3: Mathematics — Logic and Set Theory** — Foundational concepts for boolean algebra.
+- **Vol 16: Computing — Logic Gates and Circuits** — Implementing boolean operations with electronic circuits.
+- **Vol 16: Computing — Information Encoding** — Using binary to represent different types of information.
+- **Vol 37: Electrical Engineering** — Electronic devices that implement boolean logic.
+
+---
+
+**Binary and boolean logic are the thinking of machines.** Master these concepts and you understand the principles underlying all computation. Everything a computer does—from simple arithmetic to complex decision-making—is built from binary numbers and boolean operations.

@@ -1,0 +1,305 @@
+---
+title: "Number Systems: Different Ways to Count"
+volume: 3
+chapter: 8
+difficulty: core
+prerequisites:
+  - "Vol 3: Mathematics — arithmetic fundamentals"
+unlocks:
+  - "Vol 16: Computing — binary and boolean logic"
+  - "Vol 5: Chemistry — atomic numbers and notation"
+tags: [mathematics, number-systems, bases, decimal, binary, hexadecimal]
+summary: "Humans use base-10 (decimal) numbers, but other bases are useful: binary (base-2) for computers, hexadecimal (base-16) for color codes and memory addresses, octal (base-8) for historical reasons. Understanding different bases enables communication across systems."
+---
+
+## Overview
+
+We naturally count in base-10 (decimal) because humans have 10 fingers. But the choice of 10 is arbitrary. Any base can work: base-2 (binary) for computers, base-16 (hexadecimal) for digital systems, base-60 for angles and time (60 seconds per minute, 60 minutes per hour). Understanding different number systems enables you to work with computers, understand historical systems, and appreciate the flexibility of notation.
+
+This chapter covers how different bases work, conversions between bases, and practical applications.
+
+## Prerequisites
+
+- Mastery of decimal arithmetic
+- Understanding of place value (ones, tens, hundreds, etc.)
+- Ability to multiply and divide
+
+## Materials & Tools
+
+### For learning
+- Paper and pencil for conversions and calculations
+- Fingers or objects for understanding grouping in different bases
+
+## Part 1: Understanding Bases
+
+### What is a base?
+
+A base is the number of unique digits used in a counting system. Decimal uses 10 digits (0–9); binary uses 2 digits (0–1); hexadecimal uses 16 digits (0–9, A–F).
+
+Each position in a number represents a power of the base:
+
+**Decimal (base-10):**
+```
+10^3  10^2  10^1  10^0
+1000  100   10    1
+```
+
+**Binary (base-2):**
+```
+2^3  2^2  2^1  2^0
+ 8    4    2    1
+```
+
+**Hexadecimal (base-16):**
+```
+16^2  16^1  16^0
+256   16    1
+```
+
+### The general pattern
+
+In any base b, the place values are:
+- ... b³, b², b¹, b⁰ (ones place)
+
+A number like 1234 in base b means:
+- 1 * b³ + 2 * b² + 3 * b¹ + 4 * b⁰
+
+## Part 2: Common Number Systems
+
+### Binary (base-2)
+
+Used in computers and digital systems.
+
+**Digits:** 0, 1
+
+**Example: Binary 1011 to decimal**
+
+```
+1011 (binary) = 1*(2^3) + 0*(2^2) + 1*(2^1) + 1*(2^0)
+              = 1*8 + 0*4 + 1*2 + 1*1
+              = 8 + 2 + 1
+              = 11 (decimal)
+```
+
+### Octal (base-8)
+
+Used historically in computing and military contexts.
+
+**Digits:** 0–7
+
+**Example: Octal 234 to decimal**
+
+```
+234 (octal) = 2*(8^2) + 3*(8^1) + 4*(8^0)
+            = 2*64 + 3*8 + 4*1
+            = 128 + 24 + 4
+            = 156 (decimal)
+```
+
+### Hexadecimal (base-16)
+
+Used in computing for memory addresses, color codes, and data representation.
+
+**Digits:** 0–9, A–F (where A=10, B=11, C=12, D=13, E=14, F=15)
+
+**Example: Hexadecimal 2F to decimal**
+
+```
+2F (hex) = 2*(16^1) + 15*(16^0)  [F = 15]
+         = 2*16 + 15*1
+         = 32 + 15
+         = 47 (decimal)
+```
+
+**Example: Hexadecimal FF to decimal**
+
+```
+FF (hex) = 15*(16^1) + 15*(16^0)
+         = 15*16 + 15
+         = 240 + 15
+         = 255 (decimal)
+```
+
+### Vigesimal (base-20)
+
+Used by some cultures historically. The Mayan civilization used base-20.
+
+**Digits:** 0–19
+
+A number like 5,3 in base-20 (written as 5_20 and 3_20) means:
+```
+5*(20^1) + 3*(20^0) = 100 + 3 = 103 (decimal)
+```
+
+## Part 3: Converting to Decimal
+
+### General method
+
+Multiply each digit by the base raised to the power of its position, then sum.
+
+**Example: Convert 12A (hexadecimal) to decimal**
+
+```
+12A (hex) = 1*(16^2) + 2*(16^1) + 10*(16^0)  [A = 10]
+          = 1*256 + 2*16 + 10*1
+          = 256 + 32 + 10
+          = 298 (decimal)
+```
+
+**Example: Convert 1010 (binary) to decimal**
+
+```
+1010 (binary) = 1*(2^3) + 0*(2^2) + 1*(2^1) + 0*(2^0)
+              = 8 + 0 + 2 + 0
+              = 10 (decimal)
+```
+
+## Part 4: Converting from Decimal
+
+### Method 1: Repeated division
+
+Divide repeatedly by the base, recording remainders, until the quotient is 0. Read remainders from bottom to top.
+
+**Example: Convert 47 (decimal) to hexadecimal**
+
+```
+47 ÷ 16 = 2 remainder 15 (F)
+2 ÷ 16 = 0 remainder 2
+
+Read remainders from bottom to top: 2F (hex)
+Verify: 2*16 + 15 = 32 + 15 = 47 ✓
+```
+
+**Example: Convert 100 (decimal) to binary**
+
+```
+100 ÷ 2 = 50 remainder 0
+50 ÷ 2 = 25 remainder 0
+25 ÷ 2 = 12 remainder 1
+12 ÷ 2 = 6 remainder 0
+6 ÷ 2 = 3 remainder 0
+3 ÷ 2 = 1 remainder 1
+1 ÷ 2 = 0 remainder 1
+
+Read from bottom to top: 1100100 (binary)
+Verify: 64 + 32 + 4 = 100 ✓
+```
+
+### Method 2: Grouping by powers
+
+Identify which powers of the base fit into the decimal number.
+
+**Example: Convert 200 (decimal) to octal**
+
+```
+Octal powers: 8^2 = 64, 8^1 = 8, 8^0 = 1
+
+200 ÷ 64 = 3 remainder 8
+8 ÷ 8 = 1 remainder 0
+0 ÷ 1 = 0
+
+Result: 310 (octal)
+Verify: 3*64 + 1*8 + 0 = 192 + 8 = 200 ✓
+```
+
+## Part 5: Conversions Between Bases
+
+### Binary to Hexadecimal (shortcut)
+
+Binary groups into 4-bit chunks, each mapping to a hexadecimal digit.
+
+**Example: Convert 11010110 (binary) to hexadecimal**
+
+```
+Group into 4s from right:  1101 0110
+Hex equivalents:            D    6
+Result: D6 (hex)
+
+Verify: 13*16 + 6 = 208 + 6 = 214 (decimal)
+And 11010110 (binary) = 128+64+16+4+2 = 214 ✓
+```
+
+### Hexadecimal to Binary
+
+Each hex digit becomes 4 binary digits.
+
+**Example: Convert 3C (hex) to binary**
+
+```
+3 = 0011 (binary)
+C = 1100 (binary)
+Result: 00111100 (or 111100 binary)
+```
+
+## Part 6: Practical Applications
+
+### Color codes in hexadecimal
+
+RGB colors are often represented in hexadecimal: RRGGBB (two hex digits each for red, green, blue).
+
+**Example: #FF0000 is pure red**
+
+```
+FF (hex) = 255 (decimal) red
+00 (hex) = 0 (decimal) green
+00 (hex) = 0 (decimal) blue
+Result: Maximum red, no green, no blue = pure red
+```
+
+**Example: #00FF00 is pure green**
+
+```
+00 = 0 red, FF = 255 green, 00 = 0 blue = pure green
+```
+
+### Memory addresses
+
+Computer memory addresses are often shown in hexadecimal.
+
+**Example:** Memory address 0x1A2B (hex) = 1*4096 + 10*256 + 2*16 + 11 = 6699 (decimal)
+
+### Ancient systems
+
+Many historical systems used bases other than 10:
+
+- **Base-60:** Babylonian/Sumerian (still used for angles and time: 60 seconds, 60 minutes)
+- **Base-20:** Mayan (reflected in groups of 20)
+- **Base-5:** Some cultures (reflecting five fingers per hand)
+
+## Part 7: Advantages and Disadvantages
+
+### Why different bases?
+
+**Decimal (base-10):** Natural for humans (10 fingers), widely used, familiar.
+
+**Binary (base-2):** Fundamental to electronics (on/off, 1/0). Powers of 2 align with computer memory sizes (bytes = 2^8 bits, kilobytes = 2^10 bytes).
+
+**Hexadecimal (base-16):** Compact representation of binary. Four binary digits = one hex digit, reducing notation length while remaining easy to convert.
+
+**Base-60:** Divides evenly by 2, 3, 4, 5, 6, 10, 12, 15, 20, 30. Useful for measuring angles and time.
+
+## Verification
+
+Mastery of number systems is demonstrated by:
+
+1. **Accurate conversions:** Converting correctly between any two bases.
+2. **Understanding place value:** Explaining why 10 in one base equals different values in another.
+3. **Practical application:** Using hexadecimal for colors, binary for logic, etc.
+4. **Checking work:** Verifying conversions by converting back.
+
+## Common Mistakes
+
+1. **Confusing digit positions:** Remember that the rightmost digit is 10^0 (ones place), not 10^1.
+2. **Incorrect hex digit mapping:** A=10, B=11, C=12, D=13, E=14, F=15 (not different values).
+3. **Sign errors in division:** When converting from decimal, don't lose remainders.
+4. **Failing to group correctly:** When converting binary to hex, group from the right (least significant bits) leftward.
+
+## Cross-References
+
+- **Vol 3: Mathematics — Arithmetic** — Foundation for understanding place value.
+- **Vol 16: Computing — Binary and Boolean Logic** — Binary used in all computation.
+- **Vol 5: Chemistry — Atomic Structure** — Atomic numbers use decimal notation, but understanding bases helps with electron shells and orbits.
+
+---
+
+**Every system of counting is a convention.** Decimal feels natural because of our fingers, but binary and hexadecimal are equally valid and more useful in specific contexts. Mastering multiple bases makes you fluent in the language of different systems.

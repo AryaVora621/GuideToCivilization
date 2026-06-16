@@ -1,0 +1,370 @@
+---
+title: "Load Calculations: Determining Structural Forces"
+volume: 18
+chapter: 1
+difficulty: intermediate
+prerequisites:
+  - "Vol 1: Survival — basic math and measurement"
+  - "Vol 17: Materials — properties of materials"
+unlocks:
+  - "architecture/structural-design-advanced"
+  - "architecture/beam-sizing"
+  - "building/foundation-design"
+tags: [structural-engineering, loads, forces, design, calculations, safety]
+summary: "Structures must support their own weight and the weights of people, goods, snow, wind, and other forces. Understanding how to calculate these loads and design structures to safely withstand them separates safe, durable buildings from failures. This chapter explains load calculations, safety factors, and practical sizing of structural elements."
+---
+
+## Overview
+
+Every structure experiences forces: its own weight (dead load), the weight of people and goods inside (live load), snow accumulation (snow load), wind (wind load), earthquakes (seismic load), and water pressure (hydrostatic load). Structures must be designed to safely support all expected loads without failure.
+
+In a post-collapse world, engineering knowledge becomes more valuable because no structural codes or pre-engineered designs exist. Communities that understand how to calculate loads and design structures can build safely; those that guess risk catastrophic failure.
+
+This chapter teaches load calculation fundamentals and practical sizing of common structural elements.
+
+Why this matters:
+- **Safety:** Incorrect calculations cause structure failure and death
+- **Economy:** Over-design wastes materials; under-design risks failure
+- **Durability:** Proper design ensures structures last decades
+- **Independence:** Without codes, you must understand principles
+- **Confidence:** Proper calculations provide assurance
+
+## Prerequisites
+
+- Basic mathematics (multiplication, division, area calculations)
+- Understanding of weights and forces
+- Knowledge of material properties (strength of wood, stone, concrete, etc.)
+- Ability to estimate loads (weight of people, snow depth, wind speed, etc.)
+
+## Part 1: Understanding Loads
+
+### Types of Loads
+
+**Dead load (permanent):**
+- Weight of the structure itself
+- Weight of permanent contents (walls, flooring, fixed equipment)
+- Always present; never goes away
+
+**Live load (temporary):**
+- Weight of people and movable contents
+- Weight of snow (in snowy regions)
+- Temporary; may or may not be present
+
+**Snow load (regional):**
+- Weight of accumulated snow
+- Varies by region (0 in warm climates to over 100 psf in alpine regions)
+- Critical for roof design
+
+**Wind load:**
+- Force from wind pressure
+- Varies by location and altitude
+- Critical for tall or exposed structures
+
+**Seismic load (earthquake):**
+- Horizontal and vertical forces from earthquakes
+- Varies by region
+- Critical in seismic zones
+
+### Load Units and Conversion
+
+**Common units:**
+- Pounds per square foot (psf): weight per unit area
+- Pounds per linear foot (plf): weight along a line (beam)
+- Pounds (lbs): absolute weight
+
+**Conversions:**
+- 1 psf = weight spread over 1 square foot
+- To find total load: multiply psf by total area
+- 10 psf over 100 square feet = 1000 pounds total
+
+---
+
+## Part 2: Calculating Dead Load
+
+Dead load is the weight of the structure itself:
+
+### Common Material Weights
+
+**Wood:** approximately 35-50 lbs per cubic foot (varies by species and moisture)
+- Rough lumber: approximately 40 lbs/cf
+- Finished lumber: approximately 35 lbs/cf
+
+**Concrete:** approximately 150 lbs per cubic foot
+- 1-foot-thick concrete slab: 150 psf
+
+**Masonry (brick, stone):** approximately 100-140 lbs per cubic foot
+- Brick wall, 8 inches thick: approximately 40 psf
+
+**Steel:** approximately 490 lbs per cubic foot
+- Much heavier than wood or concrete
+
+### Example Calculation (Simple Floor)
+
+**Floor system:**
+- 2x8 floor joists, 12 inches on center
+- 3/4-inch plywood subfloor
+- 1 inch of flooring
+- Drywall ceiling below
+
+**Weight per square foot:**
+- Floor joists: approximately 3 plf per joist, spaced 12 inches on center = 3 psf
+- Plywood: 3 psf
+- Flooring: 1-2 psf
+- Drywall ceiling: 1.5 psf
+- **Total dead load: approximately 8-9 psf**
+
+---
+
+## Part 3: Calculating Live Load
+
+Live load is the weight of people, goods, and temporary contents:
+
+### Typical Live Loads
+
+**Residential floors:** 40 psf (building code standard)
+- Accounts for people and movable furniture
+- Conservative estimate; typical floor carries less
+
+**Sleeping areas:** 30 psf (lighter load; fewer people)
+
+**Offices:** 50 psf (more equipment, more people density)
+
+**Retail:** 100-125 psf (heavier goods, more people)
+
+**Snow load:** Varies by region
+- Warm climates: 0-10 psf
+- Moderate climates: 20-40 psf
+- Alpine regions: 100-200 psf
+- Check local data or historical accumulation
+
+### Practical Estimation
+
+**For a room of known use:**
+1. Estimate maximum occupancy (number of people)
+2. Assume 150-200 lbs per person (average person + clothing)
+3. Divide by room area in square feet
+4. Result is occupancy live load
+5. Add for furniture and equipment: 10-20 psf typical
+
+**Example:**
+- Room: 12 feet x 16 feet = 192 square feet
+- Maximum occupancy: 20 people (approximately 10 psf)
+- Furniture and equipment: 15 psf
+- **Total live load: approximately 25 psf** (conservative)
+
+---
+
+## Part 4: Combining Loads and Safety Factors
+
+### Total Design Load
+
+**Design load = Dead load + Live load**
+
+The structure must be sized to support this combined load.
+
+### Safety Factor
+
+A safety factor accounts for:
+- Uncertainty in loads (actual load might exceed estimate)
+- Uncertainty in material strength (actual strength might be less than nominal)
+- Degradation over time
+- Potential errors in calculation
+
+**Typical safety factors:**
+- Wood: 1.5 to 2.0 (multiply calculated stress by 1.5-2.0)
+- Steel: 1.5 to 2.0
+- Masonry: 2.0 to 3.0 (higher uncertainty)
+- Concrete: 1.5 to 2.0
+
+**How to apply safety factor:**
+- Calculate allowable stress for material
+- Divide by safety factor to get design stress
+- Example: Wood beam with allowable stress of 1000 psi; with safety factor of 1.5; design stress = 667 psi
+
+---
+
+## Part 5: Sizing Structural Elements
+
+### Calculating Required Strength
+
+**For a beam supporting distributed load:**
+
+1. **Identify the span:** distance the beam must span
+2. **Calculate the load:** psf multiplied by width of beam's tributary area
+3. **Calculate bending moment:** M = wL²/8 (for simply supported beam)
+   - w = load in pounds per linear foot
+   - L = span in feet
+4. **Calculate required section modulus:** S = M / f_d
+   - f_d = design (allowable) stress for the material
+5. **Select beam:** choose beam with section modulus equal to or greater than required
+
+### Example: Sizing a Floor Beam
+
+**Given:**
+- Span: 20 feet
+- Floor width (tributary width): 12 feet
+- Design load: 50 psf (dead + live)
+- Wood beam with allowable stress 1000 psi; apply 1.5 safety factor
+- Design stress: 1000/1.5 = 667 psi
+
+**Calculation:**
+1. Load on beam: 50 psf x 12 feet = 600 plf
+2. Bending moment: M = (600 x 20²) / 8 = 30,000 pound-feet = 360,000 pound-inches
+3. Required section modulus: S = 360,000 / 667 = 540 cubic inches
+4. Select beam: a 2x16 beam has S approximately 48; a 2x20 beam has S approximately 75
+5. More beams needed: 540 / 75 = 7.2 beams required
+6. Use 8 beams at 12-inch spacing (approximately 7.2 required)
+
+**Result:** Floor designed for safe load carrying
+
+### Column Sizing
+
+Columns support vertical loads; must be sized to avoid crushing:
+
+**Allowable compression stress:**
+- Wood: typically 400-600 psi (varies by species, moisture, slenderness)
+- Concrete: typically 600-1000 psi (varies by strength)
+- Steel: typically 1000-2000 psi
+
+**Required cross-sectional area = Load / allowable compression stress**
+
+**Example:**
+- Column supporting 10,000 pounds
+- Wood with allowable compression stress 500 psi
+- Required area: 10,000 / 500 = 20 square inches
+- A 4x6 column has area approximately 20 square inches (adequate)
+
+---
+
+## Part 6: Dynamic Loads (Wind, Earthquake, Impact)
+
+### Wind Load
+
+Wind creates horizontal force on structures:
+
+**Pressure calculation:**
+- Wind speed in mph varies by location
+- Wind pressure (psf) = 0.00256 x V²
+- V = wind speed in mph
+
+**Example:**
+- 60 mph wind: pressure = 0.00256 x 60² = 9.2 psf
+- 100 mph wind: pressure = 0.00256 x 100² = 25.6 psf
+
+**Application:**
+- Wind pressure acts on vertical surfaces (walls, end-gables)
+- Structure must resist lateral (horizontal) forces
+- Bracing, shear walls, or rigid frames required
+
+### Earthquake Load
+
+Earthquakes create both horizontal and vertical accelerations:
+
+**Simplified approach:**
+- Assume horizontal acceleration = 0.1 to 0.5 g (depending on region)
+- g = gravitational acceleration (32.2 ft/s²)
+- Horizontal force = structure weight x acceleration fraction
+
+**Example:**
+- Structure weight: 100,000 pounds
+- Design acceleration: 0.2 g
+- Horizontal force: 100,000 x 0.2 = 20,000 pounds
+- Structure must resist this horizontal force
+
+**Design approach:**
+- Bracing (diagonal members resisting lateral force)
+- Shear walls (vertical walls resisting lateral forces)
+- Moment-resisting frames (rigid connections resisting lateral forces)
+
+---
+
+## Part 7: Practical Applications
+
+### Residential Building
+
+**Typical loads:**
+- Dead load (walls, floor, roof): 10-15 psf
+- Live load (people, furniture): 40 psf residential floors, 30 psf for sleeping
+- Snow load: 20-40 psf (regional)
+
+**Design approach:**
+1. Calculate total load on each floor/roof
+2. Size beams, columns, and foundations for calculated loads
+3. Apply safety factor (typically 1.5-2.0)
+4. Design roof to shed snow
+
+### Large Span (Warehouse or Hall)
+
+**Typical loads:**
+- Dead load: 15-25 psf (large roof area increases dead load)
+- Live load: 20 psf or load from contents
+- Snow load: as regional
+- Wind load: critical for large exposed structures
+
+**Design approach:**
+1. Large span requires careful analysis (complex bending and shear)
+2. Usually requires truss or arch (distributes loads efficiently)
+3. Wind bracing essential (lateral forces significant)
+4. Professional design recommended (beyond simple calculation)
+
+### Bridge or Long Span
+
+**Critical loads:**
+- Dead load: structure weight
+- Live load: traffic weight (varies; concentrated loads)
+- Wind load: significant for long spans
+- Water load: if over water (impact, flooding)
+
+**Design approach:**
+- Requires sophisticated analysis
+- Professional engineering essential
+- Safety factors higher (2.0-3.0 typical)
+- Testing may be required
+
+---
+
+## Verification
+
+**You understand load calculations when you can:**
+
+1. Identify all loads acting on a structure
+2. Estimate dead load for typical materials and configurations
+3. Assign appropriate live loads for different uses
+4. Calculate total design load
+5. Apply safety factors appropriately
+6. Size simple structural elements (beams, columns)
+7. Check sizing against calculated requirements
+8. Explain how to adjust design if loads are underestimated
+
+---
+
+## Common Mistakes
+
+1. **Forgetting dead load:** Over-designing for live load alone. Solution: Always include structural weight in calculations.
+
+2. **Underestimating live load:** Structure fails under actual loads. Solution: Use conservative estimates; observe actual occupancy.
+
+3. **Insufficient safety factor:** Structure fails due to uncertainty. Solution: Always apply safety factor (typically 1.5-2.0).
+
+4. **Ignoring environmental loads (snow, wind):** Structure fails unexpectedly. Solution: Research local conditions; apply appropriate loads.
+
+5. **Poor tributary area estimation:** Load calculation incorrect. Solution: Carefully identify which structure supports which floor area.
+
+6. **Incorrect unit conversions:** Calculation errors. Solution: Double-check conversions (psf to plf to total pounds).
+
+7. **Not accounting for load concentration:** Unexpected failure from point loads. Solution: Identify concentrated loads separately; design for both distributed and concentrated loads.
+
+8. **Overbuilding from uncertainty:** Wastes materials. Solution: Use reasonable estimates with appropriate safety factor; avoid excessive over-design.
+
+9. **Ignoring second-order effects:** Slender structures may fail differently than expected. Solution: Consider slenderness; apply appropriate adjustments.
+
+10. **No checking of intermediate calculations:** Errors propagate. Solution: Verify each calculation; use simple checks (does answer make sense?).
+
+---
+
+## Cross-References
+
+- See Vol 18: Architecture — structural design and materials
+- See Vol 17: Materials — properties and strengths of construction materials
+- See Vol 15: Building — construction techniques and safety
+- See Vol 1: Survival — basic math and estimation skills
