@@ -1,0 +1,148 @@
+---
+title: "Triangulation: Mapping Vast Distances from a Single Baseline"
+volume: 24
+chapter: 3
+difficulty: intermediate
+prerequisites:
+  - "Vol 24: Cartography & Surveying — land surveying, angle measurement"
+  - "Vol 2: Mathematics — trigonometry, the law of sines"
+unlocks:
+  - "cartography-surveying/topographic-mapping"
+  - "astronomy-navigation/celestial-position-fixing"
+  - "cartography-surveying/geodesy-and-the-figure-of-the-earth"
+tags: [surveying, triangulation, trigonometry, mapping, geodesy, baseline]
+summary: "Triangulation lets you map an entire region by measuring one carefully-laid baseline and then nothing but angles. This chapter explains why it works, how to lay a baseline, build a network of triangles, and propagate accurate positions across hundreds of miles."
+---
+
+## Overview
+
+Measuring a single distance accurately is slow and physically demanding: you must drag a chain across every foot of ground between two points, correcting for slope, sag, and temperature the whole way. Measuring an angle, by contrast, is fast and can be done at a distance over terrain you could never chain — across a river, a ravine, or a forest. Triangulation exploits this asymmetry. You measure one distance with extreme care, call it the **baseline**, and from then on you measure only angles. Trigonometry converts those angles back into distances and positions for an entire network of points spread across a vast area.
+
+This single idea is one of the most powerful in all of practical mathematics. It is how the great national surveys mapped whole countries in the eighteenth and nineteenth centuries, how the size and shape of the Earth itself was first measured, and how artillery, navigation, and astronomy fix positions. Once you understand it, you can map a region far larger than you could ever walk and chain directly, with accuracy that improves rather than degrades as the network grows, provided you check your work.
+
+By the end of this chapter you will understand why one measured baseline plus angles is enough, how to lay out a baseline you can trust, how to extend a chain of triangles across the landscape, and how to detect and control the errors that would otherwise accumulate.
+
+## Prerequisites
+
+You should already be comfortable with:
+
+- Measuring horizontal angles accurately with a sighting instrument or theodolite, as covered in the previous chapter on land surveying.
+- Chaining a distance with corrections for slope and tension.
+- Basic trigonometry: sine, cosine, tangent, and especially the **law of sines**, which is the engine of all triangulation: in any triangle, the ratio of each side to the sine of its opposite angle is the same. That is, side a divided by sin(A) equals side b divided by sin(B) equals side c divided by sin(C).
+
+If the law of sines is unfamiliar, study it before continuing. It is the one tool you cannot do without here.
+
+## The Core Idea: One Side and Two Angles Define a Triangle
+
+A triangle is completely determined if you know one side and the two angles at its ends. Knowing those, the third angle follows immediately (the three angles of any plane triangle sum to 180 degrees), and the law of sines gives you the other two sides.
+
+Suppose you have measured a baseline of length 1000 units between two stations, A and B. You can see a distant landmark, C — a church tower, a hilltop cairn, a mountain peak. You cannot reach C to measure its distance, but you can stand at A and measure the angle between the baseline AB and the line of sight AC. Call it 60 degrees. Then you walk to B and measure the angle between BA and the line of sight BC. Call it 50 degrees. The third angle, at C, is 180 − 60 − 50 = 70 degrees.
+
+Now the law of sines gives the unknown sides. The distance from A to C is the baseline times sin(angle at B) divided by sin(angle at C): 1000 × sin(50°) / sin(70°) = 1000 × 0.766 / 0.940 = 815 units. The distance from B to C is 1000 × sin(60°) / sin(70°) = 1000 × 0.866 / 0.940 = 921 units.
+
+You have determined the distance to a point you never approached, using one measured length and two measured angles. That is the whole of triangulation. Everything else is a matter of doing this repeatedly, carefully, and with checks.
+
+## Extending the Network: Chains of Triangles
+
+A single triangle locates one new point. The power comes from chaining. Once you have computed the distance AC, that line becomes a known side — a new baseline — for the next triangle. From A and C you sight a fourth point D, measure the two angles, and compute the distances AD and CD. Now CD is a known side, and you push on to a fifth point, and so on.
+
+In this way a measured baseline of perhaps a few miles propagates across hundreds of miles of country. Each newly fixed point becomes the foundation for fixing the next. The landscape becomes covered with a lattice of triangles, every vertex a precisely located station, every side a known distance — yet you chained only the first line.
+
+Two practical patterns are used:
+
+- **Chain of triangles**, where triangles are strung end to end along a route. Simple, but errors accumulate in one direction with nothing to catch them.
+- **Braced quadrilaterals and networks**, where each figure has redundant sightings (all diagonals observed), so each new point is fixed by more angles than strictly necessary. The surplus measurements provide checks and let you adjust away small errors. Serious surveys always use redundant networks, never bare chains.
+
+## Laying the Baseline
+
+The entire network inherits its scale from the baseline, so the baseline must be measured with far more care than any ordinary distance. Any error in the baseline multiplies through every triangle that depends on it. The classical surveys went to extraordinary lengths here: baselines were measured with calibrated metal bars or chains laid end to end on supported, leveled trestles, with corrections applied for temperature, tension, and the sag of the measuring element.
+
+Principles for a trustworthy baseline:
+
+- **Choose flat, open, accessible ground.** You must be able to chain the whole length directly and repeatedly.
+- **Make it as long as practical.** A longer baseline gives the first triangles better geometry and less error to amplify.
+- **Measure it multiple times** and reconcile the results. The discrepancy between independent measurements is your evidence of its accuracy.
+- **Correct for everything.** Slope (reduce to horizontal), temperature (metal expands when warm), tension (a taut chain is shorter than a slack one in a known way), and sag between supports.
+- **Site the baseline endpoints where the rest of the network is visible.** The baseline is useless if you cannot sight your first stations from its ends.
+
+In a modest reconstruction effort you will not have invar bars and trestles, but the discipline is the same: measure the one foundational distance many times, correct it properly, and trust nothing about it until repeated measurements agree.
+
+## Choosing Good Stations and Good Geometry
+
+Not every triangle is equally trustworthy. The quality of a computed distance depends sharply on the **shape** of the triangle.
+
+A triangle with a very small or very large angle is dangerous. The law of sines divides by the sine of an angle, and the sine of a tiny angle is small and changes rapidly; a small error in measuring a sharp angle produces a large error in the computed side. The ideal triangle is near equilateral, with all angles comfortably between roughly 30 and 120 degrees. Surveyors call thin, sliver-shaped triangles "ill-conditioned" and avoid them.
+
+When selecting stations:
+
+- Pick points that are **mutually visible** — hilltops, towers, prominent peaks. Clear lines of sight are everything.
+- Arrange them so the resulting triangles are **well-shaped**, near equilateral.
+- Choose **permanent, identifiable** marks so the station can be re-occupied and re-found later.
+- Where natural high points are lacking, build **signals** — tripods, beacons, or masts — that can be sighted from afar and that mark the exact station point.
+
+## Measuring the Angles
+
+At each station you measure the horizontal angles between the lines of sight to the other visible stations. The discipline mirrors ordinary angle work but with higher standards because errors propagate:
+
+1. Center the instrument exactly over the station mark using a plumb bob.
+2. Sight each target precisely on the same feature each time (the same point on a signal).
+3. Read each angle several times, in both swing directions, and average. This cancels small systematic reading errors.
+4. **Use the triangle closure check.** The three measured angles of each triangle must sum to 180 degrees (for a small triangle on flat ground; very large geodetic triangles get a tiny additional correction for the Earth's curvature). The amount by which they miss is the **angular misclosure**, your direct measure of the triangle's quality. Distribute a small misclosure equally across the three angles; investigate a large one before proceeding.
+
+This built-in check is one of triangulation's great virtues. Unlike a chained distance, where a blunder can hide, a mismeasured triangle announces itself: its angles will not close.
+
+## Orienting and Positioning the Network
+
+Triangulation gives you the relative positions of all stations: every distance and the shape of the whole lattice. To anchor this lattice to the real world you need two more things:
+
+- **Orientation.** The direction of at least one line relative to true north, found by astronomical observation (sighting the pole star or the sun) or by a carefully corrected compass bearing. This rotates the whole network to its correct compass alignment.
+- **Position.** The absolute location (latitude and longitude, or coordinates in some grid) of at least one station, again typically found astronomically. This pins the floating lattice to a known spot on the Earth.
+
+With one fixed point and one fixed direction, every other station's absolute coordinates follow from the network's internal geometry. From there you can plot all stations on a map and fill in detail between them by ordinary surveying.
+
+## Worked Example: A Three-Station Extension
+
+Suppose your measured baseline AB is 2000 units. You sight a hill C.
+
+- At A, the angle BAC measures 55 degrees.
+- At B, the angle ABC measures 65 degrees.
+- Therefore angle ACB = 180 − 55 − 65 = 60 degrees.
+- Check: if you could measure all three independently and they summed to, say, 180.02 degrees, you would distribute the 0.02-degree excess as a correction.
+
+Compute the new sides:
+
+- AC = 2000 × sin(65°) / sin(60°) = 2000 × 0.906 / 0.866 = 2092 units.
+- BC = 2000 × sin(55°) / sin(60°) = 2000 × 0.819 / 0.866 = 1892 units.
+
+Now extend. From the known side BC (1892 units) you sight a further hill D, measure the angles at B and C to D, and repeat the computation to fix D. The line CD then carries you to E, and so on across the country. Each step uses only angle measurements plus a side already computed.
+
+## Verification Criteria
+
+Your triangulation is sound when:
+
+- The baseline was measured multiple times with corrections, and the measurements agree closely.
+- Every triangle's measured angles close to 180 degrees within a tight tolerance.
+- The network includes redundant observations (braced figures), and the redundant measurements are consistent with the computed geometry.
+- A distance computed by two independent paths through the network agrees. This is the strongest check: if two chains of triangles arrive at the same far station and give the same coordinates, the network is internally consistent.
+- The network is correctly oriented to true north and anchored to at least one astronomically fixed position.
+- All triangles are reasonably well-conditioned, with no critical reliance on sliver triangles.
+
+## Common Mistakes
+
+- **A poorly measured baseline.** Every error here scales through the whole survey. Over-invest in the baseline; under-investing poisons everything downstream.
+- **Ill-conditioned triangles.** Relying on a triangle with a very sharp angle amplifies angular error into large positional error. Keep triangles near equilateral.
+- **Skipping the closure check.** The 180-degree sum is free quality control. Always compute it for every triangle.
+- **No redundancy.** A bare chain of triangles has no internal check; one bad triangle corrupts everything beyond it silently. Brace your figures.
+- **Inconsistent sighting on signals.** Aiming at slightly different parts of a target on different rounds introduces angular error. Define and sight the exact point every time.
+- **Forgetting curvature on large triangles.** Over short distances the Earth is effectively flat and angles sum to 180 degrees. Over very large triangles a small spherical excess applies; ignoring it on a continental survey introduces real error.
+- **Failing to anchor the network.** A perfect internal lattice that is not oriented and positioned floats free of the real world and cannot be placed on a map.
+
+## Cross-References
+
+- The preceding chapter on land surveying supplies the angle-measurement and chaining skills triangulation depends on.
+- Topographic mapping uses the triangulated control stations as the trustworthy skeleton onto which terrain detail is hung.
+- Geodesy extends triangulation to the whole planet, where the curvature corrections mentioned here become central and the survey measures the figure of the Earth itself.
+- Astronomical position-fixing provides the orientation and anchor point that tie the network to true coordinates.
+- The trigonometry of the law of sines, from the mathematics volume, is the computational core of every triangle solved here.
+
+Triangulation is the lever that lets a small, carefully measured length move a whole continent onto paper. Measure one baseline as if your life depends on it, measure angles everywhere else, keep your triangles fat, and always check that they close. Do that, and accuracy spreads across the landscape from a single trustworthy line.

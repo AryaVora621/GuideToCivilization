@@ -1,0 +1,164 @@
+---
+title: "Electric Motors: Turning Electricity Back into Motion"
+volume: 37
+chapter: 4
+difficulty: advanced
+prerequisites:
+  - "Vol 37: Electrical Engineering — electromagnetism and induction basics"
+  - "Vol 37: Electrical Engineering — generator construction"
+  - "Vol 37: Electrical Engineering — circuits, switches, and power sources"
+unlocks:
+  - "electrical-engineering/power-tools-and-machinery"
+  - "manufacturing/powered-workshop-equipment"
+  - "transportation/electric-propulsion"
+tags: [electrical, motor, electromagnetism, induction, commutator, machinery]
+summary: "An electric motor is a generator run in reverse: it turns electricity into rotation. This chapter explains the major motor types, how to build a working DC motor from salvaged materials, how to control its speed and direction, and how to match a motor to the work it must do."
+---
+
+If a generator is how you make electricity, a motor is how you spend it usefully. A motor converts electrical energy into rotating mechanical force, and that rotation drives everything a rebuilt civilization needs muscle for: pumps that lift water, lathes that cut metal, fans that move air, saws, grinders, mills, and vehicles. A society that can build motors no longer depends on human and animal muscle for heavy, repetitive work.
+
+This chapter teaches you to understand, build, and control electric motors. The good news is that you have already learned most of the physics: a motor is a generator running backward. Where a generator uses motion to push current through a coil, a motor pushes current through a coil to create motion. The same magnets, coils, and iron cores serve both machines.
+
+## Why a Motor Works
+
+A motor exploits the **motor effect**: when current flows through a wire that sits in a magnetic field, the wire experiences a force, pushing it sideways. Reverse the current and the force reverses too.
+
+Now coil that wire and place it between magnets. Pass current through the coil and one side is pushed up while the other is pushed down, so the coil rotates. The challenge is that once the coil turns half a turn, the force would push it back the way it came. To get continuous rotation you must reverse the current in the coil at the right moment, every half turn. The device that does this is the heart of motor design, and different motor types solve it in different ways.
+
+Remember the three levers you control, the same as for a generator:
+
+- **Magnetic field strength** (stronger magnets, smaller air gap) increases force.
+- **Current through the coil** (thicker wire, higher voltage) increases force.
+- **Number of turns** in the coil increases force.
+
+More force means more torque, the twisting power that does work.
+
+## Prerequisites
+
+- Understanding that current in a magnetic field experiences a force
+- Familiarity with generator construction (coils, magnets, air gaps, shafts, bearings)
+- Ability to wind coils and count turns
+- Basic circuit skills: connecting a power source, switches, and measuring current
+- A power source: battery, generator, or rectified mains substitute
+
+## Materials & Tools
+
+**Essential:**
+- **Magnets** for the field: salvaged from speakers, hard drives, or old motors. Strong permanent magnets simplify everything.
+- **Copper magnet wire** for the rotating coil (armature) and, in some designs, the field coils.
+- **Iron core material** to wrap the armature coil around; soft iron or laminated steel concentrates the field and multiplies torque.
+- **A shaft and bearings** so the rotor spins freely under load.
+- **A commutator or switching arrangement** to reverse current at the right moment (described below).
+- **A rigid frame** to hold magnets and bearings in fixed alignment.
+
+**For control and finishing:**
+- A power source matched to your design (battery or DC supply for a DC motor)
+- Switches and, if possible, a variable resistor or simple speed controller
+- Brushes for the commutator: graphite blocks (salvage from old motors or carbon from batteries) or springy copper strips
+- Varnish or epoxy to lock windings
+
+**For testing:**
+- A multimeter to measure current draw
+- A way to load the motor: a string and weight, or a tool to drive
+
+## Part 1: The Major Motor Types
+
+### Brushed DC Motor (best first build)
+
+Current reaches the rotating armature through **brushes** that press on a **commutator**, a split ring on the shaft. As the rotor turns, the commutator automatically reverses the current in the armature coil every half turn, sustaining rotation. This is the easiest motor to understand and build, runs directly from batteries, and is simple to reverse and speed-control.
+
+### Brushless DC Motor
+
+The magnets are on the rotor and the coils are fixed; electronic switching reverses the coil currents instead of brushes. More efficient and longer-lived, but it needs electronic controllers, so it is a later project once you can make transistors or salvage controllers.
+
+### AC Induction Motor (the industrial workhorse)
+
+Alternating current in fixed coils creates a rotating magnetic field that drags a simple metal rotor around with it. The rotor needs no brushes, commutator, or magnets, just conductive bars, which makes induction motors extremely rugged. They require AC and are harder to build by hand, but they are the goal for heavy, continuous duty.
+
+### Universal Motor
+
+A brushed motor wired so it runs on either AC or DC. Common in salvaged power tools. High speed, good power for its size.
+
+Begin with a brushed DC motor. It teaches the core principles and runs from the batteries and generators you can already build.
+
+## Part 2: Building a Brushed DC Motor
+
+### Step 1: Build the Field
+
+Mount two strong permanent magnets on the frame, one north face inward and one south face inward, with a gap between them for the rotor. This fixed field is what the armature pushes against. Keep the air gap small and even.
+
+### Step 2: Build the Armature
+
+1. Take an iron core, ideally shaped so wire can wrap around it with two faces that pass close to the magnets.
+2. Wind a coil of magnet wire around the core: 100 to 200 turns of medium-gauge wire is a reasonable start. Count every turn.
+3. Mount the wound core on the shaft so it spins centered in the magnet gap with a small clearance.
+4. Varnish the winding so it cannot fly apart at speed.
+
+### Step 3: Build the Commutator
+
+1. Make a split ring: two copper segments mounted on the shaft, insulated from each other and from the shaft, with a small gap between segments.
+2. Connect each end of the armature coil to one commutator segment.
+3. Position the segment gaps so that current reverses just as the coil reaches the point where force would otherwise push it backward.
+
+### Step 4: Fit the Brushes
+
+Press two brushes (graphite blocks or springy copper) against opposite sides of the commutator. Connect your power source to the brushes. As the rotor turns, each brush slides from one segment to the other, reversing the current automatically.
+
+### Step 5: Test and Tune
+
+Apply power. The rotor should snap into motion and spin continuously. If it only twitches and stops, the commutator timing is off; rotate the brush position slightly until rotation becomes smooth and self-sustaining. A gentle starting push can help a stalled motor find its direction.
+
+## Part 3: Controlling Speed and Direction
+
+- **Direction:** Reverse the current through either the armature or the field (but not both) and the motor spins the other way. With permanent-magnet fields, simply swap the two power leads.
+- **Speed (crude):** A series resistor lowers voltage to the motor and slows it, but wastes energy as heat.
+- **Speed (efficient):** Rapidly switching the power on and off (pulse-width modulation) lets you set average power with little waste. This needs a switching transistor, an intermediate-technology component, but it is the right long-term method.
+- **Starting current:** A stopped motor draws very high current because there is no back-voltage yet. Large motors need a starting resistor or a soft-start arrangement to avoid blowing fuses or burning windings.
+
+## Part 4: Back-EMF, the Key Insight
+
+As a motor spins, it acts partly like a generator and produces a voltage that opposes the supply. This **back-electromotive-force** rises with speed and naturally limits current. Two consequences matter:
+
+1. **A free-spinning motor draws little current.** Most current is drawn only when the motor is loaded and slowed, or when starting.
+2. **An overloaded or stalled motor draws dangerous current** because back-EMF collapses. A stalled motor can overheat and burn out within seconds. Always protect motors with a fuse and never leave one stalled under power.
+
+## Worked Example: A Water Pump Motor
+
+Goal: drive a small pump to lift water from a well using a 12-volt battery bank.
+
+1. **Type:** Brushed DC motor, permanent-magnet field from salvaged speaker magnets.
+2. **Armature:** Iron core wound with 150 turns of 0.8 mm magnet wire, three-pole if you can manage it (three coils and a three-segment commutator) for smooth, reliable starting.
+3. **Commutator and brushes:** Three copper segments, graphite brushes from a dead drill motor.
+4. **Control:** A simple switch, a fuse sized just above the running current, and a series resistor for soft starting.
+5. **Result:** The motor turns the pump shaft; under load it draws more current and slows slightly, which is normal. If it stalls when the pump is primed, the motor is undersized; add turns, stronger magnets, or a higher voltage. If it runs hot, reduce load or improve cooling airflow.
+
+## Verification Criteria
+
+Your motor works correctly when:
+
+- **It self-starts and runs continuously** in one direction without manual help once timing is set.
+- **It reverses** cleanly when you swap the supply leads (permanent-magnet field).
+- **Current rises under load and falls when free-spinning**, confirming back-EMF is working.
+- **It delivers usable torque:** it can lift a weight on a string wound around the shaft, or drive its intended tool.
+- **It runs without excessive sparking** at the brushes; heavy sparking means worn brushes, a rough commutator, or bad timing.
+- **It does not overheat** during sustained running at its rated load.
+
+## Common Mistakes
+
+- **Bad commutator timing.** The motor twitches or stalls instead of spinning. Rotate the brushes until rotation is smooth.
+- **Air gap too large.** Weak torque. True the rotor and shrink the gap.
+- **Brushes too loose or too tight.** Loose brushes spark and lose contact; over-tight brushes drag and wear fast. Aim for firm, light contact.
+- **No fuse on a motor that can stall.** A stalled motor draws huge current and burns its windings. Always fuse the circuit.
+- **Undersized wire.** Thin armature wire overheats under load. Match wire gauge to the current you expect.
+- **Loose windings.** At speed they fly apart. Varnish and secure everything.
+- **Recording stall current as a broken value.** Write "above 10 amps" or "under 2 amps" in plain words in your notes, never a broken-tag form, so the figures survive being copied elsewhere.
+
+## Cross-References
+
+- **Generator construction** (this volume): the same machine in reverse; building one teaches the other.
+- **Electromagnetism and induction** (this volume): the physics of force on a current-carrying wire.
+- **Power distribution** (this volume): wiring motors safely with switches, fuses, and the right gauge of cable.
+- **Powered workshop equipment** (Manufacturing): mounting motors to drive lathes, drills, grinders, and mills.
+- **Battery and storage** (Energy Systems): the power source that runs your motor when no generator is spinning.
+
+With both generator and motor in your toolkit, you command the full cycle of electrical power: mechanical energy into electricity, electricity stored or transmitted, and electricity back into mechanical work wherever and whenever you need it. This is the machinery that ends the age of pure muscle labor and begins the age of powered tools.

@@ -1,0 +1,365 @@
+---
+title: "Etching: Selective Material Removal for Circuit Patterns"
+volume: 45
+chapter: 7
+difficulty: advanced
+prerequisites:
+  - "Vol 45: Semiconductor Technology, Ch 4 — Wafer Preparation"
+  - "Vol 27: Chemistry, Ch 5 — Acids, Bases, and Oxidation"
+  - "Vol 27: Physics, Ch 1 — Plasma and Ionized Gases"
+unlocks:
+  - "semiconductor-technology/photolithography-masking"
+  - "semiconductor-technology/layer-deposition"
+  - "electronics/transistor-fabrication"
+tags: [etching, material-removal, semiconductors, patterns, photolithography]
+summary: "Etching selectively removes material from wafers using chemical or physical processes. Combined with masks, etching creates the intricate patterns that define transistors and circuits."
+---
+
+## Overview
+
+A silicon wafer is a blank slate. To create transistors and circuits, you must selectively remove material.
+
+Etching is the controlled removal of material from a wafer surface. By using a mask (a pattern that protects some areas while exposing others), you can etch complex shapes and patterns.
+
+There are two main approaches:
+
+1. **Wet etching:** Chemical solutions that dissolve specific materials
+2. **Dry etching:** Physical or chemical processes in a plasma environment
+
+Both are essential for semiconductor fabrication.
+
+This chapter teaches etching principles, materials, equipment, and techniques.
+
+## Prerequisites
+
+- Understanding of wafer structure and chemistry (from Vol 45, Ch 4)
+- Knowledge of acids, bases, and oxidation reactions (from Vol 27, Ch 5)
+- Familiarity with plasma and ionized gases (from Vol 27, Ch 1)
+- Experience with chemical processes and safety
+- Understanding of masking and pattern transfer
+
+## Materials & Tools
+
+**For wet etching:**
+
+- Silicon tetrachloride (SiCl₄) or other etchants
+- Hydrofluoric acid (HF) solutions
+- Nitric acid (HNO₃)
+- Etching baths (glass or plastic vessels, chemical-resistant)
+- Agitation equipment (air bubbler or stirrer)
+- Temperature control (thermostated water bath)
+
+**For dry etching:**
+
+- Plasma chamber (vacuum vessel with electrodes)
+- Reactive gas source (fluorine compounds, chlorine compounds, or oxygen)
+- Vacuum pump (capable of achieving 0.1–10 torr)
+- Radio frequency (RF) power supply (13.56 MHz typical)
+- Electrode systems (parallel plate or other geometry)
+
+**For masking:**
+
+- Photoresist (light-sensitive polymer)
+- Masks (physical patterns to define etch regions)
+- UV light source (for exposing resist)
+- Developing solutions (to dissolve exposed or unexposed resist)
+
+## Part 1: Wet Etching
+
+### Wet Etch Chemistry
+
+**Silicon etching:**
+
+Silicon can be etched by various solutions:
+
+**Hydrofluoric acid (HF):**
+
+HF attacks both silicon dioxide (SiO₂) and silicon:
+- SiO₂ + 6HF → H₂SiF₆ + 3H₂O (oxide etches rapidly)
+- Si + 6HF → H₂SiF₆ + 2H₂ (silicon etches more slowly)
+
+Hydrofluoric acid is selective in the presence of an oxidizer (like HNO₃):
+- With HNO₃, silicon oxidizes at surface
+- HF then selectively removes the oxide
+- Net result: SiO₂ etches, Si etches much slower
+
+**Nitric acid + Hydrofluoric acid mixture:**
+
+Ratio is critical. Typical:
+- HNO₃: 70% (by volume or weight)
+- HF: 49% (diluted to 5–20% in final mixture)
+- Water: balance
+
+This mixture etches silicon rapidly (several micrometers per minute) while attacking oxide preferentially.
+
+### Wet Etch Process
+
+**Procedure:**
+
+1. **Prepare etchant:** Mix acids in glass or plastic container (never metal—acids corrode it)
+   - Example: 70% HNO₃ + 20% HF (diluted to 10%) + 10% water
+   - Temperature: Room temperature to 50°C (higher temp increases etch rate)
+
+2. **Prepare wafer:** Mount wafer in etching holder (plastic clamp or specialized holder)
+
+3. **Immerse and agitate:** Place wafer in etchant solution
+   - Agitate gently (air bubbler or rotate holder) to refresh solution at wafer surface
+   - Etch time: Depends on desired depth and etchant concentration
+
+4. **Monitor etch depth:** Remove wafer periodically to check etch progress
+   - Optical inspection or mechanical measurement
+
+5. **Stop etching:** Remove wafer from solution when desired depth is reached
+   - Immediately rinse with copious deionized water
+   - Rinse multiple times (remove all etchant)
+   - Dry with nitrogen gas
+
+**Etch rate:** With standard HNO₃/HF mixture, approximately 1–5 micrometers per minute at room temperature.
+
+### Selective Etching with Masks
+
+To create patterns, use a mask to protect some areas while exposing others.
+
+**Masking material:**
+
+Photoresist is a light-sensitive polymer that:
+- Hardens (or dissolves) when exposed to UV light
+- Can be patterned using a photomask
+- Protects underlying material during etching
+- Can be removed after etching is complete
+
+**Process:**
+
+1. **Spin photoresist:** Coat wafer with liquid photoresist (approximately 1 micrometer thick)
+
+2. **Align mask:** Place photomask over wafer (photomask has pattern of opaque and transparent regions)
+
+3. **Expose:** Shine UV light through mask
+   - Transparent regions expose resist underneath
+   - Opaque regions leave resist unexposed
+
+4. **Develop:** Immerse in developer solution
+   - Exposed resist dissolves (for positive resist)
+   - Unexposed resist remains (forms the mask)
+
+5. **Etch:** Immerse in etchant
+   - Etchant attacks exposed silicon
+   - Resist protects silicon underneath the mask pattern
+   - Etchant cannot reach silicon covered by resist
+
+6. **Strip resist:** Remove hardened resist with solvent (acetone or specialized stripper)
+
+**Result:** Etched pattern in silicon, matching the photomask pattern.
+
+---
+
+## Part 2: Dry Etching (Plasma Etching)
+
+### Plasma Etching Principles
+
+Dry etching uses ionized gas (plasma) to remove material.
+
+**Plasma:** Partially ionized gas containing electrons, ions, and reactive neutral particles.
+
+**Mechanism:**
+
+1. Electrons are accelerated by electric field
+2. Electrons collide with neutral gas atoms, ionizing them
+3. Ions are accelerated toward the wafer (cathode)
+4. High-energy ions bombard the wafer surface
+5. Physical sputtering or chemical reaction removes material
+6. Neutral reactive species also participate in chemical etching
+
+**Advantages over wet etching:**
+
+- **Anisotropic:** Can create vertical sidewalls (not rounded, as in wet etching)
+- **Precise:** Can etch very small features
+- **Selective:** Some plasmas etch one material while leaving others untouched
+
+**Disadvantages:**
+
+- Requires vacuum equipment and power supply
+- Can damage wafer surface (ion bombardment causes defects)
+- More complex to control
+
+### Plasma Etch Equipment
+
+**Basic setup:**
+
+1. **Vacuum chamber:** Stainless steel or aluminum vessel, capable of reaching 0.1–10 torr
+
+2. **Electrodes:** Parallel plate design typical
+   - Lower electrode (cathode): Wafer sits here
+   - Upper electrode (anode): Grounded
+   - Distance between electrodes: 1–10 cm
+
+3. **RF power supply:** Generates 13.56 MHz radio frequency voltage
+   - Power: 50–500 watts
+   - Voltage: Accelerates ions toward wafer
+
+4. **Gas inlet:** Supplies reactive gas (fluorine compounds like CF₄, chlorine compounds like Cl₂)
+
+5. **Vacuum pump:** Maintains pressure at desired level
+
+6. **Temperature control:** Heating or cooling of cathode to control etch rate
+
+### Plasma Etch Process
+
+**Procedure:**
+
+1. **Load wafer:** Place wafer on cathode (lower electrode)
+
+2. **Evacuate chamber:** Pump down to desired pressure (typically 0.5 torr for silicon etching)
+
+3. **Introduce gas:** Flow reactive gas (e.g., CF₄ or Cl₂) into chamber
+   - Gas flow rate: 10–100 cm³/min (depends on chamber size)
+
+4. **Apply RF power:** Turn on 13.56 MHz power supply
+   - Power: 50–200 watts typical
+   - Voltage at cathode: 100–500 volts
+
+5. **Monitor etch:** Observe etching process
+   - Plasma glows (light emission from excited particles)
+   - Etch rate depends on power, pressure, gas flow, and electrode temperature
+
+6. **Stop etching:** Turn off RF power when desired depth is reached
+   - Stop gas flow
+   - Vent chamber to atmospheric pressure
+   - Remove wafer
+
+**Etch rate:** Depends on conditions, but typically 0.1–1 micrometer per minute for silicon.
+
+---
+
+## Part 3: Materials and Selectivity
+
+### Materials and Etchants
+
+Different materials etch at different rates under the same conditions.
+
+**Wet etching selectivity:**
+
+| Material | HF (dilute) | HF + HNO₃ | Remarks |
+|----------|-------------|-----------|---------|
+| SiO₂ | Etches rapidly | Etches rapidly | Most useful for oxide removal |
+| Si | Minimal | Moderate | Depends on HNO₃ ratio |
+| Photoresist | No | No | Used as etch mask |
+| Metal | Varies | Varies | Generally resistant |
+
+**Dry etching selectivity:**
+
+In CF₄ plasma:
+- Silicon etches rapidly
+- SiO₂ etches much slower (can be used as etch mask)
+- Photoresist etches (slower than Si, but eventually consumed)
+
+### Achieving Selectivity
+
+**For wet etching:**
+
+Control the etchant composition and temperature:
+- Dilute HF: Primarily etches SiO₂, barely touches Si
+- HF + HNO₃: Etches both, but ratio controls relative rates
+
+**For dry etching:**
+
+Choose appropriate gas:
+- CF₄ plasma: Etches Si faster than SiO₂
+- O₂ plasma: Primarily etches organic materials (photoresist)
+- Cl₂ plasma: Etches Si, moderate SiO₂ selectivity
+
+---
+
+## Worked Example: Etching a Trench
+
+**Scenario:** Create a trench (approximately 2 micrometers deep, 1 micrometer wide) in silicon wafer.
+
+**Process using wet etching and photoresist:**
+
+**Step 1 — Prepare wafer:**
+
+1. Start with clean silicon wafer
+2. Grow thin oxide layer (approximately 0.5 micrometers) by heating in steam or dry oxygen
+
+**Step 2 — Pattern with photoresist:**
+
+1. Spin photoresist onto wafer (approximately 1 micrometer thick)
+2. Place photomask on resist (mask has pattern of 1 micrometer wide lines)
+3. Expose to UV light (approximately 365 nm wavelength)
+4. Develop in developer solution (removes exposed resist)
+5. Result: Thin layer of resist in line pattern
+
+**Step 3 — Etch oxide:**
+
+1. Immerse in dilute HF solution (approximately 1:10 HF:water)
+2. Etch time: approximately 30 seconds (oxide is approximately 0.5 micrometers thick)
+3. Oxide under the line patterns is removed
+4. Silicon underneath is exposed
+5. Oxide under resist remains (protects silicon)
+6. Result: Oxide-free regions where trench will be cut
+
+**Step 4 — Etch silicon:**
+
+1. Immerse in HNO₃ + HF mixture (approximately 70:10 ratio)
+2. Etch time: approximately 20 minutes (to create 2 micrometer deep trench)
+3. Etch only attacks exposed silicon (not resist or oxide)
+4. Etches to approximately 2 micrometers deep
+5. Result: Trench pattern etched into silicon
+
+**Step 5 — Strip resist:**
+
+1. Immerse in acetone or specialized resist stripper
+2. Photoresist dissolves
+3. Oxide pattern remains
+4. Result: Silicon wafer with trenches, oxide mask removed or partially removed
+
+**Final result:** Silicon wafer with precisely etched trenches, pattern defined by photomask.
+
+---
+
+## Verification
+
+**Understanding etching means:**
+
+1. You can explain wet etching and plasma etching principles
+2. You understand etchants and their selectivity for different materials
+3. You can prepare and safely use etchant solutions
+4. You understand photoresist and masking for pattern transfer
+5. You can estimate etch rate based on material and etchant
+6. You recognize problems (over-etching, under-etching, irregular sidewalls)
+7. You can design a simple etching process to achieve desired features
+
+If you can mask a wafer, etch a pattern, and produce features with defined dimensions and shapes, you understand etching.
+
+---
+
+## Common Mistakes
+
+1. **Using metal containers for acid etching.** Acids corrode metal. Use only glass or plastic containers.
+
+2. **Inadequate rinsing after etching.** Residual acid continues attacking wafer. Rinse thoroughly with deionized water; rinse multiple times.
+
+3. **Etching too long.** Etch rates are difficult to predict; easy to over-etch. Monitor progress by removing wafer periodically.
+
+4. **Inadequate agitation in wet etching.** Without agitation, etchant becomes depleted at wafer surface; etch rate slows. Use air bubbler or rotation.
+
+5. **Resist mask not adequately hardened.** If resist is partially developed or too thin, etchant can undercut it. Ensure resist is fully developed and adequate thickness.
+
+6. **Plasma pressure too high or too low.** Both extremes reduce etch rate and selectivity. Maintain at typical pressure (0.5–2 torr) for best results.
+
+7. **RF power too low.** Insufficient power prevents plasma from igniting or maintaining stable etch. Use 50 watts minimum for typical chamber.
+
+8. **Photomask not in good contact with resist.** If mask is held away from surface, light diffracts around mask edges; patterns become blurry. Press mask against resist.
+
+9. **Using expired or degraded etchant.** HF and HNO₃ can absorb water or degrade over time. Use fresh chemicals; store properly.
+
+10. **Not controlling temperature in wet etching.** Temperature affects etch rate significantly (roughly doubles for every 10°C increase). Control temperature for reproducibility.
+
+---
+
+## Cross-References
+
+- See Vol 45: Semiconductor Technology, Ch 4 — Wafer Preparation (preparing wafer for etching)
+- See Vol 45: Semiconductor Technology, Ch 8 — Photolithography and Masking (creating etch masks)
+- See Vol 27: Chemistry, Ch 5 — Acids, Bases, and Oxidation (chemical etching theory)
+- See Vol 27: Physics, Ch 1 — Plasma and Ionized Gases (plasma etching theory)

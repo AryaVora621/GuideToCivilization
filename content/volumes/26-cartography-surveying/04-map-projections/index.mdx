@@ -1,0 +1,119 @@
+---
+title: "Map Projections: Flattening a Round World"
+volume: 24
+chapter: 4
+difficulty: intermediate
+prerequisites:
+  - "Vol 24: Cartography & Surveying — triangulation, latitude and longitude"
+  - "Vol 2: Mathematics — geometry, basic trigonometry"
+unlocks:
+  - "cartography-surveying/topographic-mapping"
+  - "seafaring-oceanography/chart-navigation"
+  - "astronomy-navigation/position-fixing"
+tags: [cartography, projections, maps, geometry, navigation, distortion]
+summary: "A round Earth cannot be flattened onto paper without distortion. This chapter explains the unavoidable trade-offs, the main families of projection, what each one preserves and sacrifices, and how to choose the right map for the job."
+---
+
+## Overview
+
+The Earth is very nearly a sphere. A sheet of paper is flat. There is no way to wrap a flat sheet smoothly around a ball, and there is no way to flatten the surface of a ball onto a sheet, without stretching, tearing, or compressing it somewhere. This is not a limitation of clever technique; it is a theorem of geometry. Any map of a curved surface on a flat plane must distort something: areas, shapes, distances, or directions. The cartographer's real job is not to avoid distortion, which is impossible, but to choose which distortions to accept and which to eliminate, in service of what the map is for.
+
+A map projection is a systematic rule for assigning every point on the globe, identified by its latitude and longitude, to a point on the flat sheet. Different rules produce different distortions. A projection that keeps shapes correct will get areas wrong; a projection that keeps areas correct will distort shapes; a projection good for ocean navigation is useless for comparing the sizes of countries. Understanding the trade-offs lets you pick the right tool and read any map critically.
+
+By the end of this chapter you will understand why distortion is unavoidable, what the four properties a map might try to preserve are, how the major projection families behave, and how to choose a projection appropriate to a given purpose.
+
+## Prerequisites
+
+You should be comfortable with:
+
+- The graticule of latitude and longitude: parallels (lines of constant latitude, running east-west) and meridians (lines of constant longitude, running north-south, converging at the poles).
+- Basic geometry of the sphere, cylinder, and cone.
+- The output of triangulation: a network of accurately positioned points that the projection will place on paper.
+
+## Why All Maps Lie
+
+Take an orange and try to flatten its peel. You cannot do it without tearing the peel or crushing parts of it. The surface of a sphere is "intrinsically curved" in a way a flat plane is not, and no amount of bending without stretching can turn one into the other. Mathematically, the sphere has curvature and the plane does not, and that property cannot be changed by flattening.
+
+The practical consequence is a budget of distortion that must be spent somewhere. A map can preserve at most a couple of these four properties, and never all of them:
+
+1. **Area (equal-area / equivalence).** Regions on the map are in correct proportion to their true sizes. A country twice as large as another appears twice as large.
+2. **Shape (conformality).** Angles and local shapes are preserved, so small features look correctly proportioned and any two lines cross on the map at their true angle.
+3. **Distance (equidistance).** Distances are correct, but only along certain lines (typically from one or two specific points or along specific meridians), never everywhere.
+4. **Direction (azimuth).** The direction from a central point to any other point is correct.
+
+A crucial fact: area and shape cannot both be preserved by the same map. A projection is either equal-area or conformal, never both. Choosing one forecloses the other.
+
+## The Three Developable Surfaces
+
+Most classical projections are built by imagining the globe's features cast onto a surface that can be unrolled flat without distortion — a "developable" surface. There are three:
+
+- **Cylinder.** Wrap a tube around the globe, project onto it, then unroll it into a rectangle. Cylindrical projections produce rectangular maps with straight, parallel meridians and parallels. They behave best where the cylinder touches the globe, typically the equator, and distort increasingly toward the poles.
+- **Cone.** Set a cone over the globe like a hat, project onto it, then unroll it into a fan-shaped sheet. Conic projections behave best along the parallel (or two parallels) where the cone touches. They suit mid-latitude regions wider east-west than north-south, such as a temperate country.
+- **Plane (azimuthal).** Lay a flat sheet tangent to the globe at a single point and project onto it. Azimuthal projections are organized around that center point and behave best near it. They suit polar regions or any map centered on one place.
+
+The contact can be **tangent** (the surface touches along one line or point) or **secant** (the surface slices through the globe, touching along two lines), and the axis can be aligned with the poles (normal), the equator (transverse), or any angle (oblique). These variations let a cartographer place the zone of least distortion wherever the map's subject lies.
+
+## The Major Projections and Their Trade-offs
+
+**The Mercator projection (cylindrical, conformal).** This is the famous navigator's map. Its defining virtue: a line of constant compass bearing — a course you can steer by holding a fixed heading — appears as a straight line. For a sailor with a compass, this is priceless: draw a straight line from start to destination, read its angle, and steer that heading the whole way. The price is severe area distortion toward the poles. Landmasses far from the equator are grotesquely enlarged; a high-latitude island can appear larger than a tropical continent that is in truth many times its size. Mercator is superb for navigation and terrible for comparing sizes.
+
+**Equal-area cylindrical projections.** By compressing the spacing of parallels toward the poles exactly as much as the east-west stretching enlarges them, these keep every region's area correct. The cost is badly distorted shapes near the poles, where features are squashed flat. Good for showing distributions (population, resources, land use) where true relative size matters.
+
+**Conic projections (often conformal or equal-area variants).** With one or two standard parallels placed across the region of interest, conic projections give low distortion across a mid-latitude band. They are the workhorse for maps of individual countries and regions in temperate zones, balancing shape and area well over a limited area.
+
+**Azimuthal projections (planar).** Centered on a point, these show correct directions from that center to everywhere else, and (in the gnomonic variant) render great-circle routes — the genuinely shortest paths over the globe — as straight lines. A gnomonic map and a Mercator map are complementary navigation tools: plot the shortest route as a straight line on the gnomonic, transfer points to the Mercator, and sail a series of constant-heading legs that approximate it. Azimuthal projections are also the natural choice for polar maps and for any map organized around a single hub.
+
+**Compromise projections.** Some projections preserve none of the four properties exactly but distribute distortion to produce a pleasing, balanced world map — no property perfect, none disastrous. These are common for general-purpose wall maps where the goal is an honest overall impression rather than any single exact measurement.
+
+## How Distortion Behaves
+
+A useful mental model is to imagine a tiny circle drawn on the globe at many places and see what it becomes on the map. On a conformal map every such circle stays a circle (shape preserved) but changes size (area distorted). On an equal-area map every circle becomes an ellipse of the same area (area preserved) but the wrong shape. The pattern of how these circles deform across the map tells you instantly where the projection is trustworthy and where it is not.
+
+The general rule: distortion is smallest where the projection surface touches the globe (the tangent line or point, or the secant lines) and grows with distance from there. This is why you place the standard parallel, central meridian, or tangent point in the middle of your area of interest — you spend your distortion budget out at the edges where you care least.
+
+## Choosing a Projection
+
+Match the projection to the job:
+
+- **Navigating by compass at sea?** Mercator, so constant headings are straight lines.
+- **Finding the shortest route across an ocean or continent?** Gnomonic, so great circles are straight lines.
+- **Comparing the sizes of countries, or mapping any quantity where true area matters?** An equal-area projection.
+- **Mapping a single mid-latitude country?** A conic projection with standard parallels through the country.
+- **Mapping a polar region, or a map centered on one city?** An azimuthal projection centered there.
+- **A general world map for display?** A compromise projection that spreads distortion gently.
+- **A small local survey?** Over a small area the Earth is effectively flat; a simple plane grid suffices and the choice of global projection barely matters.
+
+Always ask first: what will be measured off this map — bearings, distances, areas, shapes? The answer names the property you must preserve, and that names the projection.
+
+## Worked Reasoning: Reading a Mercator Critically
+
+Suppose you are handed a Mercator world map and asked which is larger, a far-northern landmass or an equatorial one that look similar in size on the page. Because Mercator inflates area with increasing latitude, the northern landmass is drastically exaggerated. The equatorial one, sitting where the cylinder touches the globe, is shown near its true relative size. So the equatorial landmass is almost certainly the larger in reality, despite appearances. Knowing the projection's distortion pattern lets you correct for it in your head rather than be misled by it. This habit — always knowing what projection you are looking at and how it lies — is the mark of someone who can actually use maps rather than merely look at them.
+
+## Verification Criteria
+
+You understand and are using projections correctly when:
+
+- You can state, for any map you use, which projection it is and therefore which properties it preserves and which it distorts.
+- You never measure area off a conformal map or judge shape off an equal-area map.
+- You choose a navigation chart (Mercator for compass courses, gnomonic for shortest routes) appropriate to the navigation method.
+- The zone of least distortion on your map coincides with the region you most care about.
+- For a local survey you correctly judge that over a small area the flat-Earth approximation is adequate, and you do not over-engineer the projection.
+
+## Common Mistakes
+
+- **Treating any one map as "the true picture."** Every flat map distorts. There is no undistorted world map.
+- **Comparing areas on a Mercator map.** This is the single most common map-reading error and it systematically exaggerates high-latitude regions.
+- **Using an equal-area map for navigation.** Its distorted shapes and angles make compass courses and bearings unreliable.
+- **Placing the standard parallel or tangent point away from the area of interest,** which puts your worst distortion exactly where you most need accuracy.
+- **Expecting one projection to do everything.** A map is a tool chosen for a task, not a single faithful copy of the world.
+- **Ignoring the projection's limits at its edges,** where even a well-chosen projection may distort severely far from its zone of contact.
+
+## Cross-References
+
+- Triangulation, from the previous chapter, supplies the accurately positioned control points that a projection arranges on the flat sheet.
+- Topographic mapping draws terrain detail onto a chosen projection.
+- Chart navigation in the seafaring volume depends directly on the navigational projections (Mercator and gnomonic) described here.
+- Astronomical position-fixing supplies the latitude and longitude that the projection consumes as input.
+- The geometry of spheres, cylinders, and cones from the mathematics volume underlies the construction of every projection family.
+
+A map is an argument about the world made in the language of geometry, and like any argument it emphasizes some truths at the cost of others. The skilled cartographer and the skilled map-reader share one habit: they always know which truths a given map is telling and which it is quietly distorting, and they choose, or trust, accordingly.

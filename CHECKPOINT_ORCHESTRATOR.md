@@ -61,7 +61,13 @@ Phase 1 (Vols 1-8) ✓ DONE. Then Vols 14-20, then 21-33, then Phase 4-5 (33-45)
 When a lane is exhausted, agent runs `claim-next` with no arg to take anything left.
 
 ## CURRENT STATE (update each sweep)
-- 2026-06-16 17:58 UTC: **226 / 316 done**, 87 pending, 4 active, 0 drift, build GREEN (commit 4c246dc live).
+- 2026-06-16 18:14 UTC: **247 / 316 done**, 65 pending. **FLEET SCALED TO 8 AGENTS** (user added 5-8, all Haiku).
+  - Burst mode: deleted 2h cron, created 13-min sweep cron **f2b45d55** (commit+deploy continuously). RESTORE 2h cron (7 */2 * * *) when pending hits 0.
+  - Agent lanes (all on SELF-PACED /loop, fall through to global claim-next when lane empty):
+    - a1=rx8y9euk: 02,04,23,26,32  | a2=5d08vogx: 12,13,15,37,39 | a3=52fgricn: 16,43,44 | a4=e9vlfcu5: 40,41,42,45
+    - a5=4gpjrzqv: 40,41 (2nd writer) | a6=e6kczglq: 37,39 | a7=qdmp6mqj: 12,13 | a8=0dxgc0t5: 26,32
+  - Claims are ATOMIC (claim-next) so overlapping lanes never collide. ~8 chapters per ~few min.
+- 2026-06-16 17:58 UTC: 226 / 316 done, 87 pending, 4 active, 0 drift, build GREEN (commit 4c246dc live).
   - This sweep: committed+pushed 2 batches (24 files), deploy verified green twice. Agents 1-4 all actively writing.
   - Fixed orphan: agent-1 wrote 17-astronomy/06-telescope-mounts colliding w/ canonical 06-telescope-construction → renumbered to 07-telescope-mounts, added to DB as done (now vol 17 has 7 ch). Re-briefed agent-1 on exact-id rule (ack'd).
   - Dev server restarted on :3000 (was down). Cron 3f8a664b (every 2h :07) alive.

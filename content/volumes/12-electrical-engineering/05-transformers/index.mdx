@@ -1,0 +1,158 @@
+---
+title: "Transformers: Changing Voltage Without Moving Parts"
+volume: 37
+chapter: 5
+difficulty: advanced
+prerequisites:
+  - "Vol 37: Electrical Engineering — electromagnetism and induction basics"
+  - "Vol 37: Electrical Engineering — generator construction (alternating current)"
+  - "Vol 37: Electrical Engineering — circuits and measurement"
+unlocks:
+  - "electrical-engineering/power-distribution"
+  - "electrical-engineering/rectifiers-and-power-supplies"
+  - "telecommunications/signal-coupling"
+tags: [electrical, transformer, induction, voltage, ac, power-distribution]
+summary: "A transformer changes the voltage of alternating current with no moving parts, using two coils linked by an iron core. This chapter explains how transformers work, how to calculate and wind them, and how they make long-distance power distribution possible."
+---
+
+A transformer is one of the most elegant machines ever built: it has no moving parts, makes no noise beyond a faint hum, and can run for a century, yet it performs a task nothing else can do cheaply. It changes the voltage of alternating current up or down at will. Without transformers there is no power grid, because electricity cannot be sent any useful distance without them. With transformers, a single generator can light a whole town.
+
+This chapter teaches you why transformers work, how to calculate the turns you need, how to wind one from salvaged materials, and how transformers unlock efficient power distribution. The physics builds directly on electromagnetic induction, the same principle behind generators, so you already understand the foundation.
+
+## Why a Transformer Works
+
+A transformer is two coils of wire wound on a shared iron core. The first coil, the **primary**, is connected to an alternating-current source. The second coil, the **secondary**, delivers the output.
+
+When alternating current flows in the primary, it creates a constantly changing magnetic field. The iron core guides almost all of that changing field through the secondary coil. A changing magnetic field through a coil induces a voltage, exactly as in a generator. So the secondary produces a voltage even though nothing moves and the two coils never touch electrically.
+
+The critical fact: a transformer only works with **alternating current** (or otherwise changing current). A steady direct current produces a steady, unchanging field, which induces no voltage in the secondary. This is why the power grid uses AC, and why transformers and AC grew up together.
+
+## The Turns Ratio: The One Equation You Need
+
+The voltage on each coil is proportional to its number of turns. This gives the single rule that governs all transformers:
+
+> Output voltage divided by input voltage equals secondary turns divided by primary turns.
+
+In plain words:
+
+- **More turns on the secondary than the primary** raises voltage (a step-up transformer).
+- **Fewer turns on the secondary** lowers voltage (a step-down transformer).
+- **Equal turns** gives equal voltage (an isolation transformer, useful for safety).
+
+A worked instance: a primary of 200 turns fed with 100 volts, and a secondary of 400 turns, produces 200 volts out. Double the turns, double the voltage.
+
+### Power Is Conserved: Voltage Up Means Current Down
+
+A transformer does not create energy. If it raises voltage, it lowers current in the same proportion (minus small losses). Power in equals power out. So a step-up transformer that doubles voltage roughly halves the available current, and a step-down transformer that halves voltage roughly doubles the available current. This trade is the entire reason transformers matter for power distribution, as the next section shows.
+
+## Why Transformers Make the Power Grid Possible
+
+Sending electricity through wires wastes power as heat, and that waste depends on **current**, not voltage. Heavy current in a long thin wire loses a large fraction of the power to heat; the same power sent as high voltage and low current loses very little.
+
+So the grid does this:
+
+1. **Step up** the generator's output to very high voltage (and therefore low current) for the long journey along transmission lines, where low current means low loss.
+2. **Step down** again near the destination, in stages, to safe, usable voltages for homes and workshops.
+
+Without transformers, you would have to place a generator within a short distance of every load, because the losses over distance would be ruinous. Transformers let one large, efficient generating station serve a wide area. This is the backbone of electrified civilization.
+
+## Prerequisites
+
+- Understanding that a changing magnetic field induces voltage in a coil
+- Familiarity with alternating current and why generators produce it
+- Ability to wind coils and count turns accurately
+- Basic measurement: reading AC voltage and current
+- An AC source for testing (an AC generator, or salvaged mains through proper protection)
+
+## Materials & Tools
+
+**Essential:**
+- **An iron core**, the most important part. Use **laminated** soft-iron or silicon-steel sheets (thin layers insulated from each other), salvaged from dead transformers, old TVs, or microwave ovens. Solid iron blocks waste large amounts of power to internal eddy currents and overheat; laminations prevent this.
+- **Insulated copper magnet wire** for both coils. You will often need a thicker gauge for the low-voltage, high-current side and a thinner gauge for the high-voltage, low-current side.
+- **Insulating material** between layers and between coils: paper, varnish, cloth tape, or thin plastic.
+
+**Tools:**
+- A bobbin or form sized to fit the core window
+- A means to wind and count turns (a hand-cranked winder helps)
+- A multimeter for testing
+- Varnish or shellac to impregnate and protect the finished windings
+
+## Part 1: Understanding the Core
+
+The core is not optional packing; it is what links the two coils. Two core facts:
+
+- **Use laminations, not solid metal.** A changing field induces swirling currents (eddy currents) inside the core metal itself. In solid iron these currents are huge and turn the core into a heater. Thin laminations, insulated from each other, break up these currents and keep losses low. This is why every salvaged transformer core is a stack of thin sheets, not a solid lump.
+- **Do not saturate the core.** Iron can only carry so much magnetic field. Push past that limit (too few primary turns for the voltage, or too high a voltage) and the core saturates: current surges, the transformer overheats, and efficiency collapses. More primary turns and a larger core cross-section raise the saturation limit.
+
+## Part 2: Designing a Transformer
+
+### Step 1: Decide Input and Output
+
+Fix your input voltage (from your generator or supply) and the output voltage you need. Their ratio sets the turns ratio.
+
+### Step 2: Choose Turns Per Volt
+
+A core can support a certain number of volts per turn, set by its cross-sectional area and the AC frequency. A larger core needs fewer turns per volt. Without instruments, the practical method is empirical: wind a test coil of known turns, apply your input voltage, and measure the output. From that ratio you calculate how many turns give one volt, then scale both coils accordingly. Always err toward **more** primary turns rather than fewer, to stay safely below saturation.
+
+### Step 3: Choose Wire Gauges
+
+- The high-current side (usually the low-voltage side) needs **thick** wire to carry current without overheating.
+- The high-voltage, low-current side can use **thinner** wire.
+- Size each wire to its expected current, not its voltage.
+
+## Part 3: Winding the Transformer
+
+1. **Wind the primary** onto the bobbin first, in neat, counted, even layers. Lay insulating paper between layers if the voltage is high.
+2. **Insulate** thoroughly between the primary and secondary windings; this layer carries the full voltage difference and must not break down.
+3. **Wind the secondary** over the primary, again counted and even.
+4. **Bring out four leads**, two per coil, clearly marked.
+5. **Assemble the laminated core** through the bobbin window, interleaving the E-shaped and I-shaped sheets so the magnetic path is continuous, and clamp the stack tight to stop it humming loose.
+6. **Varnish or bake** the finished assembly so the windings are locked and moisture-proof.
+
+## Part 4: Testing Safely
+
+1. **Check resistance** of each coil with a meter; an open circuit means a broken wire, a near-zero reading between primary and secondary means a dangerous insulation failure.
+2. **Apply a low test voltage first** if you can, and measure the output. Confirm the ratio matches your design before connecting full voltage.
+3. **Measure no-load current.** A correctly designed transformer draws only a small current with nothing connected to the secondary. A large no-load current means too few primary turns or a saturating core; stop and add turns.
+4. **Load it gradually** and watch for heating. Warm is acceptable; too hot to touch for a few seconds means overload or design error.
+
+## Worked Example: A Step-Down Transformer for a Workshop
+
+Goal: take 240-volt AC from the distribution line down to 24 volts for safe low-voltage tools and battery charging.
+
+1. **Turns ratio:** 240 to 24 is 10 to 1, so the primary needs ten times the secondary turns.
+2. **Core:** A salvaged microwave-oven transformer core, stripped of its original windings.
+3. **Test coil:** Wind 100 turns, apply 240 volts, measure the output to find volts per turn, then scale. Suppose the test shows the core needs roughly 4 turns per volt; then the primary is about 960 turns and the secondary about 96 turns.
+4. **Wire:** Thin wire for the 960-turn primary (low current), thick wire for the 96-turn secondary (high current, since stepping down voltage raises available current).
+5. **Result:** Roughly 24 volts on the secondary. If the no-load current runs high, add primary turns to move further below saturation. If the output sags badly under load, the secondary wire is too thin; rewind with thicker wire.
+
+## Verification Criteria
+
+Your transformer works correctly when:
+
+- **The output voltage matches the turns ratio** within a few percent at no load.
+- **No-load current is small**, confirming the core is not saturating.
+- **Primary and secondary are electrically isolated** (very high resistance between them).
+- **It holds its output voltage** reasonably under load, sagging only modestly as current is drawn.
+- **It runs cool to warm**, not hot, at its rated load.
+- **The core stays mechanically tight and quiet**, with only a faint hum.
+
+## Common Mistakes
+
+- **Using a solid iron core.** It overheats from eddy currents almost immediately. Always use insulated laminations.
+- **Too few primary turns.** The core saturates, no-load current is high, and the transformer overheats. Add turns.
+- **Feeding it direct current.** A transformer does nothing useful on steady DC and the primary may overheat like a plain resistor. Transformers need AC.
+- **Thin wire on the high-current side.** The winding overheats and the voltage collapses under load. Match wire to current.
+- **Weak insulation between coils.** A breakdown puts high voltage onto the low-voltage side, a serious safety hazard. Insulate generously.
+- **Loose laminations.** They buzz, vibrate, and waste energy. Clamp the core tightly.
+- **Recording the no-load current as a broken value.** In notes, write "under 1 amp" in plain words rather than a broken-tag form, so the figure copies safely into other documents.
+
+## Cross-References
+
+- **Generator construction** (this volume): the AC source a transformer needs to function.
+- **Electromagnetism and induction** (this volume): the physics of voltage induced by a changing field.
+- **Power distribution** (this volume): how step-up and step-down transformers move power across distance with low loss.
+- **Rectifiers and power supplies** (this volume): converting the transformer's AC output into the DC that batteries and electronics require.
+- **Signal coupling** (Telecommunications): small transformers used to pass signals between circuits while isolating them.
+
+The transformer is the quiet enabler of the electrical grid. A generator makes the power and a motor spends it, but the transformer is what lets that power travel from where it is cheap to make to where it is needed. Build transformers well and you can knit isolated machines into a true power network.

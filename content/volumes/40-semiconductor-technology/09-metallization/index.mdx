@@ -1,0 +1,133 @@
+---
+title: "Metallization: Wiring the Chip Together"
+volume: 40
+chapter: 9
+difficulty: long-term
+prerequisites:
+  - "Vol 40, Ch 8 — Doping and junctions (the regions you connect)"
+  - "Vol 40, Ch 6 — Photolithography (patterning the wires)"
+  - "Vol 12: Electrical Engineering — Conductors, resistance, ohmic contact"
+  - "Vol 10: Materials — Metals, thin films, adhesion"
+unlocks:
+  - "semiconductor/packaging-wire-bonding"
+  - "semiconductor/discrete-to-integrated-circuit"
+tags: [semiconductor, metallization, interconnect, contacts, aluminum, long-term]
+summary: "Doped regions and transistors are useless until you connect them. Metallization deposits thin metal films, patterns them into wires, and forms reliable contacts to the silicon. This chapter explains contact formation, deposition methods, patterning, and the reliability problems that make wiring harder than it looks."
+---
+
+## Overview
+
+After oxidation, lithography, and doping, the wafer holds thousands or millions of transistors — but they are islands. None of them is connected to any other, or to the outside world. **Metallization** is the step that wires everything together: it deposits conducting metal, patterns it into a network of lines, and forms low-resistance contacts where the metal must touch the silicon. Without it, you have a field of inert devices; with it, you have a circuit.
+
+Metallization sounds like the easy part — just add wires — but it carries some of the hardest reliability problems in the whole process. The metal must make a good electrical contact to silicon (not always automatic), must adhere without peeling, must climb over the steps and valleys left by previous layers without thinning or breaking, must not react badly with the silicon over time, and must carry current for years without failing. Getting wiring right is a craft of materials, geometry, and patience.
+
+This chapter teaches contact formation, the main ways to deposit metal films, how to pattern them into interconnect, how to build multiple wiring layers, and the failure modes — electromigration, step coverage, spiking — that you must design around.
+
+## The Two Jobs: Contacts and Interconnect
+
+Metallization does two related things:
+
+- **Contacts:** the vertical connection where metal meets a doped silicon region (a source, drain, or other terminal). A contact must be **ohmic** — low resistance, linear, the same in both current directions — not an accidental rectifying junction. Achieving that takes care.
+- **Interconnect:** the horizontal wiring that routes signals and power between contacts across the chip. Interconnect must be low-resistance, well-insulated from everything it should not touch, and able to cross over other features.
+
+The classic workhorse metal for both is **aluminum**: cheap, conductive, easy to deposit and pattern, and it adheres well and makes decent contact to silicon. Modern advanced chips use copper for lower resistance and tungsten for vertical plugs, but aluminum is the foundational choice and the right place to start.
+
+## Making a Good Contact
+
+You cannot just drop metal on doped silicon and expect a clean connection. Two issues:
+
+- **Native oxide.** Silicon grows a thin native oxide in air within minutes, and that insulating skin blocks contact. Before depositing metal, the contact windows must be cleaned (a brief HF dip) so metal meets bare silicon.
+- **Ohmic vs. rectifying.** Metal on lightly doped silicon can form a rectifying (Schottky) junction — a diode where you wanted a wire. The fix is to make the silicon **heavily doped (n+ or p+)** right at the contact. Heavy doping makes the junction so thin that carriers tunnel straight through, giving the linear, low-resistance ohmic behavior you need. This is why contact regions are always implanted heavily before metal goes down.
+
+After deposition, a moderate **anneal** (often called sintering, around 400–450 °C) lets the metal and silicon form an intimate, low-resistance bond and improves adhesion.
+
+## Depositing the Metal Film
+
+Metal goes on as a thin film by **physical vapor deposition.** Two main techniques:
+
+- **Evaporation.** Heat the metal in vacuum until it evaporates; the vapor travels in straight lines and condenses on the cooler wafer. Simple and clean, but because the vapor is directional, it covers vertical steps poorly — the far side of a step gets little metal ("shadowing"), thinning the wire dangerously. Evaporation suits flat geometry and simpler devices.
+- **Sputtering.** Bombard a metal target with energetic ions (in an argon plasma) so atoms are knocked off and fly to the wafer. Sputtered atoms arrive from many angles, giving much better coverage of steps and into windows, and the technique handles alloys and refractory metals that are hard to evaporate. Sputtering is the modern standard for these reasons.
+
+Either way, the result is a uniform metal film, typically a fraction of a micrometer to about a micrometer thick, blanketing the whole wafer.
+
+## Patterning the Wires
+
+A blanket metal film is not a circuit; you must cut it into wires. The standard subtractive flow:
+
+1. Deposit the blanket metal film over the whole wafer (covering the patterned, contact-opened oxide beneath).
+2. Spin-coat and pattern photoresist (Ch 6) so resist protects the metal exactly where wires should remain.
+3. **Etch** the exposed metal away — by wet chemical etch for coarse geometry, or plasma/reactive-ion etch for fine lines. What remains under the resist is your interconnect.
+4. Strip the resist. The wiring pattern is now defined.
+
+(An alternative for difficult metals like copper is the **damascene** approach: etch trenches in an insulator, fill them with metal, and polish back so metal remains only in the trenches. Worth knowing, but subtractive aluminum is the foundational method.)
+
+## Multilevel Interconnect
+
+A simple circuit needs one layer of wiring; a complex chip needs several, stacked like floors of a building, because a single plane cannot route millions of connections without crossings. To stack wiring:
+
+1. Deposit and pattern the first metal layer.
+2. Cover it with an **interlayer dielectric** (an insulating oxide), planarizing it as flat as possible — uneven topography wrecks the lithography and step coverage of layers above.
+3. Open **vias** (vertical holes) through the dielectric where the next metal layer must connect down to this one.
+4. Fill the vias and deposit the next metal layer; pattern it.
+5. Repeat for as many levels as the design needs.
+
+The recurring enemy here is **topography.** Each layer adds steps and bumps; if you do not flatten between layers, later layers fall out of focus during lithography and thin out over steps during deposition. Planarization — making each level flat before building the next — is essential to multilevel wiring.
+
+## Step-by-Step Procedure (Single Layer)
+
+1. **Open and clean contacts.** With contact windows already etched in the oxide (Ch 6, Ch 8), do a brief HF dip to remove native oxide just before loading — bare silicon is essential for good contact.
+2. **Deposit metal,** by sputtering for good step coverage, blanketing the wafer.
+3. **Pattern resist** to protect the intended wires.
+4. **Etch the metal,** removing it everywhere unprotected, leaving the interconnect.
+5. **Strip resist.**
+6. **Sinter/anneal** at moderate temperature to form ohmic contacts and improve adhesion.
+7. **Inspect** for continuity, adhesion, and step coverage.
+8. For more layers: deposit interlayer dielectric, planarize, open vias, and repeat.
+
+## A Worked Example
+
+Connect the source and drain of a transistor to the outside.
+
+- The source and drain are heavily doped n+ regions (from Ch 8). Oxide covers the wafer; contact windows are already etched over each region (Ch 6).
+- HF-dip to clear native oxide in the windows, then sputter aluminum across the wafer. It fills the windows (contacts) and coats the surface (future wires).
+- Pattern resist into the wiring layout — lines running from each contact out to the bonding pads at the die edge.
+- Etch the aluminum; strip resist. Now metal lines connect source and drain to large pads.
+- Sinter at ~450 °C: the aluminum and silicon bond into clean ohmic contacts.
+- Later, packaging (Ch 10) will wire-bond from those pads to the package leads, completing the path to the outside world.
+
+## Reliability: The Hard Problems
+
+Wiring fails in ways that take years to show up, so you must design against them from the start:
+
+- **Step coverage.** Where a wire climbs a step, directional deposition thins the metal. A thin spot carries more current density, runs hot, and fails. Use conformal deposition (sputtering), planarize topography, and avoid sharp steps.
+- **Electromigration.** High current density physically pushes metal atoms along the wire over time, opening voids (breaks) and growing hummocks (shorts). It worsens with thin wires and high current. Limit current density, widen critical wires, and add small amounts of copper to aluminum to resist it.
+- **Junction spiking.** Silicon dissolves slightly into aluminum during the sinter; at a shallow junction the aluminum can punch through and short the junction ("spiking"). Prevent it with a **barrier layer** (e.g., titanium nitride) between aluminum and silicon, or by adding silicon to the aluminum alloy.
+- **Adhesion and corrosion.** Poorly adhering metal peels; some metals corrode with trace moisture and contaminants. Use adhesion layers and a protective overcoat (passivation) over the finished wiring.
+
+## Verification Criteria
+
+- **Continuity:** every intended wire conducts end to end; probe test structures confirm no breaks, especially over steps.
+- **Contact resistance:** measure it on dedicated test structures; ohmic contacts show low, linear resistance. High or rectifying contacts mean a cleaning or doping failure.
+- **Isolation:** wires that should be separate show no leakage between them; the dielectric is intact.
+- **Step coverage:** inspect (in cross-section on test wafers) that metal stays adequately thick over steps and into vias.
+- **Adhesion:** the film passes a tape or scratch test; no peeling.
+
+## Common Mistakes
+
+- **Skipping the native-oxide clean.** Metal on native oxide gives high-resistance or open contacts. Always HF-dip just before deposition.
+- **Forgetting heavy contact doping.** Metal on lightly doped silicon rectifies. Implant n+/p+ at every contact for ohmic behavior.
+- **Poor step coverage from directional deposition.** Evaporating over rough topography thins wires to failure. Sputter and planarize.
+- **No diffusion barrier on shallow junctions.** Aluminum spiking shorts the junction. Add a barrier layer or silicon-doped aluminum.
+- **Ignoring electromigration.** Running thin wires at high current density fails them in service, long after they tested fine. Budget current density up front.
+- **Building on rough topography.** Skipping planarization between layers ruins the lithography and coverage of every layer above. Flatten as you go.
+
+## Cross-References
+
+- **Vol 40, Ch 8 — Doping and junctions:** the heavily doped regions metal contacts.
+- **Vol 40, Ch 6 — Photolithography:** patterns both contacts and the wiring.
+- **Vol 40, Ch 10 — Packaging and wire bonding:** how the on-chip pads connect to the outside world.
+- **Vol 40, Ch 11 — From discrete to integrated circuit:** how wiring ties many devices into one circuit.
+- **Vol 12: Electrical Engineering — Conductors and ohmic contact:** the electrical requirements wiring must meet.
+- **Vol 10: Materials — Thin films and adhesion:** the materials science behind deposition and reliability.
+
+Metallization is where a field of isolated transistors finally becomes a working circuit. The deposition is straightforward; the reliability is not. Master contacts, coverage, and the slow failure modes of metal, and your circuits will not only work on the test bench but keep working for years.

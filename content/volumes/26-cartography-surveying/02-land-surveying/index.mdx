@@ -1,0 +1,166 @@
+---
+title: "Land Surveying: Measuring and Dividing the Earth"
+volume: 24
+chapter: 2
+difficulty: intermediate
+prerequisites:
+  - "Vol 24: Cartography & Surveying — basic measurement and units"
+  - "Vol 2: Mathematics — geometry and trigonometry"
+unlocks:
+  - "cartography-surveying/topographic-mapping"
+  - "construction/site-layout"
+  - "trade-money-markets/property-rights"
+tags: [surveying, measurement, geometry, land, mapping, boundaries]
+summary: "Land surveying turns the messy real world into precise measurements you can record, defend, and build on. This chapter teaches how to measure distances, angles, and elevations, run a closed traverse, and lay out boundaries that hold up over time."
+---
+
+## Overview
+
+Land surveying is the practice of determining the positions of points on, above, or below the surface of the Earth, and the distances and angles between them. Everything built by an organized society rests on it: property boundaries, roads, canals, aqueducts, fortifications, farmland allotments, and the maps that tie them all together. Without reliable surveying you cannot say where one person's field ends and another's begins, you cannot build a wall that meets itself, and you cannot dig a tunnel from both ends and have the halves connect in the middle.
+
+The Egyptians re-surveyed the Nile floodplain every year after the floods erased the markers. The Romans laid out cities and roads across a continent using a handful of simple instruments. They did this without satellites, lasers, or even good clocks. What they had was geometry, careful procedure, and the discipline to check their work. This chapter teaches you the same foundation.
+
+By the end you will be able to measure a distance accurately over rough ground, measure horizontal and vertical angles, determine differences in elevation, run a closed traverse around a parcel of land, calculate its area, and lay out new boundaries and structures on the ground from a plan.
+
+## Prerequisites
+
+Before working through this chapter you should have:
+
+- A working grasp of basic arithmetic and fractions.
+- Plane geometry: triangles, the properties of angles, the Pythagorean theorem.
+- Basic trigonometry: sine, cosine, and tangent of an angle, and how to look up or compute them. A table of these values, or the ability to construct one, is essential.
+- The measurement fundamentals from the first chapter of this volume: standard units of length, and the idea of a reproducible reference standard.
+
+You do not need calculus or any advanced mathematics. You do need patience and the habit of writing every measurement down immediately.
+
+## The Three Core Measurements
+
+All of land surveying reduces to measuring three things:
+
+1. **Horizontal distance** — how far apart two points are, measured on a level plane.
+2. **Direction or angle** — the horizontal angle between two lines, or the bearing of a line relative to a fixed reference such as north.
+3. **Elevation** — the vertical difference in height between two points.
+
+Every map, boundary, and structure is built from combinations of these three. Master them individually and you can combine them into any survey.
+
+## Tools and Materials
+
+You can survey with surprisingly simple equipment. In rough order of importance:
+
+- **Measuring chain or tape.** Historically a surveyor's chain was 66 feet long, divided into 100 links. Any standardized, low-stretch line marked at regular intervals works. A chain of metal links resists stretching far better than rope. If you must use rope, account for its tendency to stretch and shrink with moisture.
+- **Ranging poles or rods.** Straight poles, painted in alternating bands so they are visible at distance, used to mark points and keep lines straight.
+- **A sighting instrument for angles.** At the simplest, a flat board with a pivoting sighting rule (an alidade) on a graduated circle. More advanced is the theodolite: a small telescope that rotates on graduated horizontal and vertical circles, letting you read angles precisely.
+- **A level.** For elevation work, an instrument that establishes a truly horizontal line of sight. A water level (two connected transparent tubes; water finds the same height in both) is cheap and accurate over short distances. A spirit level mounted on a sighting telescope is the refined version.
+- **A leveling rod or staff.** A tall graduated stick held vertically and read through the level to measure heights.
+- **Plumb bob.** A weight on a string that defines true vertical, used to transfer a point on the ground up to an instrument or down from it.
+- **Marking stakes, a notebook, and a reliable pencil.** The field book is not optional. An unrecorded measurement is a measurement you did not take.
+
+If you are building from scratch, build the chain and the level first. They give you distance and elevation, which solve the majority of practical problems.
+
+## Measuring Horizontal Distance
+
+The goal is the distance between two points as if projected onto a flat, level surface, not the distance along the slope of the ground.
+
+**On level ground.** Set ranging poles at both endpoints. Stretch the chain along the line, keeping it straight and taut. A sagging or slack chain reads long. Mark the end of each chain length with a pin, then move up and repeat, counting the number of full chain lengths plus the leftover. Record the total.
+
+**On sloping ground.** A chain laid along a slope measures the slope distance, which is always longer than the horizontal distance you actually want. Two methods correct for this:
+
+- **Stepping (breaking chain).** Hold the chain horizontal in short segments, using a plumb bob to transfer each segment's end down to the ground. The downhill end of each segment is held up so the chain is level, and the plumb bob marks the point below it. Sum the level segments.
+- **Measure and correct.** Measure the slope distance and the slope angle, then compute the horizontal distance as: horizontal = slope distance × cosine(slope angle). For a slope distance of 100 units down a grade of 10 degrees, horizontal = 100 × cos(10°) = 100 × 0.985 = 98.5 units.
+
+**Sources of error to control:** chain sag, chain not aligned on the straight line between endpoints, temperature changes altering the chain's length, and miscounting chain lengths. Always chain a line twice if accuracy matters. If the two measurements differ by more than a small tolerance, chain it a third time.
+
+## Measuring Angles and Direction
+
+A distance alone tells you how far, not which way. Direction is captured as either a **bearing** (an angle measured from north or south, such as "north 40 degrees east") or as an interior angle between two lines meeting at a point.
+
+To measure a horizontal angle at a station, set your instrument exactly over the point using the plumb bob. Sight the first target and read the graduated circle. Sight the second target and read again. The angle is the difference between the two readings. Measure each angle at least twice, ideally swinging the instrument in both directions, and average the results to cancel small reading errors.
+
+For absolute direction you need a reference. The two common references are:
+
+- **Magnetic north**, found with a magnetic compass. Simple but imperfect: the magnetic pole differs from true north by an amount (the declination) that varies with location and slowly over time, and local iron deposits or tools can deflect the needle.
+- **True north**, found astronomically. The direction of the celestial pole, located using the pole star or by bisecting the angle between a star's symmetric positions, gives true north independent of magnetic disturbance. This is the gold standard for any survey meant to last.
+
+Record whether your bearings are magnetic or true. A boundary described in magnetic bearings becomes ambiguous decades later as declination drifts.
+
+## Measuring Elevation: Leveling
+
+Leveling determines the height difference between points. The principle is simple: establish a horizontal line of sight, then read a graduated rod held vertically at each point. The difference in rod readings is the difference in elevation.
+
+The procedure, called differential leveling:
+
+1. Choose a starting point of known or assumed elevation, called a benchmark. Assign it a value (for example, 100.0 units) if no absolute reference exists.
+2. Set up the level roughly midway between the benchmark and the next point. Midway placement cancels most errors from an imperfectly adjusted instrument.
+3. Hold the rod on the benchmark and read it through the level. This is the **backsight**. Add it to the benchmark's elevation to get the height of the instrument's line of sight.
+4. Move the rod to the next point. Read it. This is the **foresight**. Subtract it from the height of instrument to get the new point's elevation.
+5. To continue beyond one setup, the new point becomes a temporary benchmark (a "turning point"), and you leapfrog the level forward.
+
+Worked example: Benchmark elevation 100.0. Backsight reads 3.2, so the line of sight is at 103.2. Foresight on the next point reads 1.5, so that point's elevation is 103.2 − 1.5 = 101.7. The point is 1.7 units higher than the benchmark.
+
+To check leveling, run the line back to your starting benchmark. The sum of all backsights minus the sum of all foresights should bring you back to the original elevation. The leftover difference is your closure error, and it should be small. A large error means a blunder you must find before trusting the work.
+
+## Running a Closed Traverse
+
+A traverse is a connected series of measured lines that together describe the perimeter of a parcel or the path of a route. A **closed traverse** returns to its starting point, which lets you check the work: if the survey is correct, it must close on itself.
+
+The procedure to survey a four-sided field:
+
+1. Place a stake at each corner. Label them A, B, C, D.
+2. At each corner, measure the interior angle between the two adjacent sides using your angle instrument.
+3. Measure the horizontal length of each side: AB, BC, CD, DA.
+4. Choose a starting bearing for one side, by compass or by astronomical observation.
+
+**The angle check.** For any closed polygon, the interior angles must sum to (number of sides − 2) × 180 degrees. For a four-sided figure that is 360 degrees; for a five-sided figure, 540 degrees. Add your measured angles. The difference from the required total is the **angular misclosure**. If it is small, distribute the correction equally among the angles. If it is large, you have a measurement error to hunt down.
+
+**Computing the closure.** Convert each side into how far it runs east-west and north-south using its bearing and length: the north-south component is length × cosine(bearing), the east-west component is length × sine(bearing). For a properly closed traverse, all the north-south components must sum to zero and all the east-west components must sum to zero, because you ended where you began. The small leftover sums are the **linear misclosure**. Express it as a ratio of the misclosure distance to the total perimeter; a ratio like 1 in 5000 is good work, 1 in 500 is crude. Distribute the correction across the sides in proportion to their length (this is called balancing the traverse).
+
+## Calculating Area
+
+Once a traverse is balanced you can compute the enclosed area. A robust method that needs only the corner coordinates is the cross-product, or "shoelace," method.
+
+Assign each corner a pair of coordinates (north, east) by accumulating the components computed above, starting from an arbitrary origin. Then the area is half the absolute value of the sum, taken around the polygon, of each point's east coordinate times the next point's north coordinate, minus each point's north times the next point's east.
+
+In words: list the corners in order around the boundary, returning to the first. For each adjacent pair, multiply one corner's easting by the next corner's northing, and subtract the reverse product. Add these up around the whole figure and halve the absolute value. The result is the enclosed area regardless of how irregular the shape is, as long as the boundary does not cross itself.
+
+For a simple rectangle this collapses to length times width, which is a good sanity check on the method before you trust it on irregular parcels.
+
+## Laying Out from a Plan: Setting Out
+
+Surveying runs in two directions. Measuring an existing parcel is one; the reverse, marking on the ground a boundary or structure that exists only on paper, is called **setting out** or staking. The instruments are the same; the logic is inverted.
+
+To set out a right angle from a line (for a building corner, say), use the 3-4-5 rule: measure 3 units along the line from the corner point, 4 units along the perpendicular, and adjust until the diagonal between those two marks is exactly 5 units. Any multiple works (6-8-10, 30-40-50); larger triangles give more accurate angles. This single trick lets you lay out square buildings and rectangular fields with nothing but a marked cord.
+
+To set out a point at a known distance and bearing, occupy the reference station, turn the instrument to the required bearing, and chain the required distance along that line, planting a stake at the end. To set out a curve for a road, break it into a series of short chords, each set out by a small deflection angle from the previous one.
+
+## Verification Criteria
+
+Your survey is trustworthy when:
+
+- Every distance was measured at least twice and the two values agree within tolerance.
+- A closed traverse's interior angles sum to within a small misclosure of the geometric requirement.
+- The linear misclosure ratio meets your accuracy target (1 in 3000 or better for property work).
+- A level line run out and back returns to its starting benchmark within a small closure error.
+- Every figure in the field book is legible, in ink or hard pencil, with no erasures — corrections are struck through and rewritten so the original is still visible.
+- The area computed two different ways (for example, shoelace method and splitting the parcel into triangles) agrees.
+
+If any of these checks fails, the survey is not done. Find the error before you build or record anything on it.
+
+## Common Mistakes
+
+- **Trusting a single measurement.** Blunders are inevitable; redundancy catches them. Always measure twice.
+- **A slack or sagging chain.** This reads long and accumulates over a boundary. Keep tension consistent.
+- **Confusing slope distance with horizontal distance.** On any grade you must correct, or your map will not close and your areas will be wrong.
+- **Forgetting to record whether bearings are magnetic or true.** This makes the survey worthless to anyone who follows.
+- **Setting the instrument off-center over the station.** A plumb bob error of a finger's width at the station propagates into every angle. Center carefully.
+- **Not closing the work.** An open traverse or a one-way level line has no internal check. Whenever possible, close back on a known point.
+- **Erasing in the field book.** You may erase a genuine mistake's record and with it the evidence you would need to find a later discrepancy. Strike through, never erase.
+
+## Cross-References
+
+- The previous chapter of this volume establishes the units and measurement standards this chapter depends on.
+- Topographic mapping builds on leveling to represent terrain with contour lines.
+- Construction and site layout consume the setting-out methods here to place foundations.
+- The mathematics of trigonometry and coordinate geometry underlies traverse computation and area calculation.
+- Property rights and trade depend on defensible boundaries, which only surveying can establish.
+
+Land surveying is where abstract geometry meets the ground under your feet. The instruments are simple and the arithmetic is modest, but the discipline — measure twice, always close your work, write everything down — is what separates a map you can build a city on from a guess that collapses the first time two neighbors disagree about a fence.

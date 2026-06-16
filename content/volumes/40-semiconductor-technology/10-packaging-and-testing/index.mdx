@@ -1,0 +1,142 @@
+---
+title: "Packaging and Testing: From Wafer to Trustworthy Chip"
+volume: 40
+chapter: 10
+difficulty: long-term
+prerequisites:
+  - "Vol 40, Ch 9 — Metallization (the bonding pads)"
+  - "Vol 12: Electrical Engineering — Circuit testing, signals"
+  - "Vol 10: Materials — Metals, ceramics, polymers, thermal expansion"
+  - "Vol 13: Manufacturing — Assembly, yield, quality control"
+unlocks:
+  - "semiconductor/discrete-to-integrated-circuit"
+  - "computing/building-a-cpu"
+tags: [semiconductor, packaging, testing, wire-bonding, yield, reliability, long-term]
+summary: "A finished wafer is fragile, microscopic, and untrusted. Packaging protects each chip and connects it to a usable scale; testing separates the working dies from the dead ones and proves they will keep working. This chapter covers wafer test, dicing, die attach, wire bonding, encapsulation, final test, and yield."
+---
+
+## Overview
+
+The wafer leaving the fabrication line is not yet a product. It holds dozens to thousands of identical circuits (dies), each only millimeters across, with bonding pads too small to touch by hand, surfaces that corrode in air, and structures that a fingerprint would destroy. Worse, not all of them work: defects scattered across the wafer kill some fraction of the dies. Two final disciplines turn this fragile wafer into trustworthy chips: **packaging**, which protects each die and fans its tiny pads out to a usable connector, and **testing**, which finds the good dies, discards the bad, and proves the survivors will last.
+
+These back-end steps are often underestimated, but they decide whether your chips are usable and reliable. A perfect circuit in a bad package fails from corrosion, heat, or a broken wire. An untested batch ships dead parts that destroy trust in the product. Packaging and testing are where manufacturing yield, reliability, and cost are won or lost — frequently they cost more than the silicon itself.
+
+This chapter walks the full back-end flow: wafer-level test, dicing, die attach, wire bonding, encapsulation, final test, and the burn-in and yield concepts that govern reliability and economics.
+
+## Why the Bare Die Cannot Ship
+
+A bare die has three fatal problems for direct use:
+
+- **It is unprotected.** The metal wiring corrodes in humid air; dust and handling damage the surface; mechanical stress cracks the brittle silicon.
+- **Its connections are unreachable.** Bonding pads are tens of micrometers across — far too small and fragile to solder or plug into a board.
+- **It cannot shed heat or handle stress.** A working chip generates heat and sits in a system that flexes and vibrates; the bare die has no path to manage either.
+
+The package solves all three: it seals the die against the environment, fans the microscopic pads out to millimeter-scale leads a human or machine can connect, and provides mechanical strength and a thermal path. Packaging is the bridge between the nanometer world of the chip and the centimeter world of the circuit board.
+
+## Step 1: Wafer-Level Test (Probe)
+
+Before cutting anything, test every die **while still on the wafer.** A **wafer prober** lowers an array of fine needles (a probe card) onto each die's pads in turn, applies power and test signals, and checks the responses against the expected behavior.
+
+- Dies that pass are noted as good.
+- Dies that fail are marked (historically with an ink dot, now electronically in a wafer map) so they can be discarded after dicing.
+
+Testing before dicing saves money: there is no point packaging a dead die, and packaging is expensive. This stage also produces the **wafer map** of good and bad dies, the raw data for measuring yield.
+
+## Step 2: Dicing
+
+Separate the wafer into individual dies. The classic method is a **dicing saw** — a thin, diamond-edged blade that cuts along the **scribe lines** (the deliberate empty streets left between dies) while the wafer is held on adhesive tape. Water cools and flushes the cut. The wafer becomes a grid of loose dies on tape; the good ones (per the wafer map) are picked off; the bad ones are scrapped.
+
+Silicon is brittle, so dicing must avoid chipping and cracking that could propagate into a die. Cut along the scribe lines only, with a sharp blade, adequate cooling, and proper tape support.
+
+## Step 3: Die Attach
+
+Mount each good die into or onto its package base. The die is bonded to the package cavity or paddle with an adhesive or solder:
+
+- **Conductive attach** (silver-filled epoxy or solder) when the back of the die must connect electrically or shed heat through the package.
+- **Insulating attach** when it must not.
+
+The attach must survive thermal cycling: silicon, the die-attach material, and the package expand at different rates with temperature (a mismatch in **thermal expansion coefficient**), and repeated heating and cooling stresses the bond. A poor die attach cracks over time and lifts the die or blocks heat flow.
+
+## Step 4: Wire Bonding
+
+Now connect the die's bonding pads to the package's internal leads. The dominant method is **wire bonding**: a machine welds a fine wire (gold or aluminum, tens of micrometers thick) from each die pad to the corresponding package lead.
+
+- **Ball bonding** (gold wire): a tiny ball is formed at the wire tip with a spark, pressed and welded to the pad using heat and ultrasonic energy, then the wire is looped to the lead and bonded again.
+- **Wedge bonding** (aluminum wire): the wire is pressed and ultrasonically welded flat to each point.
+
+Each connection is made one at a time, hundreds or thousands per chip on complex parts, in fractions of a second each. The bonds must be strong, correctly placed, and looped so neighboring wires never touch. Wire bonding is delicate, high-volume precision work and a common source of field failures if done poorly. (Advanced packages use **flip-chip** bonding instead — the die is flipped face-down and its pads, capped with solder bumps, are reflowed directly onto the package, eliminating wires for many connections at once — worth knowing as the higher-performance alternative.)
+
+## Step 5: Encapsulation
+
+Seal the die and its wires against the environment. Two families:
+
+- **Plastic (molded) packages:** the die, wires, and lead frame are encased in molded epoxy. Cheap, robust, and the overwhelming majority of consumer parts. The trade-off is that plastic is not perfectly hermetic — moisture creeps in slowly over years — so plastic parts rely on the chip's own passivation layer for long-term protection.
+- **Ceramic (hermetic) packages:** the die sits in a ceramic cavity sealed with a metal or ceramic lid, giving a truly airtight enclosure. More expensive, used where reliability is paramount — aerospace, military, high-stakes systems.
+
+After encapsulation, the external leads are formed (trimmed and bent) into their final shape, and the part is marked.
+
+## Step 6: Final Test
+
+Test again — now the packaged part. Final test catches damage from dicing, attach, bonding, and molding, and verifies the part meets full specification across its operating conditions:
+
+- **Functional test:** does the circuit do what it should, at speed?
+- **Parametric test:** are voltages, currents, timing, and power within spec?
+- **Across temperature:** many parts are tested hot and cold, because behavior shifts with temperature and the spec must hold across the whole range.
+
+Parts are often **binned** by performance — faster or lower-power dies sorted into higher grades. Only parts that pass final test ship.
+
+## Reliability: Burn-In and Infant Mortality
+
+Some chips work at final test but fail soon after, from latent defects — a marginal bond, a microscopic crack, a weak oxide. These early failures are called **infant mortality.** To catch them before shipping, high-reliability parts undergo **burn-in**: running at elevated temperature and voltage for hours to days, stressing weak units until they fail in the factory rather than the field. The survivors have proven they are past the early-failure window. Burn-in trades factory time and cost for field reliability — essential where failure is expensive or dangerous.
+
+## A Worked Example
+
+Take a wafer of finished logic chips to shippable product:
+
+1. **Probe** every die on the wafer; build the wafer map of good and bad dies.
+2. **Dice** the wafer on tape; pick the good dies, scrap the marked ones.
+3. **Die-attach** each good die into a plastic package's lead frame with conductive epoxy; cure it.
+4. **Wire-bond** gold wires from each die pad to its lead frame finger.
+5. **Mold** epoxy around the die and wires; trim and form the leads; mark the part number.
+6. **Final-test** each packaged part hot and cold; bin by speed; discard failures.
+7. **Burn-in** the high-reliability grade to weed out infant mortality.
+8. Ship the survivors.
+
+## Yield: The Economics That Govern Everything
+
+**Yield** is the fraction of dies that end up as good, sellable parts. It is the single biggest driver of chip cost. If half your dies are dead, each good one effectively costs twice as much, because you paid to process the failures too.
+
+- **Defect density** matters enormously: random defects scattered across the wafer kill dies. A larger die catches more defects, so big chips yield worse than small ones — a fundamental pressure toward smaller dies.
+- **Yield compounds** across steps: front-end (fabrication) yield times back-end (packaging/test) yield gives the final number. A weak link anywhere drags the whole result down.
+- **Improving yield** means cleaner processes, tighter control, smaller dies, and catching failures as early and cheaply as possible (which is why wafer probe comes before the expensive packaging).
+
+Yield is why cleanliness, control, and early testing are not perfectionism but economics.
+
+## Verification Criteria
+
+- **Wafer map** correctly identifies good and bad dies; probe yield is tracked and trended.
+- **Dicing** produces clean separations with no chipping into the dies.
+- **Wire bonds** pass pull and shear strength tests; no touching or misplaced wires under inspection.
+- **Hermeticity** (ceramic parts) passes a leak test; plastic parts pass moisture-sensitivity standards.
+- **Final test** confirms full functional and parametric specs across the temperature range.
+- **Burn-in** (high-rel parts) completes with failures removed and survivors re-tested.
+
+## Common Mistakes
+
+- **Packaging untested dies.** Spending package cost on dead silicon. Always probe first.
+- **Poor die attach.** Voids or thermal-expansion mismatch crack the bond over thermal cycles, lifting the die or blocking heat. Match materials and cure properly.
+- **Bad wire bonds.** Weak, misplaced, or touching wires are a leading field-failure cause. Control bond force, heat, and ultrasonic energy; inspect and pull-test.
+- **Trusting plastic as hermetic.** Plastic admits moisture over years; if the chip's passivation is weak, it corrodes. Use ceramic where true hermeticity is required.
+- **Skipping burn-in on critical parts.** Infant mortality then happens in the customer's system instead of your factory.
+- **Ignoring yield economics.** Treating test and cleanliness as overhead rather than the main cost lever leads to uncompetitive, unreliable products.
+
+## Cross-References
+
+- **Vol 40, Ch 9 — Metallization:** the bonding pads packaging connects to.
+- **Vol 40, Ch 11 — From discrete to integrated circuit:** what the packaged chip ultimately delivers.
+- **Vol 16: Computing — Building a CPU:** how packaged chips become systems.
+- **Vol 12: Electrical Engineering — Testing and signals:** the measurements behind probe and final test.
+- **Vol 10: Materials — Thermal expansion and adhesion:** why die attach and packages crack, and how to prevent it.
+- **Vol 13: Manufacturing — Yield and quality control:** the broader discipline packaging yield is part of.
+
+Packaging and testing are where silicon becomes a product you can trust. Protect the die, connect it reliably, prove it works and keeps working, and account honestly for yield. A chip is only as good as the package around it and the testing behind it.
