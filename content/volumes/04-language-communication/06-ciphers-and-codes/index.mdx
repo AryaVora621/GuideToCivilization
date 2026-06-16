@@ -1,0 +1,406 @@
+---
+title: "Ciphers and Codes: Hiding and Revealing Information"
+volume: 23
+chapter: 6
+difficulty: intermediate
+prerequisites:
+  - "Vol 23: Language & Communication Ch 1 — Reading and Writing"
+  - "Vol 21: Mathematics Ch 2 — Arithmetic and Basic Counting"
+  - "ability to think about patterns and transformations"
+unlocks:
+  - "04-language-communication/07-cryptography-and-security"
+  - "practical secure communication across distance"
+tags: [cipher, code, encryption, security, communication, secrecy, patterns]
+summary: "A cipher transforms readable text into unreadable form. Understanding ciphers lets you send secret messages, understand adversarial communication, and recognize patterns. Ciphers are the foundation of all secure communication."
+---
+
+## Overview
+
+You have a message you want to send to an ally, but enemies might intercept it. You transform the message using a cipher—a secret rule that scrambles the text. Only someone who knows the rule can unscramble it.
+
+This chapter teaches:
+
+1. **What ciphers do:** Transform readable text into unreadable form
+2. **Simple ciphers:** Methods that are easy to learn and use
+3. **Strength and weakness:** Why some ciphers are breakable
+4. **Practical ciphers:** Methods suitable for post-collapse communication
+5. **Breaking ciphers:** How to recognize patterns and recover messages
+
+Ciphers are about trust. If only you and your ally know the transformation rule, only you two can read the message.
+
+## Prerequisites
+
+- Ability to read and write
+- Understanding of the alphabet (or writing system)
+- Ability to recognize patterns
+- Basic arithmetic helpful but not required
+- Willingness to practice: cipher work is detail-oriented
+
+## Materials & Tools
+
+**For using ciphers:**
+- Pen and paper
+- The agreed-upon cipher method (key)
+- Time to carefully transform each letter
+
+**For breaking ciphers:**
+- Original ciphertext (scrambled message)
+- Patience and pattern recognition
+- Knowledge of language (frequency of letters, common words)
+
+---
+
+## Part 1: Cipher Basics
+
+### Cipher vs. Code
+
+**Cipher:** A systematic method that transforms each letter (or character) in a consistent way.
+- Example: Every "A" becomes "D", every "B" becomes "E", etc.
+- The same input always produces the same output
+- Mechanical and mathematical
+
+**Code:** A method where entire words or concepts are replaced with symbols.
+- Example: "ATTACK" means retreat, "DEFEND" means advance
+- A dictionary (code book) is needed to interpret
+- Meaning-based, not letter-based
+
+This chapter focuses on **ciphers**.
+
+### Why Ciphers Matter
+
+1. **Secrecy:** If enemies intercept your message, they cannot read it without the key
+2. **Trust:** Only people who know the key can communicate
+3. **Time advantage:** Even if an enemy breaks the cipher, by then the information may be old
+4. **Morale:** Knowing your communications are secret boosts confidence
+
+---
+
+## Part 2: Simple Substitution Ciphers
+
+### The Caesar Cipher
+
+The **Caesar cipher** shifts each letter by a fixed number.
+
+**Key:** Shift every letter by 3 positions
+
+**Transformation:**
+- A → D
+- B → E
+- C → F
+- ...
+- X → A
+- Y → B
+- Z → C
+
+**Example plaintext:** "SEND AID"
+
+**Apply cipher:**
+- S → V
+- E → H
+- N → Q
+- D → G
+- A → D
+- I → L
+- D → G
+
+**Ciphertext:** "VHQG DLG"
+
+**Decryption:** Shift back by 3.
+
+### Why Caesar Cipher is Weak
+
+1. **Few keys:** Only 25 possible shifts (0–25). An enemy can try all 25.
+2. **Pattern recognition:** If you know it is a Caesar cipher, you can break it in minutes.
+3. **Frequency analysis:** The letter "E" is common in English. If "E" always becomes "H" in the ciphertext, the pattern reveals the shift.
+
+### Stronger: Substitution Cipher (Key-Based)
+
+**Method:** Replace each letter with a different letter according to a key (not a simple shift).
+
+**Key (example):**
+```
+Plaintext:  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+Ciphertext: Q W E R T Y U I O P A S D F G H J K L Z X C V B N M
+```
+
+(This looks like a QWERTY keyboard re-ordered.)
+
+**Example plaintext:** "SEND AID"
+
+**Apply cipher (using the key above):**
+- S → L
+- E → T
+- N → F
+- D → R
+- A → Q
+- I → O
+- D → R
+
+**Ciphertext:** "LTFR QOR"
+
+### Why Substitution Cipher is Stronger
+
+1. **Many keys:** 26! (factorial) possible keys, roughly 4 × 10^26. Too many to try.
+2. **Symmetric:** Decryption is the reverse—use the key backwards.
+
+### Why Substitution Cipher is Still Breakable
+
+1. **Frequency analysis:** In English, "E" is the most common letter. If you analyze the ciphertext and find that "T" appears most often, you can guess that T = E. This gives you one letter of the key.
+2. **Common patterns:** Words like "THE" and "AND" appear frequently. If you guess these, you can infer more of the key.
+3. **Multiple messages:** If you have several messages encrypted with the same key, pattern matching is easier.
+
+**Example:** You receive many ciphertext messages. You notice "LUV" appears 40 times. In English, "THE" appears frequently. Guess: L=T, U=H, V=E. This gives you 3 key letters. Repeat for other patterns.
+
+---
+
+## Part 3: Stronger Ciphers
+
+### Polyalphabetic Cipher (Vigenère)
+
+**Problem:** Substitution cipher has static letter frequencies. Solution: Use multiple substitution alphabets.
+
+**Vigenère Cipher:**
+
+1. Choose a **keyword** (example: "SECRET")
+2. Repeat the keyword above your plaintext
+3. For each plaintext letter, shift it by the amount indicated by the keyword letter
+
+**Example:**
+
+Plaintext:  "SEND MORE GOLD"
+Keyword:    "SECRETSECRETSEC" (repeated)
+
+Using shifts: A=0, B=1, C=2, ... Z=25
+
+- S + S(18) = K
+- E + E(4) = I
+- N + C(2) = P
+- D + R(17) = U
+
+**Ciphertext:** "KIPU YYKQ UOQS"
+
+**Why stronger:** Each letter "E" might be encoded differently (as I, Y, or another letter) depending on its position and the keyword.
+
+### Breaking Vigenère:
+
+1. **Key length:** Estimate keyword length (try lengths 1, 2, 3, ... until frequency analysis works)
+2. **Frequency analysis:** Once you know key length, treat each position as a separate substitution cipher
+3. **Pattern matching:** Look for repeated ciphertext patterns; these suggest the same keyword section is being used
+
+---
+
+## Part 4: Using Ciphers Practically
+
+### Choosing a Cipher
+
+**For maximum security (enemy has time and resources):**
+- Use polyalphabetic cipher (Vigenère)
+- Use a long, random keyword
+- Change the keyword frequently
+- Use multiple ciphers in sequence
+
+**For practical security (post-collapse, low threat):**
+- Simple substitution cipher with a memorable key
+- Change key occasionally
+- Assume enemy does not have time to break it (information has short value)
+
+### Key Management
+
+**The key is critical.** If enemies learn the key, the cipher is useless.
+
+**Secure key sharing:**
+- Memorize the key (no written record to steal)
+- Share the key in person (not in writing or over insecure channels)
+- Change the key regularly (weekly, monthly depending on threat)
+- Use the same key only for a limited time (reduces time enemy has to break it)
+
+### Example Workflow
+
+1. **Before sending message:** You and recipient agree on cipher method and key (in person)
+2. **Encrypt:** Transform plaintext to ciphertext using the key
+3. **Send:** Send ciphertext openly (enemies might intercept, but cannot read)
+4. **Decrypt:** Recipient uses the same key (backwards) to recover plaintext
+5. **Change key:** Next week, you meet again and agree on a new key
+
+---
+
+## Part 5: Breaking Ciphers (Cryptanalysis)
+
+### Frequency Analysis
+
+**English letter frequencies (rough):**
+- E: 13%, A: 8%, R: 8%, I: 7%, O: 7%, T: 7%, N: 7%
+- Less common: Q, X, Z (less than 1%)
+
+**Method:**
+1. Count letter frequency in ciphertext
+2. Compare to English frequencies
+3. Match high-frequency ciphertext letters to high-frequency English letters
+4. Test matches on the message to see if words form
+5. Refine iteratively
+
+**Example:** Ciphertext has these frequencies:
+- W: 13%, Q: 8%, X: 8%, etc.
+
+Guess: W = E (both 13%), Q = A (both 8%)
+
+Decrypt the message with these guesses. If you see "Q_E" (which would be "A_E"), it could be "ACE" or "ATE" or "ARE". Try each and see which makes sense.
+
+### Pattern Matching
+
+**Common patterns:**
+- "THE" (most common 3-letter word)
+- "AND" (common 3-letter word)
+- "THAT" (common 4-letter word)
+- "DOUBLE LETTERS" (LL, EE, SS common)
+
+**Method:**
+1. Look for repeated letter patterns in ciphertext
+2. Guess they represent common words
+3. Test the guess (does it produce valid English in surrounding context?)
+
+### Known-Plaintext Attack
+
+**If you know part of the plaintext** (e.g., a message starts with "MEETING AT NOON"), you can:
+
+1. Align known plaintext with ciphertext
+2. Directly deduce key letters used
+3. Use these to decrypt the rest
+
+**Defense:** Use polyalphabetic cipher to prevent this.
+
+---
+
+## Part 6: Codes vs. Ciphers
+
+### Codes Are Different
+
+**Code method:** Pre-agreed dictionary where words/concepts are replaced.
+
+**Example code dictionary:**
+- "APPLE" = attack
+- "BANANA" = retreat
+- "ORANGE" = reinforce
+- etc.
+
+**Encoded message:** "Send APPLE at dawn, follow with BANANA at noon."
+
+**Meaning:** "Attack at dawn, retreat at noon."
+
+**Advantage:** Fast (no letter-by-letter transformation)
+
+**Disadvantage:** 
+- Requires a code book (physical object that can be stolen)
+- Limited vocabulary (must have pre-agreed words for everything)
+- Patterns still emerge (if you always send "APPLE" before "BANANA", enemies learn the pattern)
+
+### When to Use
+
+**Cipher:** When security is critical and messages are short.
+
+**Code:** When speed is critical and vocabulary is limited (military commands, trading signals).
+
+---
+
+## Part 7: Worked Examples
+
+### Example 1: Encrypt and Decrypt with Caesar Cipher
+
+**Message:** "FOOD SUPPLIES LOW"
+
+**Key:** Shift by 5
+
+**Encryption:**
+- F → K
+- O → T
+- O → T
+- D → I
+- S → X
+- U → Z
+- P → U
+- P → U
+- L → Q
+- I → N
+- E → J
+- S → X
+
+**Ciphertext:** "KTTI XZUUQNJ STV"
+
+**Decryption:** Shift backward by 5.
+- K → F
+- T → O
+- T → O
+- I → D
+- etc.
+
+**Recovered plaintext:** "FOOD SUPPLIES LOW"
+
+### Example 2: Analyze a Substitution Cipher Using Frequency
+
+**Ciphertext:** "WUI KQYV DGQBN SDN LQJK HQUK"
+
+**Analysis:**
+Count frequency in ciphertext:
+- Q: 4 times (highest)
+- U: 3 times
+- etc.
+
+Guess: Q = E (common in English), U = A (second most common)
+
+Test: "WUI" becomes "WaE"—could be "THE"? So W=T, I=H.
+
+"WUI" = "THE" ✓
+
+"THE KQYV DGQBN..." = "THE KA__ B_EAN..." 
+
+Continues decryption: Likely "THE QUICK BROWN..." (famous phrase)
+
+**Full plaintext:** "THE QUICK BROWN FOX JUMP OVER THE DOG"
+
+---
+
+## Part 8: Common Mistakes
+
+### Mistake 1: Reusing the Same Key Too Long
+
+Each message encrypted with the same key provides another data point for breaking the cipher. Change the key frequently (weekly, daily if high-threat).
+
+### Mistake 2: Using Weak Keys
+
+"AAAA" or "PASSWORD" are weak keys (easy to guess). Use random, long keys.
+
+### Mistake 3: Assuming No One Knows the Cipher Method
+
+If enemies know you are using Caesar cipher, they can try all 25 shifts in minutes. Assume they know the METHOD; keep only the KEY secret.
+
+### Mistake 4: Mixing Cipher and Code
+
+Using both makes decryption harder for you too. Choose one method and stick with it.
+
+### Mistake 5: Not Testing Before Deployment
+
+Practice encrypting and decrypting before using it operationally. A mistake in your process could give away the key.
+
+---
+
+## Verification
+
+You understand ciphers when:
+
+1. You can encrypt plaintext using Caesar cipher
+2. You can decrypt ciphertext using Caesar cipher
+3. You can create and use a substitution cipher with a given key
+4. You understand why simple ciphers are breakable
+5. You can perform frequency analysis to guess plaintext
+6. You can recognize when a polyalphabetic cipher is needed
+7. You understand the importance of key secrecy and key change
+
+---
+
+## Cross-References
+
+- See Vol 23, Ch 1 — Reading and Writing (plaintext that will be encrypted)
+- See Vol 23, Ch 7 — Cryptography and Security (advanced encryption)
+- See Vol 21: Mathematics Ch 2 — Arithmetic (number systems used in ciphers)
+- See Vol 19: Society and Governance Ch 3 — Military Communications (tactical use of ciphers)
+- See Vol 25: Psychology and Education — Pattern Recognition (how brains break ciphers)

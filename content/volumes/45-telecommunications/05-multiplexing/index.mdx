@@ -1,0 +1,397 @@
+---
+title: "Multiplexing: Sending Multiple Signals Through One Channel"
+volume: 41
+chapter: 5
+difficulty: intermediate
+prerequisites:
+  - "Vol 41: Telecommunications Ch 1 — Electromagnetic Waves and Signals"
+  - "Vol 41: Telecommunications Ch 4 — Cable Construction"
+  - "Vol 21: Mathematics Ch 2 — Arithmetic and basic counting"
+unlocks:
+  - "45-telecommunications/06-modulation-and-demodulation"
+  - "practical long-distance communication networks"
+tags: [multiplexing, efficiency, channels, frequency, time-division, signal-sharing]
+summary: "Multiplexing is the art of sending multiple signals through a single cable or channel. By dividing time, frequency, or space cleverly, one cable can carry the work of many. This is how thousands of telephone calls fit through a single fiber optic strand."
+---
+
+## Overview
+
+A single cable connects two towns. Thousands of people want to communicate. Do you build a thousand cables? No—you multiplex.
+
+Multiplexing is dividing one channel (cable, frequency, time slot) so many signals can travel simultaneously. The signals arrive at the other end, are separated, and reach their destinations.
+
+This chapter teaches:
+
+1. **Why multiplexing matters:** Efficiency and cost reduction
+2. **Time-division multiplexing (TDM):** Signals take turns
+3. **Frequency-division multiplexing (FDM):** Signals use different frequencies
+4. **Space-division multiplexing (SDM):** Signals use different physical paths
+5. **Practical multiplexing:** How to implement and manage multiple signals
+
+Multiplexing is how civilization scales communication. Without it, distance communication would be impossibly expensive.
+
+## Prerequisites
+
+- Understanding of electrical signals and their properties
+- Basic knowledge of frequency and time
+- Ability to think about dividing resources
+- Familiarity with cables and channels
+
+## Materials & Tools
+
+**For time-division multiplexing:**
+- Synchronization mechanism (clock, timer)
+- Switch or relay to route signals
+- Method to separate signals at destination
+
+**For frequency-division multiplexing:**
+- Transmitters at different frequencies
+- Receivers tuned to specific frequencies
+- Filters to separate frequencies
+
+**For understanding:**
+- Ability to analyze signal patterns
+- Time and frequency concepts
+
+---
+
+## Part 1: Why Multiplexing Matters
+
+### The Cost Problem
+
+Without multiplexing, capacity is limited by physical channels.
+
+**Example: Telegraph in 1800s**
+
+To connect two towns with 100 people wanting to communicate:
+- Without multiplexing: 100 separate telegraph lines (or take turns, slow communication)
+- With multiplexing: 1 telegraph line carrying multiple signals
+
+**Cost difference:**
+- 100 lines: 100 miles of copper wire, 100 maintenance costs, 100 operators
+- 1 line with multiplexing: 1 mile of copper wire, 1 maintenance cost, 1–2 operators
+
+**Multiplexing enables:** Communication to scale from expensive luxury to affordable utility.
+
+### Practical Examples
+
+**Telephone system:** One cable carries 24–100+ phone calls simultaneously (time or frequency multiplexed).
+
+**Radio broadcasting:** Many radio stations broadcast simultaneously on different frequencies, all using the same air as the medium.
+
+**Fiber optics:** One optical fiber carries terabits of data per second by multiplexing on different wavelengths.
+
+---
+
+## Part 2: Time-Division Multiplexing (TDM)
+
+### The Principle
+
+**Signals take turns:** Each signal gets exclusive use of the channel for a short time (a "time slot"), then yields to the next signal.
+
+**Example:** 4 users sharing 1 telephone line.
+
+- Time 0–10 ms: User A sends
+- Time 10–20 ms: User B sends
+- Time 20–30 ms: User C sends
+- Time 30–40 ms: User D sends
+- Time 40–50 ms: User A sends (repeat)
+
+**At the receiver:**
+- Time 0–10 ms: Receive User A's signal, route to User A's terminal
+- Time 10–20 ms: Receive User B's signal, route to User B's terminal
+- etc.
+
+### How TDM Works
+
+**Synchronization:** Sender and receiver must agree on:
+1. Who sends during which time slot?
+2. How long is each time slot?
+3. What is the total cycle time?
+
+**Slotting:** The sender has a switching mechanism that connects each user's input to the shared channel for their time slot.
+
+**Reception:** The receiver has a switching mechanism (synchronized with the sender) that routes incoming signals to the correct user's output.
+
+### Advantages and Disadvantages
+
+**Advantages:**
+- Simple to implement (switches, timers)
+- Works with any type of signal (voice, data, etc.)
+- Does not require frequency coordination
+- Synchronous (timing is explicit)
+
+**Disadvantages:**
+- All signals must synchronize on timing
+- Each user gets only a fraction of the channel capacity (4 users on 1 line means each gets 1/4 the capacity)
+- Timing errors cause signals to go to the wrong user
+- If one user sends nothing during their slot, that slot is wasted
+
+### Practical Example: Telegraph Time-Sharing
+
+**System:** 4 telegraph operators share one telegraph line.
+
+**Slots:** 100 ms per operator (total cycle: 400 ms).
+
+**Timing:**
+- 0–100 ms: Operator A sends
+- 100–200 ms: Operator B sends
+- 200–300 ms: Operator C sends
+- 300–400 ms: Operator D sends
+- 400–500 ms: Operator A sends (repeat)
+
+**Speed:** If the line carries 10 words/minute in normal use, each operator gets 10/4 = 2.5 words/minute. Slow but functional.
+
+---
+
+## Part 3: Frequency-Division Multiplexing (FDM)
+
+### The Principle
+
+**Signals use different frequencies:** Each signal is modulated onto a different carrier frequency, then transmitted simultaneously.
+
+**Example:** Radio stations.
+
+- Station A broadcasts on 88.1 MHz
+- Station B broadcasts on 88.3 MHz
+- Station C broadcasts on 88.5 MHz
+- All transmit simultaneously; receivers tune to the desired frequency
+
+**Advantage over TDM:** Each signal gets the full channel capacity simultaneously (no taking turns).
+
+### How FDM Works
+
+**Modulation:** Each signal is impressed onto a carrier frequency.
+- User A's signal (voice, 0–3 kHz) modulates 100 MHz carrier → output is 100 MHz ± user's signal
+- User B's signal (0–3 kHz) modulates 101 MHz carrier → output is 101 MHz ± user's signal
+
+**Transmission:** All modulated signals combine and transmit through the shared channel.
+
+**Reception:** At the destination, filters separate frequencies.
+- Filter tuned to 100 MHz passes User A's signal (blocks 101 MHz)
+- Filter tuned to 101 MHz passes User B's signal (blocks 100 MHz)
+
+**Demodulation:** Each signal is demodulated to recover the original information.
+
+### Frequency Allocation
+
+For FDM to work, channels must not overlap.
+
+**Example: Voice telephone (0–3 kHz bandwidth).**
+
+If each voice occupies 4 kHz, you can fit them as:
+- User A: 100–104 MHz
+- User B: 104–108 MHz
+- User C: 108–112 MHz
+- User D: 112–116 MHz
+
+**No overlap** = no interference.
+
+### Guard Bands
+
+In practice, channels need **guard bands** (unused frequency between channels) to prevent adjacent channels from interfering.
+
+**Revised example with 0.5 kHz guard bands:**
+- User A: 100–104 MHz (4 kHz), guard band 104–104.5 MHz
+- User B: 104.5–108.5 MHz (4 kHz), guard band 108.5–109 MHz
+- User C: 109–113 MHz (4 kHz), guard band 113–113.5 MHz
+
+Guard bands waste frequency but ensure quality.
+
+### Advantages and Disadvantages
+
+**Advantages:**
+- High capacity (many signals simultaneously)
+- No timing synchronization needed
+- Each signal gets full capacity
+
+**Disadvantages:**
+- Requires modulation/demodulation (more complex electronics)
+- Frequency coordination needed (cannot overlap)
+- Requires filters to separate frequencies
+- Wasted guard band space
+
+### Practical Example: AM Radio
+
+**System:** Many radio stations broadcast simultaneously on different frequencies.
+
+**Frequency allocation:**
+- Station A: 890 kHz (covers 890–895 kHz with guard band)
+- Station B: 900 kHz
+- Station C: 910 kHz
+- etc.
+
+**Receiver:** A radio receiver tunes to the desired frequency (filters out others) and demodulates (extracts voice/music).
+
+**Capacity:** Hundreds of stations can broadcast simultaneously (each in a different frequency band).
+
+---
+
+## Part 4: Space-Division Multiplexing (SDM)
+
+### The Principle
+
+**Signals use different physical paths:** Each signal travels through a separate physical channel (cable, fiber, etc.), but the channels might be bundled together.
+
+**Example:** A multi-pair telephone cable.
+
+- Pair 1 carries User A's conversation
+- Pair 2 carries User B's conversation
+- Pair 3 carries User C's conversation
+- All bundled in the same cable sheath but electrically independent
+
+### How SDM Works
+
+**Physical separation:** Each signal has its own conductor(s) or fiber, reducing interference between signals.
+
+**Independence:** Signals travel independently; no timing coordination or frequency separation needed.
+
+**Bundling:** Multiple separate channels are packaged together (reducing overall cost and weight).
+
+### Advantages and Disadvantages
+
+**Advantages:**
+- Simple (each signal has its own channel)
+- No timing or frequency coordination
+- High isolation between signals
+- Easy to add/remove channels (just add another pair)
+
+**Disadvantages:**
+- Requires many physical conductors (bulky for large numbers of signals)
+- Weight and cost increase with number of signals
+- Difficult to scale beyond hundreds of signals
+
+### Practical Limits
+
+**In cable form:**
+- A telephone cable with 50 pairs is practical (carries 50 calls simultaneously)
+- A cable with 1000 pairs is heavy and expensive
+
+**In fiber form:**
+- A single fiber can carry thousands of signals using wavelength division (a form of FDM applied to light)
+- Much more efficient than copper pairs
+
+---
+
+## Part 5: Hybrid Approaches
+
+### TDM + FDM (Most Common)
+
+Combine time and frequency division for high efficiency.
+
+**Example: Modern telephone trunk line.**
+
+1. **Frequency division:** The line is divided into 48 channels at different frequencies.
+2. **Time division:** Within each frequency channel, 24 time slots carry individual calls.
+3. **Total capacity:** 48 × 24 = 1152 simultaneous calls on one line.
+
+### FDM + SDM (Radio Network)
+
+Combine frequency division (different stations) with space division (different antennas or regions).
+
+**Example:** Radio broadcast network.
+
+1. **Frequency division:** Station A broadcasts on 88.1 MHz, Station B on 88.3 MHz, etc.
+2. **Space division:** Different regions receive different content (Local News on 88.1 in City A, Different Local News on 88.1 in City B)
+
+### Wavelength Division Multiplexing (WDM) in Fiber
+
+For optical fiber, frequency division is reframed as **wavelength division**.
+
+**Light wavelengths (colors):**
+- Red light: 700 nm wavelength
+- Green light: 550 nm wavelength
+- Blue light: 450 nm wavelength
+
+**Multiplexing:** Send red, green, and blue light through the same fiber simultaneously. At the destination, filters separate them.
+
+**Capacity:** Dense wavelength division multiplexing (DWDM) can fit 80–400 wavelengths in a single fiber, each carrying 10–100 Gbps = terabit capacity.
+
+---
+
+## Part 6: Practical Multiplexing Setup
+
+### TDM Telegraph System (Simple)
+
+**Components:**
+- 4 telegraph keys (one per user)
+- 1 electromagnetic switch (commutator) at the sender
+- 1 rotating timer (mechanical clock)
+- 1 telegraph line
+- 1 electromagnetic switch (decoder) at the receiver
+- 4 telegraph sounders (one per user)
+
+**Operation:**
+1. The rotating timer switches between users every 100 ms
+2. Whichever user is connected sends their message
+3. At the receiver, the synchronized timer connects the received signal to the correct sounder
+4. Users hear their messages on their designated sounder
+
+**Maintenance:** Keep the timer synchronized (if it drifts, messages go to the wrong user).
+
+### FDM Radio Network (Complex)
+
+**Components:**
+- Multiple transmitters (one per station), each at a different frequency
+- Antennas for broadcast
+- Multiple receivers (tuned to different frequencies)
+- Filters to separate frequencies
+- Amplifiers to boost signal strength
+
+**Operation:**
+1. Each station modulates their content onto their carrier frequency
+2. All transmissions combine in the air
+3. Receivers tune to a specific frequency, filtering out others
+4. Demodulator extracts the original content
+
+**Maintenance:** Frequency coordination (no two stations on the same frequency), regular transmitter calibration.
+
+---
+
+## Part 7: Common Mistakes
+
+### Mistake 1: Overlapping Time Slots
+
+In TDM, if two users send during the same time slot, signals collide and become garbled. Timing must be precise and enforced.
+
+### Mistake 2: Overlapping Frequencies
+
+In FDM, if two stations broadcast on the same frequency, signals interfere. Frequency coordination is critical; violations are illegal in most countries.
+
+### Mistake 3: Insufficient Guard Bands
+
+Guard bands between FDM channels prevent interference. Without them, adjacent channels leak into each other. Too-small guard bands cause crosstalk.
+
+### Mistake 4: Assuming Multiplexing Increases Total Capacity
+
+Multiplexing does NOT increase total capacity of the medium; it divides existing capacity. Multiplexing allows sharing, not creation of new capacity.
+
+Example: 1 line carrying 4 time-multiplexed calls has 1/4 the capacity per call compared to a dedicated line (assuming same transmission speed).
+
+### Mistake 5: Poor Synchronization in TDM
+
+TDM requires perfect synchronization between sender and receiver. If the receiver's clock drifts even 1%, signals route to wrong users. Regular synchronization checks are essential.
+
+---
+
+## Verification
+
+You understand multiplexing when:
+
+1. You can explain why multiplexing is necessary
+2. You can describe how TDM divides time and allows signal separation
+3. You can describe how FDM assigns different frequencies to different signals
+4. You can explain advantages and disadvantages of each method
+5. You can design a simple TDM system for a given number of users
+6. You can identify which multiplexing method is used in a real-world example
+7. You understand how hybrid approaches (TDM + FDM) achieve higher capacity
+
+---
+
+## Cross-References
+
+- See Vol 41, Ch 1 — Electromagnetic Waves and Signals (signals being multiplexed)
+- See Vol 41, Ch 4 — Cable Construction (the physical channel carrying multiplexed signals)
+- See Vol 41, Ch 6 — Modulation and Demodulation (how signals are converted for FDM)
+- See Vol 42: Magnetic and Analog Recording (recording multiplexed signals)
+- See Vol 21: Mathematics Ch 3 — Frequency and Periodic Functions (mathematics of multiplexing)

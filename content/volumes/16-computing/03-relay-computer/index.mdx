@@ -1,0 +1,298 @@
+---
+title: "Building a Relay Computer: Logic with Electromagnetic Switches"
+volume: 44
+chapter: 3
+difficulty: advanced
+prerequisites:
+  - "Vol 44, Ch 1 — Binary and Boolean Logic (Boolean operations)"
+  - "Vol 44, Ch 2 — Logic Gates (AND, OR, NOT implementations)"
+  - "Vol 12: Electrical Engineering — Relays and electromagnet operation"
+  - "Vol 11: Mechanical Engineering — Basic mechanical design and assembly"
+unlocks:
+  - "Vol 44, Ch 4 — Sequential Logic (memory and clocked circuits)"
+  - "Vol 44, Ch 5 — Basic Arithmetic (adders, multipliers)"
+  - "Vol 42: Vacuum Tubes — Electron switching and early computers"
+tags: [computing, relays, electromechanical-logic, computers, automation]
+summary: "Before electronic computers, logic and computation were performed using electromagnetic relays—mechanical switches controlled by electromagnets. Relays can be interconnected to implement any Boolean logic function, and stacks of relays can perform arithmetic and control complex machines. Understanding relay logic is both historically important and practically useful: relay-based systems are still used in industrial automation, safety interlocks, and remote control where reliability and absence of electronic components are important."
+---
+
+## Overview
+
+A relay is an electromagnetic switch: apply a control voltage to a coil, and the magnetic field moves a mechanical arm (the armature), opening or closing electrical contacts. Relays have been used since the telegraph (1840s) to amplify weak signals. But relays also implement logic: by connecting relay contacts in series or parallel, you can build AND gates, OR gates, and NOT operations.
+
+Before transistors and integrated circuits (1950s–1960s), large computers were built from relays. The Harvard Mark I computer (1944) used over 3000 relays and weighed 5 tons. Relay computers were slow (relay contacts click/unclick at mechanical speeds, roughly 100 operations per second), but they were reliable and could perform complex calculations.
+
+Today, relay logic is still used in industrial automation, power distribution, and safety systems—particularly where high reliability, the ability to handle large currents, or the absence of electronic interference is important. Understanding how to build logic and arithmetic circuits from relays is practical knowledge for anyone designing automated systems.
+
+This chapter covers relay operation, building logic gates from relays, and assembling those gates into a simple functional computer.
+
+## Prerequisites
+
+- Understanding of Boolean logic and truth tables (Vol 44, Ch 1)
+- Knowledge of basic electric circuits: voltage, current, resistance (Vol 12)
+- Familiarity with relay operation and electromagnetic principles
+- Ability to read and interpret electrical schematic diagrams
+- Skills in wiring and electrical assembly (basic)
+- Comfort with mechanical systems and troubleshooting
+
+## Materials & Tools
+
+### Relay Types and Selection
+
+**Electromagnetic relay (general purpose):**
+- Coil voltage: typically 5V, 12V, or 24V DC (AC relays also exist)
+- Contact arrangement: normally open (NO), normally closed (NC), or changeover (CO)
+- Contact rating: maximum current and voltage the contacts can switch (e.g., 10A at 120V AC)
+- Coil resistance: typically 100 Ω to 1 kΩ (determines current needed to activate)
+
+**For a relay computer project:**
+- Relay type: Single pole, double throw (SPDT) or double pole, double throw (DPDT)
+- Coil voltage: 12V DC (standardized, easy to power)
+- Coil current: 50–100 mA typical (not too demanding for control circuits)
+- Contact rating: 2–5A minimum (to switch logic signals without excessive power waste)
+
+### Full System Components
+
+**Relays:**
+- 10–50 relays (depending on circuit complexity)
+- All should be the same type (voltage, coil resistance) for consistency
+
+**Power supply:**
+- 12V DC supply for relay coils (500 mA capacity minimum for 10 relays)
+- 5V or 3V supply for logic signal level (TTL or lower voltage logic)
+- Ground/return conductors
+
+**Wiring and assembly:**
+- Breadboard or relay rack: to organize and wire relays
+- Jumper wires: various gauges (22 AWG for signal, heavier for power)
+- Terminals: screw terminals or connectors for reliable connections
+
+**Inputs and outputs:**
+- Push buttons or toggle switches (for input signals)
+- LEDs with resistors (for output indication)
+- Audible indicators (buzzer) or lamp outputs (optional)
+
+**Tools:**
+- Multimeter: for troubleshooting and checking continuity
+- Wire stripper and crimper
+- Soldering iron and solder (or crimp connectors, if preferred)
+- Screwdrivers and basic hand tools
+
+## Step-by-Step Instructions
+
+### Part 1: Understanding Relay Operation
+
+**Step 1: Examine a relay.**
+
+A typical electromagnetic relay consists of:
+- **Coil:** a wound coil of wire (creates magnetic field when current flows)
+- **Armature:** a movable iron arm attracted by the magnetic field
+- **Spring:** returns armature to rest position when coil is de-energized
+- **Contacts:** fixed and movable electrical contacts that open/close when armature moves
+
+**Normal state (no current in coil):** Armature rests in "normal" position; contacts are either open (NO) or closed (NC), depending on design.
+
+**Energized state (current in coil):** Magnetic field pulls the armature, moving contacts to alternate position (opening NC contacts, closing NO contacts).
+
+**Step 2: Identify contact configurations.**
+
+- **Normally Open (NO):** Contacts are open when coil is de-energized; close when energized
+- **Normally Closed (NC):** Contacts are closed when de-energized; open when energized
+- **Changeover/Pole:** A single moving contact that can connect to either of two fixed contacts (like a switch)
+
+For logic circuits, **changeover contacts** (SPDT = single pole, double throw) are most useful because one relay can implement NOT logic: the normally-closed contact gives the inverted output.
+
+**Step 3: Measure relay coil parameters.**
+
+1. Use a multimeter to measure coil resistance (ohms)
+   - Example: a 12V relay coil might measure 200–400 Ω
+   - Resistance R = V / I: if rated for 12V and 50 mA, R = 12V / 0.05A = 240 Ω
+
+2. Calculate required control current:
+   - I = V / R = 12V / 240 Ω = 50 mA
+   - This relay needs 50 mA through the coil to energize
+
+3. Note the pull-in voltage (minimum voltage needed to reliably energize) and drop-out voltage (voltage at which relay releases); these determine circuit margins.
+
+### Part 2: Building Relay Logic Gates
+
+**NOT Gate (Inverter):**
+
+A single relay with a normally-closed contact implements NOT:
+- Input signal energizes relay coil
+- Normally-closed contact opens when relay is energized
+- Output is inverted (energized input → open contact → low/logic 0)
+
+**Wiring:**
+1. Connect input signal (5V logic level) in series with a resistor (1–10 kΩ) to relay coil
+2. Take output from normally-closed contact
+3. When input is high (5V), coil energizes, relay opens, output drops to 0
+4. When input is low (0V), coil de-energizes, relay closes, output rises to the supply voltage
+
+**AND Gate (2-input):**
+
+Relay contacts in **series** implement AND:
+1. Use two relays (or two contacts from different relays)
+2. Coil A controlled by input A
+3. Coil B controlled by input B
+4. Wire contacts in series: input from +5V → contact A → contact B → output → ground
+5. Output is high only if both contacts A and B are closed (both inputs energized)
+
+**OR Gate (2-input):**
+
+Relay contacts in **parallel** implement OR:
+1. Use two relays (or two contacts)
+2. Coil A controlled by input A
+3. Coil B controlled by input B
+4. Wire contacts in parallel: input from +5V → contact A or contact B → output → ground
+5. Output is high if either contact A or contact B is closed (either input energized)
+
+**NAND Gate (NOT-AND):**
+
+1. Two relays in series (AND), then pass through a NOT relay
+2. Or: use normally-closed contacts of two relays (in parallel, then invert)
+
+### Part 3: Building a Simple Relay Adder (Half Adder)
+
+A half adder is a circuit that adds two binary digits and produces a sum and carry output.
+
+**Truth table:**
+
+| A | B | Sum | Carry |
+|---|---|-----|-------|
+| 0 | 0 | 0   | 0     |
+| 0 | 1 | 1   | 0     |
+| 1 | 0 | 1   | 0     |
+| 1 | 1 | 0   | 1     |
+
+**Boolean equations:**
+- Sum = A XOR B = (A AND NOT B) OR (NOT A AND B)
+- Carry = A AND B
+
+**Relay implementation:**
+
+**For Carry (simple AND):**
+1. Coil A controlled by input A
+2. Coil B controlled by input B
+3. Carry output: normally-open contacts from A and B in series
+4. Carry is high (1) only when both A and B are energized
+
+**For Sum (XOR, more complex):**
+1. Sum = (A AND NOT B) OR (NOT A AND B)
+2. First term (A AND NOT B):
+   - Coil A energized by input A (NO contact)
+   - Relay C (inverted B): normally-closed contact (NOT B)
+   - Series: A in series with NOT B contact
+3. Second term (NOT A AND B):
+   - Relay D (inverted A): normally-closed contact (NOT A)
+   - Coil B energized by input B (NO contact)
+   - Series: NOT A contact in series with B
+4. OR the two terms: put the two series chains in parallel
+5. Sum output taken from this OR combination
+
+**Wiring sketch (simplified):**
+```
+Inputs A and B
+    ↓
+A and B energize relay coils
+    ↓
+Relay contacts arranged:
+  - Carry: contacts A and B in series (AND)
+  - Sum: two branches in parallel (OR)
+    - Branch 1: A contact in series with NOT-B
+    - Branch 2: NOT-A in series with B contact
+    ↓
+Outputs: Sum and Carry
+```
+
+**Testing the half adder:**
+1. Set inputs A and B to various combinations (0-0, 0-1, 1-0, 1-1)
+2. Check outputs Sum and Carry against the truth table
+3. Adjust relay sensitivity (by changing input resistors) if contacts are not reliably opening/closing
+
+### Part 4: Building a Simple Relay Memory (Latching Relay)
+
+A latching relay is a relay that "remembers" its state until deliberately changed. It can store one bit of information.
+
+**Circuit:**
+1. Two relays (or a dual-coil relay): one to set the latch, one to reset
+2. Cross-coupled normally-closed contacts:
+   - Relay A normally-closed contact in series with Relay B coil
+   - Relay B normally-closed contact in series with Relay A coil
+3. Set input: energizes Relay A; normally-closed contact B opens, holding A in place even after input drops
+4. Reset input: energizes Relay B; normally-closed contact A opens, de-energizing A
+5. Output: normally-open contact A (high when A is latched/set)
+
+**Operation:**
+- At rest: both relays de-energized, contacts in normal state
+- Pulse SET input: Relay A energizes, closes its NO contact; this energizes B's holding contact (A is latched on)
+- Pulse RESET input: Relay B energizes, opens A's holding contact; A de-energizes
+- The latch "remembers" its state (set or reset) until changed
+
+This is the relay equivalent of a flip-flop (one bit of memory).
+
+## Worked Examples
+
+### Example 1: Relay Coil Power Calculation
+
+You have ten 12V relays, each with 200 Ω coil resistance. What power supply do you need?
+
+**Current per relay:** I = V / R = 12V / 200 Ω = 0.06 A = 60 mA
+
+**Total current (if all energized simultaneously):** 10 × 60 mA = 600 mA
+
+**Power supply rating:** 12V, at least 600 mA (0.6 A capacity recommended; 1 A rating gives headroom)
+
+**Power consumption:** P = V × I = 12V × 0.6 A = 7.2 watts
+
+### Example 2: Half Adder Relay Count
+
+Building a half adder as described requires:
+- 2 relays for carrying (input A and B coils)
+- 2 additional relays for NOT logic (inverted A and B)
+- 2 more relays for implementing the XOR (series contacts arranged in parallel branches, then inverted if needed)
+
+**Total: 6 relays minimum** for a basic half adder (more efficient designs exist but are more complex).
+
+### Example 3: Relay Speed Limitation
+
+A typical relay takes 5–20 milliseconds to energize (armature pulls in) and 2–10 milliseconds to de-energize (spring releases).
+
+**Maximum switching frequency:** roughly 1 / (10 ms + 5 ms) = 1 / 15 ms ≈ 67 operations per second
+
+**Compare to transistor logic:** transistors switch in nanoseconds (10^-9 seconds), roughly 1 million times faster than relays. This is why transistors replaced relays in computers.
+
+**Practical implication:** Relay computers are slow but extremely reliable (relays are mechanical and can operate in harsh environments; transistors are sensitive to electrical spikes and temperature).
+
+## Verification Criteria
+
+A relay logic circuit is working correctly if:
+
+1. **Relay energization:** When input signal is applied, you hear the relay click (armature moving), and contacts change state
+2. **Truth table compliance:** Output matches the expected logic function for all input combinations
+3. **Reliable operation:** Contacts open/close consistently; no spurious activations or failures
+4. **Timing:** Relays energize/de-energize at expected speeds (within 10–50 ms typically)
+
+## Common Mistakes
+
+1. **Insufficient coil current:** Relay does not energize; contacts do not move. **Fix:** Check coil resistance and input voltage; increase input voltage or reduce input resistor.
+
+2. **Debouncing issues:** Relay contacts "bounce" (chatter) when closing, creating multiple rapid on-off cycles. **Fix:** Add a capacitor across the input (0.1–1 µF) to smooth transients; increase coil pull-in time.
+
+3. **Contact arcing:** High current through contacts causes arcing (sparking), damaging contacts. **Fix:** Reduce contact current; use higher-rated relays; add a diode across inductive loads.
+
+4. **Incorrect contact configuration:** Using normally-open when normally-closed is needed (or vice versa). **Fix:** Verify relay pinout on datasheet; test individual relay response before building complex circuits.
+
+5. **Lack of isolation:** Logic signals and power circuits not properly isolated, causing noise and false triggering. **Fix:** Use separate grounds for logic and power; shield sensitive signal wires.
+
+6. **Relay chatter at margins:** Relays at the edge of their operating voltage range fail intermittently. **Fix:** Stay well within specified voltage range (e.g., if relay rated 12V, use 12V minimum to 13.5V maximum, not 11V).
+
+## Cross-References
+
+- Vol 44, Ch 1: Binary and Boolean Logic (logic design)
+- Vol 44, Ch 2: Logic Gates (gate implementations)
+- Vol 44, Ch 4: Sequential Logic (memory and flip-flops)
+- Vol 44, Ch 5: Arithmetic (adders and multipliers)
+- Vol 12: Electrical Engineering — Relay operation and circuit design
+- Vol 42: Vacuum Tubes — Historical progression from relays to electron switching
+- Vol 41: Semiconductor Technology — Transistors as relay replacement
