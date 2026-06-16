@@ -94,6 +94,13 @@ Recommendation: preserve as NEW canonical chapters (add DB rows + fix frontmatte
 - This sweep: released stale claim 34-ceramics/06-firing-temperatures (no file, 1h34m); 0 git changes (nothing new to push); nudged agents 1/3/4 (idle ~48min).
 - Cron now job 3f8a664b (every 2h) includes push+deploy-verify.
 
+## Sweep 8 (2026-06-16 14:22 UTC)
+- 197 done / 119 pending (was 166). Big batch reconciled: agent-3 finished Mechanical (7/7), Optics (6/6), Astronomy (mostly), Pharmacology (mostly).
+- Pushed commit 2ecfe9a → Vercel build SUCCESS. 197 chapters live.
+- No stale claims, no drift, 0 build-breakers.
+- Agents idle ~1.5h after burst (last completion 12:36). Nudged 1 & 4 to resume SILENTLY (agent-3 running its autonomous plan). 
+- Pattern holds: agents burst ~15-20 chapters then idle ~1.5h (loop cadence or budget). My limits + likely theirs reset ~5h cycle.
+
 ## Watch items for next iteration
 1. Stale claims: release any `claimed` row older than ~25 min where the file is <500 words (dead/renamed agent).
 2. Inconsistent agent_id values pollute tracking (agent-A/B/C, "4", agent-test). Encourage canonical agent-1..4.
