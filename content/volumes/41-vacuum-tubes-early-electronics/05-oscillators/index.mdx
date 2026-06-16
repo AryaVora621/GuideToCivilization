@@ -1,0 +1,151 @@
+---
+title: "Oscillators: Generating Steady Signals"
+volume: 42
+chapter: 5
+difficulty: advanced
+prerequisites:
+  - "Vol 42: Vacuum Tubes & Early Electronics — the triode and amplification"
+  - "Vol 37: Electrical Engineering — coils, capacitors, and resonance"
+  - "Vol 37: Electrical Engineering — feedback in circuits"
+unlocks:
+  - "vacuum-tubes-early-electronics/radio-transmitters"
+  - "telecommunications/carrier-generation"
+  - "vacuum-tubes-early-electronics/timing-and-clocks"
+tags: [electronics, oscillator, vacuum-tube, feedback, resonance, signals]
+summary: "An oscillator turns steady direct current into a continuous oscillating signal. This chapter explains the feedback principle behind all oscillators, how a tuned circuit sets the frequency, how to build a vacuum-tube oscillator, and why oscillators are the heartbeat of radio and timing."
+---
+
+Every radio transmitter, every clock, every device that produces a tone or a carrier wave depends on an **oscillator**, a circuit that generates a steady, repeating signal all by itself from nothing but a direct-current supply. An amplifier makes a weak signal strong, but an oscillator is more remarkable: it creates a signal where there was none, sustaining a pure rhythm indefinitely. Without oscillators there is no radio to transmit, no precise timekeeping by electronic means, and no carrier on which to send voice or code. The oscillator is the heartbeat of electronics.
+
+This chapter explains how an oscillator works, which rests on a beautifully simple idea: take an amplifier and feed part of its output back to its own input in the right way, and it will sustain a signal forever. You will learn the conditions a circuit must meet to oscillate, how a tuned circuit fixes the frequency, how to build a working vacuum-tube oscillator, and the major oscillator types. It builds on the triode amplifier and on resonance, and it unlocks transmitters and electronic timing.
+
+## The Core Idea: Amplification Plus Feedback
+
+An oscillator is built from two things you already understand: an **amplifier** and **feedback**.
+
+An amplifier takes a small input and produces a larger copy at its output. Now imagine taking a portion of that larger output and feeding it back to the input. If you feed it back in the right phase, **reinforcing** the input rather than opposing it, the signal builds on itself: output feeds input, which produces more output, which feeds more input. A tiny disturbance, always present as electrical noise, grows into a strong, self-sustaining oscillation.
+
+This is **positive feedback**, and it is the heart of every oscillator. (Its opposite, negative feedback, feeds the output back to oppose the input, which stabilizes an amplifier instead. The same loop, opposite phase, opposite effect.)
+
+For oscillation to start and hold steady, two conditions, known together as the conditions for oscillation, must be met:
+
+1. **The feedback must be in phase** (reinforcing), so each cycle pushes the next in the same direction.
+2. **The loop gain must be enough** to replace the energy lost each cycle, at least at the start, so the oscillation builds and then sustains.
+
+Meet both and the circuit rings continuously. Fail either and it stays silent or dies away.
+
+## What Sets the Frequency: The Tuned Circuit
+
+A loop that simply feeds back will oscillate, but at what frequency? The answer is set by a frequency-selective element in the loop. The classic choice is a **tuned circuit**, a coil and capacitor together, which naturally resonates at one particular frequency.
+
+Placed in the feedback loop, the tuned circuit ensures the feedback is strongest and correctly phased only at its resonant frequency, so the oscillation settles there. Change the coil or capacitor and you change the frequency, exactly as tuning a radio does. This is how an oscillator is set to produce, say, the precise carrier frequency a transmitter needs.
+
+Other frequency-setting elements exist, including resistor-capacitor networks for low frequencies and, much later, quartz crystals for extreme precision, but the coil-and-capacitor tuned circuit is the foundation and the one to learn first.
+
+## Prerequisites
+
+- Understanding of the triode (or other amplifying device) and how it amplifies
+- Familiarity with resonance in a coil-and-capacitor circuit
+- The concept of feedback and signal phase
+- A regulated direct-current power supply suitable for the tube
+- Basic circuit assembly and measurement
+
+## Materials & Tools
+
+**Essential:**
+- An amplifying device: a **triode vacuum tube** (or a transistor, for later designs)
+- A **tuned circuit**: a coil and a capacitor, at least one of them adjustable to set frequency
+- A means of **feedback**: a tap on the coil, a separate feedback winding, or a capacitor network
+- A **power supply** appropriate to the device (vacuum tubes need a heated filament and a higher plate voltage)
+- Resistors and capacitors to set the operating conditions and couple the stages
+
+**For testing:**
+- A way to detect the output: an earpiece (for audio frequencies), a lamp, or ideally a meter or a second receiver
+- A means to measure or compare frequency
+
+## Part 1: How a Vacuum-Tube Oscillator Works
+
+The triode amplifies: a small voltage on its grid controls a larger current through it. To make it oscillate, you take some of the output and feed it back to the grid in reinforcing phase, through a tuned circuit that fixes the frequency.
+
+When power is first applied, tiny random fluctuations (noise) at the resonant frequency get amplified, fed back, amplified again, and rapidly build into a strong steady oscillation at the tuned frequency. The oscillation grows until the tube can no longer amplify it further, at which point it stabilizes into a continuous signal. From a steady DC supply, the circuit now produces a clean alternating signal at a frequency you chose.
+
+## Part 2: The Major Oscillator Types
+
+Several classic arrangements differ mainly in how they provide feedback.
+
+### The Armstrong (Tickler) Oscillator
+
+Feedback comes through a separate small coil (the "tickler") magnetically coupled to the main tuned coil. Energy from the output coil is coupled back into the tuned circuit in reinforcing phase. Simple and historically the first; the feedback amount is set by how the coils are positioned.
+
+### The Hartley Oscillator
+
+The tuned coil is tapped partway along its length, and the tap provides the feedback. One simple coil with a tap does the whole job, which makes it economical and easy to build.
+
+### The Colpitts Oscillator
+
+Feedback is taken from a junction between two capacitors in the tuned circuit instead of a coil tap. Often more stable in frequency and well suited to higher frequencies.
+
+### Resistor-Capacitor Oscillators
+
+For low (audio) frequencies, where coils would be impractically large, networks of resistors and capacitors set the frequency and phase instead of a tuned circuit. Used for tones and timing rather than radio carriers.
+
+Begin with the Armstrong or Hartley type, which make the feedback principle most visible.
+
+## Part 3: Building a Simple Hartley Oscillator
+
+1. **Set up the triode** with its filament heated and plate supply connected, biased to amplify.
+2. **Build the tuned circuit:** a coil with a tap, paired with a capacitor (make one adjustable to set frequency), connected to the tube.
+3. **Arrange the feedback:** connect so the tapped portion of the coil feeds the grid in reinforcing phase. If the circuit does not oscillate, the feedback is likely out of phase; reverse the coil connections.
+4. **Apply power:** the circuit should break into oscillation on its own. Confirm with an earpiece (for audio) or a meter or nearby receiver (for radio frequencies).
+5. **Tune:** adjust the capacitor to move the frequency. Confirm the frequency changes as expected.
+6. **Adjust feedback:** too little and it will not start; too much and the output distorts. Aim for reliable starting with a clean signal.
+
+## Part 4: Frequency Stability
+
+A good oscillator holds its frequency steady, which matters enormously for radio (drift means you wander off channel) and for timing. Enemies of stability:
+
+- **Temperature changes** alter coil and capacitor values, shifting frequency. Use stable components and let the circuit warm up.
+- **Supply voltage changes** shift the operating point. Use a regulated supply.
+- **Mechanical vibration** of coils and wires changes their values. Build rigidly.
+- **Loading** by whatever the oscillator drives can pull its frequency. Isolate the oscillator with a buffer amplifier so the load does not disturb it.
+
+For ordinary work a well-built tuned-circuit oscillator is stable enough; for precision timing, later crystal-controlled oscillators hold frequency far better.
+
+## Worked Example: A Radio Transmitter's Carrier Source
+
+Goal: generate a steady radio-frequency carrier for a simple transmitter.
+
+1. **Type:** A Hartley oscillator using a triode, chosen for simplicity.
+2. **Tuned circuit:** Coil and adjustable capacitor sized for the desired broadcast frequency, tapped for feedback.
+3. **Power:** A regulated plate supply and a steady filament supply, so the frequency does not drift with voltage.
+4. **Buffer:** A following amplifier stage isolates the oscillator from the antenna load so transmitting does not pull the frequency.
+5. **Result:** A clean, steady carrier at the chosen frequency, ready to be modulated with voice or code and sent to the antenna. If the frequency drifts, improve component stability and regulation; if it will not start, increase feedback or correct its phase.
+
+## Verification Criteria
+
+Your oscillator works correctly when:
+
+- **It starts on its own** when power is applied, with no external signal.
+- **It produces a steady, continuous output** at the expected frequency.
+- **The frequency tracks the tuning:** adjusting the capacitor or coil moves it predictably.
+- **The output is clean**, a smooth wave rather than a distorted or erratic one, when feedback is set correctly.
+- **The frequency holds reasonably steady** over time and with small supply changes.
+
+## Common Mistakes
+
+- **Feedback out of phase.** The circuit refuses to oscillate. Reverse the feedback coil or connection.
+- **Too little feedback.** It will not start reliably, especially when cold. Increase coupling.
+- **Too much feedback.** The output distorts into a harsh, impure signal. Back the feedback off to the minimum that starts reliably.
+- **Unstable components.** Frequency drifts with heat and vibration. Use stable parts and build rigidly.
+- **Loading the oscillator directly.** Connecting a heavy load pulls the frequency. Add a buffer stage.
+- **Recording frequencies as broken values.** Note specifications in plain words such as "drift kept under 1 part in 1000," never a broken-tag form, so figures copy cleanly into other documents.
+
+## Cross-References
+
+- **The triode and amplification** (this volume): the amplifying device at the oscillator's core.
+- **Coils, capacitors, and resonance** (Electrical Engineering): the tuned circuit that fixes the frequency.
+- **Feedback in circuits** (Electrical Engineering): the principle, positive here, that makes oscillation possible.
+- **Radio transmitters** (this volume): the great consumer of oscillators, which provide the carrier.
+- **Timing and clocks** (this volume): oscillators used to mark precise intervals of time.
+
+The oscillator is where electronics begins to generate rather than merely respond. By wrapping an amplifier in positive feedback around a resonant circuit, you create a steady, controllable signal from a quiet power supply, the carrier of every broadcast and the tick of every electronic clock. Master it and you hold the source of the signals all of telecommunications is built to carry.

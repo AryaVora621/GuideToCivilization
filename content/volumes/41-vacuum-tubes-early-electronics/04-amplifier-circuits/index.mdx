@@ -1,0 +1,131 @@
+---
+title: "Amplifier Circuits: Making Weak Signals Strong"
+volume: 42
+chapter: 4
+difficulty: advanced
+prerequisites:
+  - "Vol 42: Vacuum Tubes & Early Electronics — the triode and how tubes work"
+  - "Vol 9: Electrical Engineering — voltage, current, and circuits"
+unlocks:
+  - "vacuum-tubes-early-electronics/oscillators-and-signal-generation"
+  - "telecommunications/transmitter-and-receiver-design"
+tags: [electronics, vacuum-tubes, amplifier, triode, signals, circuits]
+summary: "An amplifier turns a tiny signal into a large copy of itself — the single most important function in electronics. This chapter explains how a vacuum tube amplifies, how to build a working amplifier stage, and how to keep it stable and faithful."
+---
+
+## Overview
+
+Amplification is the foundation of electronics. A microphone produces a signal far too weak to drive a loudspeaker; a radio antenna picks up a whisper of energy far too faint to hear. The amplifier solves this: it takes a small input signal and produces a larger output that is a faithful, scaled-up copy. With amplification you can detect faint radio signals, drive loudspeakers, boost telephone calls across continents, and build the oscillators and switches that make all electronics possible. Before the amplifier, electrical communication was limited to crude on-off signaling; after it, the age of electronics began.
+
+The first practical amplifying device was the vacuum tube, specifically the triode. A triode can control a large flow of current with a tiny voltage, and that control is exactly what amplification requires. By arranging a triode in a circuit so that a small input voltage governs a large output current through a load, you get a magnified copy of the input. The same principle later moved to transistors, but the vacuum tube came first and remains the clearest way to understand how amplification works.
+
+This chapter explains the principle of amplification, how a triode achieves it, how to build a basic amplifier stage, and the practical matters of biasing, gain, and stability that separate a working amplifier from a howling, distorting mess.
+
+## Prerequisites
+
+- Understanding how a triode works: the cathode, anode (plate), and grid (Vol 42)
+- Basic circuit knowledge: voltage, current, resistance, and Ohm's law (Vol 9)
+- The idea of a signal as a small varying voltage
+- A power supply capable of the higher voltages tubes require
+
+## Part 1: What Amplification Means
+
+### The Core Idea
+
+Amplification does not create energy from nothing. An amplifier uses a small input signal to control a larger amount of energy drawn from a power supply, shaping that larger energy into a magnified copy of the input. Think of a small hand on a large valve: a gentle motion of the hand controls a powerful flow of water. The hand provides almost no power; the water's power comes from the supply. The amplifier is that valve for electrical signals.
+
+### Gain
+
+The key measure of an amplifier is its **gain**: how many times larger the output is than the input. A gain of 50 means a 1-unit input becomes a 50-unit output. Gain can apply to voltage, current, or power. A single tube stage might give a voltage gain of tens; chaining several stages multiplies the gains together to reach the very large amplification needed for, say, a radio receiver.
+
+## Part 2: How the Triode Amplifies
+
+### The Three Elements
+
+A triode has three parts inside an evacuated glass envelope:
+
+- **Cathode:** heated so it emits electrons.
+- **Anode (plate):** held at a positive voltage, it attracts electrons, so a current flows from cathode to plate through the vacuum.
+- **Grid:** a fine mesh between cathode and plate. A small voltage on the grid strongly influences how many electrons get through to the plate.
+
+### The Control Action
+
+Here is the magic: a small change in the grid voltage causes a large change in the plate current. Make the grid slightly more negative and it repels electrons, choking the plate current; make it slightly less negative and current surges. Because the grid is close to the cathode, a tiny grid voltage swing controls a large plate current swing. That large current, passed through a load resistor, produces a large voltage swing across the resistor — a magnified copy of the small grid input. That is amplification.
+
+## Part 3: Building a Basic Amplifier Stage
+
+### The Common-Cathode Stage
+
+The standard single-tube amplifier connects:
+
+1. **Input to the grid.** The small signal is fed to the grid (through a coupling capacitor that passes the signal but blocks steady voltages).
+2. **A load resistor in the plate circuit.** The plate connects through a resistor to the positive supply. As plate current varies, the voltage across this resistor varies — this varying voltage is your amplified output.
+3. **Output from the plate.** The amplified signal is taken from the plate (again through a coupling capacitor).
+4. **Bias on the grid.** The grid is held at a slightly negative average voltage (the "bias") so the tube operates in its responsive middle range.
+
+### Biasing — The Critical Setting
+
+Bias sets the tube's resting operating point. Get it wrong and the amplifier distorts:
+
+- **Too little negative bias:** the tube runs near saturation; large signals get clipped flat on top.
+- **Too much negative bias:** the tube nears cutoff; signals get clipped on the bottom or vanish.
+- **Correct bias:** places the resting point in the middle of the tube's responsive range, so the signal can swing up and down symmetrically without clipping.
+
+A common method is the cathode bias resistor: a resistor in the cathode lead develops a voltage that automatically holds the grid suitably negative relative to the cathode. This self-biasing is simple and stable.
+
+## Part 4: Faithfulness — Avoiding Distortion
+
+An amplifier's job is a faithful copy, larger but the same shape. Distortion — any change in shape — is the enemy.
+
+- **Clipping** happens when the signal is driven beyond the tube's range and the peaks get flattened. Avoid it with correct bias and by not overdriving the input.
+- **Nonlinearity** means the tube amplifies different signal levels by slightly different amounts, warping the waveform. Operating in the tube's most linear region minimizes it.
+- **Negative feedback** is a powerful cure: feed a small portion of the output back to the input in opposition. This trades some gain for greatly improved faithfulness, stability, and reduced distortion. Almost every good amplifier uses some feedback.
+
+## Part 5: Multiple Stages and Stability
+
+### Cascading for More Gain
+
+One stage rarely gives enough amplification. Connect the output of one stage to the input of the next (coupled through a capacitor), and the gains multiply. Three stages of gain 30 each yield an overall gain of 27,000. Each added stage, though, adds noise and the risk of instability.
+
+### The Danger of Oscillation
+
+If output signal leaks back to the input in the reinforcing (positive) direction, the amplifier can break into self-sustaining oscillation — it howls or whistles on its own, useless as an amplifier. Causes include stray coupling between stages, shared power-supply paths, and poor layout. Cures include careful layout, shielding, decoupling the power supply with capacitors at each stage, and avoiding unintended feedback paths. (Deliberately arranging positive feedback turns an amplifier into an oscillator — useful, but a topic for the next chapter.)
+
+## Worked Example: A Microphone Preamplifier
+
+You want to boost a weak microphone signal enough to drive a later power stage.
+
+1. **Feed the mic to the grid** through a coupling capacitor, with a grid resistor to set the input path.
+2. **Set the bias** with a cathode resistor so the tube rests in its linear middle.
+3. **Place a load resistor** in the plate circuit; the amplified signal appears across it.
+4. **Take the output from the plate** through a coupling capacitor to the next stage.
+5. **Add negative feedback** to tame distortion and stabilize the gain.
+6. **Test:** a small input sine wave should emerge much larger and the same clean shape; if the peaks are flattened, adjust the bias or reduce the input.
+
+The faint microphone signal emerges as a strong, clean copy ready for further amplification.
+
+## Verification Criteria
+
+- **The output is a larger copy of the input.** On test equipment, the output waveform matches the input's shape, scaled up by the gain.
+- **Gain matches the design.** Measured output divided by input equals roughly the expected gain.
+- **No clipping at normal levels.** The waveform peaks are rounded, not flattened, across the intended signal range.
+- **Low distortion.** The amplified signal sounds clean and looks like the original; feedback and proper bias keep it faithful.
+- **It is stable.** The amplifier does not oscillate, hum, or howl on its own with no input.
+
+## Common Mistakes
+
+- **Wrong bias.** Incorrect grid bias pushes the tube toward cutoff or saturation, clipping and distorting the signal. Set bias to the linear middle.
+- **Overdriving the input.** Feeding too large a signal drives the tube beyond its range and clips. Match input level to the tube's capacity.
+- **No power-supply decoupling.** Shared supply paths couple stages together and cause hum and oscillation. Decouple each stage with capacitors.
+- **Poor layout in multistage amps.** Stray coupling from output back to input causes oscillation. Lay out carefully, shield, and keep input and output apart.
+- **Forgetting coupling capacitors.** Direct connections pass the tube's steady voltages where only the signal should go, upsetting bias. Couple signals through capacitors.
+- **Ignoring tube heating.** A cold cathode emits no electrons. Allow the heater to warm up before expecting operation.
+
+## Cross-References
+
+- **Vol 42: Vacuum Tubes & Early Electronics — Oscillators and Signal Generation** for turning an amplifier into a signal source with positive feedback.
+- **Vol 42: Vacuum Tubes & Early Electronics — The Triode** for the device's inner workings.
+- **Vol 41: Telecommunications — Transmitter and Receiver Design** for amplifiers in radio.
+- **Vol 9: Electrical Engineering** for the circuit fundamentals.
+
+The amplifier is the beating heart of electronics: the device that makes the weak strong and the faint audible. Understand how a triode's grid controls a large current with a small voltage, set the bias correctly, keep the signal faithful with feedback, and guard against oscillation, and you can build the amplifiers that power radio, sound, and the whole electronic age.

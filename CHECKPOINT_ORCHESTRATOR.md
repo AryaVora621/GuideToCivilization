@@ -61,7 +61,11 @@ Phase 1 (Vols 1-8) ✓ DONE. Then Vols 14-20, then 21-33, then Phase 4-5 (33-45)
 When a lane is exhausted, agent runs `claim-next` with no arg to take anything left.
 
 ## CURRENT STATE (update each sweep)
-- 2026-06-16 18:14 UTC: **247 / 316 done**, 65 pending. **FLEET SCALED TO 8 AGENTS** (user added 5-8, all Haiku).
+- 2026-06-16 21:34 UTC: **266 / 316 done**, 50 pending, 1 active. Build GREEN (latest burst commit live). Burst cron f2b45d55 (13-min) running.
+  - Re-nudged all 8 agents to self-paced GLOBAL claim-next loops (atomic, self-balancing). Agent-6 confirmed mid-write (energy vols). Others resuming.
+  - Biggest remaining: 41-vacuum(6), 39-seafaring(5), 32-trade(5), 16-computing(5), 13-manufacturing(5), 42-magnetic(4), 23-meteorology(4).
+  - REMINDER: when pending=0 & claimed=0 → delete cron f2b45d55, recreate 2h cron (7 */2 * * *), mark project COMPLETE.
+- 2026-06-16 18:14 UTC: 247 / 316 done, 65 pending. **FLEET SCALED TO 8 AGENTS** (user added 5-8, all Haiku).
   - Burst mode: deleted 2h cron, created 13-min sweep cron **f2b45d55** (commit+deploy continuously). RESTORE 2h cron (7 */2 * * *) when pending hits 0.
   - Agent lanes (all on SELF-PACED /loop, fall through to global claim-next when lane empty):
     - a1=rx8y9euk: 02,04,23,26,32  | a2=5d08vogx: 12,13,15,37,39 | a3=52fgricn: 16,43,44 | a4=e9vlfcu5: 40,41,42,45

@@ -1,0 +1,307 @@
+---
+title: "Interferometry: Optical Measurement by Light Interference"
+volume: 40
+chapter: 6
+difficulty: advanced
+prerequisites:
+  - "Vol 40, Ch 1 — Tolerance and Fit (precision measurement concepts)"
+  - "Vol 40, Ch 4 — Gauge Blocks (reference standards)"
+  - "Vol 40, Ch 5 — Surface Plates (precision references)"
+  - "Vol 29: Physics — Light, wavelength, and wave properties"
+unlocks:
+  - "Vol 40: Advanced metrology (laser scanning, surface profiling)"
+  - "Vol 32: Optics — Laser technology and optical systems"
+tags: [metrology, interferometry, optics, precision-measurement, light]
+summary: "Interferometry uses the wave properties of light to measure distances and verify flatness with sub-micrometer precision. When light from two paths interferes, it creates a pattern of bright and dark bands (fringes). By counting fringes or analyzing fringe patterns, you can determine whether surfaces are flat, measure distances to nanometer accuracy, and verify gauge blocks and other precision standards. Optical interferometry is the highest-precision measurement technique available and is the ultimate reference for metrology labs."
+---
+
+## Overview
+
+Interferometry is a measurement technique based on the principle that light is a wave. When light from two sources travels different distances and recombines, the waves either reinforce (bright fringes) or cancel (dark fringes) depending on the path difference. By observing these interference patterns, you can measure distances with unprecedented precision—to nanometers or less.
+
+Interferometry is the foundation of precision metrology:
+- **Verifying gauge blocks:** Certified metrology labs use interferometry to verify that gauge blocks meet specifications
+- **Measuring surface flatness:** Detecting deviations from flat down to 0.0001 mm
+- **Distance measurement:** Determining how far apart two surfaces are with nanometer precision
+- **Validating other instruments:** Using interferometric measurements as the ultimate standard against which all other instruments are calibrated
+
+Understanding the principle of interferometry is important for interpreting precision metrology results, even if you don't build an interferometer yourself.
+
+## Prerequisites
+
+- Understanding of light as a wave (Vol 29: Physics)
+- Knowledge of wavelength and the visible light spectrum
+- Familiarity with precision measurement concepts and tolerances (Vol 40, Ch 1)
+- Understanding of gauge blocks and reference standards (Vol 40, Ch 4)
+- Ability to interpret fringe patterns
+- Comfort with optical setups and safety (laser safety)
+
+## Materials & Tools
+
+### For Understanding Optical Interference
+
+- Source of monochromatic light (laser or filtered incandescent light)
+- Optical components: mirrors, beam splitters, lenses
+- Two flat optical surfaces (glass plates or mirrors)
+- Screen or camera to observe interference patterns
+
+### For Practical Interferometry (Lab Equipment)
+
+**Laser interferometer (industrial):**
+- Helium-Neon (He-Ne) laser (632.8 nm wavelength, red light)
+- Beam splitter (divides laser light into two paths)
+- Retroreflectors (return light precisely along the same path)
+- Photodetectors (measure light intensity)
+- Display or computer (records interference fringe count)
+
+**Optical flat (reference surface):**
+- Precision-ground glass plate (flatness under 0.0001 mm)
+- Used to test surfaces by placing them in contact and observing fringes
+
+**Michelson interferometer (for research/teaching):**
+- Laser or monochromatic light source
+- Beam splitter (50/50 or 45/55 reflectivity)
+- Two mirrors (one movable, one fixed)
+- Lenses and screens for viewing fringes
+
+## Step-by-Step Instructions
+
+### Part 1: Understanding Optical Interference Principle
+
+**Step 1: Recognize that light is a wave.**
+
+Light travels as electromagnetic waves with a characteristic wavelength. For visible light:
+- Red light: ~650 nm (nanometers)
+- Green light: ~550 nm
+- Blue light: ~450 nm
+- Ultraviolet: under 400 nm
+- Infrared: over 700 nm
+
+(1 nanometer = 0.000001 mm = 10^-9 meters)
+
+**Step 2: Understand constructive and destructive interference.**
+
+When two light waves meet, they interact:
+
+**Constructive interference (waves in phase):**
+- Peaks of one wave align with peaks of the other
+- Waves reinforce; result is a bright band
+- Path difference = 0, 1 wavelength, 2 wavelengths, etc. (integer multiple)
+
+**Destructive interference (waves out of phase):**
+- Peak of one wave aligns with trough of the other
+- Waves cancel; result is a dark band
+- Path difference = 0.5 wavelength, 1.5 wavelengths, etc. (half-integer multiple)
+
+**Step 3: Calculate path difference from fringe position.**
+
+If light travels along two different paths and then meets:
+- Path 1 length: L1
+- Path 2 length: L2
+- Path difference: ΔL = L1 − L2
+
+If ΔL = N × λ (where N is an integer and λ is wavelength), constructive interference occurs (bright fringe).
+
+If ΔL = (N + 0.5) × λ, destructive interference occurs (dark fringe).
+
+**Example:**
+- Wavelength: 632.8 nm (He-Ne laser, red light)
+- Path difference at first bright fringe: 632.8 nm (one wavelength)
+- Path difference at second bright fringe: 1265.6 nm (two wavelengths)
+- Each fringe represents a distance of exactly one wavelength
+
+### Part 2: Simple Optical Flat Test (Monochromatic Light)
+
+An optical flat is a precision-ground glass plate with one surface guaranteed flat to under 0.0001 mm. It is used to test other surfaces by placing them in contact and observing interference fringes.
+
+**Step 1: Set up the optical flat and light source.**
+
+1. Place the optical flat on a clean surface (glass plate or mirror)
+2. Direct monochromatic light (laser or filtered white light) at a shallow angle onto the flat
+3. Observe the surface in reflected light
+
+**Step 2: Place a test surface under the optical flat.**
+
+1. Clean both the optical flat and test surface thoroughly
+2. Place the test surface flat against the optical flat (or separate by a small gap)
+3. The two surfaces should make contact or be very close together
+
+**Step 3: Observe the fringe pattern.**
+
+When light reflects off the top surface of the optical flat and the top surface of the test surface below it, interference occurs:
+
+**If surfaces are in perfect contact (or parallel):**
+- No path difference where they touch
+- Fringes are straight, parallel lines
+- Dark fringe at the contact point (destructive interference)
+- Bright fringe at one wavelength spacing away
+
+**If surfaces have a wedge gap (one end higher than the other):**
+- Path difference increases toward the high end
+- Fringes are evenly spaced, parallel lines (if the wedge is uniform)
+- Fringe spacing = 0.5 × λ / (wedge angle in radians)
+
+**If surfaces have a curved or uneven gap:**
+- Fringes are curved or irregular
+- Fringe curvature indicates surface departure from flatness
+
+**Step 4: Interpret the fringe pattern.**
+
+- **Straight, parallel fringes:** Surfaces are flat or have a simple wedge error
+- **Curved fringes:** Surfaces have waviness or are not flat
+- **Fringe number:** Count fringes across the surface; each fringe = 0.0001 mm of separation (for He-Ne laser)
+
+**Example interpretation:**
+- Optical flat placed on a glass plate
+- Fringes are straight and parallel
+- 5 fringes observed across 50 mm width
+- Path difference = 5 × (632.8 nm / 2) = 1584 nm
+- This indicates the glass plate is flat to within about 0.0016 mm (acceptable for most applications)
+
+### Part 3: Laser Interferometer for Distance Measurement
+
+Modern laser interferometers measure distance by counting fringe changes as a reflecting surface moves.
+
+**Step 1: Set up the laser and beam path.**
+
+1. Mount a He-Ne laser on an optical bench
+2. Direct the laser beam through a beam splitter (divides light into two paths)
+3. Direct one beam to a fixed mirror (reference path)
+4. Direct the other beam to a retroreflector attached to the moving surface (measurement path)
+
+**Step 2: Align the paths.**
+
+1. Adjust mirrors and lenses so that reflected beams from both paths recombine
+2. Observe interference fringes on a screen or photodetector
+3. Adjust alignment until fringes are sharp and stable
+
+**Step 3: Move the measurement retroreflector.**
+
+1. As the retroreflector moves toward or away from the beam splitter, the path length changes
+2. Each complete fringe cycle (bright → dark → bright) = one wavelength traveled = 632.8 nm
+3. The number of fringe cycles = distance traveled / wavelength
+
+**Step 4: Count fringe cycles to measure distance.**
+
+Example: A positioning stage moves 10 mm.
+- Number of complete fringe cycles observed: 15,797 cycles
+- Distance = 15,797 cycles × 632.8 nm/cycle = 9.9998 mm
+- Measurement precision: ±1 nanometer (±0.000001 mm)
+
+### Part 4: Verifying Gauge Block Flatness with Interferometry
+
+Certified metrology labs use interferometry to verify that gauge blocks are flat to specification.
+
+**Step 1: Place the gauge block on an optical flat.**
+
+1. Clean both surfaces
+2. Place the gauge block flat against the optical flat (or with minimal gap)
+3. Direct monochromatic light at a shallow angle
+
+**Step 2: Observe fringe pattern.**
+
+- Gauge blocks must be flat to Grade specifications (Grade 0: ±0.05 µm flatness)
+- Fringes should be relatively straight and evenly spaced
+
+**Step 3: Interpret flatness deviation.**
+
+- If fringes are straight: block is flat ✓
+- If fringes curve: block has local deviation from flatness
+- Fringe curvature of 0.5 fringe = 0.316 µm flatness error (one-half wavelength)
+
+**Example:**
+- Grade 0 gauge block placed on optical flat
+- Observed fringe pattern: nearly straight fringes, very slight curvature
+- Estimated flatness deviation: 0.2 fringes = 0.1 µm (within Grade 0 spec of ±0.05 µm?)
+- Block passes verification ✓
+
+### Part 5: Reading Fringe Patterns and Calculating Error
+
+**Step 1: Count fringes carefully.**
+
+1. Identify the center of the fringe pattern
+2. Count from center outward in one direction
+3. Each fringe transition = one wavelength of path difference
+
+**Step 2: Convert fringe count to distance.**
+
+For visible light near 632.8 nm (He-Ne laser):
+- One complete fringe = 632.8 nm
+- Path difference = Fringe count × 632.8 nm / 2 (because light travels down and back)
+
+**Step 3: Interpret in context of tolerance.**
+
+Example: Verifying a 25 mm gauge block against an optical flat.
+- Observed fringes: 0.3 complete fringe
+- Path difference = 0.3 × 632.8 nm / 2 = 95 nm = 0.000095 mm
+- Block thickness varies by 0.00005 mm across its surface (excellent flatness)
+
+## Worked Examples
+
+### Example 1: Calculating Flatness from Fringe Count
+
+You observe a fringe pattern on a 50 mm wide gauge block:
+- Left edge: 0 fringes (reference)
+- Center: 0.5 fringes
+- Right edge: 0.8 fringes
+- Maximum deviation: 0.8 fringes
+
+**Path difference:** 0.8 × 632.8 nm / 2 = 253 nm = **0.000253 mm**
+
+**Interpretation:** Surface deviates from flat by about 0.00025 mm (well within Grade 1 tolerance of ±0.5 µm).
+
+### Example 2: Measuring Distance with Fringe Counting
+
+A precision positioning stage moves an object toward a laser interferometer.
+
+**Observation:** 10,000 complete fringe cycles pass the detector.
+
+**Distance moved:** 10,000 cycles × 632.8 nm = 6.328 mm
+
+**Precision:** ±1 fringe = ±0.0003 mm absolute accuracy (±300 nanometers)
+
+### Example 3: Gauge Block Verification
+
+A Grade 0 gauge block (nominal 10 mm) is tested with an optical flat.
+
+**Expected flatness:** ±0.05 µm (±50 nanometers)
+
+**Observed fringe pattern:**
+- Fringe count at center: 0.1 fringes
+- Fringe count at edge: 0.15 fringes
+- Maximum variation: 0.05 fringes
+
+**Path difference:** 0.05 fringes × 632.8 nm / 2 = 16 nm
+
+**Conclusion:** Block flatness is 0.016 µm, well within Grade 0 spec ✓
+
+## Verification Criteria
+
+Correct use of optical interferometry is confirmed by:
+
+1. **Fringe clarity:** Fringes are sharp and well-defined (indicates good alignment and clean optics)
+2. **Consistent reading:** Multiple measurements give the same fringe count (within ±1 fringe)
+3. **Fringe position stability:** Fringes do not drift or vibrate during observation
+4. **Comparison to standards:** Measurements agree with known reference standards (certified gauge blocks or optical flats)
+
+## Common Mistakes
+
+1. **Dirty optics:** Dust or fingerprints on optical surfaces produce blurry or missing fringes. **Fix:** Clean all optical surfaces with lens paper and acetone; handle only by edges.
+
+2. **Poor alignment:** Reflected beams do not recombine properly; fringes are weak or invisible. **Fix:** Carefully adjust mirrors and beam splitters; use viewing screen to optimize overlap.
+
+3. **Environmental vibration:** Floor vibrations cause fringes to shift and blur. **Fix:** Place interferometer on vibration-isolated table; minimize nearby machinery.
+
+4. **Temperature changes:** Thermal expansion changes path lengths; fringes shift. **Fix:** Allow apparatus to stabilize thermally (30 minutes minimum); control room temperature to ±1°C.
+
+5. **Miscount of fringes:** Counting error leads to wrong distance measurement. **Fix:** Count carefully multiple times; use video recording to count frame-by-frame if needed.
+
+6. **Wrong wavelength assumption:** Using wrong wavelength for calculations. **Fix:** Verify laser wavelength from manufacturer specs; He-Ne lasers are typically 632.8 nm.
+
+## Cross-References
+
+- Vol 40, Ch 1: Tolerance and Fit — Precision and measurement standards
+- Vol 40, Ch 4: Gauge Blocks — Reference standards and their verification
+- Vol 40, Ch 5: Surface Plates — Using precision reference surfaces
+- Vol 29: Physics — Light properties and wave interference
+- Vol 32: Optics — Laser technology and optical systems

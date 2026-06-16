@@ -1,0 +1,141 @@
+---
+title: "Radio Basics: Communication Through the Air"
+volume: 37
+chapter: 7
+difficulty: advanced
+prerequisites:
+  - "Vol 37: Electrical Engineering — circuits, coils, and capacitors"
+  - "Vol 37: Electrical Engineering — electromagnetism and induction"
+  - "Vol 37: Electrical Engineering — power sources and rectifiers"
+unlocks:
+  - "telecommunications/radio-transmitters"
+  - "telecommunications/antenna-design"
+  - "electrical-engineering/amplification-and-vacuum-tubes"
+tags: [electrical, radio, electromagnetic-waves, antenna, communication, telecommunications]
+summary: "Radio sends information across distance with no wires, using electromagnetic waves. This chapter explains how radio waves are made and detected, the parts of a transmitter and receiver, how to build a simple crystal radio, and the principles of tuning and antennas."
+---
+
+Radio is the technology that conquered distance. Before it, a message could travel only as fast as a rider, a ship, or a wire strung pole to pole. Radio freed communication from physical connection entirely: a signal leaps invisibly through the air, over mountains and oceans, to anyone with a receiver. It coordinates ships at sea, warns of storms and enemies, binds scattered settlements into one informed community, and carries knowledge and news where no cable could ever reach. For a rebuilding civilization, radio is the fastest route back to long-distance communication, and a simple receiver can be built with astonishingly little.
+
+This chapter explains what radio waves are, how they carry information, and how the basic machines of radio, the transmitter and the receiver, actually work. It shows you how to build a crystal radio, the simplest working receiver, which needs no power source at all. It builds on your knowledge of coils, capacitors, and electromagnetism, and it opens the door to transmitters, antennas, and the wider world of telecommunications.
+
+## What a Radio Wave Is
+
+You already know that a changing electric current creates a changing magnetic field, and that a changing magnetic field creates an electric field. Push current back and forth rapidly in a wire and these two effects feed each other, breaking free of the wire and radiating outward as a self-sustaining **electromagnetic wave**. That wave is radio.
+
+Key facts to hold onto:
+
+- **Radio waves travel at the speed of light**, the same as visible light, which is itself an electromagnetic wave of much higher frequency. Radio is simply light too low in frequency to see.
+- **Frequency** is how many times per second the wave oscillates. Low frequencies travel far and bend around obstacles; high frequencies carry more information and travel in straighter lines.
+- **Wavelength** is the physical length of one cycle of the wave. Frequency and wavelength are linked: higher frequency means shorter wavelength. This relationship governs how big your antenna must be.
+- **The waves need no medium.** Unlike sound, which needs air, radio waves travel through empty space, which is why they reach across the vacuum from distant worlds.
+
+## How a Wave Carries Information
+
+A plain wave at a steady frequency carries no message; it is just a tone. To send information you **modulate** the wave, varying it in step with the thing you want to send:
+
+- **Amplitude modulation (AM):** vary the strength (height) of the wave to match the sound. The simplest method, and what the first voice and music broadcasts used.
+- **Frequency modulation (FM):** vary the frequency slightly to match the sound. More resistant to noise, but more complex.
+- **On-off keying:** simply switch the wave on and off in patterns, the method of telegraph code. Crude but extremely robust and the easiest to send and receive over great distance.
+
+A receiver reverses the process: it captures the wave and **demodulates** it, extracting the original sound or code.
+
+## Prerequisites
+
+- Understanding of coils (inductors) and capacitors, and that together they can resonate
+- Familiarity with diodes and rectification
+- The idea that a changing current radiates an electromagnetic wave
+- Basic circuit assembly and a way to listen (an earpiece) or measure
+
+## Materials & Tools
+
+**For a simple crystal receiver:**
+- A long wire **antenna** (the longer and higher, the better) and a good **ground** connection
+- A **coil** of wire wound on a tube, to form the tuning inductor
+- A **variable capacitor**, or a way to vary the coil, to tune across frequencies
+- A **detector**: a semiconductor diode, or the classic "cat's whisker", a fine wire touching a crystal of galena (lead sulfide) or pyrite
+- A **high-impedance earpiece** to hear the signal
+- Connecting wire
+
+**For understanding and expansion:**
+- Knowledge of resonance (the coil-and-capacitor tuned circuit)
+- Later: amplifying devices (vacuum tubes or transistors) to make weak signals loud and to build transmitters
+
+## Part 1: The Tuned Circuit, Choosing One Station
+
+The air is full of radio waves at many frequencies at once. To listen to just one, you need a **tuned circuit**, which is simply a coil and a capacitor connected together. Such a circuit naturally "rings" at one particular frequency, its **resonant frequency**, set by the size of the coil and the capacitor. At that frequency it responds strongly; at others, weakly.
+
+By making the capacitor (or the coil) adjustable, you change the resonant frequency and so select which station you hear. This is exactly what the tuning knob on any radio does. Turning it changes the capacitance, sliding the resonant point across the band until it matches the station you want, which then comes through strongly while others fade.
+
+## Part 2: The Detector, Turning Waves into Sound
+
+A modulated radio wave oscillates millions of times a second, far too fast for an earpiece or your ear to follow. The wave's shape (its varying amplitude) carries the sound, but the rapid oscillation must be stripped away.
+
+A **diode** does this. It lets current pass only one way, chopping off half of every oscillation. What remains is a pulsing current whose average follows the original sound's shape. Smoothed slightly, this drives the earpiece and you hear the broadcast. This is **demodulation**, and in the simplest radios a single diode is the entire detector.
+
+The old "cat's whisker" detector is a diode made by hand: a fine springy wire touching a sensitive spot on a natural crystal forms a one-way junction. Finding the sensitive spot is fiddly, but it needs no manufactured parts, which is why it was the heart of the first home radios.
+
+## Part 3: Building a Crystal Radio
+
+The crystal radio is the simplest receiver that works, and it draws all its power from the radio wave itself, needing no battery.
+
+1. **Erect an antenna:** a long wire, as high and as long as you can manage, well clear of obstructions. Length matters: more wire captures more signal.
+2. **Make a good ground:** connect to a metal rod driven into moist earth, or to a water pipe. The antenna and ground together capture the wave.
+3. **Wind the tuning coil:** many turns of insulated wire around a cylindrical form (a bottle or tube). Tap the coil or pair it with a variable capacitor for tuning.
+4. **Connect the detector:** a diode (or cat's whisker on galena) after the tuned circuit.
+5. **Add the earpiece:** a high-impedance earpiece across the detector output, with a small capacitor across it to smooth the signal.
+6. **Tune:** adjust the capacitor (or coil tap) until a station comes through. With a good antenna and a strong nearby station, you will hear voice or music with no power supply at all.
+
+## Part 4: Antennas, the Gateway to the Air
+
+The antenna couples your circuit to the waves in the air, both for receiving and transmitting. A few principles:
+
+- **Size relates to wavelength.** An antenna works best when its length is a simple fraction (often a half or a quarter) of the wavelength it handles. Lower frequencies (longer waves) need longer antennas.
+- **Height and clearance help.** An antenna high and clear of obstructions reaches farther.
+- **A ground or counterpoise** is often needed as the other half of the antenna system, especially for the simple vertical and long-wire types.
+- **The same antenna works both ways.** A good transmitting antenna is a good receiving antenna at the same frequency.
+
+For a receiver, simply more wire, higher up, usually means a stronger signal. For a transmitter, antenna design becomes a precise craft, treated in its own chapter.
+
+## Part 5: From Receiver to Transmitter (the next step)
+
+A transmitter is the mirror of a receiver. Instead of capturing a wave and extracting sound, it generates a steady high-frequency oscillation, modulates it with the sound or code you wish to send, amplifies it, and feeds it to an antenna to radiate. Generating and amplifying that oscillation needs an active device, a vacuum tube or transistor, which is why building a transmitter comes after you can amplify signals. But the principles, resonance, modulation, and antennas, are exactly the ones you have learned here.
+
+## Worked Example: A Settlement Listening Post
+
+Goal: receive weather warnings and news broadcasts at a remote settlement with no electricity.
+
+1. **Antenna:** A long wire strung between two tall poles, as high as possible, with a wire run down to the set.
+2. **Ground:** A copper rod driven into damp soil near the building.
+3. **Receiver:** A crystal radio, coil tuned by a salvaged variable capacitor, a salvaged diode as detector, and a high-impedance earpiece.
+4. **Operation:** An operator tunes across the band each day at broadcast times, listening for the regional station's news and storm warnings.
+5. **Result:** The settlement receives life-saving information with no power source, built entirely from a coil, a diode, an earpiece, and wire. As resources grow, add an amplifier so the whole room can hear, and later a transmitter to reply.
+
+## Verification Criteria
+
+Your radio works correctly when:
+
+- **It tunes:** adjusting the capacitor or coil selects different stations, isolating one from the rest.
+- **It detects:** the diode produces audible sound from a modulated signal, not silence or a steady tone.
+- **The antenna and ground improve reception:** more wire, more height, and a solid ground all strengthen the received signal.
+- **A crystal set works with no battery**, drawing its power from the wave itself.
+- **Stronger or nearer stations come through clearly**, weaker ones faintly, as physics predicts.
+
+## Common Mistakes
+
+- **A poor or short antenna.** The single biggest cause of a silent crystal radio. Make it long and high.
+- **A bad ground.** Without a solid earth connection the simple receiver barely works. Use a rod in damp soil or a water pipe.
+- **A low-impedance earpiece.** Ordinary loudspeakers will not work with the tiny power of a crystal set; use a high-impedance earpiece.
+- **No tuned circuit.** Without a coil-and-capacitor resonator you hear all stations at once, a useless jumble.
+- **Expecting voice from on-off code or vice versa.** Match your detector and listening to the kind of modulation being sent.
+- **Recording wire lengths as broken values.** Note antenna specs in plain words such as "wire no shorter than 15 m," never a broken-tag form, so the figures copy cleanly into other documents.
+
+## Cross-References
+
+- **Coils, capacitors, and resonance** (this volume): the tuned circuit that selects a station.
+- **Rectifiers and diodes** (this volume): the detector that turns waves into sound.
+- **Amplification and vacuum tubes** (this volume): making weak signals loud and building transmitters.
+- **Radio transmitters** (Telecommunications): the mirror of the receiver, sending signals out.
+- **Antenna design** (Telecommunications): the precise craft of coupling circuits to the air.
+
+Radio is civilization's nervous system across distance. With nothing more than a coil, a crystal, an earpiece, and a long wire, you can pull voices and warnings out of the empty air, and from that humble start build your way to transmitters that let scattered communities speak to one another across a rebuilt world.

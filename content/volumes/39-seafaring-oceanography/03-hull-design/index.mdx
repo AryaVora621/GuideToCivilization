@@ -1,0 +1,406 @@
+---
+title: "Hull Design: Optimizing Ship Performance"
+volume: 39
+chapter: 3
+difficulty: advanced
+prerequisites:
+  - "Vol 15: Transportation — ship construction basics"
+  - "Vol 15, Ch 3: Ship Construction — understanding materials and assembly"
+  - "Vol 39, Ch 1: Tides and Currents — understanding water dynamics"
+  - "Vol 11: Mechanical Engineering — hydrodynamic principles"
+unlocks:
+  - "seafaring/advanced-sailing-techniques"
+  - "naval-architecture/performance-optimization"
+  - "seafaring/cargo-capacity-planning"
+tags: [hull, design, hydrodynamics, ship, performance, efficiency]
+summary: "Hull shape determines ship performance: speed, stability, cargo capacity, and seaworthiness. Understanding hull design principles enables building ships optimized for specific purposes and water conditions."
+---
+
+## Overview
+
+The hull is the underwater body of a ship. Hull shape is the primary determinant of ship performance:
+
+- **Speed:** A streamlined hull reduces drag and allows faster travel
+- **Stability:** A wide, deep hull resists capsizing in waves
+- **Cargo capacity:** A voluminous hull carries more cargo
+- **Seaworthiness:** A hull designed for waves has appropriate freeboard and shape
+- **Efficiency:** An efficient hull travels farther on the same fuel
+
+Different ship types require different hull shapes. A cargo vessel prioritizes capacity; a naval vessel prioritizes maneuverability; a fishing boat prioritizes stability in rough water.
+
+This chapter covers hull design principles, how to optimize a hull for specific purposes, and how to evaluate hull performance. Understanding these principles allows builders to create ships suited to their intended use.
+
+## Prerequisites
+
+- Understanding of ship construction and basic hydrodynamics
+- Familiarity with geometry and volume calculations
+- Knowledge of water properties and fluid dynamics (basic level)
+- Understanding of forces: lift, drag, buoyancy
+- Design and planning experience
+
+## Materials & Tools
+
+**Design tools:**
+- Paper and pencil (for sketches)
+- Scale ruler (for proportional drawings)
+- Compass and protractor (for curves and angles)
+- Calculator (for volume and area calculations)
+- Model-building materials (wood, clay, foam for testing designs)
+
+**Analysis tools:**
+- Scales and weights (for testing models in water)
+- Tank or large basin (for testing model seaworthiness)
+- Measuring calipers (for checking hull dimensions)
+- Notebook (for recording observations and measurements)
+
+**For full-scale construction:**
+- Building slipway and supports
+- Timber and fastening materials
+- Workers and tools (same as shipbuilding)
+
+---
+
+## Part 1: Hull Shape and Hydrodynamic Principles
+
+### Understanding Drag and Resistance
+
+Every ship moving through water experiences drag (resistance). Drag has two main components:
+
+1. **Friction drag:** Caused by water friction on the hull surface
+   - Larger surface area = more friction
+   - Rougher surface = more friction
+   - Faster speed = more friction (increases with speed squared)
+
+2. **Form drag (pressure drag):** Caused by water pressure at the bow and stern
+   - Shape matters: a blunt bow creates large pressure wave
+   - A streamlined shape minimizes pressure drag
+   - At higher speeds, form drag becomes dominant
+
+**Total drag** is the sum of friction and form drag. Ships are designed to balance both:
+- A sharp, pointed bow reduces form drag
+- A smooth, fair hull surface reduces friction drag
+
+### Buoyancy and Displacement
+
+A ship floats because water displaced by the hull weighs more than the ship itself. By Archimedes' principle:
+
+Weight of ship = Weight of water displaced
+
+**Displacement** is the volume of water displaced, measured in metric tons (1 cubic meter of water ≈ 1 metric ton).
+
+For a ship:
+- Total displacement (D) = volume of hull underwater × water density
+- Weight of ship and cargo must equal displacement for the ship to float
+
+A ship with a displacement of 100 metric tons must displace 100 cubic meters of fresh water (or slightly less of salt water, which is denser).
+
+### The Waterline and Freeboard
+
+**Waterline:** The line where the water surface touches the hull.
+
+**Freeboard:** The distance from the waterline to the top of the hull (height of the hull above water).
+
+Freeboard determines:
+- **Wave protection:** Taller freeboard keeps water out in waves (good for ocean-going ships)
+- **Stability:** Higher freeboard means the center of gravity is higher (worse for stability)
+- **Wind resistance:** Taller hull catches more wind
+- **Practical limitation:** Launching a ship with very high freeboard is difficult
+
+**Typical freeboard:**
+- Cargo vessel: 0.5–1.0 meter
+- Naval ship: 1.0–1.5 meters
+- Coastal fishing boat: 0.3–0.6 meter
+
+### Metacentric Height and Stability
+
+The metacenter is an imaginary point that determines ship stability. If the center of gravity is below the metacenter, the ship is stable (will right itself when tilted). If above, the ship is unstable (will capsize).
+
+**Metacentric height (GM):** The distance between the center of gravity (G) and the metacenter (M).
+
+- Large GM: Very stable but slow to respond; uncomfortable in waves
+- Small GM: Quick responding but risky (easier to capsize)
+- Negative GM: Capsizing (stability failure)
+
+**For practical ships:**
+- Cargo vessel: GM ≈ 0.5–1.5 meters (moderate stability)
+- Naval vessel: GM ≈ 1.0–2.0 meters (high stability important)
+- Racing yacht: GM ≈ 0.3–0.8 meters (low GM is acceptable for performance)
+
+### Prismatic Coefficient
+
+The **prismatic coefficient (Cp)** is a measure of how uniform the hull shape is along its length.
+
+Cp = (Actual volume of hull) / (Volume of a prism with base = midship section and length = waterline length)
+
+- Cp = 1.0: Perfect prism (very uniform), low speed but high cargo capacity
+- Cp = 0.7: Fine-lined (tapered at bow and stern), higher speed but less cargo
+- Cp = 0.5: Very fine-lined (needle-shaped), racing hull, low cargo capacity
+
+**Trade-off:** Higher Cp means more cargo capacity but slower; lower Cp means faster but less cargo.
+
+For practical ships:
+- Cargo vessel: Cp ≈ 0.75–0.85 (prioritize capacity)
+- Coastal trading vessel: Cp ≈ 0.65–0.75 (balance)
+- Fast sailing ship: Cp ≈ 0.55–0.65 (prioritize speed)
+
+---
+
+## Part 2: Designing Hull Shapes for Different Purposes
+
+### Cargo Vessel Hull
+
+**Objective:** Maximize cargo capacity and stability.
+
+**Design characteristics:**
+- Flat bottom (high volume)
+- Straight sides (cylindrical shape, high Cp)
+- Blunt bow (practical, less finely tapered)
+- Blunt stern (practical)
+- Freeboard: 0.5–1.0 meter (sufficient for river or coastal trade)
+
+**Proportions (typical cargo vessel):**
+- Length: 20–50 meters
+- Beam (width): Length / 3 to Length / 4 (e.g., 15m length → 4–5m beam)
+- Depth: Beam / 1.5 to Beam / 2 (e.g., 4m beam → 2–2.5m depth)
+- Displacement: Typically 30–70% of the volume envelope (Length × Beam × Depth)
+
+**Performance:**
+- Speed: 8–12 knots (typical under sail or favorable current)
+- Stability: Good (wide beam, deep, low center of gravity)
+- Seaworthiness: Moderate (adequate freeboard, but blunt bow pounds in heavy seas)
+
+### Fishing Vessel Hull
+
+**Objective:** Stability in rough water, seaworthiness, adequate speed for fishing grounds.
+
+**Design characteristics:**
+- Deep draft (improves stability)
+- Rounded bilges (smooth underwater shape)
+- Fine bow (cuts through waves rather than plowing)
+- Full stern (helps with towing nets or stability when loaded with catch)
+- Higher freeboard (0.6–1.0 meter, to keep spray off deck)
+
+**Proportions:**
+- Length: 10–20 meters (typical for working fishery)
+- Beam: Length / 3.5 to Length / 3 (e.g., 15m → 4.3–5m)
+- Depth: Beam / 1.2 to Beam / 1.5 (e.g., 4.5m beam → 3–3.75m)
+
+**Performance:**
+- Speed: 8–10 knots (not as fast as cargo vessel, but adequate)
+- Stability: Excellent (deep, rounded shape resists rolling)
+- Seaworthiness: Very good (fine bow handles waves; high freeboard keeps dry)
+
+### Fast Sailing Vessel (Racing or Naval)
+
+**Objective:** Speed, maneuverability, ability to sail to windward.
+
+**Design characteristics:**
+- Fine lines (reduced displacement relative to length)
+- Narrow beam (length / 4 to length / 5)
+- Deep draft (improves resistance to leeway, helps windward ability)
+- Sharp bow (minimizes wave-making resistance)
+- Fine stern (reduces drag)
+- Moderate freeboard (reduces wind resistance)
+
+**Proportions:**
+- Length: 20–40 meters (longer = faster)
+- Beam: Length / 5 to Length / 4.5 (e.g., 30m → 6–6.7m)
+- Depth: Beam / 1.3 to Beam / 1.8 (e.g., 6m beam → 3.3–4.5m)
+
+**Performance:**
+- Speed: 12–16 knots (significant speed advantage)
+- Stability: Lower (narrower beam, higher center of gravity are riskier)
+- Seaworthiness: Good (fine bow handles waves; adequate freeboard)
+
+---
+
+## Part 3: Calculating and Optimizing Hull Performance
+
+### Hull Speed (Froude Number)
+
+The **hull speed** is a theoretical maximum speed dependent on waterline length. The speed is limited by wave-making resistance:
+
+Hull speed (knots) ≈ 1.34 × √(waterline length in meters)
+
+**Example:**
+- Waterline length: 15 meters
+- Hull speed ≈ 1.34 × √15 ≈ 1.34 × 3.87 ≈ 5.2 knots
+
+This is a rough rule; actual speed depends on power, hull shape, and conditions.
+
+**Implication:** Longer ships are faster. A 30-meter ship has a hull speed around 7.3 knots; a 50-meter ship, 9.5 knots.
+
+### Displacement-to-Length Ratio
+
+**Displacement-to-length ratio (D/L):**
+
+D/L = (Displacement in metric tons) / [(Waterline length in meters / 100)³]
+
+This ratio characterizes the ship's build:
+- D/L under 100: Very light (racing yacht or fast naval ship)
+- D/L 100–200: Light to medium (fast cargo ship)
+- D/L 200–300: Medium (typical cargo vessel)
+- D/L over 300: Heavy (barge or slow cargo vessel)
+
+**Higher D/L** means heavier, slower, more cargo capacity.
+**Lower D/L** means lighter, faster, less cargo capacity.
+
+### Volume and Cargo Calculation
+
+**Estimating cargo volume:**
+
+For a rectangular hull:
+Volume = Length × Beam × Depth × block coefficient
+
+Block coefficient is typically 0.6–0.75 for cargo vessels.
+
+**Example:**
+- Length: 20m, Beam: 5m, Depth: 2.5m
+- Block coefficient: 0.70
+- Volume: 20 × 5 × 2.5 × 0.70 = 175 cubic meters
+
+This is the internal volume available for cargo (minus crew space, engine room, etc.). Actual cargo capacity is typically 80–90% of this.
+
+### Testing Hull Design with Models
+
+**Method: Build a scale model and test in water.**
+
+1. **Create model (1:10 scale typical):**
+   - Full-size: 15m vessel → Model: 1.5m vessel
+   - Use wood, clay, or foam
+   - Ensure model is accurate to design proportions
+
+2. **Measure model properties:**
+   - Displacement (weigh, then calculate from volume)
+   - Freeboard (measure from model's waterline to top)
+   - Trim (is it level or tilted in water?)
+
+3. **Test seaworthiness:**
+   - Float model in tank or large basin
+   - Create small waves (push water or use wave maker)
+   - Observe: Does it bob appropriately? Does water wash over deck? Does it capsize easily?
+
+4. **Estimate full-scale performance:**
+   - If model is stable and handles waves well, full-scale ship likely will too
+   - If model shows problems, redesign before building full-size
+
+---
+
+## Worked Examples
+
+### Example 1: Designing a River Trading Vessel
+
+**Requirements:**
+- Carry 50 metric tons cargo
+- Travel 500 km on river (various water depths)
+- Survive short river chop (wave height under 1 meter)
+- Draft must be under 1.5 meters (for shallow sections)
+
+**Design solution:**
+
+1. **Hull type:** Flat-bottomed, cargo-focused
+2. **Dimensions:**
+   - Length: 20 meters (reasonable for river, can navigate locks/bends)
+   - Beam: 5 meters (length/4, balanced)
+   - Depth: 2 meters (accommodates draft and cargo)
+   - Freeboard: 0.6 meters
+
+3. **Displacement:**
+   - Volume: 20 × 5 × 2 × 0.70 = 140 cubic meters
+   - Displacement: 140 metric tons (empty)
+   - With 50 tons cargo: 190 tons total
+   - Draft when loaded: approximately 1.35 meters ✓
+
+4. **Stability:**
+   - Beam/Draft ratio: 5/1.35 ≈ 3.7 (good)
+   - Shape provides good stability for river work
+
+### Example 2: Evaluating a Hull Design Change
+
+**Situation:** A cargo vessel design currently has a beam of 5 meters. The designer proposes increasing beam to 5.5 meters to increase cargo capacity.
+
+**Analysis:**
+
+Current hull:
+- Length: 20m, Beam: 5m, Depth: 2m
+- Displacement: 20 × 5 × 2 × 0.70 = 140 cubic meters
+
+Proposed hull:
+- Length: 20m, Beam: 5.5m, Depth: 2m
+- Displacement: 20 × 5.5 × 2 × 0.70 = 154 cubic meters
+- Additional cargo capacity: 154 − 140 = 14 cubic meters (14 metric tons)
+
+**Trade-off:**
+- Advantage: 10% more cargo capacity
+- Disadvantage: Wider beam may make river navigation difficult (locks, bends); slightly slower due to increased drag
+- Decision: Suitable only if river dimensions allow the wider beam
+
+### Example 3: Comparing Cargo vs. Speed
+
+**Two hull designs for ocean-going trade:**
+
+**Design A (Cargo-optimized):**
+- Waterline length: 30m → Hull speed ≈ 7.3 knots
+- Displacement: 300 metric tons
+- Cargo capacity: 200 metric tons
+- Beam/Length: 5/30 ≈ 1/6 (full)
+
+**Design B (Speed-optimized):**
+- Waterline length: 30m → Hull speed ≈ 7.3 knots (same theoretical max)
+- Displacement: 150 metric tons
+- Cargo capacity: 80 metric tons
+- Beam/Length: 4/30 ≈ 1/7.5 (finer)
+
+**Trade-off:**
+- Design A carries 2.5× more cargo but may be slower (heavier)
+- Design B carries less cargo but is faster (lighter hull)
+- For long ocean voyages: Speed matters (reaches market sooner); Design B preferred
+- For river/coastal trading: Cargo matters more; Design A preferred
+
+---
+
+## Verification
+
+**You understand hull design when:**
+
+1. You can explain how hull shape affects drag, stability, and cargo capacity
+2. You can calculate displacement and draft for a given hull
+3. You can compare hull designs using proportions and coefficients
+4. You understand the trade-offs between speed, stability, and cargo capacity
+5. You can design a hull optimized for a specific purpose (cargo, fishing, speed)
+6. You can estimate hull speed from waterline length
+7. You can test hull designs using physical models
+
+---
+
+## Common Mistakes
+
+1. **Ignoring displacement calculations:** Designing a hull without calculating displacement can result in a ship that is too heavy (sits too low) or too light (rides too high). Always verify displacement matches intended load.
+
+2. **Overestimating beam narrowness:** Making a hull too narrow for its length sacrifices cargo capacity and stability without much speed gain. Keep beam-to-length ratio within practical ranges (1/3–1/5).
+
+3. **Insufficient freeboard:** A hull designed with too little freeboard will swamp in waves or spray the deck excessively. Always provide adequate freeboard for the intended waters.
+
+4. **Underestimating wave effects:** A hull design that works in calm water may fail in waves. Test with models or learn from similar ships before committing to full-scale construction.
+
+5. **Prioritizing speed over seaworthiness:** A very fine-lined, fast hull may be unstable or uncomfortable in rough water. Balance speed with practical seakeeping ability.
+
+6. **Ignoring construction constraints:** A hull design that is beautiful on paper may be impossible to build with available materials or labor. Design with construction methods in mind.
+
+7. **Forgetting internal volume losses:** A hull's full volume is not available for cargo; subtract engine room, crew space, ballast tanks, and structural components. Cargo capacity is typically 70–80% of hull volume.
+
+8. **Misjudging stability from static calculations:** A ship that is stable when upright may be unstable when heeled (tilted) in wind. High-speed sailing ships and naval vessels need careful stability analysis.
+
+9. **Over-engineering the hull:** A hull that is too robust wastes material and weight. Design for the expected conditions, not worst-case scenarios.
+
+10. **Not accounting for trim and heel:** A ship that is heavier at bow or stern will trim (tilt lengthwise) or heel (tilt sideways) unevenly. Balance weight distribution to keep the ship level for optimal performance.
+
+---
+
+## Cross-References
+
+- See Vol 15: Transportation — ship construction techniques
+- See Vol 15, Ch 3: Ship Construction — detailed building methods
+- See Vol 39, Ch 1: Tides and Currents — understanding water dynamics
+- See Vol 39, Ch 2: Navigation and Sailing — using hulls effectively
+- See Vol 11: Mechanical Engineering (hydrodynamics and forces)

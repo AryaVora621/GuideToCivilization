@@ -1,0 +1,165 @@
+---
+title: "Energy Storage: Saving Power for When You Need It"
+volume: 34
+chapter: 6
+difficulty: intermediate
+prerequisites:
+  - "Vol 34: Energy Systems — forms of energy and conversion"
+  - "Vol 9: Electrical Engineering — basic electricity and circuits"
+unlocks:
+  - "energy-systems/batteries-and-electrochemical-storage"
+  - "energy-systems/pumped-and-mechanical-storage"
+  - "energy-systems/microgrids-and-power-management"
+tags: [energy, storage, batteries, flywheel, pumped-hydro, thermal-storage]
+summary: "Energy supply rarely matches demand in time: the sun sets, the wind drops, the river floods then dries. Energy storage bridges that gap. This chapter surveys the practical ways to store energy — mechanical, thermal, chemical, and electrical — and how to choose among them."
+---
+
+## Overview
+
+The central problem of energy is timing. The sun shines at midday but you cook at night. The wind blows in gusts but your tools need steady power. A river runs strong in spring and weak in late summer. Almost every energy source delivers power when it wants to, not when you need it. Energy storage is the bridge across that gap: it captures energy when it is plentiful and releases it when it is scarce.
+
+There is no single best way to store energy. Each method trades off how much it holds, how fast it can deliver, how long it keeps the energy without loss, how much it costs, and how complex it is to build. A water tank on a hill, a heated mass of stone, a spinning wheel, a charged battery, and a tank of fuel are all energy storage, each suited to different needs. Understanding the options lets you match the storage to the job: a flywheel smooths a workshop's power, a hot rock keeps a house warm overnight, a reservoir stores a season's worth of hydropower, and a battery runs a lamp after dark.
+
+This chapter surveys the practical storage methods a rebuilding civilization can build, explains the trade-offs, and helps you choose.
+
+## Prerequisites
+
+- Understanding the forms of energy: kinetic, potential, thermal, chemical, electrical (Vol 34)
+- Basic electricity for the electrical methods (Vol 9)
+- Awareness that all storage loses some energy in the round trip
+- Some source of energy worth storing (solar, wind, hydro, muscle, fuel)
+
+## The Universal Trade-offs
+
+Before the methods, learn the questions you must ask of any storage system:
+
+- **Capacity:** How much total energy can it hold? (Enough for an hour, a night, a season?)
+- **Power:** How fast can it charge and discharge? (A trickle, or a sudden surge?)
+- **Round-trip efficiency:** How much energy comes back out compared to what went in? Every method loses some.
+- **Self-discharge / retention:** How long can it hold energy before it leaks away? A flywheel loses energy in minutes; a fuel tank holds it for years.
+- **Durability and cost:** How long does it last, how many cycles, and what does it take to build and maintain?
+
+No method wins on all counts. Storage design is choosing the right compromise for your need.
+
+## Part 1: Mechanical Storage
+
+### Pumped Hydro (Gravitational Potential)
+
+The most scalable storage humans have. When energy is plentiful, pump water uphill into a reservoir. When energy is needed, let it flow back down through a turbine to recover the energy.
+
+- **Strengths:** Huge capacity, very long retention (water sits in the reservoir indefinitely), simple and durable.
+- **Weaknesses:** Needs suitable terrain (a height difference and a place for two reservoirs), and round-trip efficiency is moderate (roughly 70 to 80 percent in good systems).
+- **Use:** Seasonal and large-scale storage where geography allows. This is the backbone of grid-scale storage.
+
+### Flywheels (Kinetic)
+
+A heavy wheel spun up to high speed stores energy in its motion; slowing it down releases that energy. Mechanical flywheels have smoothed the power of mills and engines for centuries.
+
+- **Strengths:** Delivers and absorbs power quickly, very durable, simple.
+- **Weaknesses:** Holds energy only briefly (friction and air drag bleed it away in minutes to hours), modest total capacity.
+- **Use:** Smoothing fluctuating power — keeping a workshop's machinery running steadily between power pulses.
+
+### Springs, Weights, and Compressed Air
+
+Winding a spring, hoisting a heavy weight, or compressing air in a tank all store energy mechanically. Weight-and-pulley systems powered clocks for centuries. Compressed air can drive tools.
+
+- **Strengths:** Simple, repairable, no exotic materials.
+- **Weaknesses:** Modest capacity; compressed air loses energy as heat unless managed.
+- **Use:** Small-scale, local mechanical power and timing devices.
+
+## Part 2: Thermal Storage
+
+Heat is energy, and storing heat is often the cheapest storage of all.
+
+### Sensible Heat (Heating a Mass)
+
+Heat up a large mass — water, stone, brick, earth — when energy is plentiful, then draw the heat back out later. A masonry stove, a stone wall warmed by the sun, or an insulated tank of hot water all store thermal energy.
+
+- **Strengths:** Very cheap, simple, large capacity in bulk.
+- **Weaknesses:** Loses heat over time unless well insulated; only useful where you need heat (or can convert it).
+- **Use:** Space heating overnight, hot water, drying, and pairing with solar thermal collectors.
+
+### Latent Heat (Phase Change)
+
+Materials absorb a lot of energy when they melt and release it when they solidify, all at a steady temperature. Storing heat in a melting material packs more energy into less space than simply warming it.
+
+- **Use:** Holding a steady temperature, such as keeping a space warm at a fixed comfortable level overnight.
+
+## Part 3: Chemical Storage
+
+### Fuels
+
+The densest practical storage of all is chemical fuel: wood, charcoal, ethanol, biodiesel, biogas. Each holds enormous energy per kilogram and keeps it for years with no leakage.
+
+- **Strengths:** Extremely high energy density, indefinite retention, easy to transport.
+- **Weaknesses:** Releasing the energy means combustion (heat and emissions), and conversion back to mechanical or electrical power is inefficient.
+- **Use:** Long-term and portable energy storage; the natural partner to engines and stoves. (See the biogas, ethanol, and biodiesel chapters.)
+
+### Batteries (Electrochemical)
+
+Batteries store electrical energy as chemical energy and release it on demand. Even simple batteries can be built from common metals and acids or salts.
+
+- **Strengths:** Deliver electricity directly and on demand; portable; reasonably efficient.
+- **Weaknesses:** Limited capacity per weight compared to fuel, degrade with cycling, and the best chemistries need refined materials.
+- **Use:** Storing solar or wind electricity for lighting, electronics, and small tools. Covered in detail in a dedicated chapter.
+
+## Part 4: Electrical Storage (Direct)
+
+### Capacitors
+
+A capacitor stores energy directly in an electric field between conducting plates. It charges and discharges almost instantly.
+
+- **Strengths:** Extremely fast power delivery, very long life, no chemical wear.
+- **Weaknesses:** Tiny capacity compared to batteries; leaks charge over time.
+- **Use:** Smoothing electrical pulses, timing circuits, and brief high-power bursts, not bulk storage.
+
+## Part 5: Choosing the Right Storage
+
+Match the method to the timescale and form of energy you need:
+
+- **Seconds to minutes (smoothing power):** flywheel, capacitor.
+- **Hours (overnight):** battery, hot-water or masonry thermal storage.
+- **Days to seasons (long term):** pumped hydro, fuel.
+- **Need electricity out:** battery (bulk), capacitor (bursts).
+- **Need heat out:** thermal mass or phase-change storage.
+- **Need portability:** fuel or battery.
+
+Often the best system combines methods: a solar setup might use thermal mass for heating, a battery for lighting, and stored fuel as a backup for cloudy stretches.
+
+## Worked Example: Powering a Homestead Day and Night
+
+A homestead has solar panels and a small stream.
+
+1. **Daytime electricity:** Solar panels run tools directly at midday and charge a battery bank.
+2. **Nighttime lighting:** The battery bank releases stored electricity for lamps and electronics after dark.
+3. **Heating:** A solar thermal collector heats a large insulated water tank (thermal storage) during the day, releasing warmth into the night.
+4. **Seasonal backup:** The stream's water is pumped into an uphill pond during wet months (pumped hydro), released through a small turbine in the dry season.
+5. **Deep backup:** A store of biogas or ethanol fuels a generator for long stretches of bad weather.
+
+Each storage method covers a different timescale, and together they keep power available around the clock and around the year.
+
+## Verification Criteria
+
+- **Energy comes back out.** Charge the store, then draw it down; you should recover a substantial fraction of what you put in (know roughly what efficiency to expect for each method).
+- **It holds long enough.** The storage retains usable energy across the timescale you need it for — minutes for a flywheel, a night for a battery, a season for a reservoir.
+- **It delivers at the needed rate.** The store can supply power fast enough for the load (a flywheel for surges, a battery for steady draw).
+- **It survives cycling.** Repeated charge and discharge does not rapidly destroy the system; capacity holds up over many cycles.
+- **The system meets demand.** Over a full day and night, stored energy plus fresh supply covers the loads without running out.
+
+## Common Mistakes
+
+- **Mismatching storage to timescale.** Using a flywheel for overnight storage fails (it leaks energy in minutes); using a battery for seasonal storage is wasteful. Match the method to the duration.
+- **Ignoring round-trip losses.** Every store returns less than it took in. Size the system for the energy you actually get back, not what you put in.
+- **No insulation on thermal storage.** A hot mass with poor insulation leaks its energy uselessly. Insulate thermal stores well.
+- **Over-cycling batteries.** Deeply draining and recharging batteries constantly shortens their life. Manage depth of discharge.
+- **Single point of failure.** Relying on one storage method leaves you stranded when conditions defeat it. Combine methods for resilience.
+- **Forgetting safety.** Stored energy is concentrated energy: pressurized air, charged batteries, and raised water all release suddenly if mishandled. Build in safety margins.
+
+## Cross-References
+
+- **Vol 34: Energy Systems — Batteries and Electrochemical Storage** for building and using batteries.
+- **Vol 34: Energy Systems — Pumped and Mechanical Storage** for hydro and flywheel detail.
+- **Vol 34: Energy Systems — Microgrids and Power Management** for combining sources and storage into a reliable supply.
+- **Vol 9: Electrical Engineering** for the electrical foundations.
+
+Energy storage is what turns intermittent, unreliable energy sources into dependable power. There is no perfect store, only the right store for each job: fast or slow, brief or lasting, heat or electricity or motion. Learn the trade-offs, combine methods to cover every timescale, and you can keep energy flowing whenever and wherever your community needs it.

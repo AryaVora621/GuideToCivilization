@@ -1,0 +1,112 @@
+---
+title: "Vacuum Diode Construction: Building the First Electronic Valve"
+volume: 42
+chapter: 2
+difficulty: long-term
+prerequisites:
+  - "Vol 42, Ch 1 — Thermionic emission (the principle)"
+  - "Vol 37: Electrical Engineering — Current, voltage, vacuum"
+  - "Vol 29: Optics and Instrument Making — Glassblowing, sealing"
+  - "Vol 10: Materials — Metals, melting points, getters"
+unlocks:
+  - "vacuum-tubes/triode-and-amplification"
+  - "electrical/rectification-and-power-supplies"
+tags: [vacuum-tubes, diode, rectifier, thermionic, electronics, long-term]
+summary: "The vacuum diode is the simplest electron tube: a heated filament and a plate sealed in an evacuated glass envelope that lets current flow one way only. This chapter explains how to build one — the parts, the vacuum, the getter, and the assembly — and how it rectifies alternating current."
+---
+
+## Overview
+
+The vacuum diode is the first and simplest electronic device, and building one teaches the foundations of all early electronics. Inside an evacuated glass bulb sit just two electrodes: a **heated filament (cathode)** that boils off electrons, and a cold metal **plate (anode)** to collect them. Because the heated cathode emits electrons but the cold plate does not, current can flow through the vacuum in only one direction — from cathode to plate when the plate is made positive, and not at all when it is negative. This one-way behavior, **rectification**, is the diode's entire purpose, and it was the property that launched electronics: turning alternating current into the steady direct current that powers electronic circuits.
+
+This chapter is a construction guide. The physics of *why* a hot cathode emits electrons (thermionic emission) is covered in Ch 1; here we build the device that exploits it. You will learn the parts, why the vacuum is essential, how to achieve and preserve it, how to assemble the electrodes, and how the finished diode rectifies. The vacuum diode is also the direct ancestor of the triode (Ch 3), which adds a third electrode to gain amplification — so mastering diode construction is the necessary first step toward building active electronics from scratch.
+
+## How the Diode Works
+
+The operating principle is elegantly one-directional:
+
+- The **cathode is heated** (directly, as a glowing filament, or indirectly, as a sleeve heated by an internal filament) until it emits a cloud of electrons into the surrounding vacuum — thermionic emission.
+- When the **plate is made positive** relative to the cathode, it attracts these negative electrons; they cross the vacuum and current flows.
+- When the **plate is made negative,** it repels the electrons, and since the cold plate emits none of its own, no current flows.
+
+Thus the diode conducts in one direction only. Feed it alternating current — which reverses direction continuously — and it passes only the half-cycles where the plate is positive, blocking the rest. The output is a pulsing but **one-directional** current: alternating current has been **rectified** toward direct current. This is what the diode is for.
+
+## Why the Vacuum Matters
+
+The "vacuum" in vacuum tube is not incidental — it is essential, and getting it right is the hardest part of construction:
+
+- **Electrons must travel freely.** In air, emitted electrons collide with gas molecules and never reach the plate cleanly. A good vacuum gives them an unobstructed path.
+- **A hot filament burns up in air.** Oxygen attacks the glowing cathode and destroys it in moments. The vacuum protects it, letting it run hot for thousands of hours.
+- **Residual gas causes problems.** Stray gas molecules get ionized by the electron stream, disrupting operation, causing a bluish glow, and bombarding and degrading the cathode. The better the vacuum, the cleaner and longer-lived the tube.
+
+So the entire device hinges on creating and *maintaining* a high vacuum inside a sealed glass envelope — a real engineering challenge, since glass, metal, and the electrodes themselves slowly release trapped gas.
+
+## The Parts
+
+A vacuum diode needs:
+
+- **The cathode (filament).** A wire — often tungsten, or a coated wire for better emission — that glows when heated by a current. Coated (oxide) cathodes emit far more electrons at lower temperature and are preferred where you can make the coating; plain tungsten is simpler but runs hotter. In indirectly heated designs, a separate heater warms a coated cathode sleeve.
+- **The anode (plate).** A metal plate or cylinder surrounding or facing the cathode, to collect electrons. It needs no heating but must withstand the heat radiated from the cathode and the energy of arriving electrons without releasing its own gas, so it is made of a refractory metal (nickel, molybdenum) and often blackened to radiate heat.
+- **The glass envelope.** A sealed bulb that holds the vacuum and supports the electrodes, with airtight seals where the electrode leads pass through the glass.
+- **Lead-in wires** that pass through the glass to connect the electrodes to the outside, made of a metal whose thermal expansion matches the glass so the seals stay airtight as the tube heats and cools.
+- **The getter** — a small amount of reactive metal (such as barium) that, once flashed, absorbs residual gas and keeps the vacuum good over the tube's life (explained below).
+- **A base** with pins for connecting the tube into a circuit.
+
+## Achieving the Vacuum and the Getter
+
+Building the vacuum has two stages, and the second is the clever one:
+
+1. **Pump it down.** With the electrodes assembled and the envelope nearly sealed, connect it to a vacuum pump and evacuate it as far as the pump allows, removing the bulk of the air. While pumping, **heat the whole tube** (bake it) and run the electrodes hot to drive out gas trapped in the glass and metal — "outgassing." This step is vital: gas hidden in the parts will leak back out later and spoil the vacuum if not baked out now.
+2. **Seal and getter.** Seal off the envelope from the pump. The vacuum is good but never perfect, and parts keep slowly outgassing. So inside the tube sits the **getter** — reactive metal that, after sealing, is flashed (heated suddenly, often by induction) so it vaporizes and deposits as a thin mirror-like film on the inner glass. This film chemically traps residual and newly released gas molecules, *continuously improving and maintaining the vacuum* for the tube's whole life. The silvery patch you see inside a vacuum tube is the getter film at work.
+
+The getter is what makes a long-lived sealed tube possible; without it, slow outgassing would degrade the vacuum and kill the tube.
+
+## Step-by-Step Construction
+
+1. **Prepare the electrodes:** form the filament/cathode and the plate, mounting them on a glass or mica support structure that holds them in fixed position without touching, with the plate surrounding or facing the cathode at a small, even gap.
+2. **Attach lead-in wires** of matched-expansion metal to each electrode, arranged to pass through the glass base.
+3. **Mount the assembly** in the glass envelope and fuse the leads into airtight glass seals.
+4. **Add the getter** to the assembly (a small holder of reactive metal).
+5. **Evacuate:** connect to the vacuum pump through a small tubulation, pump down, and **bake** the whole tube while running the electrodes hot to outgas the parts thoroughly.
+6. **Seal off** the tubulation under vacuum.
+7. **Flash the getter** to deposit the gas-absorbing film and perfect the vacuum.
+8. **Mount the base** and pins; test.
+
+## Testing the Finished Diode
+
+A good diode, tested:
+
+- **Lights up:** apply heater power and the filament glows steadily without burning out, indicating an intact filament and adequate vacuum.
+- **Conducts one way only:** apply a positive plate voltage and current flows; reverse it and current stops. This rectifying check is the core test.
+- **Shows a clean getter mirror,** not a milky or white deposit (white getter means air leaked in — a failed seal).
+- **No blue gas glow** of significance: a faint glow near the plate can be normal, but a strong bluish haze through the tube signals too much residual gas.
+
+## A Worked Example: Rectifying AC
+
+Use the diode to make pulsing DC from AC:
+
+- Connect the diode's plate to an AC source through the load, and heat the filament.
+- During the half-cycle when the source makes the plate positive, the diode conducts and current flows through the load.
+- During the opposite half-cycle, the plate goes negative, the diode blocks, and no current flows.
+- The result across the load is current in **one direction only,** pulsing once per cycle — half-wave rectified DC. Add a smoothing capacitor (Vol 37) and it becomes steady DC suitable for powering circuits.
+
+This is exactly how early radios and electronics derived their direct-current power supplies from the alternating mains.
+
+## Common Mistakes
+
+- **Inadequate vacuum.** The single most common failure. A poor vacuum lets gas ionize, glows blue, eats the cathode, and shortens life drastically. Pump hard, bake thoroughly, and getter well.
+- **Skipping the bake-out.** Gas hidden in glass and metal leaks back out and ruins the vacuum after sealing. Outgas by baking while pumping.
+- **Mismatched seal metal.** Lead-in wires whose expansion differs from the glass crack the seals on heating and admit air. Use matched-expansion metals.
+- **Overheating or underheating the filament.** Too hot and it burns out fast; too cool and it emits too few electrons. Run the cathode at its designed temperature.
+- **Electrodes touching or unevenly spaced.** A short or an uneven gap ruins operation. Mount the structure rigidly with a consistent cathode-to-plate gap.
+- **Ignoring a white getter.** A white (rather than silvery) getter means the tube has lost vacuum and is dead; do not trust it.
+
+## Cross-References
+
+- **Vol 42, Ch 1 — Thermionic emission:** why a heated cathode emits electrons.
+- **Vol 42, Ch 3 — The triode and amplification:** adding a control grid to make an active, amplifying device.
+- **Vol 37: Electrical Engineering — Rectification and power supplies:** turning the diode's one-way current into smooth DC.
+- **Vol 29: Optics and Instrument Making — Glassblowing and sealing:** the envelope and airtight seals.
+- **Vol 10: Materials — Refractory metals and getters:** the materials that survive the heat and hold the vacuum.
+
+The vacuum diode is electronics in its simplest form: heat a cathode, collect its electrons on a plate, seal it in a vacuum, and you have a one-way valve for electric current. Build one well — above all, win and keep the vacuum — and you hold the rectifier that powered early electronics and the foundation on which the amplifying triode, and everything after it, was built.

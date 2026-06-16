@@ -1,0 +1,376 @@
+---
+title: "Hard Disk Principles: Data Storage on Magnetic Media"
+volume: 42
+chapter: 4
+difficulty: advanced
+prerequisites:
+  - "Vol 5: Physics — magnetism and electromagnetic induction"
+  - "Vol 42, Ch 1: Magnetic Core Memory (understanding magnetic storage basics)"
+  - "Vol 42, Ch 2: Tape Recording (linear magnetic recording)"
+  - "Vol 12: Electrical Engineering (understanding circuits and signals)"
+unlocks:
+  - "computing/digital-storage-systems"
+  - "computing/data-retrieval-methods"
+  - "electronic-storage/media-preservation"
+tags: [disk, storage, magnetic, data, recording, digitization]
+summary: "Hard disks use rotating magnetic platters to store digital data at high density. Understanding hard disk principles enables data recovery, storage design, and long-term data preservation."
+---
+
+## Overview
+
+A hard disk is a data storage device that uses rotating magnetic platters to record digital information. Hard disks are valuable in post-collapse civilization because they:
+
+1. **Store large amounts of data:** A single disk can store gigabytes to terabytes of information (books, medical records, technical manuals)
+2. **Persist data without power:** Data remains intact even when the device is unpowered
+3. **Survive mechanical failure:** Unlike tape, hard disks can often be repaired or have data recovered even if damaged
+4. **Are scalable:** Multiple disks can be combined for higher capacity
+
+Hard disks work by magnetizing spots on a rotating platter to represent 1's and 0's (binary data). By understanding hard disk principles, you can maintain, repair, and recover data from storage media.
+
+This chapter covers hard disk design, how data is written and read, encoding methods, common failures, and data recovery basics.
+
+## Prerequisites
+
+- Understanding of magnetism and magnetic fields
+- Familiarity with binary notation (1's and 0's)
+- Knowledge of rotation and mechanical systems
+- Understanding of electronics and signal detection
+- Basic understanding of data storage concepts
+
+## Materials & Tools
+
+**For hard disk inspection:**
+- Screwdrivers (various sizes)
+- Platter removal tools (soft-edged, non-magnetic)
+- Magnifying glass or microscope (to observe disk surface)
+- Dust-free cloth
+- Anti-static mat or bracelet
+
+**For data recovery:**
+- Donor hard disk (for parts, if needed)
+- Read/write head replacement parts (if available)
+- Platter cleaning supplies (specialized, non-abrasive)
+- Computer with disk controller
+- Specialized data recovery software (if available)
+
+**For preservation:**
+- Climate-controlled storage (cool, dry environment)
+- Protective cases
+- Desiccant packets (to control humidity)
+- Labels and documentation
+
+---
+
+## Part 1: Understanding Hard Disk Structure and Operation
+
+### Components of a Hard Disk
+
+**Platter:**
+- A flat, circular disk coated with magnetic material
+- Typical diameter: 3.5 inches (desktop), 2.5 inches (laptop), or smaller (mobile)
+- Surface: Very smooth (microscopic imperfections of under 1 micrometer)
+- Coating: Iron oxide or other ferromagnetic material
+- Rotates at 5,400 to 15,000 RPM (revolutions per minute)
+
+**Read/write heads:**
+- Tiny electromagnets suspended above the platter
+- Floating on a thin cushion of air (typically 10–50 nanometers above surface)
+- Write head: Creates magnetic field to record data
+- Read head: Detects magnetic field from platter to retrieve data
+- Positioned by actuator arm
+
+**Actuator arm:**
+- Moves read/write heads across the platter
+- Controlled by voice coil motor (similar to loudspeaker mechanism)
+- Positions heads at different disk locations (tracks)
+
+**Spindle motor:**
+- Rotates the platter at constant speed
+- High precision; must maintain exact RPM
+
+**Controller circuit:**
+- Manages read/write operations
+- Converts computer data to magnetic signals and vice versa
+- Handles error correction
+
+### How Data Is Written
+
+1. **Head positioning:** Actuator positions read/write head at desired location on platter
+2. **Magnetization:** Write head creates magnetic field, orienting iron oxide particles
+3. **Direction encoding:** Direction of magnetization represents 1 or 0 (north = 1, south = 0, or vice versa)
+4. **Sequential writing:** As platter rotates, head writes data in circular tracks
+5. **Speed:** Modern drives write at rates of 100–300 megabytes per second
+
+### How Data Is Read
+
+1. **Head positioning:** Actuator positions read head over desired track
+2. **Detection:** Read head detects changing magnetic field as platter rotates past
+3. **Signal generation:** Magnetic changes induce electrical signals in read head
+4. **Amplification:** Weak signals are amplified and sent to controller
+5. **Decoding:** Controller interprets signals as 1's and 0's
+
+### Data Organization
+
+**Sectors:**
+- Smallest addressable unit of data (typically 512 bytes or 4,096 bytes)
+- Arranged in concentric circles (tracks) on the platter
+- Each sector has header information (address, error correction code) and data area
+
+**Tracks:**
+- Concentric circles on the platter
+- Outer tracks have more physical space, longer sectors
+- Inner tracks are tighter, shorter sectors
+- Number of tracks: thousands to millions, depending on disk size
+
+**Cylinders:**
+- Imaginary vertical planes through all platters (for multi-platter drives)
+- Allows parallel access to multiple platters
+
+**Capacity calculation:**
+- Capacity = Number of platters × Tracks per platter × Sectors per track × Bytes per sector
+- Example: 1 platter × 100,000 tracks × 200 sectors/track × 512 bytes/sector ≈ 10 GB
+
+---
+
+## Part 2: Encoding and Error Correction
+
+### Magnetic Encoding Methods
+
+**Simple magnetization (NRZ - Non-Return to Zero):**
+- North polarity = 1, South polarity = 0 (or vice versa)
+- Simple but difficult to detect boundaries between same-polarity regions
+- Rarely used in modern drives
+
+**Flux transitions (RLL - Run-Length Limited):**
+- Data is represented by transitions in magnetic field, not absolute direction
+- Transition = boundary between north and south
+- Improves data density and error detection
+- Standard encoding method for modern hard drives
+
+**Encoding rules (example: 2,7 RLL):**
+- Maximum 2 consecutive 0's (prevents excessive flux change)
+- Maximum 7 consecutive 0's (prevents loss of synchronization)
+- Increases effective capacity by ~30% compared to simple magnetization
+
+### Error Correction Codes (ECC)
+
+Hard disks include error correction codes to detect and correct read errors.
+
+**Parity bit:**
+- Simple error detection
+- Each sector includes a bit that indicates odd/even parity
+- Detects single-bit errors (not sufficient for recovery)
+
+**Reed-Solomon codes:**
+- More sophisticated error correction
+- Can correct multiple bit errors per sector
+- Typical: 32 bytes of error correction data per 512-byte sector
+- Allows recovery even if significant portion of data is unreadable
+
+**Example:**
+- Sector with read error detected
+- ECC decodes and corrects error using redundancy
+- Data recovered successfully
+- If errors exceed ECC capability: sector marked as bad, data lost
+
+---
+
+## Part 3: Disk Failures and Data Recovery
+
+### Common Hard Disk Failures
+
+**Mechanical failures:**
+1. **Head crash:** Read/write head contacts platter, grinding away magnetic coating
+   - Symptoms: Loud clicking sounds, inability to read
+   - Severity: Data loss
+   - Recovery: Requires professional head replacement
+
+2. **Spindle motor failure:** Platter stops rotating
+   - Symptoms: No sounds, no power to drive
+   - Severity: Data inaccessible without rotation
+   - Recovery: Spindle motor replacement (delicate)
+
+3. **Actuator arm failure:** Head positioning mechanism breaks
+   - Symptoms: Head unable to move to correct location
+   - Severity: Data inaccessible
+   - Recovery: Actuator arm replacement
+
+**Electronic failures:**
+1. **Controller circuit failure:** Control electronics malfunction
+   - Symptoms: Drive not recognized by computer, no spinning
+   - Severity: Depends on failure type
+   - Recovery: Possible if failure is isolated to controller (firmware reset or board replacement)
+
+2. **Firmware corruption:** Software on the drive is corrupted
+   - Symptoms: Drive spins but not recognized
+   - Severity: Can sometimes be repaired without hardware replacement
+   - Recovery: Firmware rewrite (if possible)
+
+**Environmental failures:**
+1. **Heat damage:** Excessive heat degrades components and magnetic coating
+   - Symptoms: Degraded performance, eventual failure
+   - Prevention: Maintain cool environment (under 25°C preferred)
+
+2. **Humidity damage:** Moisture causes corrosion
+   - Symptoms: Electrical failures, head crashes
+   - Prevention: Keep relative humidity under 60%
+
+3. **Magnetic field exposure:** Strong external magnetic field erases data
+   - Symptoms: Data loss without drive damage
+   - Prevention: Keep away from strong magnets and electromagnetic sources
+
+### Data Recovery Attempts
+
+**Basic recovery (no physical damage):**
+
+1. **Connect to different computer:**
+   - Try the disk on another computer with different controller
+   - If recognized: data may be recoverable using software tools
+   - If not recognized: likely firmware or controller failure
+
+2. **Replace controller board (if available):**
+   - Remove circuit board from failed drive
+   - Install on identical or compatible donor drive
+   - May allow access to data if controller failure was the problem
+
+**Intermediate recovery (minor physical damage):**
+
+1. **Head replacement (requires expertise):**
+   - Open drive in clean environment (specialized clean room ideal)
+   - Replace damaged read/write head with compatible donor head
+   - Reassemble and attempt to read data
+
+2. **Platter inspection and cleaning:**
+   - If platter is scratched but coating is partially intact, carefully clean surface
+   - May restore readability of damaged sectors
+
+**Advanced recovery (major physical damage):**
+
+- Requires professional data recovery service
+- Involves replacing spindle motor, rebuilding drive mechanics
+- Cost is often high but valuable for critical data
+
+### Data Preservation
+
+**Short-term (months to years):**
+- Store disks in cool, dry environment
+- Avoid temperature fluctuations
+- Protect from vibration and physical shock
+- Keep away from magnetic sources
+
+**Medium-term (years to decades):**
+- Periodically test disk functionality
+- Keep multiple copies on different media
+- Monitor for signs of failure (slow operation, noise)
+
+**Long-term (decades or longer):**
+- No single storage method is proven reliable for very long periods
+- Migrate data to new media every 5–10 years
+- Maintain multiple copies
+- Keep documentation of data format and encoding
+
+---
+
+## Worked Examples
+
+### Example 1: Diagnosing a Failing Hard Disk
+
+**Symptoms:** Drive makes clicking sounds, computer cannot access files.
+
+**Diagnosis:**
+- Clicking sound suggests head striking platter (head crash)
+- Data inaccessible: platter or head damage likely
+- Severity: Serious mechanical failure
+
+**Recovery options:**
+1. **Stop using immediately:** Further operation will worsen damage
+2. **Professional recovery:** Head crash typically requires professional repair (expensive but data can often be recovered)
+3. **DIY recovery (risky):** Remove drive casing in clean environment, inspect platter for visible damage, attempt head replacement if experienced
+
+**Outcome:**
+- If damage is minor: Head replacement may recover most/all data
+- If platter is scratched: Some data loss but partial recovery likely
+- If damage is severe: Professional recovery remains the best option
+
+### Example 2: Recovering Data from a Non-Recognized Drive
+
+**Symptoms:** Drive powers on and spins, but computer does not recognize it.
+
+**Diagnosis:**
+- Likely controller circuit or firmware failure
+- Platter and data are intact
+
+**Recovery process:**
+1. **Try different computer:** Confirms issue is with drive, not computer
+2. **Check BIOS:** Does computer detect drive at all? (Basic Input/Output System, low-level hardware detection)
+3. **If detected but not recognized by OS:**
+   - Likely firmware issue
+   - Try firmware reset (disconnect power, wait 30 seconds, reconnect)
+   - Try controller board replacement if available
+
+4. **Data extraction:** If computer can recognize disk (even partially):
+   - Use data recovery software to scan for readable sectors
+   - Copy recoverable data to another disk
+   - Success depends on extent of controller failure
+
+### Example 3: Calculating Hard Disk Capacity
+
+**Specification of a 20 GB disk:**
+- 2 platters (two surfaces each = 4 surfaces)
+- 50,000 tracks per surface
+- 250 sectors per track
+- 512 bytes per sector
+
+**Calculation:**
+- Capacity = 4 surfaces × 50,000 tracks × 250 sectors × 512 bytes
+- Capacity = 4 × 50,000 × 250 × 512 = 25,600,000,000 bytes ≈ 25.6 GB
+
+Note: Manufacturer advertising often rounds and excludes system overhead (file system, bad sectors), resulting in slightly lower usable capacity.
+
+---
+
+## Verification
+
+**You understand hard disk principles when:**
+
+1. You can explain how magnetic fields are used to store data on a hard disk
+2. You can describe the major components of a hard disk and their functions
+3. You understand how data is written and read from a rotating platter
+4. You can identify common hard disk failures and their symptoms
+5. You understand basic data recovery approaches
+6. You can calculate disk capacity from physical parameters
+7. You understand error correction and data reliability
+
+---
+
+## Common Mistakes
+
+1. **Attempting recovery of head-crashed drive without preparation:** Operating a drive with mechanical damage worsens the problem. Stop using it immediately and assess damage carefully before attempting recovery.
+
+2. **Ignoring environmental conditions:** Heat and humidity damage hard disks slowly. Maintaining proper storage conditions extends disk lifespan significantly.
+
+3. **Replacing controller board without compatibility check:** Controller boards are often not interchangeable. Replacing with incompatible board wastes time; verify compatibility or consult documentation first.
+
+4. **Over-cleaning platter surface:** Cleaning may remove protective coating. Use only specialized, non-abrasive materials designed for disk surfaces.
+
+5. **Attempting drive repair without static protection:** Static electricity can damage sensitive electronics. Always ground yourself before opening a drive or touching components.
+
+6. **Ignoring data backup:** The best recovery method is not needing recovery. Maintain regular backups on different media.
+
+7. **Assuming firmware corruption can be easily fixed:** Firmware repair requires specialized tools and knowledge. Amateur attempts can make the problem worse.
+
+8. **Leaving a failing drive connected to computer:** If a drive is making clicking sounds or behaving erratically, disconnect it immediately. Operation can destroy remaining recoverable data.
+
+9. **Exceeding safe operating temperature:** Hard disks rated for operation under 55°C. Extended operation above this temperature accelerates component failure.
+
+10. **Stacking or storing disks without protection:** Physical shock can cause head crashes. Store disks carefully, ideally in cases or padded environments.
+
+---
+
+## Cross-References
+
+- See Vol 42, Ch 1 — Magnetic Core Memory (basic magnetic storage principles)
+- See Vol 42, Ch 2 — Tape Recording (sequential magnetic data storage)
+- See Vol 5: Physics (magnetism and electromagnetic principles)
+- See Vol 12: Electrical Engineering (circuits and signal processing)
+- See Vol 16: Computing (digital data representation and storage)

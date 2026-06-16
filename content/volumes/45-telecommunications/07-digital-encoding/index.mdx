@@ -1,0 +1,132 @@
+---
+title: "Digital Encoding: Turning Information into Numbers"
+volume: 41
+chapter: 7
+difficulty: advanced
+prerequisites:
+  - "Vol 41: Telecommunications — signals, noise, and the telegraph"
+  - "Vol 39: Computing — binary numbers and logic"
+  - "Vol 2: Scientific Method — measurement and precision"
+unlocks:
+  - "telecommunications/error-detection-and-correction"
+  - "telecommunications/data-transmission"
+  - "computing/data-storage"
+tags: [telecommunications, digital, encoding, binary, signals, information]
+summary: "Digital encoding represents any information as discrete numbers, usually binary, so it can be stored and transmitted without degrading. This chapter explains why digital beats analog for reliability, how to encode text, sound, and images as numbers, and the principles of sampling and codes."
+---
+
+The deepest idea in modern communication is also one of the simplest: any piece of information, a letter, a sound, a picture, a measurement, can be turned into numbers, and numbers can be copied, stored, and sent perfectly. This is **digital encoding**, and it is the reason a message can cross the world and arrive exactly as it left, why a recording can be copied a thousand times without fading, and why a single wire or radio channel can carry text, voice, and images all at once. A civilization that grasps digital encoding can build communication and computing systems of a reliability that analog methods can never reach.
+
+This chapter explains what digital encoding is, why representing information as discrete numbers defeats the noise that plagues analog signals, and how to encode the three great kinds of information, text, sound, and images, as numbers. It builds on binary numbers and the telegraph, and it unlocks error correction, data transmission, and digital storage.
+
+## Analog Versus Digital: Why Numbers Win
+
+An **analog** signal represents information by a quantity that varies smoothly, like the groove depth on a record or the changing voltage from a microphone. The trouble is that every copy and every transmission adds a little noise, and because the signal can take any value, there is no way to tell the original from the noise. Copy an analog recording many times and it degrades into hiss. Send an analog signal far and it arrives blurred.
+
+A **digital** signal represents information as discrete symbols, almost always the two binary states 0 and 1. The crucial advantage: because only two values are allowed, a receiver does not need to measure exactly. It only needs to decide whether each symbol is closer to a 0 or a 1. As long as the noise is not large enough to flip one into the other, the receiver recovers the exact original, then passes on a clean, freshly made copy. Noise does not accumulate. This is why digital information can be copied and transmitted endlessly with no loss.
+
+The core insight: **discrete symbols can be perfectly restored; continuous values cannot.** This single property is the foundation of all digital technology.
+
+## Binary: The Universal Alphabet
+
+Digital systems almost always use **binary**, just two symbols, because two-state devices are the easiest and most reliable to build: a switch on or off, a voltage high or low, a spot magnetized one way or the other, a hole punched or not. Each binary digit is a **bit**. With enough bits you can represent any number, and therefore any information.
+
+A few essentials:
+
+- **One bit** has two possible values (0 or 1).
+- **Each added bit doubles** the number of possibilities: 2 bits give 4 values, 3 bits give 8, 8 bits give 256.
+- **A group of 8 bits** is a **byte**, a convenient unit able to represent 256 different values, enough for a full set of letters, digits, and symbols.
+
+To encode anything digitally, you assign numbers to the things you want to represent, then write those numbers in binary.
+
+## Prerequisites
+
+- Comfort with binary numbers and converting to and from decimal
+- Understanding that a signal can carry distinct symbols (as in telegraph code)
+- The idea of measurement and precision
+- Basic arithmetic and the notion of a code or lookup table
+
+## Part 1: Encoding Text
+
+Text is the easiest information to digitize because it is already made of discrete symbols, the letters and marks of writing.
+
+1. **Build a code table:** assign a unique number to every character you need, the letters (upper and lower case), the digits, punctuation, and a few control marks like space and end-of-line.
+2. **Choose enough bits:** a set of, say, 100-odd characters fits comfortably in 7 or 8 bits per character (since 8 bits cover 256 values).
+3. **Encode:** replace each character with its number, written in binary. The word becomes a stream of bytes.
+4. **Decode:** at the other end, look up each number in the same table to recover the character.
+
+This is exactly how standard text codes work: an agreed table mapping characters to numbers. The only requirement is that sender and receiver share the same table. The old telegraph codes were an early form of this idea, assigning patterns to letters.
+
+## Part 2: Encoding Sound
+
+Sound is analog, a continuously varying pressure wave, so digitizing it requires turning a smooth curve into numbers. This is done by **sampling**.
+
+1. **Sample in time:** measure the sound's strength at regular, rapid intervals, many thousands of times per second. Each measurement is a snapshot of the wave's height at that instant.
+2. **Quantize the value:** round each measurement to the nearest of a fixed set of levels, and record that level as a binary number.
+3. **The result** is a long list of numbers, one per sample, that traces the shape of the wave.
+4. **Playback** feeds those numbers back out in order at the same rate, recreating the wave.
+
+Two choices set the quality:
+
+- **Sampling rate:** how often you measure. You must sample faster than twice the highest frequency in the sound, or you lose and distort the high notes. Faster sampling captures higher frequencies faithfully.
+- **Bit depth:** how many levels you allow per sample. More bits mean finer steps and less rounding error (less "graininess" in quiet passages).
+
+Sample fast enough and finely enough, and the digital recording is indistinguishable from the original to the ear, yet it can be copied perfectly forever.
+
+## Part 3: Encoding Images
+
+An image is digitized by dividing it into a grid of tiny squares called **pixels** and recording a number for each.
+
+1. **Divide the picture into a grid** of pixels; more pixels mean finer detail (higher resolution).
+2. **Measure each pixel:** for a simple image, record its brightness as a number; for color, record numbers for the amounts of a few primary colors (commonly red, green, and blue) that together make the pixel's color.
+3. **Store the numbers** in order, row by row, as binary.
+4. **Display** by setting each spot on a screen or print to the recorded brightness and color.
+
+As with sound, more pixels and more bits per pixel give a more faithful image at the cost of more data. The same principle covers everything: chop the continuous thing into discrete pieces, measure each as a number.
+
+## Part 4: The Cost and the Cure, Data Volume
+
+Digitizing produces a great many numbers. A few minutes of sound or a single detailed image can be a vast stream of bits. Two ideas tame this:
+
+- **Compression:** much information is repetitive or predictable, and clever coding can represent it in far fewer bits without losing what matters. (This is its own large subject.)
+- **Choosing fidelity to the need:** a voice message needs far less sampling than music; a simple diagram needs far fewer pixels than a photograph. Match the encoding to the purpose and you spend only the bits you need.
+
+## Worked Example: Sending a Digital Message Over a Telegraph Line
+
+Goal: send the word "HI" digitally over a simple on-off line.
+
+1. **Code table:** agree that each letter maps to a number; suppose H is 72 and I is 73 in the shared table.
+2. **To binary:** 72 is 01001000 and 73 is 01001001 in eight bits each.
+3. **Transmit:** send the bits in order as on-off pulses (1 = pulse, 0 = no pulse), with timing both ends agree on.
+4. **Receive:** for each pulse slot, the receiver decides simply "pulse or no pulse," recovering the exact bits even if the line is noisy, as long as noise does not fully erase or invent a pulse.
+5. **Decode:** group into bytes, read 72 and 73, look up the table, recover "HI" perfectly.
+6. **Lesson:** the message survives noise that would have garbled an analog signal, because every symbol is just a yes-or-no decision.
+
+## Verification Criteria
+
+Your digital encoding works correctly when:
+
+- **Encoding and decoding are reversible:** a message encoded then decoded with the same table returns exactly the original.
+- **The same table is shared** by sender and receiver; mismatched tables produce gibberish.
+- **Sampled sound, replayed, resembles the original**, with quality rising as sampling rate and bit depth increase.
+- **Images reconstruct faithfully**, sharper with more pixels and more bits per pixel.
+- **The signal resists noise:** moderate noise does not corrupt the recovered information, because each symbol is a discrete decision.
+
+## Common Mistakes
+
+- **Sampling too slowly.** High frequencies are lost or turned into false low tones. Sample faster than twice the highest frequency present.
+- **Too few bits per sample or pixel.** Coarse steps produce grainy sound and banded images. Use enough levels for the needed fidelity.
+- **Mismatched code tables.** Sender and receiver must use identical mappings or the message is unreadable.
+- **Forgetting timing agreement.** A bit stream is meaningless without agreed timing or framing so the receiver knows where each symbol and byte begins.
+- **Assuming digital means lossless when it does not.** Lossy compression and too-coarse sampling discard information permanently; choose fidelity deliberately.
+- **Recording sample rates as broken values.** Note specifications in plain words such as "sample rate no lower than 8000 per second," never a broken-tag form, so figures copy cleanly into other documents.
+
+## Cross-References
+
+- **Binary numbers and logic** (Computing): the number system underlying all digital encoding.
+- **Signals, noise, and the telegraph** (this volume): the analog channels digital signals travel over.
+- **Error detection and correction** (this volume): adding extra bits so even flipped symbols can be caught and repaired.
+- **Data transmission** (this volume): moving encoded bits reliably from place to place.
+- **Data storage** (Computing): holding encoded information durably.
+
+Digital encoding is the act of translating the world into numbers so that information becomes as durable and copyable as arithmetic itself. Master it, and a message, a song, or a picture can travel any distance and survive any number of copies without losing a single detail, the foundation on which all modern communication and computing is built.

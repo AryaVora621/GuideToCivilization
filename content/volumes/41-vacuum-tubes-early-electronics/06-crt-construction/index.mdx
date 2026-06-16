@@ -1,0 +1,132 @@
+---
+title: "Cathode Ray Tube Construction: Painting Pictures With Electrons"
+volume: 42
+chapter: 6
+difficulty: long-term
+prerequisites:
+  - "Vol 42, Ch 1 — Thermionic emission"
+  - "Vol 42, Ch 2 — Vacuum diode construction (vacuum, getter, sealing)"
+  - "Vol 37: Electrical Engineering — Electric and magnetic fields, high voltage"
+  - "Vol 5: Chemistry — Phosphors and luminescence"
+unlocks:
+  - "telecommunications/television-basics"
+  - "electronics/oscilloscopes-and-displays"
+tags: [vacuum-tubes, CRT, display, electron-beam, phosphor, television, long-term]
+summary: "The cathode ray tube fires a focused beam of electrons at a glowing phosphor screen and steers it to paint images point by point. It made the oscilloscope, television, and early computer display possible. This chapter explains the electron gun, focusing, deflection, the phosphor screen, and how to build and operate one safely."
+---
+
+## Overview
+
+The cathode ray tube (CRT) is the device that let electronics draw. Where the diode and triode handle invisible currents, the CRT turns electron flow into **visible images** — a steerable beam of electrons strikes a coated screen and makes it glow exactly where the beam lands. Move the beam fast enough and you trace lines, waveforms, letters, and full moving pictures. The CRT made the oscilloscope (the engineer's window into electrical signals), television, radar displays, and the first computer screens all possible. For most of a century, to *see* an electronic signal meant to watch a CRT.
+
+A CRT is, at heart, an elaborate vacuum tube: the same evacuated envelope, heated cathode, and getter you learned building a diode (Ch 2), but with a long funnel-shaped bulb, a gun that shapes the emitted electrons into a tight beam, a way to aim that beam anywhere on a screen, and a phosphor coating that converts the beam's energy into light. This chapter explains each part — the electron gun, focusing, deflection, and the screen — and how they combine to paint a controllable picture. Because CRTs run at lethal voltages and store dangerous charge, it also covers the serious safety practices their construction and handling demand.
+
+## How a CRT Works
+
+The chain from electron to image:
+
+1. A **heated cathode** emits electrons (thermionic emission, Ch 1).
+2. An **electron gun** accelerates them to high speed and focuses them into a narrow beam aimed down the length of the tube.
+3. A **deflection system** bends the beam to steer it left/right and up/down, aiming it at any point on the screen.
+4. The beam strikes a **phosphor-coated screen** at the wide end; the phosphor glows where struck, producing a bright dot.
+5. By steering the beam rapidly across the screen and varying its intensity, the glowing dot traces out lines and, scanned fast enough, a complete image that the eye perceives as whole and continuous.
+
+The entire process happens in a hard vacuum so the electron beam travels unobstructed — exactly the reason the diode needed a vacuum, now at larger scale and higher voltage.
+
+## The Electron Gun
+
+The **electron gun** at the narrow neck of the tube creates and shapes the beam. Its parts, in order along the beam:
+
+- **The cathode:** a heated, coated emitter that supplies the electrons — usually an indirectly heated oxide cathode for copious emission.
+- **The control grid:** a nearby electrode at a negative voltage that regulates how many electrons pass, and thus the **brightness** of the spot. Make the grid more negative and it throttles the beam toward darkness; this is how image intensity is controlled (the "video" signal in a television rides on this grid).
+- **Accelerating anodes:** electrodes at high positive voltage that pull the electrons forward and accelerate them to high speed down the tube. The higher this **anode voltage** (often many thousands of volts), the faster and more energetic the beam, and the brighter the screen.
+- **Focusing electrodes:** which form an "electron lens" (see below) that converges the spreading electrons into a fine point on the screen.
+
+The gun thus does three jobs: emit, control brightness, and accelerate — handing a fast, intensity-controlled stream to the focusing system.
+
+## Focusing: The Electron Lens
+
+Electrons leave the cathode spreading apart (like charges repel), so without focusing they would smear into a blurry blob on the screen. **Focusing** converges them back to a sharp point, using the fact that shaped electric or magnetic fields bend electron paths just as glass lenses bend light:
+
+- **Electrostatic focus** uses a set of cylindrical electrodes at different voltages; the field between them acts as a converging lens, and adjusting the focus voltage sharpens the spot.
+- **Magnetic focus** uses a coil around the neck whose field squeezes the beam to a point, adjusted by the coil current.
+
+Either way, the goal is a tiny, sharp spot where the beam meets the screen — the smaller the spot, the finer the detail the display can show.
+
+## Deflection: Steering the Beam
+
+A focused beam aimed at the screen's center is only a dot; to draw, you must **steer** it across the whole screen. Two methods, mirroring focus:
+
+- **Electrostatic deflection** uses two pairs of charged plates inside the neck — one pair for horizontal, one for vertical. Voltage on a pair pushes the passing beam toward the positive plate. This is fast and precise, ideal for **oscilloscopes**, where the beam must follow rapidly changing signals.
+- **Magnetic deflection** uses coils (a yoke) around the neck whose magnetic fields bend the beam. Magnetic deflection can bend the beam through larger angles, allowing shorter, wider tubes — which is why **televisions** use it for their large screens.
+
+By driving the two axes together, you place the spot anywhere on the screen. To form a picture, the beam is usually **scanned** in a raster: swept rapidly left-to-right line by line, top to bottom, while its brightness is modulated to paint each point — covering the whole screen many times a second so the eye sees a steady image.
+
+## The Phosphor Screen
+
+The inside of the wide screen end is coated with **phosphor** — a chemical that emits light when struck by energetic electrons (luminescence). Where the beam lands, the phosphor glows; elsewhere it stays dark. Key properties:
+
+- **Color of the glow** depends on the phosphor chemistry — green for many oscilloscopes and radar, white or (with three phosphors) full color for television.
+- **Persistence:** how long the glow lingers after the beam moves on. Long-persistence phosphors hold an image (good for radar); short-persistence ones follow fast motion without smearing.
+- The beam's electrons, having delivered their energy, are carried away by a conductive coating (often graphite) on the inside of the funnel, which also forms part of the high-voltage anode.
+
+## Construction and the Vacuum
+
+Building a CRT extends diode construction (Ch 2) to a larger, funnel-shaped envelope:
+
+1. **Assemble the electron gun** — cathode, grid, anodes, focus electrodes — precisely aligned on a support, mounted in the tube's neck.
+2. **Add deflection** — internal plates for electrostatic types, or leave the neck bare for an external yoke in magnetic types.
+3. **Coat the screen** with phosphor on the inside of the wide face, and apply the inner conductive coating.
+4. **Seal the envelope** with airtight electrode seals, as for any tube.
+5. **Evacuate and bake** thoroughly to outgas the large surfaces, then **flash the getter** to reach and hold a hard vacuum — even more critical here because the large evacuated bulb is under great atmospheric pressure and any gas spoils the beam.
+6. **Fit the base and connections** and the high-voltage anode contact.
+
+The vacuum challenge is greater than a small tube's because of the large internal surface area to outgas and the high voltages involved, which ionize any residual gas badly.
+
+## Safety: A CRT Is Dangerous
+
+CRTs are among the most hazardous devices a builder handles, in three distinct ways:
+
+- **Lethal high voltage.** The anode runs at thousands to tens of thousands of volts. This can kill. Worse, the tube's coatings form a capacitor that **stores a dangerous charge even after power is removed** — a CRT can shock you badly hours after being switched off. Always discharge the anode to ground through a resistor before touching it.
+- **Implosion.** The large evacuated glass envelope is under crushing atmospheric pressure. If cracked or struck, it does not merely break — it **implodes**, then sprays glass outward violently. Handle the bulb with eye and face protection, never knock the neck (the weakest point), and treat a scrapped tube with great care.
+- **X-rays.** High-voltage tubes can emit X-rays where the beam strikes; adequate glass thickness and voltage limits mitigate this, but it is a reason not to run a tube above its rated voltage.
+
+These are not cautions to note and forget — CRTs injure and kill careless builders. Discharge, shield, and handle the glass as the genuine hazard it is.
+
+## A Worked Example: An Oscilloscope Trace
+
+To display a changing voltage:
+
+- Run the electron gun to produce a focused, accelerated beam striking the screen as a bright dot.
+- Drive the **horizontal** deflection with a steadily rising "sweep" voltage, moving the dot smoothly left to right, then snapping back to repeat — this makes the horizontal axis represent time.
+- Apply the **signal you are measuring** to the **vertical** deflection, so the dot rises and falls with the voltage.
+- The dot, swept across in time while bobbing with the signal, traces the waveform's shape on the screen — you now *see* the electrical signal directly. This is the oscilloscope, the fundamental instrument for understanding electronics.
+
+## Verification Criteria
+
+A working CRT:
+
+- **Produces a bright, sharp spot** at screen center with gun and focus correctly set.
+- **Responds to brightness control** via the grid, dimming and brightening smoothly.
+- **Deflects fully** in both axes, reaching all edges of the screen without distortion.
+- **Holds focus across the screen,** not just at center.
+- **Shows a clean getter mirror** and no gas glow, confirming a good vacuum.
+
+## Common Mistakes
+
+- **Treating a powered-off CRT as safe.** It stores lethal charge; always discharge the anode first. This mistake kills.
+- **Striking or scratching the envelope,** risking a violent implosion. Protect the glass and never knock the neck.
+- **Inadequate vacuum** on the large envelope, giving a dim, defocused, gas-glowing beam. Bake and getter thoroughly.
+- **Poor focus alignment,** smearing the spot and blurring every image. Align the gun precisely and set focus carefully.
+- **Mismatched deflection method to purpose:** electrostatic for fast signals (oscilloscopes), magnetic for large-angle screens (television). Using the wrong one limits the display.
+- **Running above rated anode voltage,** risking X-ray emission and tube damage. Stay within ratings.
+
+## Cross-References
+
+- **Vol 42, Ch 1 — Thermionic emission:** the electron source.
+- **Vol 42, Ch 2 — Vacuum diode construction:** vacuum, getter, and sealing techniques the CRT extends.
+- **Vol 41, Telecommunications — Television basics:** how scanned CRT images become broadcast pictures.
+- **Vol 37: Electrical Engineering — Fields and high voltage:** the electric and magnetic fields that focus and steer the beam, and the high-voltage hazards.
+- **Vol 5: Chemistry — Phosphors and luminescence:** how the screen converts electrons to light.
+
+The cathode ray tube is where electronics became visible. A gun shapes electrons into a beam, fields focus and steer it, and a phosphor screen turns its landings into light — letting you paint waveforms, letters, and moving pictures from nothing but a controlled stream of electrons. Build it carefully, respect its lethal voltages and imploding glass, and you hold the display technology that showed humanity its signals, its computers, and its television.
