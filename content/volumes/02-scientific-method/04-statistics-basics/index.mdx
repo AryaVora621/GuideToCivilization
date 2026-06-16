@@ -1,0 +1,383 @@
+---
+title: "Statistics Basics: Making Sense of Numbers"
+volume: 21
+chapter: 4
+difficulty: intermediate
+prerequisites:
+  - "Vol 21: Scientific Method Ch 2 — Hypothesis and Experiment"
+  - "Vol 3: Mathematics Ch 1 — Arithmetic and Basic Counting"
+unlocks:
+  - "02-scientific-method/05-peer-review-and-replication"
+  - "advanced data analysis across all sciences"
+tags: [statistics, data-analysis, probability, variation, average, distribution, confidence]
+summary: "Statistics is the science of numbers. It tells you whether a pattern in your data is real or just random chance. Without statistics, you cannot trust your experiments."
+---
+
+## Overview
+
+You conduct an experiment. You measure. You get results. But do your results mean anything? Or did you get lucky?
+
+Statistics answers this question: How confident should you be in your data?
+
+This chapter teaches:
+
+1. **Average, median, and variation:** How to summarize what your numbers tell you
+2. **Normal distribution:** Why most measurements cluster around a typical value
+3. **Confidence and uncertainty:** How much error is acceptable
+4. **Comparing groups:** When is a difference real vs. random chance
+5. **Data visualization:** How to show your results clearly
+
+A single measurement tells you little. Many measurements, analyzed statistically, tell you truth.
+
+## Prerequisites
+
+- Ability to add, divide, and calculate simple arithmetic
+- Understanding that measurements vary (no two measurements are identical)
+- Experience conducting an experiment (from Ch 2)
+- Willingness to learn that reality is messier than it appears
+
+## Materials & Tools
+
+**For calculating statistics:**
+- Notebook and pencil (to record data)
+- Ability to add and divide (for averages)
+- Graph paper (optional, for visualizing data)
+- Ruler (for drawing graphs)
+
+**For understanding:**
+- Basic understanding of probability (better than / worse than random chance)
+
+---
+
+## Part 1: Describing Your Data
+
+### Why Numbers Need Summaries
+
+You conduct an experiment 10 times and get these results:
+
+**Dissolution times (in seconds):** 45, 47, 46, 44, 48, 46, 45, 46, 47, 45
+
+What do these numbers *mean*? Saying "it took 45, 47, 46..." is useless. You need a summary.
+
+### The Average (Mean)
+
+The **average** (mean) is the sum of all values divided by the count of values.
+
+Calculation:
+(45 + 47 + 46 + 44 + 48 + 46 + 45 + 46 + 47 + 45) / 10 = 459 / 10 = 45.9 seconds
+
+**What it means:** If you did the experiment once, you would expect about 45.9 seconds.
+
+**Strength:** The average accounts for all measurements and is easy to calculate.
+
+**Weakness:** The average ignores whether measurements are tightly clustered (45, 46, 45, 46) or wildly scattered (10, 85, 50, 45).
+
+### The Median
+
+The **median** is the middle value when you arrange all measurements from smallest to largest.
+
+Arrange your 10 values:
+44, 45, 45, 45, 45, 46, 46, 46, 47, 47, 48
+
+The median is the value in the middle. With 10 values (even number), take the average of the two middle values:
+Median = (45 + 46) / 2 = 45.5 seconds
+
+**What it means:** Half the measurements were below this value; half were above.
+
+**Strength:** The median is not affected by extreme outliers (if one measurement was 500 seconds, it would not shift the median much).
+
+**Weakness:** The median ignores some of your data.
+
+### The Mode
+
+The **mode** is the most frequently occurring value.
+
+In your data: 45 appears 4 times, 46 appears 3 times, others appear once or twice.
+Mode = 45 seconds
+
+**What it means:** The most typical result.
+
+**Strength:** Simple; shows what actually happened most often.
+
+**Weakness:** Not useful if no value repeats or if all values repeat equally.
+
+---
+
+## Part 2: Understanding Variation
+
+### The Range
+
+The **range** is the difference between the highest and lowest values.
+
+Highest: 48 seconds
+Lowest: 44 seconds
+Range = 48 - 44 = 4 seconds
+
+**What it means:** All measurements fell within a 4-second span.
+
+**Strength:** Shows how spread out your data is.
+
+**Weakness:** A single extreme outlier can inflate the range.
+
+### Standard Deviation (Informal)
+
+**Standard deviation** measures how much typical measurements deviate from the average. A small standard deviation means measurements cluster tightly. A large standard deviation means measurements are scattered.
+
+Informal calculation (sufficient for most purposes):
+
+1. Calculate the average: 45.9 seconds
+2. For each measurement, calculate how far it is from average:
+   - 45 is 0.9 below average
+   - 47 is 1.1 above average
+   - 46 is 0.1 above average
+   - (and so on)
+3. Average these differences: roughly 0.8 seconds
+
+**What it means:** Most measurements are within 1 second of the average (45.9 ± 1 second = 44.9 to 46.9 seconds).
+
+### Why Variation Matters
+
+Two experiments, both with an average of 45.9 seconds:
+
+**Experiment A:** 45, 45, 46, 46, 45, 46, 46, 45, 46, 46 (tight clustering, range = 1)
+
+**Experiment B:** 20, 25, 45, 50, 70, 80, 10, 50, 40, 39 (scattered, range = 70)
+
+Same average. Experiment A is **reliable** (you get similar results each time). Experiment B is **unreliable** (results swing wildly). Variation reveals this.
+
+---
+
+## Part 3: Normal Distribution
+
+### The Bell Curve
+
+If you conduct a measurement many times under identical conditions, results form a pattern: most values cluster around an average, with fewer outliers on either side.
+
+Visualize this:
+
+```
+      | frequency
+      |     *
+      |    ***
+      |   *****
+      |  *******
+      | *********
+      |***********
+      |_____________
+        average
+```
+
+This shape is called a **normal distribution** or **bell curve**.
+
+Examples of normally distributed measurements:
+- Plant heights in a population (most are average height; some are taller, some shorter)
+- Rainfall amounts across years (some years are wet, some dry, most are average)
+- Reaction times in experiments (most people react in similar times; some faster, some slower)
+- Error in measurements (most measurements are close to true value; some are slightly off)
+
+### The 68-95-99.7 Rule
+
+In a normal distribution:
+- 68% of measurements fall within 1 standard deviation of the average
+- 95% fall within 2 standard deviations
+- 99.7% fall within 3 standard deviations
+
+Example: Plant height with average = 30 cm, standard deviation = 2 cm.
+
+- 68% of plants are 28–32 cm tall (1 std dev)
+- 95% are 26–34 cm (2 std devs)
+- 99.7% are 24–36 cm (3 std devs)
+
+This means:
+- If you measure a plant at 28 cm, it is not unusual (within 1 std dev of average)
+- If you measure a plant at 50 cm, it is highly unusual (5 std devs from average, indicating a different variety or conditions)
+
+---
+
+## Part 4: Comparing Groups
+
+### When Is a Difference Real?
+
+You test: "Does salt dissolve faster in warm water?"
+
+- Warm water: average 45.9 seconds
+- Cold water: average 52.3 seconds
+
+The difference is 6.4 seconds. But is this difference real, or just random variation?
+
+If you repeat the experiment many times:
+- If warm water is *always* faster, the difference is **real**.
+- If warm water is faster *most of the time*, the difference is likely **real**.
+- If warm water is sometimes faster and sometimes slower, the difference might be **random chance**.
+
+### Checking Significance
+
+Look at the ranges:
+
+**Warm water results:** 43, 44, 45, 46, 47, 48, 49 (range: 43–49, average 45.9)
+
+**Cold water results:** 50, 51, 52, 53, 54, 55, 56 (range: 50–56, average 52.9)
+
+The ranges do *not* overlap. Every warm measurement is lower than every cold measurement. The difference is **real**.
+
+Now imagine:
+
+**Warm:** 40, 45, 50, 55, 60 (range: 40–60, average 50)
+
+**Cold:** 45, 50, 55, 60, 65 (range: 45–65, average 55)
+
+Ranges overlap significantly. It is unclear whether warm water is truly faster or if the difference is random variation. This difference is **uncertain**.
+
+### Rule of Thumb
+
+If the ranges (or standard deviations) of two groups do not overlap, the difference is likely real. If they overlap significantly, the difference is uncertain.
+
+---
+
+## Part 5: Data Visualization
+
+### Why Graphs Matter
+
+Numbers in a table are hard to interpret. A graph shows patterns instantly.
+
+### Types of Graphs
+
+**Line graph** (how something changes over time):
+```
+Temperature (°C) vs. Time (hours)
+|
+|        ___
+|       /   \
+|      /     \___
+|     /
+|____/_____________
+     time
+```
+Use this when you measure the same variable repeatedly over time.
+
+**Bar graph** (comparing categories):
+```
+Dissolution time (seconds)
+|
+| ___
+| |   |
+| |   |
+| |___| ___
+| |   | |   |
+| |___| |   | ___
+| |     |___| |   |
+| |           |   |___
+|_|_____|_____|_______|
+  10C   25C   50C
+  (temperature)
+```
+Use this to compare independent groups (warm vs. cold, with salt vs. without salt).
+
+**Histogram** (distribution of measurements):
+```
+Frequency
+|        *
+|       ***
+|      *****
+|     *******
+|    *********
+|   ***********
+|_____________
+  45 46 47 48
+  (dissolution time in seconds)
+```
+Use this to show the spread of many measurements.
+
+### Good Graph Practices
+
+1. **Title:** "Dissolution Time vs. Water Temperature"
+2. **Axis labels:** X-axis: "Temperature (°C)", Y-axis: "Time (seconds)"
+3. **Data points:** Plot actual values
+4. **Scale:** Start at 0 (unless there is a reason not to); use equal intervals
+5. **Legend:** If multiple lines or bars, label them
+
+---
+
+## Part 6: Worked Examples
+
+### Example 1: Plant Growth (Summarizing Data)
+
+You grow 20 plants under identical conditions and measure height after 8 weeks:
+
+Measurements (in cm): 18, 19, 20, 19, 21, 18, 20, 19, 22, 20, 19, 18, 21, 20, 19, 20, 18, 19, 20, 21
+
+**Average:** (18+19+20+...+21) / 20 = 398 / 20 = 19.9 cm
+
+**Median:** Arrange: 18, 18, 18, 18, 19, 19, 19, 19, 19, 19, 20, 20, 20, 20, 20, 20, 21, 21, 21, 22. Median = (19 + 20) / 2 = 19.5 cm
+
+**Mode:** 19 and 20 (both appear 6 times)
+
+**Range:** 22 - 18 = 4 cm
+
+**Interpretation:** Plants average 19.9 cm, with most between 18–21 cm. Variation is small (4 cm range), suggesting consistent growing conditions.
+
+### Example 2: Comparing Water Temperatures
+
+You measure salt dissolution time in three temperatures:
+
+**Cold (10°C):** 48, 50, 49, 51, 50 (average 49.6 sec, range 48–51)
+
+**Warm (50°C):** 22, 24, 23, 25, 24 (average 23.6 sec, range 22–25)
+
+Ranges do not overlap (48–51 vs. 22–25). Warm water dissolves salt faster. The difference (49.6 - 23.6 = 26 seconds) is **real**.
+
+---
+
+## Part 7: Common Mistakes
+
+### Mistake 1: Using Average Alone
+
+Two experiments with average = 50:
+- A: 48, 49, 50, 51, 52 (consistent)
+- B: 10, 30, 50, 70, 90 (scattered)
+
+The average hides the difference. Always report range or standard deviation too.
+
+### Mistake 2: Ignoring Outliers
+
+You measure 10 times and get: 45, 46, 45, 46, 1000. The average (208) is useless. Investigate the outlier. Did you make a recording error? Did something go wrong? Remove or explain it.
+
+### Mistake 3: Confusing Categories
+
+You compare "tall" vs. "short" plants without defining what "tall" and "short" mean. Use numbers (height in cm), not descriptions.
+
+### Mistake 4: Drawing a Line Through Scattered Points
+
+If you plot points (45, 47), (46, 48), (48, 49), a straight line through all three is misleading. The points show variation, not a perfect relationship. Draw a **trend line** (average direction) instead, or simply plot the points without connecting them.
+
+### Mistake 5: Using Too Few Data Points
+
+One or two measurements are not statistics; they are guesses. Conduct at least 10 trials (preferably 20+) to trust your summary.
+
+### Mistake 6: Assuming Average = Typical
+
+You have 100 people with incomes: 99 earn $30,000/year; 1 earns $1,000,000. Average income = $39,900. But the median ($30,000) is more "typical." Use both average and median.
+
+---
+
+## Verification
+
+You understand statistics when:
+
+1. You can calculate average, median, and range from a set of measurements
+2. You understand what standard deviation means (spread around the average)
+3. You recognize a normal distribution and can apply the 68-95-99.7 rule
+4. You can compare two groups and determine if a difference is real or random
+5. You can create a bar graph or line graph to show results
+6. You understand that variation is normal and expected
+7. You can explain why one experiment with 10 trials is more trustworthy than an experiment with 1 trial
+
+---
+
+## Cross-References
+
+- See Vol 21, Ch 2 — Hypothesis and Experiment (experiments that statistics analyzes)
+- See Vol 21, Ch 3 — Evidence and Argument (how statistical results support claims)
+- See Vol 3: Mathematics — Advanced Mathematics for more formal statistical methods
+- See Vol 27: Biology — Population statistics (how biologists use statistics to study life)
+- See Vol 4: Medicine — Clinical trials (how statistics determines if a treatment works)
