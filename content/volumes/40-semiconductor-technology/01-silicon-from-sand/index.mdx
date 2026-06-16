@@ -1,0 +1,165 @@
+---
+title: "Silicon from Sand: Carbothermic Reduction"
+volume: 40
+chapter: 1
+difficulty: long-term
+prerequisites:
+  - "Vol 5: Chemistry — Acids, bases, and reduction reactions"
+  - "Vol 9: Natural Resources — Quartz and silica identification"
+  - "Vol 11: Mechanical Engineering — High-temperature furnaces"
+unlocks:
+  - "semiconductor/purification-zone-refining"
+  - "semiconductor/doping"
+  - "materials/silica-glass"
+tags: [semiconductor, silicon, materials, chemistry, long-term]
+summary: "The complete process for reducing silicon dioxide (quartz sand) to metallurgical-grade silicon using carbon at 1700°C+. This is Step 1 of 12 in the path from beach sand to working transistors."
+---
+
+## Overview
+
+Silicon is the second most abundant element in Earth's crust, making up about 28% of it — mostly as silicon dioxide (SiO₂) in quartz sand, sandstone, and granite. Yet turning that abundant silica into a working transistor requires reducing it to elemental silicon and then purifying it across 11 more steps to an astonishing purity: 99.9999999% pure (nine nines, or 9N), removing all but one atom in a billion.
+
+This chapter covers Step 1: getting from SiO₂ to metallurgical-grade silicon (MGS) at roughly 98–99% purity using carbothermic reduction. The silicon produced here is good enough for solar cells and aluminum alloys, but not yet for electronics — that requires Vol 40, Ch 2.
+
+**The overall path:**
+```
+Sand (SiO₂)
+  → [Ch 1: Carbothermic reduction]
+  → Metallurgical Silicon (98–99%)
+  → [Ch 2: Zone refining / Siemens process]
+  → Electronic-grade Silicon (99.9999999%)
+  → [Ch 3: Czochralski crystal growth]
+  → Single-crystal ingot
+  → [Ch 4: Wafer cutting and polishing]
+  → Silicon wafer
+  → [Ch 5–11: Fabrication]
+  → Transistors and integrated circuits
+```
+
+## Prerequisites
+
+- **High-temperature furnace** capable of 1,700°C+ (arc furnace or resistance furnace). See Vol 11, Ch 6.
+- **Pure carbon source**: metallurgical coke (from coking coal), wood charcoal (lower purity), or graphite electrodes.
+- **High-purity quartz**: quartzite rock or clean quartz sand with visible impurities removed. Avoid sand with high iron content.
+- **Understanding of reduction reactions**: Vol 5, Ch 4 (redox chemistry).
+
+## Materials & Tools
+
+**Raw materials:**
+- High-purity quartzite or quartz sand (SiO₂) — more than 95% SiO₂ preferred. White or glassy appearance.
+- Metallurgical coke (from coking coal) or dense charcoal. See Vol 9 for coke production.
+- Graphite electrodes (if building an arc furnace). Graphite can be made from petroleum coke or natural graphite.
+
+**Equipment:**
+- Electric arc furnace (preferred) or submerged arc furnace — see construction below
+- High-temperature crucible (graphite or silicon carbide)
+- Refractory-lined hearth (magnesite or alumina brick)
+- Ladle for molten silicon
+- Steel molds for ingot casting
+- Safety: face shields, heat-resistant gloves, proper ventilation (SiO₂ dust is a serious respiratory hazard — silicosis)
+
+**Scale note:** Industrial silicon reduction uses furnaces rated at 10–100 MW. A minimal experimental furnace can produce a few kilograms per batch; industrial restart would require significant electrical infrastructure (Vol 12).
+
+## The Chemistry
+
+The core reaction is carbothermic reduction:
+
+```
+SiO₂  +  2C  →  Si  +  2CO↑
+(at 1700°C+)
+```
+
+Carbon (as coke or charcoal) strips the oxygen from silicon dioxide, releasing CO gas and leaving molten silicon. The reaction is endothermic and requires continuous heat input — this is why an electric arc furnace works better than combustion alone.
+
+Secondary reactions occur simultaneously:
+```
+SiO₂  +  3C  →  SiC  +  2CO  (silicon carbide — unwanted byproduct)
+SiC   +  SiO₂  →  Si  +  2CO  (SiC then reacts back at higher temps)
+```
+
+The balance between these reactions depends on temperature and the ratio of SiO₂ to C. Too much carbon produces SiC that doesn't easily reduce back. Too little carbon leaves unreacted SiO₂.
+
+**Optimal SiO₂:C ratio**: Approximately 1:2 by moles (1 gram SiO₂ requires 0.26 grams carbon, or about 1:0.27 by mass for the stoichiometric minimum — use slight excess carbon in practice).
+
+## Step-by-Step Instructions
+
+### Step 1: Prepare the raw materials
+
+**Crush and clean the quartzite.** Quartzite or quartz pebbles should be crushed to 2–5 cm chunks. Wash with water to remove clay and surface impurities. If iron contamination is visible (reddish staining), treat with dilute hydrochloric acid (Vol 5) and rinse thoroughly — iron in the feedstock will appear in the final silicon and is extremely hard to remove later.
+
+**Prepare the carbon.** Use dense metallurgical coke (petroleum or coal-derived, not wood charcoal for best results). Crush to similar size to the quartzite feed. Wood charcoal works but introduces more impurities (ash, volatile organics) and tends to produce more SiC.
+
+**Dry both materials.** Wet feedstocks create steam explosions in the furnace. Dry at 150–200°C for several hours before use.
+
+### Step 2: Build or operate the arc furnace
+
+An electric submerged arc furnace for silicon is a large refractory-lined vessel with three graphite electrodes that submerge into the charge (the mixed SiO₂ and C feed). The arc forms between the electrodes and the charge rather than above it.
+
+**Minimum furnace construction:**
+1. Refractory lining: magnesite or alumina bricks, minimum 15 cm thick, shaped into a round or oval hearth (2–3 meters diameter for useful production).
+2. Three graphite electrodes: 15–30 cm diameter (or substitute steel pipes packed with carbon for prototype scales — they will erode faster).
+3. Power supply: 3-phase AC, minimum 200–500 kW for a small batch furnace (Vol 12, Ch 5).
+4. Tapping hole at the bottom or side, plugged with clay, to drain molten silicon.
+
+**Charge the furnace**: Mix SiO₂ and C in the calculated ratio. Feed into the furnace from the top around the electrodes. The electrodes are powered and the arc melts and reacts the charge continuously.
+
+### Step 3: Run the reduction
+
+**Temperature**: 1,700–2,000°C in the reaction zone. The slag (unreacted oxides) floats on top of the molten silicon bath.
+
+**Operating signs to monitor:**
+- CO gas burns blue above the charge — this confirms the reaction is proceeding.
+- Electrode consumption: graphite electrodes erode into the process. Plan for electrode replacement (this is why electrode manufacture matters — see Ch 4).
+- Slag formation: a glassy slag of unreacted oxides and impurities (mainly calcium, aluminum, iron oxides) collects above the molten silicon bath.
+
+**Run time**: A continuous furnace runs indefinitely; a batch furnace takes 4–8 hours to reach operating temperature and complete a charge.
+
+### Step 4: Tap the silicon
+
+When sufficient silicon has accumulated (typically indicated by regular tapping cycles), open the tapping hole. Molten silicon (melting point 1,414°C) flows out.
+
+**Be aware**: Molten silicon reacts with water explosively. The casting area must be bone dry. Cast into preheated steel or graphite molds. Silicon contracts on cooling — the solid ingots will be gray-blue metallic in appearance with a slightly granular surface.
+
+### Step 5: Assess purity
+
+Metallurgical silicon (MGS) from this process is typically 98–99% pure. Major impurities include:
+- Iron (Fe): 0.3–0.5% — comes from raw materials and equipment
+- Aluminum (Al): 0.1–0.4%
+- Calcium (Ca): 0.05–0.2%
+- Titanium (Ti): trace
+- Boron (B) and Phosphorus (P): trace but critically important — these are dopants that will affect semiconductor behavior
+
+MGS is useful for:
+- Aluminum-silicon alloys (Vol 10)
+- Solar cells (lower-grade acceptable, "solar-grade silicon")
+- Chemical industry intermediates
+
+**For electronics**, the MGS must be further purified. Proceed to Ch 2.
+
+## Verification
+
+- Metallic gray-blue ingots with characteristic silicon luster
+- Hardness: silicon is brittle and hard — it fractures with a conchoidal fracture (like glass) rather than deforming
+- Melting point ~1414°C confirms silicon identity (not SiC, which melts at 2730°C)
+- Density ~2.33 g/cm³
+
+**Simple purity test**: Dissolve a small sample in hydrofluoric acid (HF) — pure silicon dissolves; iron-rich areas leave a brownish residue. **HF is extremely dangerous** — this test requires full chemical safety protocols (Vol 5, Ch 8).
+
+## Common Mistakes
+
+- **Wet feedstocks.** Steam causes violent spattering of molten silicon. Always pre-dry.
+- **Iron contamination from equipment.** Steel tools in contact with molten silicon dissolve. Use graphite, silicon carbide, or ceramic tools only.
+- **Wrong SiO₂/C ratio.** Excess carbon forms stable SiC (silicon carbide) that won't reduce further and lowers yield. Excess silica leaves unreacted feedstock. Weigh carefully.
+- **Poor electrode contact.** Poor submerging of electrodes causes arc above the charge instead of within it — much lower efficiency.
+- **No tapping preheat.** Cold tapping area causes molten silicon to solidify in the tapping channel before you can collect it.
+- **Silica dust.** SiO₂ particles cause silicosis with prolonged exposure. Always work with respiratory protection when crushing quartzite.
+
+## Cross-References
+
+- See Vol 5, Ch 4 — Reduction reactions and redox chemistry
+- See Vol 9, Ch 3 — Identifying quartz and quartzite in the field
+- See Vol 11, Ch 6 — Building high-temperature arc furnaces
+- See Vol 12, Ch 5 — Three-phase power generation for furnaces
+- See Vol 40, Ch 2 — Purifying metallurgical silicon to semiconductor grade
+- See Appendix G — Mineral identification (quartz identification)
+- See Appendix I — Units and standards (purity measurements: ppm, ppb)

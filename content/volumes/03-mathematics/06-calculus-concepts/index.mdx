@@ -1,0 +1,233 @@
+---
+title: "Calculus Concepts"
+volume: 22
+chapter: 6
+difficulty: long-term
+prerequisites:
+  - "Vol 22, Ch 2: Geometry"
+  - "Basic algebra"
+unlocks:
+  - "engineering/optimization"
+  - "physics/rates-of-change"
+tags: [calculus, mathematics, rates, optimization, long-term]
+summary: "Practical calculus concepts: rates of change, optimization, and accumulation. Foundation for engineering and resource management."
+---
+
+## Overview
+
+Calculus is the mathematics of change. It answers questions like: How fast is something changing? What is the maximum or minimum value? How much accumulates over time?
+
+After collapse, calculus helps with resource management: How much water accumulates in a cistern as rain falls? What angle maximizes arrow range? How fast does a disease spread?
+
+This chapter covers practical calculus concepts without formal derivation.
+
+## Prerequisites
+
+- Understanding of geometry and algebra
+- Ability to think about rates and change
+- Willingness to use approximations
+
+## Materials & Tools
+
+- Paper and pen for calculations
+- Understanding of graphs (x-axis, y-axis)
+- Tables of values (created by experimentation)
+
+## Step-by-Step Instructions
+
+### Step 1: Understand Rates of Change
+
+Many things change over time.
+
+**Examples:**
+
+- Water filling a cistern: gallons per minute
+- Disease spreading: new cases per day
+- Arrow slowing: meters per second lost per meter traveled
+- Crop growth: centimeters per week
+
+**Rate = change in quantity / change in time**
+
+Example: Cistern fills 10 gallons in 2 minutes. Rate = 10/2 = 5 gallons per minute.
+
+### Step 2: Recognize When Rates Change
+
+The rate itself can change.
+
+**Constant rate:**
+
+Water flows at steady 5 gallons per minute. After 10 minutes: 50 gallons. Linear growth.
+
+**Changing rate:**
+
+Arrow velocity starts at 50 m/s but decreases. After 10 meters: 40 m/s. After 20 meters: 30 m/s. Nonlinear change.
+
+Disease starts infecting 2 people per day, but as more people are infected, rate increases (exponential growth). Day 1: 2 cases. Day 2: 4 cases. Day 3: 8 cases.
+
+### Step 3: Find Maximum and Minimum Values
+
+Many decisions involve optimization.
+
+**Example:** Arrow range varies with launch angle.
+- 10 degrees: 50 meters range
+- 30 degrees: 95 meters range
+- 45 degrees: 100 meters range (maximum)
+- 60 degrees: 90 meters range
+- 80 degrees: 45 meters range
+
+At 45 degrees, range is maximum. This is the optimum angle.
+
+**How to find maximum without calculus:**
+
+1. Test multiple values
+2. Plot on graph
+3. Find the highest point
+4. Record value at that point
+
+### Step 4: Understand Accumulation
+
+Total accumulated value equals sum of incremental changes.
+
+**Example:** Rainfall accumulation.
+- Hour 1: 2 mm rain
+- Hour 2: 3 mm rain
+- Hour 3: 1 mm rain
+- Total after 3 hours: 2 + 3 + 1 = 6 mm
+
+**More complex:** If rain falls at 1 mm per hour for 5 hours, total = 5 mm. But if rate varies hourly (1, 2, 2, 1, 0.5 mm), total = 6.5 mm.
+
+### Step 5: Use Slope to Predict Change
+
+If you know current rate, you can estimate near-future value.
+
+**Example:** Cistern at 100 gallons, filling at 5 gallons per minute.
+
+Estimate after 10 minutes: 100 + (5 × 10) = 150 gallons.
+
+This works if rate stays constant. If rate changes, estimate becomes less accurate.
+
+### Step 6: Recognize Diminishing Returns
+
+Some processes show diminishing returns.
+
+**Example:** More workers make more bricks, but not proportionally.
+
+- 1 worker: 100 bricks per day
+- 2 workers: 180 bricks per day (not 200, because they interfere)
+- 3 workers: 250 bricks per day (marginal gain of 70, vs 80 before)
+- 4 workers: 310 bricks per day (marginal gain of 60, decreasing)
+
+After some point, adding workers helps less and less.
+
+### Step 7: Understand Exponential Growth and Decay
+
+Some quantities multiply each time period.
+
+**Exponential growth (disease, population):**
+
+Initial: 10 cases
+Each person infects 2 others
+
+- Day 0: 10 cases
+- Day 1: 10 × 2 = 20 cases
+- Day 2: 20 × 2 = 40 cases
+- Day 3: 40 × 2 = 80 cases
+
+Doubles each day. Growth accelerates.
+
+**Exponential decay (radioactivity, confidence in rumor):**
+
+Initial: 100 people believe a rumor
+Each day, half stop believing
+
+- Day 0: 100 believers
+- Day 1: 50 believers
+- Day 2: 25 believers
+- Day 3: 12 believers
+
+Halves each day. Growth slows.
+
+### Step 8: Use Graphs to Visualize Change
+
+Plot data to see patterns.
+
+**Example:** Crop yield vs. water amount
+
+Plot points:
+- 10mm water: 50 kg yield
+- 20mm: 90 kg
+- 30mm: 120 kg
+- 40mm: 140 kg
+- 50mm: 155 kg
+
+Graph shows increasing yield, but rate of increase slows. Beyond 50mm, more water does not help (reaches optimum).
+
+### Step 9: Apply to Decision-Making
+
+Use these concepts to make better decisions.
+
+**Example: Allocate workers to tasks**
+
+Task A: 1 worker makes 100 units. 2 workers make 180 units (marginal gain: 80).
+Task B: 1 worker makes 60 units. 2 workers make 105 units (marginal gain: 45).
+
+Assign first extra worker to Task A (better return).
+
+**Example: Manage epidemic**
+
+Disease spreading exponentially. Daily doubling.
+
+Today: 10 cases. If no action taken:
+- Day 5: 320 cases
+- Day 10: 10,240 cases (epidemic)
+
+Intervention: Reduce transmission to 1.5× (instead of 2×)
+- Day 5: 76 cases (much slower)
+- Day 10: 380 cases (manageable)
+
+Early intervention prevents exponential explosion.
+
+## Verification
+
+Successful use of calculus concepts results in:
+- Accurate rate predictions
+- Good optimization decisions
+- Recognition of exponential growth/decay
+- Better resource allocation
+
+If inadequate:
+- Estimates are significantly wrong
+- Optimization misses true maximum/minimum
+- Exponential growth surprises you (seems to suddenly explode)
+
+## Common Mistakes
+
+**Mistake 1 - Assuming constant rates.**
+
+Rate changes, but you assume it stays the same. Prediction is off.
+
+**Mistake 2 - Ignoring exponential growth.**
+
+Disease is doubling. You think it is growing linearly. Reality surprises (catastrophic).
+
+**Mistake 3 - Confusing average with current rate.**
+
+Average water flow over 10 days is 5 gallons/min, but current flow is 3 gal/min. Estimate is wrong.
+
+**Mistake 4 - Missing diminishing returns.**
+
+You keep adding workers assuming each adds same output. Actually, marginal gain decreases.
+
+**Mistake 5 - Not collecting data.**
+
+You guess at rates without measuring. Estimates are inaccurate. Always measure.
+
+**Mistake 6 - Oversimplifying.**
+
+Real systems are complex. Single-factor models miss important interactions.
+
+## Cross-References
+
+- See Vol 22, Ch 2 - Geometry (foundation: slope, rates)
+- See Vol 23 - Physics (motion and forces)
+- See Vol 14 - Medicine (epidemic spread is exponential)

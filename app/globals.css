@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #030712;
+    --foreground: #f9fafb;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Chapter prose styles */
+.prose-chapter h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #111827;
+}
+
+.prose-chapter h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
+}
+
+.prose-chapter p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.prose-chapter ul,
+.prose-chapter ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.prose-chapter li {
+  margin-bottom: 0.375rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+.prose-chapter strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.prose-chapter code {
+  font-family: var(--font-geist-mono);
+  font-size: 0.875rem;
+  background: #f3f4f6;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+
+.prose-chapter blockquote {
+  border-left: 3px solid #d1d5db;
+  padding-left: 1rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+
+/* Dark mode prose */
+@media (prefers-color-scheme: dark) {
+  .prose-chapter h2 {
+    border-bottom-color: #374151;
+    color: #f9fafb;
+  }
+  .prose-chapter h3 {
+    color: #e5e7eb;
+  }
+  .prose-chapter p,
+  .prose-chapter li {
+    color: #d1d5db;
+  }
+  .prose-chapter strong {
+    color: #f9fafb;
+  }
+  .prose-chapter code {
+    background: #1f2937;
+    color: #e5e7eb;
+  }
+  .prose-chapter blockquote {
+    border-left-color: #4b5563;
+    color: #9ca3af;
+  }
+}
+
+/* Print styles */
+@media print {
+  @page {
+    margin: 1.5cm 2cm;
+    size: A4;
+  }
+
+  body {
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #000;
+    background: #fff;
+  }
+
+  header,
+  footer,
+  nav,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .prose-chapter h2 {
+    font-size: 16pt;
+    page-break-after: avoid;
+    border-bottom: 0.5pt solid #000;
+  }
+
+  .prose-chapter h3 {
+    font-size: 12pt;
+    page-break-after: avoid;
+  }
+
+  .prose-chapter p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  table {
+    page-break-inside: avoid;
+  }
+}

@@ -1,0 +1,249 @@
+---
+title: "Decision Under Uncertainty"
+volume: 6
+chapter: 5
+difficulty: long-term
+prerequisites:
+  - "Leadership or decision-making experience"
+  - "Basic mathematics (percentages, expected value)"
+unlocks:
+  - "strategy/risk-management"
+  - "planning/scenario-analysis"
+tags: [decision-making, strategy, uncertainty, risk, long-term]
+summary: "Using Bayesian reasoning and expected value to make decisions when outcomes are uncertain."
+---
+
+## Overview
+
+You must decide whether to plant a crop that might fail. Whether to send scouts toward a threat or avoid it. Whether to accept refugees or turn them away. Every decision happens with incomplete information.
+
+Perfect knowledge is impossible. The question is: how do you decide well with the knowledge you have?
+
+This chapter covers two tools: Bayesian reasoning (updating beliefs as you learn) and expected value (comparing uncertain outcomes). Together, they let you make rational decisions even when you cannot know the future.
+
+## Prerequisites
+
+- Decision-making experience
+- Willingness to think probabilistically (in percentages and odds, not certainties)
+- Basic math (multiplication, percentages)
+
+## Materials & Tools
+
+- Paper and pen
+- Ability to estimate odds (rough percentages are fine)
+
+## Step-by-Step Instructions
+
+### Step 1: Accept Uncertainty
+
+You cannot know the future. Accept this. Your goal is not certainty, but reasonable decision-making despite uncertainty.
+
+Common mistakes:
+
+- **Denial:** "This will work out" (it might not)
+- **Paralysis:** "I do not know the future, so I cannot decide" (you must decide anyway)
+- **False confidence:** "It will definitely work" (you are overconfident)
+
+Better approach: "This might work. Let me estimate the odds and decide based on those odds."
+
+### Step 2: Estimate Initial Odds (Priors)
+
+Before deciding, estimate the probability of each outcome.
+
+Example: "Should we accept these refugees?"
+
+Possible outcomes:
+- Refugees integrate, contribute to the community (probability: ???)
+- Refugees drain resources and cause conflict (probability: ???)
+
+Ask yourself: "Based on what I know, what percentage chance of each outcome?"
+
+These are your "priors" (initial beliefs).
+
+Example estimates:
+- Integration and contribution: 60%
+- Resource drain and conflict: 40%
+
+These are rough guesses. Precision is not the point; reasonable estimation is.
+
+### Step 3: Gather Evidence
+
+New information should update your beliefs. If you learn the refugees are skilled farmers, your estimate of positive outcomes increases. If you learn they are fleeing because they started a conflict elsewhere, your estimate decreases.
+
+**Bayesian updating:** When you get new evidence, update your odds.
+
+Formula (simple version):
+
+New belief = (Prior belief × Likelihood of evidence given that belief) / (Likelihood of all outcomes)
+
+In practice, you do not need the formula. Just ask:
+
+- "If outcome A is true, how likely is this evidence?" (e.g., if refugees will integrate, how likely is it they are skilled farmers? Very likely. So this evidence supports outcome A.)
+- "If outcome B is true, how likely is this evidence?" (e.g., if refugees will drain resources, how likely is it they are skilled farmers? Less likely. So this evidence supports outcome A over B.)
+
+**Example:** You learn the refugees include two experienced farmers and a healer.
+
+Updated belief:
+- Integration and contribution: 70% (up from 60%)
+- Resource drain and conflict: 30% (down from 40%)
+
+The new information shifted your odds.
+
+### Step 4: Consider the Costs and Benefits
+
+Even if an outcome is likely, it might not be worth the risk if the downside is severe.
+
+Compare outcomes by "expected value." This is the average outcome you expect, weighted by probability.
+
+**Example:** Accept refugees
+
+Outcome A (60%): Integration, contribution. Benefit: +50 units of labor/skill, growth
+Outcome B (40%): Resource drain, conflict. Cost: -100 units (lost resources, internal conflict)
+
+Expected value = (0.60 × 50) + (0.40 × -100) = 30 - 40 = -10
+
+Expected value is negative. Even though integration is more likely, the downside is large enough that this decision might not be good.
+
+Compare this to the alternative: Refuse refugees.
+
+Outcome A (80%): They leave peacefully. Neutral (no change)
+Outcome B (20%): They linger nearby, gradually cause problems. Cost: -20 units
+
+Expected value = (0.80 × 0) + (0.20 × -20) = -4
+
+Expected value is less negative. Refusing is slightly better than accepting.
+
+Decide: Refuse refugees, or accept with careful vetting to reduce the probability of outcome B.
+
+### Step 5: Recognize Your Confidence Level
+
+Your odds are estimates, not certainties. Recognize how confident you are.
+
+- High confidence: Estimate based on similar past situations (e.g., you have accepted refugees before)
+- Medium confidence: Estimate based on general knowledge (e.g., you know refugees sometimes integrate, sometimes do not)
+- Low confidence: Estimate with almost no information (e.g., you know almost nothing about these people)
+
+Low confidence means your odds are rough guesses. Plan accordingly:
+
+- If low confidence, seek more information before deciding
+- If low confidence and you must decide anyway, hedge your bets (e.g., accept refugees but put constraints on them; plan contingencies in case they cause problems)
+
+### Step 6: Make the Decision
+
+Calculate expected values for each option. Compare.
+
+The option with the highest expected value is the rational choice (though not the only reasonable choice—other factors, like your values, matter too).
+
+**Example decision tree:**
+
+```
+Decision: Accept refugees?
+
+Option A: Accept (with vetting)
+- 70% integration, contribution: +50 value
+- 30% drain, conflict: -80 value
+Expected value: (0.70 × 50) + (0.30 × -80) = 35 - 24 = +11
+
+Option B: Refuse
+- 80% leave peacefully: 0 value
+- 20% linger, cause problems: -20 value
+Expected value: (0.80 × 0) + (0.20 × -20) = -4
+
+Option A has higher expected value. Accept.
+```
+
+### Step 7: Plan for Wrong Outcomes
+
+Even if your decision is rational, it might fail. Plan contingencies.
+
+"We will accept the refugees, with the expectation that 70% of the time this works out. But there is a 30% chance of problems. If problems arise, here is our contingency plan..."
+
+Contingencies:
+- Limit refugee numbers at first (so if problems arise, damage is contained)
+- Monitor relationships (so you detect problems early)
+- Have exit options (if conflict becomes intractable, arrange for refugees to leave)
+- Protect vulnerable assets (keep food stores separate, so if refugees need to eat, they do not consume your whole supply)
+
+### Step 8: Learn and Update
+
+After you decide, observe outcomes. Did your odds prove accurate?
+
+"We accepted refugees. 70% expected them to integrate. They did integrate (success). Next time we face a similar decision, we can update our confidence."
+
+Or: "We accepted refugees. We estimated 30% chance of drain and conflict. That is exactly what happened. Our estimate was accurate. Next time we will revise the odds or impose more stringent vetting."
+
+Over time, your estimates improve. Experienced leaders make better odds estimates than inexperienced ones.
+
+### Step 9: Handle Multiple Decisions
+
+Complex situations involve many decisions. Chain them together:
+
+"Accept refugees? If yes, then assign them to what role? If they integrate, how do we handle their children? Each decision has odds and expected values."
+
+Map out the decision tree:
+
+```
+Accept refugees?
+├─ Yes
+│  ├─ They integrate (70%)
+│  │  └─ Assign to agriculture
+│  │     ├─ They produce surplus (50%)
+│  │     └─ They are mediocre (50%)
+│  └─ They cause conflict (30%)
+│     └─ Separate them, or try to reconcile
+└─ No
+   ├─ They leave (80%)
+   └─ They linger nearby (20%)
+```
+
+Evaluate each path. The highest expected value path is the rational choice.
+
+## Verification
+
+**Successful decision-making results in:**
+
+- Consistent outcomes (your odds estimates prove accurate over time)
+- Good decisions (on average, your decisions produce better outcomes than not deciding)
+- Learning (your odds improve as you gain experience)
+- Community confidence (people see that your decisions are reasoned, not arbitrary)
+
+**If decision-making fails:**
+
+- Bad outcomes without learning (decisions fail, but you do not update your odds)
+- Overconfidence (you underestimate risk, leading to repeated failure)
+- Paralysis (you never commit to a decision, so nothing improves)
+
+If failure appears, review your decision-making process. Are your odd estimates accurate? Are you missing information before deciding?
+
+## Common Mistakes
+
+**Mistake 1 — Treating probability as certainty.**
+
+You estimated 70% chance of success and it failed (30% chance). You conclude your odds estimate was wrong. But 70-30 is still a reasonable estimate even if the 30% outcome happens. Do not react to single failures.
+
+**Mistake 2 — Refusing to estimate.**
+
+"I do not know the odds, so I will not try to estimate." But you must decide anyway. Any estimate, even a rough guess, is better than deciding without reasoning.
+
+**Mistake 3 — Ignoring low-probability, high-impact outcomes.**
+
+You estimate a 5% chance of catastrophe (e.g., accepting refugees triggers a conflict that destroys the settlement). That is low probability, but if it happens, the impact is enormous. Expected value: (0.05 × -1000) = -50. This can outweigh positive outcomes.
+
+**Mistake 4 — Not updating beliefs.**
+
+You made an estimate five years ago. You have learned new information. But you are still using the old odds. Update your beliefs as you learn.
+
+**Mistake 5 — Confusing confidence with accuracy.**
+
+You are very confident in your odds ("I am sure these are 70-30"). But you are actually guessing (low confidence). Be honest about how much you know.
+
+**Mistake 6 — Optimism bias.**
+
+Humans naturally overestimate positive outcomes and underestimate negative ones. Consciously correct for this. If you think a task has 90% chance of success, increase the failure estimate to 15-20%.
+
+## Cross-References
+
+- See Vol 21 — "Scientific Method" (gathering evidence systematically)
+- See Vol 22 — "Mathematics" (probability and statistics)
+- See Vol 6, Ch 1 — "Ethical Frameworks" (values vs. expected value)
+- See Vol 8 — "Society & Governance" (collective decision-making under uncertainty)

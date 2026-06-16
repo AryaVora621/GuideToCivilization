@@ -1,0 +1,278 @@
+---
+title: "Analytic Geometry"
+volume: 22
+chapter: 5
+difficulty: long-term
+prerequisites:
+  - "Vol 22, Ch 2: Geometry"
+  - "Vol 22, Ch 4: Trigonometry"
+unlocks:
+  - "surveying/coordinate-systems"
+  - "navigation/coordinate-based"
+tags: [geometry, coordinates, surveying, navigation, long-term]
+summary: "Using coordinate systems to map land and locate positions: coordinate grids, distance calculation, slope, and practical surveying applications."
+---
+
+## Overview
+
+Analytic geometry combines algebra and geometry using coordinate systems. Instead of measuring angles and distances directly, you assign coordinates to points and calculate distances mathematically.
+
+After collapse, this becomes a tool for mapping settlements, surveying land, and navigating. A coordinate system allows precise location recording without needing compass or theodolite.
+
+## Prerequisites
+
+- Understanding of geometry and trigonometry
+- Comfort with algebra (variables, equations)
+- Ability to create and read maps with grid systems
+
+## Materials & Tools
+
+- Grid paper or parchment
+- Ruler and measuring tools
+- Stakes for establishing coordinate origin
+- Measuring rope or tape marked with units
+
+## Step-by-Step Instructions
+
+### Step 1: Establish a Coordinate System
+
+A coordinate system assigns numbers to locations.
+
+**Cartesian coordinates (x, y):**
+
+Two perpendicular axes (horizontal = x, vertical = y). Every point has coordinates (x, y).
+
+**Setting up in the field:**
+
+1. Choose origin point (0, 0) — a recognizable landmark
+2. Establish x-axis (east-west direction) — measure distances along it
+3. Establish y-axis (north-south direction) — perpendicular to x-axis
+4. Mark intervals (every 10 meters, or scaled unit)
+
+**Example:**
+
+Origin at settlement center. X-axis points east (positive) and west (negative). Y-axis points north (positive) and south (negative).
+
+Well is at coordinates (50, 30) = 50 meters east and 30 meters north of center.
+
+### Step 2: Record Positions Using Coordinates
+
+Instead of "tower is northeast of settlement," you record exact coordinates.
+
+**Recording a building:**
+
+1. Measure distance from origin along x-axis: 80 meters east
+2. Measure distance along y-axis: 60 meters north
+3. Record: Building is at (80, 60)
+
+**For irregularly shaped buildings:**
+
+Record all corners:
+- Corner A: (80, 60)
+- Corner B: (85, 60)
+- Corner C: (85, 65)
+- Corner D: (80, 65)
+
+Four corners define the building exactly.
+
+### Step 3: Calculate Distance Between Two Points
+
+Given two coordinates, find distance.
+
+**Formula:** Distance = √[(x₂-x₁)² + (y₂-y₁)²]
+
+**Example:**
+
+Point A: (0, 0) — settlement center
+Point B: (30, 40) — watchtower
+
+Distance = √[(30-0)² + (40-0)²] = √[900 + 1600] = √2500 = 50 meters
+
+Note: This is the 3-4-5 triangle scaled up (30:40:50 = 3:4:5).
+
+### Step 4: Calculate Slope and Angle
+
+Given two points, find the slope (steepness).
+
+**Slope = (y₂-y₁) / (x₂-x₁)**
+
+**Example:**
+
+Point A: (0, 0)
+Point B: (100, 20)
+
+Slope = 20/100 = 0.2 (rise 20 for every 100 forward)
+
+This is a gentle slope (~11 degrees).
+
+### Step 5: Map a Territory
+
+Create accurate map using coordinates.
+
+**Procedure:**
+
+1. Establish coordinate system with origin at a fixed point
+2. Go to each significant location (building, water source, boundary marker)
+3. Measure coordinates for that location
+4. Record on paper grid
+
+**Result:** Accurate map scalable to any size
+
+**Map scale:**
+
+If you measure in meters but draw on grid where 1 square = 10 meters:
+- Point at (100, 50) in meters draws at (10, 5) on map
+
+### Step 6: Determine Line Equations
+
+A straight line can be expressed as an equation.
+
+**Slope-intercept form: y = mx + b**
+
+Where m = slope, b = y-intercept (where line crosses y-axis)
+
+**Example:**
+
+Line passes through (0, 10) and (10, 30)
+
+Slope m = (30-10)/(10-0) = 20/10 = 2
+
+Y-intercept b = 10 (crosses y-axis at y=10)
+
+Equation: y = 2x + 10
+
+**Using the equation:**
+
+To find y-value for any x:
+- x = 5: y = 2(5) + 10 = 20
+
+To find x-value for any y:
+- y = 50: 50 = 2x + 10, so x = 20
+
+### Step 7: Find Intersection Points
+
+Where do two lines or paths cross?
+
+**Example:**
+
+Road 1: y = 2x + 10
+Road 2: y = -x + 40
+
+Set equal: 2x + 10 = -x + 40
+
+Solve: 3x = 30, so x = 10
+
+Substitute back: y = 2(10) + 10 = 30
+
+Intersection point: (10, 30)
+
+**Real application:**
+
+Border between two territories. Road A enters at (0, 20). Road B enters at (40, 0). Where do they meet? Find intersection.
+
+### Step 8: Calculate Area Using Coordinates
+
+Given vertices of a shape, find area.
+
+**For a polygon with vertices (x₁,y₁), (x₂,y₂), ... (xₙ,yₙ):**
+
+Shoelace formula: Area = |Σ(xᵢ×yᵢ₊₁ - xᵢ₊₁×yᵢ)| / 2
+
+**Example: Triangle with vertices (0,0), (4,0), (2,3)**
+
+Area = |[(0×0 - 4×0) + (4×3 - 2×0) + (2×0 - 0×3)]| / 2
+     = |[0 + 12 + 0]| / 2
+     = 12 / 2
+     = 6 square units
+
+### Step 9: Navigate Using Coordinates
+
+Find your way to a destination using coordinates.
+
+**Procedure:**
+
+1. Know your current location coordinates (or determine via triangulation)
+2. Know destination coordinates
+3. Calculate direction (angle) toward destination
+4. Calculate distance
+5. Travel in that direction for that distance
+
+**Angle calculation:**
+
+From current position (x₁, y₁) to destination (x₂, y₂):
+
+Angle = arctan[(y₂-y₁)/(x₂-x₁)]
+
+(Remember: 0° is east, 90° is north, 180° is west, 270° is south)
+
+**Example:**
+
+Current: (0, 0)
+Destination: (30, 40)
+
+Angle = arctan(40/30) = arctan(1.33) ≈ 53°
+
+Travel northeast at 53° from east = 37° from north.
+
+Distance = 50 meters (calculated earlier).
+
+### Step 10: Create Territorial Boundaries
+
+Use coordinate lines to define borders.
+
+**Example:**
+
+Settlement territory is bounded by:
+- West: x = -100 (west-east line at x=-100)
+- East: x = 100
+- South: y = -80
+- North: y = 120
+
+Territory is a rectangle from (-100,-80) to (100,120).
+
+Area = 200 × 200 = 40,000 square units (16 square kilometers if units are meters)
+
+## Verification
+
+Successful analytic geometry results in:
+- Accurate maps of territory
+- Precise location records
+- Correct distance calculations
+- Efficient navigation using coordinates
+
+If analytic geometry is inadequate:
+- Map locations do not match reality
+- Distances calculated are significantly wrong
+- Boundary disputes due to unclear coordinates
+
+## Common Mistakes
+
+**Mistake 1 - Wrong axis direction.**
+
+You define x-axis as north-south instead of east-west. All coordinates are rotated.
+
+**Mistake 2 - Inconsistent scale.**
+
+Some measurements in meters, some in paces. Coordinates are meaningless.
+
+**Mistake 3 - Wrong formula.**
+
+Using distance = (x₂-x₁) + (y₂-y₁) instead of √[(x₂-x₁)² + (y₂-y₁)²]. Distance is wrong.
+
+**Mistake 4 - Forgetting negative coordinates.**
+
+You only use positive coordinates. Points west or south of origin cannot be recorded.
+
+**Mistake 5 - Misreading slope.**
+
+Slope 2 means steep (rise 2 for every 1 forward). Slope 0.2 means gentle (rise 0.2 for every 1 forward). Easy to confuse.
+
+**Mistake 6 - Not checking intersection.**
+
+You calculate intersection of borders. It falls in a river. Borders are impractical; redesign.
+
+## Cross-References
+
+- See Vol 22, Ch 2 - Geometry (foundation: distance, slope)
+- See Vol 24 - Surveying (field application of coordinates)
+- See Vol 17 - Navigation (using coordinates to navigate)

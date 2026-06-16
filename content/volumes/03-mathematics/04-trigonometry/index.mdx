@@ -1,0 +1,272 @@
+---
+title: "Trigonometry"
+volume: 22
+chapter: 4
+difficulty: long-term
+prerequisites:
+  - "Vol 22, Ch 2: Geometry"
+  - "Vol 22, Ch 3: Angles and Right Triangles"
+unlocks:
+  - "surveying/distance-measurement"
+  - "navigation/angle-based"
+tags: [trigonometry, mathematics, angles, surveying, long-term]
+summary: "Using trigonometry to find distances and heights: sine, cosine, tangent, and practical applications for surveying and navigation."
+---
+
+## Overview
+
+Trigonometry is the mathematics of triangles and angles. It solves the problem: Given some angles and one distance, find the unknown distances.
+
+Examples:
+- How tall is that tower? Measure the angle; calculate height.
+- How far away is the enemy camp? Measure two angles; calculate distance.
+- What angle should the siege ladder be? Calculate from height.
+
+This chapter covers practical trigonometry: the three main functions (sine, cosine, tangent) and how to use them for surveying and navigation.
+
+## Prerequisites
+
+- Understanding of geometry and right triangles
+- Comfort with angles (degrees)
+- Ability to work with ratios and decimals
+
+## Materials & Tools
+
+- A simple angle-measuring tool or protractor
+- Measuring tape for baseline distances
+- Paper and pencil for calculations
+- Table of sine/cosine/tangent values (or approximate from memory)
+
+## Step-by-Step Instructions
+
+### Step 1: Understand the Right Triangle Setup
+
+Trigonometry works with right triangles (one 90-degree angle).
+
+**Parts of a right triangle:**
+
+```
+        |
+        | opposite
+        |
+--------|----
+      adjacent
+```
+
+**Relative to an angle:**
+- Opposite: Side across from the angle
+- Adjacent: Side next to the angle
+- Hypotenuse: Longest side, opposite the 90-degree angle
+
+**Example:**
+
+Looking at a tower from ground level at a 30-degree angle upward:
+- Angle of elevation: 30 degrees
+- Opposite side: Height of tower (unknown)
+- Adjacent side: Horizontal distance to tower (measurable)
+- Hypotenuse: Line of sight (calculable)
+
+### Step 2: Memorize or Reference Sine, Cosine, Tangent
+
+These ratios relate angles to side lengths.
+
+**Sine (sin):** opposite / hypotenuse
+
+**Cosine (cos):** adjacent / hypotenuse
+
+**Tangent (tan):** opposite / adjacent
+
+**Mnemonic:** SOH-CAH-TOA (Sine = Opposite/Hypotenuse, Cosine = Adjacent/Hypotenuse, Tangent = Opposite/Adjacent)
+
+**Common values (approximate):**
+
+- sin 0° = 0; cos 0° = 1; tan 0° = 0
+- sin 30° = 0.5; cos 30° = 0.87; tan 30° = 0.58
+- sin 45° = 0.71; cos 45° = 0.71; tan 45° = 1
+- sin 60° = 0.87; cos 60° = 0.5; tan 60° = 1.73
+- sin 90° = 1; cos 90° = 0; tan 90° = undefined
+
+### Step 3: Calculate Height of a Tall Object
+
+Common problem: How tall is the tower?
+
+**Procedure:**
+
+1. Measure horizontal distance from tower base (let's say 50 meters)
+2. Measure angle of elevation (looking up angle): 30 degrees
+3. Use tangent: tan 30° = height / distance
+4. Rearrange: height = distance × tan 30°
+5. height = 50 × 0.58 = 29 meters
+
+**Formula:** height = distance × tan(angle)
+
+**Real example:**
+
+Looking at a 100-meter cliff from 100 meters away:
+- Angle of elevation: tan⁻¹(100/100) = tan⁻¹(1) = 45 degrees
+
+### Step 4: Calculate Distance to a Distant Object
+
+Problem: How far away is the enemy camp?
+
+**Using baseline triangulation:**
+
+1. Create a baseline (measure distance between two observation points, e.g., 100 meters)
+2. From first point, measure angle to target: 40 degrees
+3. From second point, measure angle to target: 60 degrees
+4. Use trigonometry to calculate distance to target
+
+**Approximate method (if angles are simple):**
+
+If both angles are 45 degrees and baseline is 100 meters, then distance is approximately 100 meters (forms isosceles right triangle).
+
+**More precise method:**
+
+Use law of sines: a/sin(A) = b/sin(B) = c/sin(C)
+
+Where a, b, c are sides and A, B, C are opposite angles.
+
+This requires more calculation but is more accurate.
+
+### Step 5: Calculate Range for Archery or Siege Weapons
+
+Problem: At what angle should siege catapult fire to hit target 200m away?
+
+**Assuming projectile travel in parabolic arc:**
+
+At 45-degree angle, projectile travels farthest. For lower or higher angles:
+- 30 degrees: Shorter range, higher arc
+- 45 degrees: Maximum range
+- 60 degrees: Shorter range, very high arc
+
+**Practical approach:**
+
+- Measure distance to target (200 meters)
+- Estimate angle based on experience (40-50 degrees usually good)
+- Adjust based on feedback (hits short/long)
+
+**Using trigonometry for elevation:**
+
+If target is on a hill 50 meters higher and 200 meters away:
+- Angle to horizontal target: tan⁻¹(0/200) = 0 degrees
+- Angle to elevated target: tan⁻¹(50/200) = tan⁻¹(0.25) ≈ 14 degrees
+- Adjust aim upward by 14 degrees
+
+### Step 6: Navigate Using Angles
+
+Problem: Reach a target location without a compass.
+
+**Using angle and distance:**
+
+1. Measure angle to target (using sun, stars, or angle-measuring tool)
+2. Measure or estimate distance to target
+3. Travel in that direction, checking angle periodically to correct course
+
+**Using triangulation to locate yourself:**
+
+1. From unknown location, measure angles to two known landmarks
+2. On map, draw lines at those angles from landmarks
+3. Where lines intersect is your location
+
+### Step 7: Measure Underwater Depth or Distance
+
+Problem: How deep is the well/river?
+
+**Using angle:**
+
+1. Look at object underwater at an angle (e.g., 45 degrees from horizontal)
+2. Measure distance to object horizontally (e.g., 5 meters)
+3. At 45 degrees: depth ≈ distance = 5 meters
+
+**More generally:**
+
+Depth = distance × tan(angle)
+
+This is approximate because water refraction bends light, but close enough for practice.
+
+### Step 8: Understand Inverse Functions
+
+Given a ratio, find the angle.
+
+**Inverse functions:**
+
+- sin⁻¹: Inverse sine (arcsin)
+- cos⁻¹: Inverse cosine (arccos)
+- tan⁻¹: Inverse tangent (arctan)
+
+**Example:**
+
+If opposite/hypotenuse = 0.5, then angle = sin⁻¹(0.5) = 30 degrees
+
+**Using without calculator:**
+
+Estimate from known values. If ratio is 0.5, you know sin 30° = 0.5, so angle is 30 degrees.
+
+If ratio is between known values, estimate:
+- sin⁻¹(0.6) is between sin⁻¹(0.5)=30° and sin⁻¹(0.71)=45°, so approximately 37°
+
+### Step 9: Apply to Surveying a Field
+
+Problem: Measure a field boundary using angles.
+
+**Procedure:**
+
+1. Set up baseline (measure 100m along known direction)
+2. At each endpoint, measure angle to distant corner of field
+3. Calculate position of corner using trigonometry
+4. Repeat for all corners
+5. Calculate area using geometry (sum of triangles)
+
+**Result:** Accurate field boundary without direct measurement.
+
+## Verification
+
+**Successful trigonometry use results in:**
+
+- Accurate height measurements
+- Correct distance estimates
+- Effective aiming (weapons and siege equipment)
+- Proper surveying with minimal ground work
+
+**If trigonometry is failing:**
+
+- Heights are significantly off (tens of percent error)
+- Distance estimates are wildly wrong
+- Aiming requires multiple adjustments
+- Surveying requires repeated measurements
+
+## Common Mistakes
+
+**Mistake 1 - Confusing angle types.**
+
+Angle of elevation (up from horizontal) vs. angle of depression (down from horizontal). They are supplementary; use correct one.
+
+**Mistake 2 - Forgetting to convert angles.**
+
+Using degrees when tables give radians, or vice versa. Always check units.
+
+**Mistake 3 - Wrong function.**
+
+Need opposite/adjacent (tangent), but use opposite/hypotenuse (sine). Always pick correct trig function.
+
+**Mistake 4 - Ignoring refraction.**
+
+Light bends in water. Underwater distance appears closer than it is. Adjust estimates accordingly.
+
+**Mistake 5 - Assuming flat Earth.**
+
+Over very long distances (kilometers), Earth curvature matters. For surveying a field or fortress, negligible.
+
+**Mistake 6 - Rounding angles.**
+
+You measure 31.3 degrees but round to 30 degrees. Over long distances, error compounds. Keep precision.
+
+**Mistake 7 - Forgetting baseline distance.**
+
+You measure angles but forget to record baseline distance. Cannot calculate actual distance without it.
+
+## Cross-References
+
+- See Vol 22, Ch 2 - Geometry (foundation: triangles and angles)
+- See Vol 24 - Surveying (detailed land measurement)
+- See Vol 17 - Navigation (angles for direction finding)

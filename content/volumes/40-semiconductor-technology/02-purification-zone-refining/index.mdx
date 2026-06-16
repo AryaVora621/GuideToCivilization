@@ -1,0 +1,162 @@
+---
+title: "Silicon Purification: Zone Refining and the Siemens Process"
+volume: 40
+chapter: 2
+difficulty: long-term
+prerequisites:
+  - "Vol 40, Ch 1 — Carbothermic reduction (metallurgical silicon)"
+  - "Vol 5: Chemistry — Distillation, vapor pressure"
+  - "Vol 12: Electrical Engineering — Induction heating"
+unlocks:
+  - "semiconductor/czochralski-crystal-growth"
+tags: [semiconductor, silicon, purification, chemistry, long-term]
+summary: "Two purification paths from 99% to 99.9999999% pure silicon: the industrial Siemens process (trichlorosilane decomposition) and the laboratory zone refining method. Both are explained from first principles."
+---
+
+## Overview
+
+Metallurgical silicon at 98–99% purity contains impurities measured in tenths of a percent. For electronics, you need silicon so pure that impurities measure in **parts per trillion** — roughly one impurity atom per billion silicon atoms (electronic grade: 9N = 99.9999999%). 
+
+This level of purity is not achievable by any simple smelting technique. You need to exploit a fundamental property of crystallization: when a material solidifies, impurities are preferentially excluded from the growing crystal and pushed into the liquid phase. Zone refining uses this principle by repeatedly melting and re-solidifying the same material, sweeping impurities to one end.
+
+The Siemens process takes a different approach: convert silicon to a volatile compound (trichlorosilane), distill the compound to high purity, then decompose it back to pure silicon.
+
+## Two Paths to Pure Silicon
+
+### Path A: Zone Refining (more accessible, good to ~7N purity)
+
+Best for: Laboratory/early rebuild scenarios. Uses induction heating. Requires 5–20 passes to reach electronic grade. Can be done at small scale.
+
+### Path B: Siemens Process (industrial standard, 9N achievable)
+
+Best for: Established industrial rebuild. Requires chemical infrastructure (HCl gas, reaction vessels, distillation columns). Produces polysilicon chunks that become the feedstock for Czochralski growth (Ch 3).
+
+Both are described in full below.
+
+## Prerequisites
+
+**For zone refining:**
+- Metallurgical silicon ingots or rods (Ch 1)
+- Induction heating coil and RF power supply (Vol 12) OR resistance furnace with a very narrow hot zone
+- Inert atmosphere (argon or vacuum) — silicon oxidizes at temperature
+- Silicon carbide or quartz tube to contain the rod
+
+**For Siemens process:**
+- Metallurgical silicon
+- Hydrochloric acid (HCl) gas source — see Vol 5, Ch 5
+- Copper catalyst
+- Distillation apparatus capable of handling trichlorosilane (bp 31.8°C) — low boiling point means room-temperature condensation is possible
+- High-temperature chemical vapor deposition (CVD) reactor, 1,100°C
+- Hydrogen gas supply
+
+## Method A: Zone Refining
+
+### The principle
+
+Every element has a **distribution coefficient (k)** that describes how preferentially it enters a solid versus remaining in liquid when that material freezes. For most impurities in silicon:
+
+- k < 1: impurities prefer the liquid phase (most impurities in silicon fall here — boron, phosphorus, iron, etc.)
+- k = 1: impurity distributes equally (rare)
+- k > 1: impurity prefers the solid (also rare for silicon)
+
+When you melt a narrow zone of silicon and slowly move that zone from one end of a rod to the other, impurities are swept toward the end of travel. After many passes, impurities concentrate at the last end (which is cut off and discarded), and the rest of the rod reaches high purity.
+
+### Step-by-Step: Zone Refining
+
+**Step 1: Prepare the silicon rod.**
+Metallurgical silicon must be cast into a uniform rod (2–5 cm diameter, 30–60 cm long) and its surface cleaned with HF and deionized water if available. Place horizontally in a quartz tube.
+
+**Step 2: Purge the atmosphere.**
+Flow argon gas through the tube to displace air. Silicon at 1400°C+ reacts aggressively with oxygen. Argon (inert) prevents oxidation. Alternatively, use vacuum.
+
+**Step 3: Create a narrow molten zone.**
+Using an RF induction coil (positioned outside the quartz tube) or a narrow-resistance heater, melt only a 2–5 cm zone of the rod. The rest remains solid. The molten zone is held by surface tension — this requires care with diameter; too wide and the melt sags and breaks contact.
+
+**Step 4: Move the zone slowly.**
+Move the heater coil along the rod at 1–5 mm/minute (slower = better separation). As the molten zone moves forward, it melts fresh solid silicon at its leading edge and re-solidifies purified silicon at its trailing edge, pushing impurities forward.
+
+**Step 5: Repeat passes.**
+Move the zone from the same end each pass. After 5 passes, iron content drops by ~10,000×. After 20 passes, you approach 7–8N purity. The last 10–20% of the rod (the tail where impurities concentrate) is cut off and recycled back to the furnace.
+
+**Step 6: Verify purity.**
+Measure resistivity. High-purity silicon has very high resistivity (>1000 Ω·cm for intrinsic silicon). See Ch 5 for resistivity measurement methods.
+
+### Zone Refining Limitations
+
+Zone refining cannot remove impurities with k > 1 (they accumulate at the front of the rod, not the tail). Importantly, **oxygen** (k ≈ 1.25) and **carbon** slightly prefer the solid. This is one reason the Siemens process ultimately produces purer silicon for electronics.
+
+## Method B: The Siemens Process
+
+### The principle
+
+Convert silicon to trichlorosilane (SiHCl₃), a liquid at room temperature with a boiling point of 31.8°C. This allows standard distillation to separate it from impurity chlorides (most of which boil at different temperatures). Then decompose the purified SiHCl₃ back to silicon by thermal decomposition with hydrogen.
+
+### The reactions
+
+```
+Step 1 (hydrochlorination):
+Si + 3HCl → SiHCl₃ + H₂
+(at 300°C, copper catalyst)
+
+Step 2 (distillation):
+SiHCl₃ (bp 31.8°C) separated from:
+  BCl₃   (bp 12.5°C) — removed as low boiler
+  SiCl₄  (bp 57.6°C) — removed as high boiler
+  FeCl₃  (bp 315°C)  — removed as high boiler
+  PCl₃   (bp 76.1°C) — removed as high boiler
+
+Step 3 (deposition):
+SiHCl₃ + H₂ → Si + 3HCl
+(at 1100°C on a seed rod of pure silicon — CVD)
+```
+
+### Step-by-Step: Siemens Process
+
+**Step 1: Hydrochlorination of MGS.**
+Pass dry HCl gas over crushed MGS (particle size 1–10 mm) at 300°C in a fluidized bed reactor. Use copper (Cu) as a catalyst — copper powder mixed into the feed at 0.1–0.5% by weight significantly increases reaction rate and selectivity for SiHCl₃ over SiCl₄.
+
+The output gas mixture contains SiHCl₃, SiCl₄, H₂, HCl, and volatile chlorides of impurities. Cool the stream to condense the trichlorosilane (below 32°C will work in most climates without refrigeration in cool weather).
+
+**Step 2: Fractional distillation.**
+Distill the condensed liquid in a fractional distillation column. The goal is to cut out pure SiHCl₃:
+- Remove low boilers (BCl₃, bp 12.5°C) as overhead fractions
+- Collect SiHCl₃ (bp 31.8°C) as the main fraction
+- Leave high boilers (SiCl₄, FeCl₃, PCl₃, etc.) in the pot
+
+Multiple distillation passes improve purity further. This is where the chemical purification happens — each pass removes more of the impurity chlorides.
+
+**Step 3: Chemical vapor deposition (CVD) in a Siemens reactor.**
+The Siemens reactor is a sealed bell-jar reactor containing two inverted U-shaped slim rods of pure silicon (the "slim rods" serve as seed/substrate). The rods are resistance-heated to 1,100°C. Purified SiHCl₃ vapor mixed with H₂ is flowed into the reactor.
+
+The trichlorosilane decomposes on the hot rod surface, depositing pure silicon atoms. The rod grows thicker over hours and days of deposition. After several days, the reactor is opened and the now-thick polysilicon rods are removed.
+
+The resulting **electronic-grade polysilicon** is 9N pure — suitable for Czochralski crystal growth (Ch 3).
+
+**Safety note:** SiHCl₃ is flammable and reacts violently with water. HCl is highly corrosive. This process requires proper chemical engineering infrastructure, fume hoods, and gas handling systems.
+
+## Verification
+
+**Zone refined silicon:**
+- Four-point probe resistivity measurement should exceed 100 Ω·cm (typically 1,000–10,000 Ω·cm for 7N+ material)
+- Visual: clean metallic surface without visible oxide or contamination
+
+**Siemens polysilicon:**
+- Gray, granular "cauliflower" or "popcorn" surface texture on the deposited rods
+- Very high resistivity (>5,000 Ω·cm)
+- Breaks with a clean, glassy fracture — no metallic discoloration
+
+## Common Mistakes
+
+- **Air contamination during zone refining.** Even small oxygen leaks oxidize the melt surface and incorporate oxygen (which, unlike most impurities, segregates into the solid). Maintain argon flow continuously.
+- **Zone too wide.** Wide molten zones make separation less efficient and risk the melt breaking free of the rod. Keep to 3–5 cm.
+- **Moving the zone too fast.** The impurity sweep requires time for diffusion. 1 mm/min is slow but thorough; 5 mm/min is the practical upper limit.
+- **Boron and phosphorus contamination.** These critical dopants have k values closest to 1 of all common impurities, making them the hardest to remove. Boron in particular (k = 0.8) is stubbornly persistent. The Siemens process removes them via BCl₃ and PCl₃ distillation separation — zone refining alone struggles below ~10 ppb boron.
+- **HCl water contamination in Siemens.** Wet HCl gas produces siloxanes and chlorosilanol side products that contaminate the product. Dry the HCl before introduction.
+
+## Cross-References
+
+- See Vol 40, Ch 1 — Metallurgical silicon production (the starting feedstock)
+- See Vol 40, Ch 3 — Czochralski crystal growing (uses the polysilicon from this chapter)
+- See Vol 5, Ch 6 — Fractional distillation design
+- See Vol 12, Ch 4 — Induction heating for zone refining coils
+- See Appendix I — Units: purity in ppm/ppb/ppt, resistivity in Ω·cm

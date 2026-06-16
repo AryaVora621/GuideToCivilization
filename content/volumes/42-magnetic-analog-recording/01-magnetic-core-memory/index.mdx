@@ -1,0 +1,176 @@
+---
+title: "Magnetic Core Memory: Theory, Construction, and Operation"
+volume: 42
+chapter: 1
+difficulty: long-term
+prerequisites:
+  - "Vol 6: Physics — Magnetism and magnetic hysteresis"
+  - "Vol 12: Electrical Engineering — Inductors and pulse circuits"
+  - "Vol 42, Ch 2 — Ferrite core manufacture"
+unlocks:
+  - "computing/memory-architecture"
+  - "computing/addressing"
+tags: [computing, memory, magnetic, ferrite, electronics, long-term]
+summary: "Magnetic core memory — used in every early mainframe, NASA Apollo computer, and first-generation satellite systems — stores one bit per tiny ferrite ring. This chapter explains the physics, construction of memory planes, and the coincident-current addressing scheme from scratch."
+---
+
+## Overview
+
+From the mid-1950s to the late 1970s, nearly every computer on Earth used magnetic core memory. The Apollo guidance computer that took humans to the Moon used it. The IBM System/360 used it. Early Soviet satellites used it. The first transistorized computers used it. It was the dominant computer memory technology for over 20 years, and for good reason: **it is non-volatile** (retains data without power), **radiation-hard** (immune to the space radiation that kills semiconductor memory), and can be built with relatively primitive manufacturing tools compared to integrated circuits.
+
+A core memory plane consists of a grid of tiny ferrite rings (cores), each threaded by wires in an X-Y grid plus a sense and inhibit wire. Each core stores one bit. The state of the bit (0 or 1) is determined by which direction the core is magnetized — clockwise or counterclockwise. Reading the bit requires writing to it and sensing whether the magnetic field switched; if it switched, it was storing a 1 (and must be written back — this is called "destructive readout").
+
+For anyone rebuilding computing capability without access to semiconductor fabrication, magnetic core memory is the logical first memory technology — it requires only ferrite manufacturing (achievable with oxide chemistry), fine wire (achievable with wire drawing, Vol 13), and basic transistor pulse circuits.
+
+## The Physics: Magnetic Hysteresis and the Square Loop
+
+The key to core memory is a ferrite material with a **square hysteresis loop** — a magnetic characteristic where the material has only two stable states of magnetization (fully saturated in one direction or the other) with a very sharp transition between them.
+
+### The hysteresis curve
+
+When you apply an increasing magnetic field (H) to a ferrite core:
+1. The core magnetizes in the direction of the field
+2. At saturation (+Hsat), all magnetic domains align — the core is fully magnetized
+3. When you remove the field, the core retains magnetization at the **remanence point** (+Br)
+4. To switch the core to the other state, you must exceed the **coercive field** (-Hc) in the reverse direction
+5. The core then snaps to -Br (the opposite remanent state)
+
+A "square" loop means +Br and -Br are nearly equal to the saturation values, and the transition between them is sharp. This gives you two clearly distinguishable states — perfect for binary storage.
+
+### The coincident-current scheme
+
+A core memory plane stores an array of bits using a clever addressing trick:
+
+- Each core sits at the intersection of an **X wire** and a **Y wire**
+- To write a 1, send a current pulse of +I/2 through the X wire AND +I/2 through the Y wire passing through the target core
+- The core at the intersection receives I/2 + I/2 = I — enough to switch it to state 1
+- All other cores on either wire receive only I/2 — **not enough to switch** (this is called the half-select threshold)
+- To read: send +I/2 through X and Y, plus monitor the **sense wire** (which threads all cores diagonally). If the core switches from 1→0, it induces a voltage pulse in the sense wire. No pulse = it was already 0.
+
+This scheme allows addressing individual cores in an N×N array using only N + N = 2N wires, rather than N² individual connections.
+
+## Prerequisites
+
+- **Ferrite cores** with square hysteresis loop: See Vol 42, Ch 2 for manufacture. Outer diameter: 1–3 mm for hand-threading; industrial cores were 0.5 mm.
+- **Fine wire**: 28–40 AWG magnet wire (copper with enamel insulation). See Vol 13, Ch 4 for wire drawing.
+- **Transistor pulse drivers**: To generate the half-select current pulses. See Vol 16.
+- **Sense amplifiers**: To detect the tiny voltage induced in the sense wire (millivolts level). See Vol 41 for amplifier circuits.
+- **Frame/substrate**: A stiff frame to hold the threading pattern. Fine wire mesh or PCB traces can substitute for the frame.
+
+## Materials & Tools
+
+**For a small prototype memory plane (16×16 = 256 bits):**
+- 256 ferrite cores (toroidal rings, OD 2–3 mm, ID 1–2 mm, height 1 mm)
+- Wire: approximately 5 meters of 30 AWG magnet wire for X lines (16 wires × ~300 mm per wire pass)
+- Wire: approximately 5 meters of 30 AWG for Y lines
+- Wire: approximately 5 meters of 36–40 AWG for sense wire (thinner to reduce capacitance)
+- Wire: approximately 5 meters of 36–40 AWG for inhibit wire (needed for writing 0)
+- Threading needle or fine wire stiffener (thin steel wire, 0.5 mm, to guide threading)
+- Inspection magnifier (10× minimum — core memory threading is fine work)
+- Frame: rigid substrate with a 16×16 grid of holes at the core spacing (e.g., etched PCB or machined plate)
+
+**For drive circuits:**
+- 32 transistor switches (16 X-drivers + 16 Y-drivers) capable of switching 400mA pulses
+- Sense amplifier circuit (see Vol 16 reference)
+- Clock circuit for timing read/write pulses
+
+## Step-by-Step: Constructing a Core Memory Plane
+
+### Step 1: Verify your ferrite cores
+
+Before threading hundreds of cores, test that they have a proper square loop. Connect a few turns of wire through several cores and apply an AC signal while watching the resulting waveform on an oscilloscope (Vol 41). A square loop appears as a characteristic rectangular hysteresis curve. Round loops (typical of audio ferrite) will not work for core memory — they lack the sharp switching needed.
+
+Determine the **critical current**: the minimum current needed to fully switch a core. Use a pulse generator and sense coil to find the switching threshold. This determines your half-select current (I/2 = half the switching threshold) and full-select current (I = full switching current).
+
+### Step 2: Design the threading pattern
+
+Each core is threaded by exactly four wires:
+1. X wire (row): passes through in one direction
+2. Y wire (column): passes through in one direction  
+3. Sense wire: passes through all cores in the plane diagonally in a zigzag pattern
+4. Inhibit wire: also zigzags, in the opposite direction to the sense wire
+
+The sense and inhibit wires are typically the same physical wire in opposing directions, or separate wires threaded in opposite directions through alternate cores.
+
+**Thread direction matters**: X and Y wires must thread in the same direction relative to the core (both "clockwise" when viewed from one end) so that their fields add together at the selected core.
+
+### Step 3: Build the frame
+
+A 16×16 array needs 256 hole positions in a grid, spaced by the core diameter + 1–2 mm for the wire. Machine or drill the frame substrate with matching hole positions. Label X (row) and Y (column) positions 1–16.
+
+Alternatively, build the plane without a frame by carefully tape-securing the wires in place as threading proceeds.
+
+### Step 4: Thread the X wires
+
+Thread the first X wire through the first core in row 1, then out and around to the second core in row 1, threading through in the same direction. Continue across all 16 cores in the row. Terminate each end of the X wire at the frame edge where it will connect to the X-driver circuit.
+
+Repeat for all 16 rows. Take care to maintain consistent threading direction — reversing the threading direction on any wire will invert that row's behavior.
+
+### Step 5: Thread the Y wires
+
+Thread each Y wire down its column in the same manner, passing through all 16 cores in the column. Each Y wire passes through cores already threaded by X wires — this is the intersection. The Y wire passes through the center of the toroid in the perpendicular direction to the X wire.
+
+**The threading angle**: X and Y wires ideally pass through the core at approximately 90° to each other so they produce orthogonal magnetic field contributions. In practice, threading at any consistent angle works — the coincident-current scheme is tolerant of angle variation.
+
+### Step 6: Thread the sense wire
+
+The sense wire threads through all 256 cores in a zigzag (snake) pattern. In even rows, it threads left-to-right; in odd rows, right-to-left. This alternating pattern causes the voltage pulses from "1" cores and "0" cores to add constructively rather than canceling out across different rows.
+
+The sense wire uses the thinnest wire possible (36–40 AWG) to minimize stray capacitance and inductance, which would slow the sense signal rise time and blur the data.
+
+### Step 7: Thread the inhibit wire
+
+The inhibit wire threads through all cores in the same zigzag as the sense wire but in the **opposite direction**. Its purpose: to write a "0" into a selected core. During a write-0 operation, the inhibit wire carries a current of -I/2, which cancels out one of the two I/2 pulses at the selected core, preventing it from switching to 1.
+
+### Step 8: Solder connections and verify
+
+Solder X and Y wire ends to the driver circuit outputs. Solder sense wire to the sense amplifier input. Solder inhibit wire to the inhibit driver.
+
+**Continuity test first**: Check that no wires short to each other (with an ohmmeter). Threading fine wire through tiny ferrite holes commonly causes accidental shorts.
+
+**Pulse test**: Apply a write-1 pulse (both X and Y at I/2 simultaneously) and then a read pulse. Verify a sense pulse appears on the sense wire. Apply write-0 (X and Y I/2 with inhibit), then read — verify NO sense pulse.
+
+## Memory Plane Specifications (1960s technology, achievable in rebuild)
+
+| Parameter | Value |
+|---|---|
+| Core OD (hand-threaded) | 2–3 mm |
+| Core ID | 1.0–1.5 mm |
+| Array size | 16×16 to 64×64 per plane |
+| Cycle time | 1–10 microseconds |
+| Current per wire | 200–500 mA per half-select |
+| Operating temperature | –40°C to +85°C |
+| Power retention without power | Indefinite (non-volatile) |
+| Radiation hardness | Excellent (no semiconductor junctions) |
+
+## Scaling Up: From Plane to Memory System
+
+A single 16×16 plane stores 256 bits. For useful memory:
+- **Stack planes** vertically — 8 planes give 8-bit words (bytes), each addressed at the same X-Y coordinate
+- A 64×64×8 stack = 32,768 bits = 4 kilobytes
+- The Apollo guidance computer had 4,096 words × 16 bits = 8 kilobytes of core RAM
+- Stack multiple stacks for more capacity
+
+## Historical Context
+
+The first working core memory was demonstrated by Jay Forrester at MIT in 1949. By 1955, IBM was manufacturing core memory planes industrially. The technique of threading by hand was replaced by early automated threading machines by the 1960s — but hand-threading a small plane is entirely feasible, just time-consuming (a skilled worker can thread ~200 cores per hour).
+
+Core memory remained in use in aerospace and defense applications well into the 1980s precisely because of its non-volatility and radiation hardness. The Space Shuttle used core memory in its main flight computers through the 1990s.
+
+## Common Mistakes
+
+- **Wrong core material.** Audio/transformer ferrite does not have a square loop. Manganese-zinc (MnZn) ferrite is for audio; you need **nickel-zinc (NiZn)** or specific manganese-magnesium ferrite with square-loop characteristics.
+- **Inconsistent threading direction.** Reversing the X or Y wire direction on any core inverts that bit's behavior. Mark your threading tool with an arrow and be methodical.
+- **Half-select current too high.** If I/2 exceeds the switching threshold, all cores on a selected wire will switch — destroying data in the whole row or column. The half-select must be reliably below the switching threshold for all cores.
+- **Sense wire too thick.** Thick sense wire has high capacitance which slows the sense pulse and makes it harder to detect. Use the finest wire you can manage.
+- **No inhibit wire.** Without the inhibit wire, you can only write 1s, not 0s. Both are essential.
+- **Not accounting for destructive readout.** Every read destroys the stored data. The read cycle must be followed by a write-back of the data. Failure to implement write-back corrupts memory.
+
+## Cross-References
+
+- See Vol 42, Ch 2 — Ferrite core manufacture (making the cores)
+- See Vol 6, Ch 7 — Magnetic hysteresis theory
+- See Vol 16, Ch 4 — Computer memory architecture (how core memory fits into a computer)
+- See Vol 12, Ch 3 — Inductors and transformer design
+- See Vol 41, Ch 5 — Sense amplifier circuits
+- See Vol 13, Ch 4 — Wire drawing to fine gauges

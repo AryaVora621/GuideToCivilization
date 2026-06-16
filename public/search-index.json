@@ -1,0 +1,940 @@
+[
+  {
+    "title": "Water Purification",
+    "summary": "How to make water safe to drink using five methods, ranked from simplest to most effective. Contaminated water kills faster than most threats you will face.",
+    "tags": [
+      "survival",
+      "water",
+      "health",
+      "immediate"
+    ],
+    "volumeSlug": "01-survival",
+    "volumeTitle": "Survival",
+    "volumeNumber": 1,
+    "chapterSlug": "01-water-purification",
+    "chapter": 1
+  },
+  {
+    "title": "Fire Making",
+    "summary": "Fire provides heat, light, cooked food, sterilized water, protection, and the psychological anchor of civilization. Four methods from friction to prepared tinder.",
+    "tags": [
+      "survival",
+      "fire",
+      "heat",
+      "cooking",
+      "immediate"
+    ],
+    "volumeSlug": "01-survival",
+    "volumeTitle": "Survival",
+    "volumeNumber": 1,
+    "chapterSlug": "02-fire-making",
+    "chapter": 2
+  },
+  {
+    "title": "Hunting & Trapping",
+    "summary": "Passive trap construction and active hunting techniques to acquire protein—from deadfall traps to field dressing.",
+    "tags": [
+      "survival",
+      "hunting",
+      "trapping",
+      "protein",
+      "immediate"
+    ],
+    "volumeSlug": "01-survival",
+    "volumeTitle": "Survival",
+    "volumeNumber": 1,
+    "chapterSlug": "05-hunting-trapping",
+    "chapter": 5
+  },
+  {
+    "title": "Fishing",
+    "summary": "Fish are protein-rich, renewable, and accessible even without modern tools. Hand-lines, weirs, spears, and traps catch food in hours, not days. Learn to read water, place gear, and harvest without depleting.",
+    "tags": [
+      "survival",
+      "fishing",
+      "food",
+      "immediate",
+      "protein"
+    ],
+    "volumeSlug": "01-survival",
+    "volumeTitle": "Survival",
+    "volumeNumber": 1,
+    "chapterSlug": "06-fishing",
+    "chapter": 6
+  },
+  {
+    "title": "Basic First Aid & Wound Care",
+    "summary": "Stop bleeding, clean wounds, treat burns and fractures without modern equipment. These are the skills that keep you alive in the first days after collapse.",
+    "tags": [
+      "survival",
+      "medicine",
+      "first-aid",
+      "immediate"
+    ],
+    "volumeSlug": "01-survival",
+    "volumeTitle": "Survival",
+    "volumeNumber": 1,
+    "chapterSlug": "07-first-aid",
+    "chapter": 7
+  },
+  {
+    "title": "Primitive Tool Making",
+    "summary": "Bone, wood, and soft stone tools are faster and often better than flint. Make needles, scrapers, fish hooks, digging sticks, and grinding stones from readily available materials.",
+    "tags": [
+      "survival",
+      "tools",
+      "bone",
+      "wood",
+      "stone",
+      "immediate"
+    ],
+    "volumeSlug": "01-survival",
+    "volumeTitle": "Survival",
+    "volumeNumber": 1,
+    "chapterSlug": "09-primitive-tools",
+    "chapter": 9
+  },
+  {
+    "title": "Navigation Without GPS",
+    "summary": "Find direction and keep your bearing using only the sun, stars, terrain, and natural landmarks. Navigation keeps you from walking in circles when you are lost.",
+    "tags": [
+      "survival",
+      "navigation",
+      "immediate",
+      "wilderness"
+    ],
+    "volumeSlug": "01-survival",
+    "volumeTitle": "Survival",
+    "volumeNumber": 1,
+    "chapterSlug": "10-navigation",
+    "chapter": 10
+  },
+  {
+    "title": "Observation and Measurement: Building the Foundation of Science",
+    "summary": "Science starts with careful observation and measurement. Learn to observe systematically, measure accurately, record reliably, and estimate uncertainty.",
+    "tags": [
+      "science",
+      "observation",
+      "measurement",
+      "data",
+      "methodology"
+    ],
+    "volumeSlug": "02-scientific-method",
+    "volumeTitle": "Scientific Method",
+    "volumeNumber": 2,
+    "chapterSlug": "01-observation-and-measurement",
+    "chapter": 1
+  },
+  {
+    "title": "Arithmetic: Counting, Calculation, and Practical Numbers",
+    "summary": "Master addition, subtraction, multiplication, and division. Learn to calculate without paper, estimate quickly, and verify results. Arithmetic is the foundation of all practical mathematics.",
+    "tags": [
+      "arithmetic",
+      "numbers",
+      "calculation",
+      "addition",
+      "multiplication"
+    ],
+    "volumeSlug": "03-mathematics",
+    "volumeTitle": "Mathematics",
+    "volumeNumber": 3,
+    "chapterSlug": "01-arithmetic",
+    "chapter": 1
+  },
+  {
+    "title": "Cell Theory: Understanding Life at Its Foundation",
+    "summary": "All life is made of cells. Cells are the smallest units of life. This chapter explains the three core principles and why they matter for food, medicine, and survival.",
+    "tags": [
+      "biology",
+      "cells",
+      "theory",
+      "foundation",
+      "life-science"
+    ],
+    "volumeSlug": "07-biology",
+    "volumeTitle": "Biology",
+    "volumeNumber": 7,
+    "chapterSlug": "01-cell-theory",
+    "chapter": 1
+  },
+  {
+    "title": "Genetics Basics: Heredity, Variation, and Mutation",
+    "summary": "Traits pass from parent to offspring through genetic material. Understanding inheritance helps you breed crops and animals, predict disease, and understand why populations change.",
+    "tags": [
+      "genetics",
+      "heredity",
+      "dna",
+      "mutation",
+      "inheritance"
+    ],
+    "volumeSlug": "07-biology",
+    "volumeTitle": "Biology",
+    "volumeNumber": 7,
+    "chapterSlug": "02-genetics-basics",
+    "chapter": 2
+  },
+  {
+    "title": "Evolution and Natural Selection: How Populations Change",
+    "summary": "Populations change over generations through natural selection. Understanding this explains disease resistance, crop failure, and how organisms adapt to collapse scenarios.",
+    "tags": [
+      "evolution",
+      "selection",
+      "adaptation",
+      "population-dynamics",
+      "survival"
+    ],
+    "volumeSlug": "07-biology",
+    "volumeTitle": "Biology",
+    "volumeNumber": 7,
+    "chapterSlug": "03-evolution",
+    "chapter": 3
+  },
+  {
+    "title": "Ecology: Energy, Populations, and Ecosystems",
+    "summary": "Organisms live in systems where energy flows and populations interact. Understanding ecosystems helps you manage resources sustainably and predict population changes.",
+    "tags": [
+      "ecology",
+      "ecosystems",
+      "energy-flow",
+      "populations",
+      "food-webs"
+    ],
+    "volumeSlug": "07-biology",
+    "volumeTitle": "Biology",
+    "volumeNumber": 7,
+    "chapterSlug": "04-ecology",
+    "chapter": 4
+  },
+  {
+    "title": "Human Anatomy",
+    "summary": "Essential human anatomy: skeletal system, organs, blood vessels, and nervous system. Foundation for medical diagnosis and treatment.",
+    "tags": [
+      "anatomy",
+      "biology",
+      "medicine",
+      "human-body",
+      "long-term"
+    ],
+    "volumeSlug": "07-biology",
+    "volumeTitle": "Biology",
+    "volumeNumber": 7,
+    "chapterSlug": "05-human-anatomy",
+    "chapter": 5
+  },
+  {
+    "title": "Soil Science",
+    "summary": "Healthy soil grows healthy crops. Learn soil types, fertility assessment, amendments, and management techniques. Post-collapse agriculture depends on understanding your soil.",
+    "tags": [
+      "soil",
+      "agriculture",
+      "fertility",
+      "amendment",
+      "drainage"
+    ],
+    "volumeSlug": "08-agriculture",
+    "volumeTitle": "Agriculture",
+    "volumeNumber": 8,
+    "chapterSlug": "01-soil-science",
+    "chapter": 1
+  },
+  {
+    "title": "Crop Selection",
+    "summary": "Choose crops that match your climate, soil, and labor capacity. The goal is calories first, then nutrition, then surplus. Select for reliability over novelty.",
+    "tags": [
+      "crops",
+      "selection",
+      "climate",
+      "calories",
+      "strategy"
+    ],
+    "volumeSlug": "08-agriculture",
+    "volumeTitle": "Agriculture",
+    "volumeNumber": 8,
+    "chapterSlug": "02-crop-selection",
+    "chapter": 2
+  },
+  {
+    "title": "Seed Saving",
+    "summary": "Save seed from this year's harvest for next year's planting. Seed saving ensures independence from external sources and creates locally-adapted varieties over generations.",
+    "tags": [
+      "seeds",
+      "saving",
+      "storage",
+      "genetics",
+      "breeding"
+    ],
+    "volumeSlug": "08-agriculture",
+    "volumeTitle": "Agriculture",
+    "volumeNumber": 8,
+    "chapterSlug": "03-seed-saving",
+    "chapter": 3
+  },
+  {
+    "title": "Irrigation",
+    "summary": "Grow crops where water is scarce or unreliable by building irrigation systems. Gravity-fed channels are simplest; learn surface, furrow, and drip irrigation methods.",
+    "tags": [
+      "irrigation",
+      "water",
+      "agriculture",
+      "channels",
+      "gravity"
+    ],
+    "volumeSlug": "08-agriculture",
+    "volumeTitle": "Agriculture",
+    "volumeNumber": 8,
+    "chapterSlug": "04-irrigation",
+    "chapter": 4
+  },
+  {
+    "title": "Crop Rotation",
+    "summary": "Rotate crops annually to maintain soil fertility, prevent pest buildup, and break disease cycles. A good rotation plan feeds your settlement indefinitely without depleting soil.",
+    "tags": [
+      "rotation",
+      "nitrogen",
+      "legumes",
+      "soil",
+      "sustainability"
+    ],
+    "volumeSlug": "08-agriculture",
+    "volumeTitle": "Agriculture",
+    "volumeNumber": 8,
+    "chapterSlug": "05-crop-rotation",
+    "chapter": 5
+  },
+  {
+    "title": "Composting at Scale",
+    "summary": "Build large composting systems that turn crop residue, manure, and kitchen waste into soil amendment. Hot compost, windrows, and vermicompost each serve different scales and climates.",
+    "tags": [
+      "compost",
+      "organic-matter",
+      "nutrients",
+      "waste-management",
+      "sustainability"
+    ],
+    "volumeSlug": "08-agriculture",
+    "volumeTitle": "Agriculture",
+    "volumeNumber": 8,
+    "chapterSlug": "06-composting-at-scale",
+    "chapter": 6
+  },
+  {
+    "title": "Pest Control",
+    "summary": "Identifying agricultural pests, non-chemical control methods, crop rotation, and integrated pest management without industrial pesticides.",
+    "tags": [
+      "agriculture",
+      "pests",
+      "farming",
+      "control",
+      "long-term"
+    ],
+    "volumeSlug": "08-agriculture",
+    "volumeTitle": "Agriculture",
+    "volumeNumber": 8,
+    "chapterSlug": "07-pest-control",
+    "chapter": 7
+  },
+  {
+    "title": "Wound Care",
+    "summary": "Step-by-step wound cleaning, closure, and infection prevention using available materials and no modern equipment.",
+    "tags": [
+      "medicine",
+      "wounds",
+      "infection",
+      "immediate",
+      "survival"
+    ],
+    "volumeSlug": "14-medicine",
+    "volumeTitle": "Medicine",
+    "volumeNumber": 14,
+    "chapterSlug": "02-wound-care",
+    "chapter": 2
+  },
+  {
+    "title": "Germ Theory in Practice: Sterilization Without Autoclave",
+    "summary": "Sterilize medical instruments and environments without electricity or autoclaves. The goal is making tools and spaces safe enough that wounds heal, not become infected.",
+    "tags": [
+      "medicine",
+      "sterilization",
+      "infection-prevention",
+      "techniques"
+    ],
+    "volumeSlug": "14-medicine",
+    "volumeTitle": "Medicine",
+    "volumeNumber": 14,
+    "chapterSlug": "03-germ-theory-practice",
+    "chapter": 3
+  },
+  {
+    "title": "Fever and Infection Management",
+    "summary": "Fever is a defense mechanism. Recognize the difference between controlled fever (healing) and runaway fever (sepsis). Manage infection, prevent complications, and know when a patient is past saving.",
+    "tags": [
+      "medicine",
+      "fever",
+      "infection",
+      "sepsis",
+      "survival"
+    ],
+    "volumeSlug": "14-medicine",
+    "volumeTitle": "Medicine",
+    "volumeNumber": 14,
+    "chapterSlug": "04-fever-and-infection",
+    "chapter": 4
+  },
+  {
+    "title": "Field Surgery",
+    "summary": "When you must cut to save a life: amputation, abscess drainage, and emergency surgery without anesthesia or modern equipment. Last-resort interventions that separate survivors from corpses.",
+    "tags": [
+      "medicine",
+      "surgery",
+      "amputation",
+      "trauma",
+      "survival"
+    ],
+    "volumeSlug": "14-medicine",
+    "volumeTitle": "Medicine",
+    "volumeNumber": 14,
+    "chapterSlug": "07-field-surgery",
+    "chapter": 7
+  },
+  {
+    "title": "Herbal Pharmacopoeia: 40+ Medicinal Plants",
+    "summary": "Fifty medicinal plants with their active compounds, preparation methods, dosages, and interactions. This is your post-collapse pharmacopoeia.",
+    "tags": [
+      "medicine",
+      "herbalism",
+      "pharmacopoeia",
+      "plants",
+      "remedies"
+    ],
+    "volumeSlug": "14-medicine",
+    "volumeTitle": "Medicine",
+    "volumeNumber": 14,
+    "chapterSlug": "09-herbal-pharmacopoeia",
+    "chapter": 9
+  },
+  {
+    "title": "Property Systems: Commons vs. Private Ownership",
+    "summary": "Define who owns what and how disputes are resolved. Commons (shared resources) and private property both work; the failure mode is ambiguity.",
+    "tags": [
+      "governance",
+      "property",
+      "commons",
+      "land-ownership",
+      "legal-systems"
+    ],
+    "volumeSlug": "18-society-governance",
+    "volumeTitle": "Society & Governance",
+    "volumeNumber": 18,
+    "chapterSlug": "01-property-systems",
+    "chapter": 1
+  },
+  {
+    "title": "Rule of Law: Criminal and Civil Justice Without Lawyers",
+    "summary": "Establish consistent rules for crime and civil disputes. Justice without lawyers means clear rules, community judges, and enforceable penalties.",
+    "tags": [
+      "governance",
+      "law",
+      "justice",
+      "crime",
+      "civil-disputes"
+    ],
+    "volumeSlug": "18-society-governance",
+    "volumeTitle": "Society & Governance",
+    "volumeNumber": 18,
+    "chapterSlug": "02-rule-of-law",
+    "chapter": 2
+  },
+  {
+    "title": "Government Structures: Organizing Decision-Making Without Professionals",
+    "summary": "Design a government structure that makes binding decisions without professional politicians. Options: assemblies, councils, rotating magistrates. The failure mode is concentration of power.",
+    "tags": [
+      "governance",
+      "decision-making",
+      "assembly",
+      "councils",
+      "leadership-rotation"
+    ],
+    "volumeSlug": "18-society-governance",
+    "volumeTitle": "Society & Governance",
+    "volumeNumber": 18,
+    "chapterSlug": "03-government-structures",
+    "chapter": 3
+  },
+  {
+    "title": "Record-Keeping and Archives: Preserving Information for the Future",
+    "summary": "Keep written records of property, laws, decisions, and knowledge. Without archives, history is forgotten, disputes return, and civilizations restart from scratch.",
+    "tags": [
+      "governance",
+      "records",
+      "archives",
+      "literacy",
+      "administration"
+    ],
+    "volumeSlug": "18-society-governance",
+    "volumeTitle": "Society & Governance",
+    "volumeNumber": 18,
+    "chapterSlug": "05-record-keeping",
+    "chapter": 5
+  },
+  {
+    "title": "Currency from Scratch: Creating Money Without Central Banks",
+    "summary": "Establish a medium of exchange to replace barter. Options: commodity-based (grain, metal), token-based (coins, tokens), or credit-based (ledgers). Currency enables specialization and long-term planning.",
+    "tags": [
+      "currency",
+      "money",
+      "trade",
+      "economics",
+      "medium-of-exchange"
+    ],
+    "volumeSlug": "18-society-governance",
+    "volumeTitle": "Society & Governance",
+    "volumeNumber": 18,
+    "chapterSlug": "06-currency-from-scratch",
+    "chapter": 6
+  },
+  {
+    "title": "Failure Modes",
+    "summary": "How civilizations historically fail, the warning signs to watch for, and the structural vulnerabilities that cause collapse.",
+    "tags": [
+      "civilization",
+      "collapse",
+      "history",
+      "strategy",
+      "survival"
+    ],
+    "volumeSlug": "19-civilization-roadmap",
+    "volumeTitle": "Civilization Roadmap",
+    "volumeNumber": 19,
+    "chapterSlug": "03-failure-modes",
+    "chapter": 3
+  },
+  {
+    "title": "Group Dynamics",
+    "summary": "How groups form, achieve cohesion, differentiate roles, and manage in-group vs. out-group boundaries.",
+    "tags": [
+      "psychology",
+      "groups",
+      "cohesion",
+      "dynamics",
+      "long-term"
+    ],
+    "volumeSlug": "25-psychology-education",
+    "volumeTitle": "Psychology & Education",
+    "volumeNumber": 25,
+    "chapterSlug": "02-group-dynamics",
+    "chapter": 2
+  },
+  {
+    "title": "Ethical Frameworks",
+    "summary": "Three ethical frameworks (consequentialism, deontology, virtue ethics) and how to apply them when civilization-building requires impossible choices.",
+    "tags": [
+      "ethics",
+      "philosophy",
+      "decision-making",
+      "long-term",
+      "leadership"
+    ],
+    "volumeSlug": "27-ethics-philosophy",
+    "volumeTitle": "Ethics, Philosophy & Decision-Making",
+    "volumeNumber": 27,
+    "chapterSlug": "01-ethical-frameworks",
+    "chapter": 1
+  },
+  {
+    "title": "Justice and Rights",
+    "summary": "Building fair legal systems and defining rights when civilization restarts from collapse.",
+    "tags": [
+      "ethics",
+      "justice",
+      "rights",
+      "law",
+      "long-term"
+    ],
+    "volumeSlug": "27-ethics-philosophy",
+    "volumeTitle": "Ethics, Philosophy & Decision-Making",
+    "volumeNumber": 27,
+    "chapterSlug": "02-justice-and-rights",
+    "chapter": 2
+  },
+  {
+    "title": "Social Contracts",
+    "summary": "Writing founding documents, charters, and constitutions that establish how a post-collapse community governs itself.",
+    "tags": [
+      "governance",
+      "social-contract",
+      "constitution",
+      "law",
+      "long-term"
+    ],
+    "volumeSlug": "27-ethics-philosophy",
+    "volumeTitle": "Ethics, Philosophy & Decision-Making",
+    "volumeNumber": 27,
+    "chapterSlug": "04-social-contracts",
+    "chapter": 4
+  },
+  {
+    "title": "Decision Under Uncertainty",
+    "summary": "Using Bayesian reasoning and expected value to make decisions when outcomes are uncertain.",
+    "tags": [
+      "decision-making",
+      "strategy",
+      "uncertainty",
+      "risk",
+      "long-term"
+    ],
+    "volumeSlug": "27-ethics-philosophy",
+    "volumeTitle": "Ethics, Philosophy & Decision-Making",
+    "volumeNumber": 27,
+    "chapterSlug": "05-decision-under-uncertainty",
+    "chapter": 5
+  },
+  {
+    "title": "Leadership and Authority",
+    "summary": "Sources of legitimate authority, how to lead without tyranny, and how to plan succession.",
+    "tags": [
+      "leadership",
+      "authority",
+      "governance",
+      "long-term"
+    ],
+    "volumeSlug": "27-ethics-philosophy",
+    "volumeTitle": "Ethics, Philosophy & Decision-Making",
+    "volumeNumber": 27,
+    "chapterSlug": "06-leadership-and-authority",
+    "chapter": 6
+  },
+  {
+    "title": "Fortification Design",
+    "summary": "Design defensive structures that deter attackers without consuming unsustainable labor. Learn to site fortifications, size walls and towers, integrate water barriers, and account for terrain advantages.",
+    "tags": [
+      "fortification",
+      "defense",
+      "walls",
+      "architecture",
+      "engineering"
+    ],
+    "volumeSlug": "31-military-defense",
+    "volumeTitle": "Military History & Defense",
+    "volumeNumber": 31,
+    "chapterSlug": "01-fortification-design",
+    "chapter": 1
+  },
+  {
+    "title": "Perimeter Security",
+    "summary": "Organize effective guard rotations, set up alarm systems, and monitor perimeter threats without burning out your defenders. Perimeter security is as much about routine and communication as about weapons.",
+    "tags": [
+      "security",
+      "perimeter",
+      "guards",
+      "alarms",
+      "watch-systems"
+    ],
+    "volumeSlug": "31-military-defense",
+    "volumeTitle": "Military History & Defense",
+    "volumeNumber": 31,
+    "chapterSlug": "02-perimeter-security",
+    "chapter": 2
+  },
+  {
+    "title": "Defensive Strategy",
+    "summary": "Plan how to defend your settlement if attacked. Strategy is how you use your fortifications, terrain, and people. Effective defense often means avoiding direct combat, not winning it.",
+    "tags": [
+      "strategy",
+      "defense",
+      "tactics",
+      "positioning",
+      "fallback"
+    ],
+    "volumeSlug": "31-military-defense",
+    "volumeTitle": "Military History & Defense",
+    "volumeNumber": 31,
+    "chapterSlug": "03-defensive-strategy",
+    "chapter": 3
+  },
+  {
+    "title": "Siege Basics",
+    "summary": "When your settlement is surrounded and supply lines are cut, you are under siege. Survive by managing supplies, water, and morale. Know when to fight for a breakout, when to negotiate, and when to surrender.",
+    "tags": [
+      "siege",
+      "defense",
+      "negotiation",
+      "endurance",
+      "water-storage"
+    ],
+    "volumeSlug": "31-military-defense",
+    "volumeTitle": "Military History & Defense",
+    "volumeNumber": 31,
+    "chapterSlug": "04-siege-basics",
+    "chapter": 4
+  },
+  {
+    "title": "Weapon Basics",
+    "summary": "Learn to make and use defensive weapons: bows, spears, and simple crossbows. Focus is on simplicity and defensive value, not dominance. Post-collapse weapons are tools, not status.",
+    "tags": [
+      "weapons",
+      "bows",
+      "spears",
+      "crossbows",
+      "defense",
+      "crafting"
+    ],
+    "volumeSlug": "31-military-defense",
+    "volumeTitle": "Military History & Defense",
+    "volumeNumber": 31,
+    "chapterSlug": "05-weapon-basics",
+    "chapter": 5
+  },
+  {
+    "title": "Lessons from History",
+    "summary": "Study how civilizations collapsed: Rome, Byzantium, Easter Island. Learn the patterns of military overextension, defensive failure, and resource depletion. Your settlement must not repeat these mistakes.",
+    "tags": [
+      "history",
+      "civilization",
+      "defense",
+      "collapse",
+      "strategy"
+    ],
+    "volumeSlug": "31-military-defense",
+    "volumeTitle": "Military History & Defense",
+    "volumeNumber": 31,
+    "chapterSlug": "06-lessons-from-history",
+    "chapter": 6
+  },
+  {
+    "title": "Tracking and Sign",
+    "summary": "Read tracks, scat, browse, and runs to locate animals, predict their movement, and understand their behavior. Tracking turns a forest into readable text.",
+    "tags": [
+      "survival",
+      "tracking",
+      "hunting",
+      "wilderness",
+      "sign"
+    ],
+    "volumeSlug": "35-wilderness-survival-tracking",
+    "volumeTitle": "Wilderness Survival & Tracking",
+    "volumeNumber": 35,
+    "chapterSlug": "01-tracking-and-sign",
+    "chapter": 1
+  },
+  {
+    "title": "Terrain Navigation",
+    "summary": "Read the landscape to navigate reliably: identify ridges, valleys, water flows, and distinctive features. Terrain never lies if you know how to read it.",
+    "tags": [
+      "navigation",
+      "wilderness",
+      "terrain",
+      "tracking"
+    ],
+    "volumeSlug": "35-wilderness-survival-tracking",
+    "volumeTitle": "Wilderness Survival & Tracking",
+    "volumeNumber": 35,
+    "chapterSlug": "02-terrain-navigation",
+    "chapter": 2
+  },
+  {
+    "title": "Edible Plants in Depth",
+    "summary": "Field identification and preparation of 30+ edible plants by species, with toxin removal and seasonal timing.",
+    "tags": [
+      "survival",
+      "foraging",
+      "plants",
+      "food",
+      "immediate"
+    ],
+    "volumeSlug": "35-wilderness-survival-tracking",
+    "volumeTitle": "Wilderness Survival & Tracking",
+    "volumeNumber": 35,
+    "chapterSlug": "03-edible-plants-depth",
+    "chapter": 3
+  },
+  {
+    "title": "Primitive Tools (Flint Knapping)",
+    "summary": "Flint, chert, and obsidian can be worked into the sharpest cutting edges in the world. Learn to identify knappable stone and produce blades, points, and scrapers in hours without modern tools.",
+    "tags": [
+      "survival",
+      "flint-knapping",
+      "stone-tools",
+      "hunting",
+      "wilderness"
+    ],
+    "volumeSlug": "35-wilderness-survival-tracking",
+    "volumeTitle": "Wilderness Survival & Tracking",
+    "volumeNumber": 35,
+    "chapterSlug": "04-primitive-tools",
+    "chapter": 4
+  },
+  {
+    "title": "Hunting Strategies: Ambush, Drives, and Snare Placement",
+    "summary": "Kill game reliably by understanding where animals go, what they fear, and how to intercept them. Three core strategies: ambush, drive, and snare placement.",
+    "tags": [
+      "hunting",
+      "survival",
+      "strategy",
+      "animal-behavior",
+      "food-production"
+    ],
+    "volumeSlug": "35-wilderness-survival-tracking",
+    "volumeTitle": "Wilderness Survival & Tracking",
+    "volumeNumber": 35,
+    "chapterSlug": "05-hunting-strategies",
+    "chapter": 5
+  },
+  {
+    "title": "Shelter by Environment: Desert, Arctic, Temperate, Jungle",
+    "summary": "Build shelters matched to your climate: desert, arctic, temperate forest, or jungle. Material selection and design determine survival.",
+    "tags": [
+      "shelter",
+      "survival",
+      "environment",
+      "climate-adaptation"
+    ],
+    "volumeSlug": "35-wilderness-survival-tracking",
+    "volumeTitle": "Wilderness Survival & Tracking",
+    "volumeNumber": 35,
+    "chapterSlug": "06-shelter-by-environment",
+    "chapter": 6
+  },
+  {
+    "title": "Emergency Signaling",
+    "summary": "Signal for rescue using mirrors, smoke, ground signals, and sound. Know what rescuers see and hear, and how to make your signal unmistakable.",
+    "tags": [
+      "survival",
+      "signaling",
+      "rescue",
+      "emergency",
+      "visual"
+    ],
+    "volumeSlug": "35-wilderness-survival-tracking",
+    "volumeTitle": "Wilderness Survival & Tracking",
+    "volumeNumber": 35,
+    "chapterSlug": "07-emergency-signaling",
+    "chapter": 7
+  },
+  {
+    "title": "Composting Toilets: Design and Operation",
+    "summary": "A composting toilet converts human waste into safe, nutrient-rich soil amendment. No water, no sewage pipes, no smell — just controlled decomposition that produces fertilizer.",
+    "tags": [
+      "sanitation",
+      "composting",
+      "waste-management",
+      "pathogen-destruction",
+      "agriculture"
+    ],
+    "volumeSlug": "36-sanitation-engineering",
+    "volumeTitle": "Sanitation Engineering",
+    "volumeNumber": 36,
+    "chapterSlug": "03-composting-toilets",
+    "chapter": 3
+  },
+  {
+    "title": "Water Testing: Field Methods for Contamination Detection",
+    "summary": "Test water for contamination without a lab. Detect bacterial, chemical, and physical hazards using improvised methods.",
+    "tags": [
+      "sanitation",
+      "water-testing",
+      "contamination",
+      "field-methods",
+      "chemistry"
+    ],
+    "volumeSlug": "36-sanitation-engineering",
+    "volumeTitle": "Sanitation Engineering",
+    "volumeNumber": 36,
+    "chapterSlug": "04-water-testing",
+    "chapter": 4
+  },
+  {
+    "title": "Vector Control: Mosquitoes, Rats, Flies Without Pesticides",
+    "summary": "Control disease vectors (mosquitoes, rats, flies) through environmental management, physical barriers, and biological methods. Prevention is more effective than treatment.",
+    "tags": [
+      "sanitation",
+      "public-health",
+      "pest-control",
+      "disease-prevention"
+    ],
+    "volumeSlug": "36-sanitation-engineering",
+    "volumeTitle": "Sanitation Engineering",
+    "volumeNumber": 36,
+    "chapterSlug": "05-vector-control",
+    "chapter": 5
+  },
+  {
+    "title": "Waste Management and Hazardous Waste Isolation",
+    "summary": "Separate solid waste into organic (compostable), inert (landfill), and hazardous (isolated). Know what decomposes, what stays forever, and what poisons the land.",
+    "tags": [
+      "sanitation",
+      "waste",
+      "hazardous-materials",
+      "environmental-protection"
+    ],
+    "volumeSlug": "36-sanitation-engineering",
+    "volumeTitle": "Sanitation Engineering",
+    "volumeNumber": 36,
+    "chapterSlug": "06-waste-management",
+    "chapter": 6
+  },
+  {
+    "title": "Greywater Systems: Infiltration Trenches, Reed Beds & Reuse",
+    "summary": "Treat and reuse greywater (water from sinks, showers, laundry) through natural systems. Conserve freshwater while preventing pollution.",
+    "tags": [
+      "sanitation",
+      "water-reuse",
+      "irrigation",
+      "greywater",
+      "filtration"
+    ],
+    "volumeSlug": "36-sanitation-engineering",
+    "volumeTitle": "Sanitation Engineering",
+    "volumeNumber": 36,
+    "chapterSlug": "07-greywater-systems",
+    "chapter": 7
+  },
+  {
+    "title": "Silicon from Sand: Carbothermic Reduction",
+    "summary": "The complete process for reducing silicon dioxide (quartz sand) to metallurgical-grade silicon using carbon at 1700°C+. This is Step 1 of 12 in the path from beach sand to working transistors.",
+    "tags": [
+      "semiconductor",
+      "silicon",
+      "materials",
+      "chemistry",
+      "long-term"
+    ],
+    "volumeSlug": "40-semiconductor-technology",
+    "volumeTitle": "Semiconductor Technology",
+    "volumeNumber": 40,
+    "chapterSlug": "01-silicon-from-sand",
+    "chapter": 1
+  },
+  {
+    "title": "Silicon Purification: Zone Refining and the Siemens Process",
+    "summary": "Two purification paths from 99% to 99.9999999% pure silicon: the industrial Siemens process (trichlorosilane decomposition) and the laboratory zone refining method. Both are explained from first principles.",
+    "tags": [
+      "semiconductor",
+      "silicon",
+      "purification",
+      "chemistry",
+      "long-term"
+    ],
+    "volumeSlug": "40-semiconductor-technology",
+    "volumeTitle": "Semiconductor Technology",
+    "volumeNumber": 40,
+    "chapterSlug": "02-purification-zone-refining",
+    "chapter": 2
+  },
+  {
+    "title": "Magnetic Core Memory: Theory, Construction, and Operation",
+    "summary": "Magnetic core memory — used in every early mainframe, NASA Apollo computer, and first-generation satellite systems — stores one bit per tiny ferrite ring. This chapter explains the physics, construction of memory planes, and the coincident-current addressing scheme from scratch.",
+    "tags": [
+      "computing",
+      "memory",
+      "magnetic",
+      "ferrite",
+      "electronics",
+      "long-term"
+    ],
+    "volumeSlug": "42-magnetic-analog-recording",
+    "volumeTitle": "Magnetic & Analog Recording",
+    "volumeNumber": 42,
+    "chapterSlug": "01-magnetic-core-memory",
+    "chapter": 1
+  }
+]

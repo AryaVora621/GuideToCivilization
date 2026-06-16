@@ -1,0 +1,431 @@
+---
+title: "Electromagnetism: Unified Theory of Electricity and Magnetism"
+volume: 29
+chapter: 7
+difficulty: long-term
+prerequisites:
+  - "Vol 29: Physics — static electricity, magnetism, and their relation"
+unlocks:
+  - "radio-communication/electromagnetic-waves"
+  - "electrical-engineering/power-transmission"
+  - "physics/light-as-electromagnetic-wave"
+tags: [physics, electromagnetism, waves, fields, radiation, maxwell]
+summary: "Electricity and magnetism are two aspects of one phenomenon. Understanding electromagnetism helps you work with electromagnetic waves and understand energy transmission."
+---
+
+## Overview
+
+Electromagnetism is the unified theory of electricity and magnetism. They are not separate forces but two aspects of the same fundamental interaction. Understanding electromagnetism helps you:
+
+1. **Transmit information:** Radio and wireless communication use electromagnetic waves
+2. **Understand light:** Light is an electromagnetic wave
+3. **Generate and transmit power:** Electrical power transmission uses electromagnetic fields
+4. **Predict behavior:** Understand how electrical and magnetic fields interact
+5. **Design devices:** Build more efficient electrical and magnetic devices
+
+This chapter teaches practical electromagnetism theory.
+
+## Prerequisites
+
+- Understanding of electricity and magnetism (previous chapters)
+- Understanding of waves
+- Ability to visualize fields
+- Basic mathematics
+
+## Materials & Tools
+
+**For observation and experimentation:**
+- Radio receiver
+- Antenna
+- AC power source (household outlet)
+- Coils of wire
+- Compasses
+- Magnet
+- Oscilloscope (if available)
+
+**For understanding:**
+- Ability to draw field diagrams
+- Understanding of mathematical relationships
+
+## Part 1: Maxwell's Equations
+
+Maxwell's equations describe how electricity and magnetism work together.
+
+### The Four Equations
+
+**Gauss's Law:**
+- Electric charges create electric fields
+- More charge = stronger field
+- Field radiates outward from positive charge, inward to negative
+
+**Gauss's Law for Magnetism:**
+- No magnetic monopoles exist (no single north or south)
+- Magnetic field lines always form closed loops
+- Consequence: Can't isolate individual magnetic poles
+
+**Faraday's Law:**
+- Changing magnetic field creates electric field
+- Rate of change matters (faster change = stronger induced field)
+- Used in generators, transformers, inductors
+
+**Ampere-Maxwell Law:**
+- Electric current creates magnetic field
+- Changing electric field also creates magnetic field
+- Unifies electricity and magnetism at fundamental level
+
+### Consequences of Maxwell's Equations
+
+From these four equations, several profound conclusions follow:
+
+1. **Electromagnetic waves exist:** Changing electric field creates magnetic field, which creates electric field, etc.
+2. **Waves travel at speed of light:** c = 1/√(μ₀ε₀) (fundamental constant)
+3. **Light is electromagnetic:** Visible light is just electromagnetic wave in visible frequency range
+4. **All electromagnetic waves travel at same speed:** Radio, microwave, light, X-ray—all travel at c in vacuum
+
+---
+
+## Part 2: Electromagnetic Waves
+
+Electromagnetic waves consist of oscillating electric and magnetic fields perpendicular to each other and to direction of propagation.
+
+### Wave Properties
+
+**Frequency and wavelength:** c = f × λ
+- c = 3 × 10⁸ m/s (speed of light)
+- Higher frequency = shorter wavelength
+- Lower frequency = longer wavelength
+
+**Electromagnetic spectrum:**
+- Radio: 10⁶–10⁹ Hz (longest waves)
+- Microwave: 10⁹–10¹² Hz
+- Infrared: 10¹²–10¹⁴ Hz
+- Visible light: 4–8 × 10¹⁴ Hz
+- Ultraviolet: 10¹⁴–10¹⁷ Hz
+- X-ray: 10¹⁷–10¹⁹ Hz
+- Gamma ray: 10¹⁹ Hz+ (shortest waves)
+
+### Electromagnetic Radiation from Accelerated Charges
+
+Accelerating electrical charges radiate electromagnetic waves.
+
+**Examples:**
+- Oscillating electrons in antenna → Radio waves
+- Oscillating electrons in wire → Infrared heat
+- Electrons jumping between atomic levels → Light
+- Rapidly stopping electrons → X-rays
+
+**Power radiated:** P ∝ a² (proportional to acceleration squared)
+- Rapid acceleration = more radiation
+- Slow acceleration = less radiation
+
+**Practical implications:**
+- High-frequency oscillations radiate effectively (radio antennas)
+- Low-frequency oscillations radiate poorly (power lines don't radiate much)
+
+---
+
+## Part 3: Radio Waves and Communication
+
+Radio waves are long-wavelength electromagnetic radiation.
+
+### Radio Wave Generation
+
+**Process:**
+1. Electrical current oscillates in conductor (antenna)
+2. Oscillating current creates changing electric field
+3. Changing field radiates as electromagnetic wave
+4. Wave propagates outward at speed of light
+
+**Antenna design:**
+- Antenna size affects efficiency
+- Most efficient when length = λ/4 or λ/2
+- Example: 1 MHz radio has λ = 300 m; efficient antenna is 75 m long
+
+**Directional vs. omnidirectional:**
+- Parabolic reflector focuses waves (like flashlight beam)
+- Dish antennas increase range and directionality
+- Yagi antenna (multiple elements) creates focused radiation pattern
+- Whip/monopole antenna radiates in all directions (less efficient but simpler)
+
+**Antenna impedance matching:**
+- Antenna impedance must match transmission line impedance
+- Mismatch causes signal reflection and power loss
+- 50 ohm coax cable standard for radio systems
+
+### Radio Wave Propagation
+
+**Ground wave:** Travels along surface
+- Follows Earth's curvature
+- Works for distances up to ~100 km
+- Better at low frequencies
+
+**Sky wave:** Bounces off ionosphere
+- Reflects down at great distances
+- Used for long-distance communication
+- Affected by solar activity
+
+**Direct wave:** Line-of-sight
+- Straight path between transmitter and receiver
+- Blocked by obstacles
+- Used for VHF/UHF communication
+
+### Radio Frequency (RF) Circuits
+
+Radio receivers detect electromagnetic waves and convert to audio.
+
+**Basic receiver:**
+1. Antenna captures wave
+2. Tuned circuit selects specific frequency
+3. Detector extracts information (modulation)
+4. Amplifier boosts signal
+5. Speaker converts to sound
+
+**Modulation methods:**
+- AM (Amplitude Modulation): Varies wave height
+- FM (Frequency Modulation): Varies wave frequency
+- Digital: Uses on/off pulses
+
+---
+
+## Part 4: Induction and Energy Transfer
+
+Electromagnetic induction is fundamental to transformers, generators, and wireless power transfer.
+
+### Wireless Power Transfer
+
+Electromagnetic energy can be transmitted wirelessly using coupled coils.
+
+**Mechanism:**
+1. Primary coil has AC current
+2. Creates changing magnetic field
+3. Field induces voltage in secondary coil
+4. Power transfers without physical connection
+
+**Efficiency:** Depends on:
+- Coupling strength (how well fields overlap)
+- Frequency (higher frequency better)
+- Distance (decreases rapidly with distance)
+
+**Practical range:** Typically works best under 1 meter with conventional coils.
+
+### Resonant Transfer
+
+When coils are tuned to same frequency, transfer is much more efficient.
+
+**Resonance condition:** Both coils oscillate at same frequency
+**Advantage:** Dramatic increase in efficiency at resonance
+**Example:** Two coils at 1 MHz can transfer power efficiently at inches distance
+
+**For post-collapse applications:** Wireless charging of batteries, device-to-device power transfer
+
+---
+
+## Part 5: Practical Electromagnetic Applications
+
+### Power Transmission
+
+Electrical power transmitted over long distances using AC (alternating current).
+
+**Why AC:** Transformers only work with AC
+**Efficiency:** Can step up voltage (step down current)
+- High voltage, low current loses less heat in wires
+- Transformer at destination steps down to usable voltage
+
+**Transmission efficiency:** 
+- High voltage (100+ kV): ~95% efficiency over long distances
+- Low voltage: Higher losses
+
+### Coupled Resonant Coils
+
+Wireless power transfer works best with resonant coupling.
+
+**Principle:**
+1. Primary coil oscillates at specific frequency
+2. Sends electromagnetic energy to secondary coil
+3. If secondary tuned to same frequency, absorbs energy efficiently
+4. Energy transferred without wires or direct contact
+
+**Q factor:** Measure of how selectively tuned coil is
+- High Q: Narrow frequency response, high efficiency at resonance
+- Low Q: Broad frequency response, lower peak efficiency
+- Typical Q: 10-100 for practical coils
+
+**Practical wireless charging:**
+- Phone charging pads use ~100 kHz frequency
+- Coils separated by 3–5 mm typically
+- Efficiency ~70–80% at close distance
+
+**Distance limitations:**
+- Power transfer decreases rapidly with distance
+- Scales as 1/distance⁴ for certain configurations
+- Practical limit ~1 meter with conventional approaches
+
+---
+
+### Microwave Ovens
+
+Microwave radiation heats food by exciting water molecules.
+
+**Frequency:** ~2.45 GHz (microwaves)
+**Wavelength:** ~12 cm
+**How it works:**
+1. Magnetron generates microwaves
+2. Waves reflect around metal box
+3. Penetrate food to ~2 cm depth
+4. Water molecules absorb energy, vibrate, generate heat
+
+**Why metal blocks:** Wavelength similar to metal dimensions; waves reflect instead of penetrate
+
+**Practical microwave safety:**
+- Microwave oven is shielded; waves don't escape
+- Metal mesh window allows seeing inside (holes smaller than wavelength)
+- Door safety interlock stops microwaves when open
+- Non-ionizing radiation; safe exposure levels set by regulations
+- Effective shielding prevents leakage
+
+### Signal Modulation and Demodulation
+
+Information is transmitted by modulating electromagnetic waves.
+
+**Amplitude Modulation (AM):**
+- Vary the height of waves
+- Frequency stays constant
+- Information encoded in varying amplitude
+- Used in AM radio broadcasts
+
+**Frequency Modulation (FM):**
+- Vary the frequency of waves
+- Amplitude stays constant
+- Information encoded in frequency variations
+- More resistant to noise than AM
+
+**Digital Modulation:**
+- Uses discrete states (on/off pulses)
+- Binary: 1 = signal on, 0 = signal off
+- More efficient than analog for data
+
+**Bandwidth requirement:**
+- Higher information rate requires wider bandwidth
+- Bandwidth = range of frequencies used
+- FM radio: ~200 kHz bandwidth per station
+- Cell phone: ~2 MHz bandwidth per user
+
+---
+
+### Propagation Losses
+
+Electromagnetic waves weaken over distance.
+
+**Path loss:** Power decreases with distance squared
+- Doubling distance reduces power to 1/4
+- Equation: Loss (dB) = 20 log(distance)
+
+**Absorption:**
+- Water absorbs microwaves (why it heats food)
+- Metals reflect waves
+- Vegetation attenuates radio waves
+
+**Refraction:**
+- Waves bend in atmosphere due to temperature/humidity gradients
+- Affects long-distance communication
+- Important for satellite communication
+
+**Multipath propagation:**
+- Waves reflect off obstacles (buildings, terrain)
+- Multiple copies arrive at receiver at different times
+- Causes fading and interference
+
+---
+
+## Part 6: Electromagnetic Effects and Safety
+
+### Radiation Safety
+
+Electromagnetic radiation carries energy. High-frequency waves are more energetic.
+
+**Ionizing radiation (dangerous):**
+- X-rays, gamma rays, UV: Can ionize atoms, damage DNA
+- Cause burns, cancer, radiation sickness at high doses
+
+**Non-ionizing radiation (generally safe):**
+- Visible light: Lower energy, doesn't ionize
+- Radio, microwave: Much lower energy
+- Still can cause heating if intense
+
+**Safe practices:**
+- Limit exposure to high-frequency radiation
+- X-ray: Lead shielding blocks effectively
+- UV: Use sunscreen or protective clothing
+- Radio/microwave: Normal sources are safe; avoid concentrated beams
+
+### Electromagnetic Interference (EMI)
+
+Electromagnetic waves can interfere with electronics.
+
+**Sources:**
+- Power lines (60 Hz)
+- Radio transmitters
+- Electrical motors
+- Microwave ovens
+- Cell phone transmitters
+
+**Effects:**
+- Distortion in radio reception
+- Noise in audio equipment
+- Malfunction of sensitive electronics
+
+**Reduction methods:**
+- Shielding (metal boxes block external fields; Faraday cage principle)
+- Grounding (provides path for interference; connects to Earth reference)
+- Filtering (removes unwanted frequencies using capacitors and inductors)
+- Distance (move away from source; power decreases with distance)
+- Twisted pair cables (cancels external field effects)
+- Ferrite cores (absorb electromagnetic energy on wires)
+
+---
+
+## Verification
+
+**Understanding electromagnetism means:**
+
+1. You can explain how electricity and magnetism relate
+2. You understand electromagnetic waves
+3. You can explain radio wave generation and reception
+4. You understand wireless power transfer
+5. You recognize sources of electromagnetic interference
+6. You understand radiation safety
+
+---
+
+## Common Mistakes
+
+1. **Thinking electricity and magnetism are separate:** They are two aspects of one phenomenon unified by Maxwell.
+
+2. **Confusing all radiation as dangerous:** Only ionizing radiation (X-ray, gamma, UV) is significantly dangerous. Radio waves are safe.
+
+3. **Assuming light and radio are fundamentally different:** Both are electromagnetic waves; only frequency differs.
+
+4. **Overestimating antenna efficiency:** Most antennas are inefficient unless properly sized and matched to frequency.
+
+5. **Ignoring impedance matching:** Power transfer is inefficient if impedances don't match between source and load.
+
+6. **Thinking wireless power is magic:** Still limited by physics; efficiency depends on distance and frequency.
+
+7. **Ignoring shielding importance:** Proper shielding of wires prevents both EMI and radiation loss.
+
+8. **Underestimating transformer importance:** Transformers enable efficient long-distance power transmission; without them, power distribution as we know it wouldn't exist.
+
+9. **Assuming simple formulas apply everywhere:** Real-world systems have losses, non-ideal materials, and impedance mismatches. Theory is guide, but measurements verify behavior.
+
+10. **Neglecting frequency-dependent effects:** Resistance, inductance, and capacitance all vary with frequency. Low-frequency approximations don't work for high frequencies.
+
+---
+
+## Cross-References
+
+- See Vol 29, Ch 5 — Static Electricity (source of charge)
+- See Vol 29, Ch 6 — Magnetism (magnetic field generation)
+- See Vol 29, Ch 3 — Waves and Sound (wave properties)
+- See Vol 29, Ch 4 — Optics (light as electromagnetic wave)
+- See Vol 37: Electrical Engineering (practical electromagnetic applications)
+- See Vol 34: Energy Systems (power transmission and use)
