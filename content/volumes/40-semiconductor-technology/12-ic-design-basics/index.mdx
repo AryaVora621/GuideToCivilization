@@ -1,0 +1,530 @@
+---
+title: "IC Design Basics: Planning and Designing Integrated Circuits"
+volume: 45
+chapter: 12
+difficulty: advanced
+prerequisites:
+  - "Vol 45: Semiconductor Technology, Ch 11 — From Transistor to IC"
+  - "Vol 45: Semiconductor Technology, Ch 10 — Circuit Design Fundamentals"
+  - "Vol 12: Electrical Engineering, Ch 5 — Boolean Logic and Digital Systems"
+unlocks:
+  - "electronics/microprocessor-architecture"
+  - "computing/fpga-design"
+  - "electronics/signal-processing-circuits"
+tags: [ic-design, circuit-design, hdl, timing, verification, semiconductor]
+summary: "IC design is the process of planning, specifying, and verifying integrated circuits before fabrication. This chapter teaches design methodology, tools, and techniques for creating reliable, efficient chips."
+---
+
+## Overview
+
+An integrated circuit begins not with atoms on silicon, but with ideas on paper.
+
+The IC designer must decide:
+- **What should the chip do?** (specification)
+- **How should it do it?** (architecture)
+- **How will we verify it works?** (testing strategy)
+- **Will it fit on the die?** (area estimation)
+- **Will it consume acceptable power?** (power budget)
+- **How fast must it operate?** (timing requirements)
+
+IC design is the bridge between system requirements and physical silicon. A poor design becomes a $100 million mistake in the fab. A good design becomes a successful product.
+
+This chapter teaches IC design methodology: from specification to verification, the tools designers use, and the decision-making process that leads to manufacturable, functional circuits.
+
+## Prerequisites
+
+- Understanding of transistor-level and gate-level circuit design (from Vol 45, Ch 11)
+- Knowledge of Boolean logic and digital systems (from Vol 12, Ch 5)
+- Familiarity with SPICE simulation and basic circuit analysis
+- Ability to think abstractly about large systems
+- Mathematical comfort with estimates and approximations
+
+## Materials & Tools
+
+**For IC design:**
+
+- **Hardware Description Language (HDL):** Verilog or VHDL for specifying behavior and structure
+- **Simulation tools:** ModelSim, VCS, or open-source simulators for functional verification
+- **Synthesis tools:** Logic synthesis converts HDL to gate-level netlist (Synopsys Design Compiler, Cadence, or open-source alternatives)
+- **Place & Route:** Layout tools that position cells and route interconnects (Cadence Innovus, Mentor Graphics, or open-source tools like OpenROAD)
+- **Static Timing Analysis:** STA tools verify timing closure (PrimeTime, Tempus, or open-source sta)
+- **Power Analysis:** Tools estimate dynamic and static power consumption
+- **Design Rule Checking (DRC):** Verifies physical design meets foundry rules
+- **Schematic entry:** For manual circuit design (analog circuits, custom cells)
+- **Process Design Kit (PDK):** Foundry-provided descriptions of transistors, interconnects, and rules
+
+**For planning:**
+
+- Whiteboard or design notebook for sketching architecture
+- Spreadsheet for area/power/timing budget estimates
+- Version control (git) for design files
+- Documentation system for specifications and decisions
+
+## Part 1: IC Design Methodology
+
+### The Design Hierarchy
+
+IC design proceeds through layers of abstraction:
+
+**1. Specification (System Level)**
+
+Define what the chip must do without saying how.
+
+**Example:** "A 32-bit microprocessor that executes 1 billion instructions per second, consumes under 10 watts, fits in a 10 mm × 10 mm die, and operates at 3.3 V."
+
+This is not a design—it's a requirement. The specification allocates resources:
+
+| Resource | Budget | Allocation |
+|----------|--------|------------|
+| Area | 100 mm² | CPU (60%), Memory (30%), I/O (10%) |
+| Power | 10 W | Dynamic (7 W), Static (3 W) |
+| Timing | 1 ns | Logic (0.6 ns), Routing (0.4 ns) |
+| Frequency | 1 GHz | Clock cycle: 1 ns |
+
+**2. Architecture (System/Microarchitecture)**
+
+Divide the chip into major blocks: CPU, memory controller, I/O interface, power management.
+
+For each block, describe:
+- **Inputs and outputs:** What signals enter and exit?
+- **Functionality:** What operations does it perform?
+- **Timing:** How many clock cycles for each operation?
+- **Interface:** How do blocks communicate?
+
+**Example:** ALU block processes arithmetic operations in 1 clock cycle. Inputs: two 32-bit operands, 5-bit operation code. Output: 32-bit result, flags.
+
+**3. Logic Design (Gate Level)**
+
+Describe logic using Boolean equations, truth tables, or HDL.
+
+**Example (HDL):**
+
+```verilog
+module alu_32bit(
+  input [31:0] a, b,
+  input [4:0] operation,
+  output [31:0] result,
+  output [3:0] flags
+);
+  always @(*) begin
+    case(operation)
+      5'b00000: result = a + b;        // ADD
+      5'b00001: result = a - b;        // SUB
+      5'b00010: result = a & b;        // AND
+      5'b00011: result = a | b;        // OR
+      // ... more operations
+    endcase
+  end
+endmodule
+```
+
+**4. Transistor Design (Cell Level)**
+
+For custom high-performance cells (not synthesized), design transistor-level circuits. Example: custom adder, multiplier, memory compiler output.
+
+**5. Physical Design (Layout)**
+
+Synthesis and place-and-route tools convert the gate-level design into physical layout on silicon.
+
+**6. Verification at Each Level**
+
+- **Logic verification:** Simulate HDL with test vectors; does behavior match specification?
+- **Gate-level verification:** Verify synthesized design matches pre-synthesis HDL
+- **Timing verification:** Check all paths meet timing constraints
+- **Physical verification:** Ensure layout obeys design rules and contains no shorts
+- **Manufacturing checks:** Verify design is manufacturable with expected yield
+
+---
+
+## Part 2: Specification and Planning
+
+### Writing a Specification
+
+A good specification is precise, verifiable, and allocates resources.
+
+**Components:**
+
+1. **Functional requirements:** What does the chip do?
+   - Instruction set (if a processor)
+   - I/O protocols and pinout
+   - Operating modes (normal, low-power, debug)
+
+2. **Performance requirements:**
+   - Frequency (clock rate in MHz/GHz)
+   - Latency (how long for a computation)
+   - Throughput (operations per second)
+
+3. **Power requirements:**
+   - Maximum power dissipation (watts)
+   - Operating voltage (V)
+   - Supply current (A)
+
+4. **Area budget:**
+   - Die size (mm²)
+   - Allocation by function (CPU, memory, I/O)
+
+5. **Reliability:**
+   - Operating temperature range
+   - Voltage margins (min-max supply voltage)
+   - Expected lifespan or mission duration
+
+### Planning and Estimation
+
+Before detailed design, estimate whether the goals are achievable.
+
+**Area estimation:**
+
+- 1 transistor occupies approximately 0.01–0.1 µm² in modern processes
+- 1-bit of SRAM memory: approximately 100–200 transistors
+- 1 logic gate: approximately 4–20 transistors
+- Routing and interconnect overhead: 50–200% of cell area
+
+**Example:** A 32-bit 4-stage processor pipeline:
+- Registers and logic: approximately 50,000 transistors
+- Cache (if present): approximately 100,000+ transistors
+- Total: approximately 200,000 transistors minimum
+
+In a 28 nm process, 200,000 transistors occupy approximately 0.2–0.5 mm².
+
+**Power estimation:**
+
+- **Dynamic power:** P = C × V² × f × A (capacitance, voltage, frequency, activity factor)
+- **Static power:** P = I_leak × V (leakage current, supply voltage)
+
+Example for 1 GHz operation at 1 V with 50% activity:
+- C = 10 nF (estimated), V = 1 V, f = 1 GHz, A = 0.5
+- P_dynamic = 10e-9 × 1² × 1e9 × 0.5 = 5 W
+- P_static = 0.1 mA × 1 V = 0.1 W
+- Total ≈ 5.1 W
+
+**Timing estimation:**
+
+- Simple logic: 50–100 ps per stage
+- Memory access: 100–500 ps
+- Routing delay: 50–200 ps per mm of interconnect
+
+Example: A 32-bit adder path:
+- Ripple-carry: approximately 16 stages × 100 ps = 1600 ps (too slow for 1 GHz)
+- Optimized carry-lookahead: approximately 200 ps (suitable for 1 GHz)
+
+---
+
+## Part 3: HDL Design Flow
+
+### Hardware Description Language (HDL)
+
+HDL describes circuits using a language similar to programming, but with concurrency.
+
+**Verilog (most common):**
+
+```verilog
+module counter_32bit(
+  input clk, reset,
+  output [31:0] count
+);
+  reg [31:0] counter;
+  
+  always @(posedge clk) begin
+    if (reset)
+      counter <= 32'b0;
+    else
+      counter <= counter + 1;
+  end
+  
+  assign count = counter;
+endmodule
+```
+
+**Key concepts:**
+
+- **always blocks:** Describe sequential logic (triggered on clock edges or events)
+- **assign statements:** Describe combinational logic
+- **Modules:** Encapsulate circuits; can be instantiated many times
+- **Ports:** Inputs and outputs of modules
+
+### Design Flow: HDL to Netlist
+
+1. **Write HDL:** Describe behavior or structure at register-transfer level (RTL)
+
+2. **Simulate (Behavioral Verification):**
+   - Write test benches (input stimuli)
+   - Run simulation
+   - Compare output against expected behavior
+   - Debug if behavior is incorrect
+
+3. **Synthesize:**
+   - Logic synthesis tool reads HDL
+   - Maps Boolean functions to gate library
+   - Produces gate-level netlist (list of gates and connections)
+   - Optimization passes reduce area, power, timing
+
+4. **Verify Synthesis:**
+   - Verify gate-level netlist matches HDL behavior
+   - Formal verification or simulation
+
+5. **Place & Route:**
+   - Positions logic cells on die
+   - Routes interconnect between cells
+   - Respects design rules (spacing, width, antenna rules)
+
+6. **Static Timing Analysis:**
+   - Calculates path delays (without simulation)
+   - Checks all paths meet clock timing constraints
+   - Reports timing violations (if any)
+
+7. **Physical Verification:**
+   - Design rule check (DRC): Ensures layout follows foundry rules
+   - Layout versus schematic (LVS): Verifies layout matches netlist topology
+   - Antenna checks: Ensures metal routing won't cause plasma damage during manufacturing
+
+---
+
+## Part 4: Timing Closure and Constraints
+
+### Understanding Timing
+
+A synchronous circuit operates on a clock. Logic must complete within one clock cycle.
+
+**Setup time:** The time before a clock edge that data must be stable.
+
+**Hold time:** The time after a clock edge that data must remain stable.
+
+**Propagation delay:** The time a signal takes to propagate through logic.
+
+**Example:** 1 GHz clock = 1 ns per cycle.
+
+If a path from one register to another takes 0.8 ns, it can work at 1 GHz (0.8 ns &lt; 1 ns).
+
+If a path takes 1.2 ns, it violates timing (1.2 ns &gt; 1 ns). The circuit fails.
+
+### Timing Constraints
+
+Designers specify timing requirements:
+
+**Clock constraint:**
+
+```verilog
+// Clock period: 1 ns (1 GHz)
+create_clock -period 1 -name clk [get_ports clk]
+```
+
+**Input/output delay constraints:**
+
+```verilog
+// Input data arrives 0.1 ns before clock edge
+set_input_delay -clock clk 0.1 [get_ports data_in]
+
+// Output must be stable 0.2 ns after clock edge
+set_output_delay -clock clk 0.2 [get_ports data_out]
+```
+
+**Path exceptions:**
+
+```verilog
+// This path is not critical; relax timing
+set_false_path -from [get_pins stage1/Q] -to [get_pins stage2/D]
+```
+
+### Static Timing Analysis
+
+Tools compute delay for every path in the design:
+
+- **Critical path:** The slowest path that determines maximum frequency
+- **Setup slack:** How much margin before timing violation (positive = safe)
+- **Hold slack:** Margin to prevent hold violations
+
+If setup slack is negative, timing is violated; the design must be optimized.
+
+### Optimization Techniques
+
+1. **Increase clock period:** Slow clock down (reduce frequency)
+
+2. **Reduce path delay:**
+   - Use faster cells (larger transistors = faster, but larger area)
+   - Reduce fanout (limit number of gates driven by one output)
+   - Shorten paths (restructure logic)
+   - Insert pipeline stages (break long paths into multiple cycles)
+
+3. **Reduce capacitive load:**
+   - Smaller gates
+   - Shorter wires
+   - Fewer connections
+
+---
+
+## Part 5: Power and Area Management
+
+### Dynamic Power Reduction
+
+Power is dissipated when transistors switch (charge/discharge capacitance).
+
+**P_dynamic = C × V² × f × A**
+
+Where A is activity factor (what fraction of transistors switch each cycle).
+
+**Reduction strategies:**
+
+1. **Lower voltage:** 1 V → 0.5 V = 4× power reduction (V²)
+2. **Lower frequency:** Reduce clock speed
+3. **Reduce switching activity:** Gate clocks to idle blocks (clock gating)
+4. **Use efficient logic:** Some circuits consume less power than others
+
+### Static Power (Leakage)
+
+Even idle transistors consume power through leakage current.
+
+**P_static = I_leak × V**
+
+Leakage doubles approximately every 5°C.
+
+**Reduction strategies:**
+
+1. **Use high-Vth transistors:** Higher threshold voltage = less leakage (but slower)
+2. **Reduce transistor width:** Narrower transistors leak less
+3. **Power gating:** Disconnect power from unused blocks
+
+### Area Optimization
+
+Smaller chips are cheaper and more reliable.
+
+**Optimization:**
+
+1. **Reduce logic:** Simplify Boolean equations; remove redundant logic
+2. **Reuse:** Use the same cell multiple times rather than custom designs
+3. **Library cell selection:** Choose compact cells from technology library
+4. **Memory compilers:** Use optimized memory generators
+
+---
+
+## Worked Example: Designing a 16-Bit Counter
+
+**Specification:**
+
+- Counts from 0 to 65535 (16-bit)
+- Increments on every clock edge
+- Asynchronous reset
+- Clock frequency: 100 MHz (10 ns period)
+- Target area: under 5000 µm²
+- Power: under 50 mW
+
+**Step 1 — Architecture:**
+
+A simple 16-bit counter with one output:
+
+| Signal | Direction | Width | Purpose |
+|--------|-----------|-------|---------|
+| clk | Input | 1 | Clock signal |
+| reset_n | Input | 1 | Active-low reset |
+| count | Output | 16 | Counter value |
+
+**Step 2 — HDL Design:**
+
+```verilog
+module counter_16bit(
+  input clk, reset_n,
+  output [15:0] count
+);
+  reg [15:0] counter;
+  
+  always @(posedge clk or negedge reset_n) begin
+    if (!reset_n)
+      counter <= 16'b0;
+    else
+      counter <= counter + 1;
+  end
+  
+  assign count = counter;
+endmodule
+```
+
+**Step 3 — Timing Analysis:**
+
+- Adder delay: approximately 200 ps (ripple carry)
+- Register setup time: approximately 150 ps
+- Total path delay: approximately 350 ps
+- Clock period: 10 ns
+- Setup slack: 10 ns - 0.35 ns = 9.65 ns (margin = excellent)
+
+Design easily meets 100 MHz.
+
+**Step 4 — Power Estimation:**
+
+- Registers: 16 flip-flops, each switches at clock frequency
+- Adder: one addition per cycle
+
+Dynamic power:
+- 16 flip-flops × 0.5 pF × (1 V)² × 100 MHz × activity = approx 0.8 mW
+- Adder: approx 2 mW
+- Total: approx 3 mW (well under 50 mW budget)
+
+**Step 5 — Area Estimation:**
+
+- 16 D flip-flops: 16 × 300 µm² = 4800 µm²
+- Adder logic: approx 500 µm²
+- Total: approx 5300 µm² (slightly over budget, but acceptable for this example)
+
+**Step 6 — Verification:**
+
+Test vectors:
+
+| clk cycles | reset_n | count |
+|------------|---------|-------|
+| 0 | 0 | 0000 |
+| 1 | 1 | 0001 |
+| 2 | 1 | 0002 |
+| ... | ... | ... |
+| 65535 | 1 | FFFF |
+| 65536 | 1 | 0000 (wraps) |
+
+Simulate and verify all test cases pass.
+
+---
+
+## Verification
+
+**Understanding IC design means:**
+
+1. You can write a specification for a digital circuit (functional, performance, area, power)
+2. You understand design hierarchy (specification to transistor level)
+3. You can write HDL to describe digital circuits
+4. You can estimate area, power, and timing before detailed design
+5. You understand timing constraints and how to verify timing closure
+6. You can identify critical paths and optimize them
+7. You recognize tradeoffs: area vs. speed, power vs. performance
+8. You understand the role of place-and-route, DRC, and verification
+
+If you can specify a digital system, design it in HDL, estimate its characteristics, and identify how to optimize for area/power/timing, you understand IC design.
+
+---
+
+## Common Mistakes
+
+1. **Underestimating complexity.** A simple specification grows quickly when detailed. Budget 2–3× the estimated effort.
+
+2. **Ignoring timing constraints until late.** Timing must be planned early. Late fixes are expensive and often impossible.
+
+3. **Assuming synthesis is perfect.** Synthesis can produce inefficient logic. Review synthesized netlist; sometimes hand-tuning helps.
+
+4. **Not budgeting for routing delay.** Metal routing adds significant delay, especially across large chips. Account for it early.
+
+5. **Overoptimizing non-critical paths.** Focus optimization on the critical path. Improving slower paths wastes effort.
+
+6. **Ignoring power from the start.** Late power reduction is difficult. Plan power budgets during architecture phase.
+
+7. **Insufficient test coverage.** Simulation can miss corner cases. Use formal verification for critical paths; use multiple simulation tools.
+
+8. **Not considering manufacturing yield.** Design choices affect yield. Consult foundry design guides; use conservative margins.
+
+9. **Poor documentation.** Undocumented design decisions are lost when team members leave. Document WHY, not just WHAT.
+
+10. **Scope creep.** Adding features during design delays tape-out. Freeze specification early; additions go to next version.
+
+---
+
+## Cross-References
+
+- See Vol 45: Semiconductor Technology, Ch 11 — From Transistor to IC (circuit integration)
+- See Vol 45: Semiconductor Technology, Ch 10 — Circuit Design Fundamentals (Boolean logic)
+- See Vol 12: Electrical Engineering, Ch 5 — Digital Logic Systems (timing concepts)
+- See Vol 45: Semiconductor Technology, Ch 13 — Testing and Yield (verifying manufactured chips)
+- See Vol 12: Electrical Engineering, Ch 8 — Microprocessor Design (design of complete systems)

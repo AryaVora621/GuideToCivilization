@@ -61,7 +61,10 @@ Phase 1 (Vols 1-8) ✓ DONE. Then Vols 14-20, then 21-33, then Phase 4-5 (33-45)
 When a lane is exhausted, agent runs `claim-next` with no arg to take anything left.
 
 ## CURRENT STATE (update each sweep)
-- 2026-06-16 21:34 UTC: **266 / 316 done**, 50 pending, 1 active. Build GREEN (latest burst commit live). Burst cron f2b45d55 (13-min) running.
+- 2026-06-16 21:47 UTC: **315 / 317 done, 0 pending, 2 active** (agent-4: 37-energy/07-power-calculations, 40-semiconductor/12-ic-design-basics). Build GREEN. (317 total = 316 plan + 1 bonus telescope-mounts.)
+  - Agents 5,6,7,8 finished their pools and stood down (budget conserved). Agent-1 stood down earlier (budget). Agent-4 finishing last 2.
+  - NEXT sweep: once those 2 land → reconcile, commit, push, verify green, then COMPLETE: delete cron f2b45d55, recreate 2h cron (7 */2 * * *), mark done.
+- 2026-06-16 21:34 UTC: 266 / 316 done, 50 pending, 1 active. Build GREEN. Burst cron f2b45d55 (13-min) running.
   - Re-nudged all 8 agents to self-paced GLOBAL claim-next loops (atomic, self-balancing). Agent-6 confirmed mid-write (energy vols). Others resuming.
   - Biggest remaining: 41-vacuum(6), 39-seafaring(5), 32-trade(5), 16-computing(5), 13-manufacturing(5), 42-magnetic(4), 23-meteorology(4).
   - REMINDER: when pending=0 & claimed=0 → delete cron f2b45d55, recreate 2h cron (7 */2 * * *), mark project COMPLETE.

@@ -1,0 +1,139 @@
+---
+title: "Machine Code: The Language the Computer Actually Runs"
+volume: 44
+chapter: 5
+difficulty: advanced
+prerequisites:
+  - "Vol 44: Computing — binary, logic gates, and the processor"
+  - "Vol 44: Computing — memory and the stored-program concept"
+unlocks:
+  - "computing/assembly-language-and-programming"
+  - "computing/operating-systems-basics"
+tags: [computing, machine-code, binary, processor, instructions, programming]
+summary: "Underneath every program is machine code: raw binary numbers that the processor reads and obeys directly. This chapter explains what machine instructions are, how the processor executes them, and how this lowest level of software actually works."
+---
+
+## Overview
+
+Every program a computer runs — every calculation, every game, every operating system — ultimately becomes machine code: sequences of binary numbers that the processor reads from memory and obeys one at a time. Machine code is the only language a computer truly understands. Everything written in higher languages must eventually be translated down into these raw numbers before the machine can run it. To understand computing at its foundation, you must understand machine code, because it reveals what a computer actually is: a machine that fetches numbers from memory and performs simple operations in response, billions of times a second.
+
+A machine instruction is astonishingly simple on its own. It might say "add the number in one storage location to the number in another," or "if this value is zero, jump to a different part of the program," or "copy this number from memory into the processor." Each instruction is encoded as a binary number that the processor's circuitry is wired to interpret and carry out. The breathtaking power of computers comes not from any single instruction being clever, but from executing enormous numbers of these tiny, simple steps at incredible speed.
+
+This chapter explains what machine instructions look like, how the processor fetches and executes them, the main categories of instruction, and how programs are built from them. It assumes you understand binary, logic, and the basic structure of a processor and memory.
+
+## Prerequisites
+
+- Understanding binary numbers and how they represent values (Vol 44)
+- Familiarity with logic gates and the parts of a processor: registers, the arithmetic unit, the control unit (Vol 44)
+- The stored-program idea: that instructions and data both live in memory (Vol 44)
+- Comfort with the idea that numbers can represent commands, not just quantities
+
+## Part 1: Instructions Are Numbers
+
+### The Stored-Program Insight
+
+The foundational idea of the modern computer is that instructions are stored in memory as numbers, right alongside the data they operate on. There is nothing physically different about a memory location holding an instruction versus one holding data; the difference is only in how the processor uses it. When the processor reads a location expecting an instruction, it interprets the binary number there as a command.
+
+### Anatomy of an Instruction
+
+A machine instruction is a binary number divided into fields:
+
+- **The opcode (operation code):** the part that says what to do — add, subtract, copy, jump, compare. Each operation has its own number.
+- **The operands:** the parts that say what to do it to — which registers or memory locations to use, or a literal value.
+
+For example, an instruction might break down as "opcode 5 (add), operand A (register 1), operand B (register 2)," all packed into one binary number. The processor's control circuitry decodes this number and activates the right internal pathways to perform the addition.
+
+## Part 2: The Fetch-Decode-Execute Cycle
+
+The processor runs a relentless, simple loop, the heartbeat of all computing:
+
+1. **Fetch:** The processor reads the next instruction from memory. A special register, the program counter, holds the address of that instruction.
+2. **Decode:** The control unit examines the instruction's opcode and figures out what operation is required and which operands are involved.
+3. **Execute:** The processor carries out the operation — performing arithmetic, moving data, or changing the program counter to jump elsewhere.
+4. **Advance:** The program counter moves to the next instruction (unless the instruction itself changed it), and the cycle repeats.
+
+This cycle runs continuously, millions or billions of times per second. Every behavior of the computer emerges from this tireless repetition of fetch, decode, execute.
+
+## Part 3: The Main Categories of Instruction
+
+Despite the variety of processors, machine instructions fall into a few families:
+
+### Data Movement
+
+Instructions that copy values around: load a value from memory into a register, store a register's value back to memory, or move data between registers. Computers spend much of their time simply shuffling data into place before operating on it.
+
+### Arithmetic and Logic
+
+Instructions that compute: add, subtract, multiply, compare, and the logical operations AND, OR, NOT, and XOR. These are carried out by the arithmetic and logic unit. This is where actual calculation happens.
+
+### Control Flow
+
+Instructions that change which instruction runs next, by altering the program counter:
+
+- **Jump (branch):** go to a different part of the program.
+- **Conditional jump:** jump only if some condition holds (a value is zero, negative, etc.). This is how computers make decisions.
+- **Call and return:** jump to a subroutine and later come back, enabling reusable blocks of code.
+
+Control flow is what makes a computer more than a calculator: it lets the program choose different paths and repeat actions (loops) based on data.
+
+### Input and Output
+
+Instructions that communicate with the world beyond the processor and memory — reading from a keyboard, writing to a display, controlling devices. Often these work by reading and writing special memory locations connected to hardware.
+
+## Part 4: How Decisions and Loops Work
+
+The power to make decisions and repeat comes entirely from conditional jumps. Consider repeating an action ten times:
+
+1. Set a counter to ten.
+2. Do the action.
+3. Subtract one from the counter.
+4. Compare the counter to zero.
+5. If it is not zero, jump back to step 2.
+6. Otherwise, continue past the loop.
+
+Every loop, every "if this then that," every complex behavior in software is built from comparisons and conditional jumps like these. The processor itself cannot "think"; it only follows the jumps the program lays out, but from these simple branches all of computation is constructed.
+
+## Part 5: From Machine Code Upward
+
+### Why We Do Not Usually Write Machine Code
+
+Writing raw binary instructions by hand is brutally tedious and error-prone. To ease this, the first abstraction is **assembly language**: a human-readable shorthand where each machine instruction gets a short name (like ADD, JMP, LOAD) and locations get names instead of raw numbers. A program called an assembler translates this directly into machine code. Above assembly sit higher-level languages, which are translated (compiled) all the way down to machine code before running.
+
+Every layer rests on machine code at the bottom. Understanding machine code demystifies the whole stack: a high-level program is, after all the translation, just a long sequence of these simple numbered commands marching through the fetch-decode-execute cycle.
+
+## Worked Example: Adding Two Numbers
+
+Suppose you want to add two numbers stored in memory and save the result. In machine terms:
+
+1. **Load** the first number from its memory address into register 1.
+2. **Load** the second number from its memory address into register 2.
+3. **Add** register 1 and register 2, placing the sum in register 1.
+4. **Store** register 1 back into a result memory address.
+
+Each step is a single machine instruction — a binary number with an opcode and operands. The processor fetches, decodes, and executes each in turn. Four tiny steps, and the addition is done. Scale this up to billions of such steps and you have every program ever written.
+
+## Verification Criteria
+
+- **The processor follows the cycle.** Tracing execution, each instruction is fetched, decoded, and executed in order, with the program counter advancing correctly.
+- **Instructions do what their opcode says.** An add instruction produces a sum; a load moves data; a jump changes the flow as intended.
+- **Conditional jumps branch correctly.** The program takes the right path depending on the data, proving decisions work.
+- **Loops terminate.** A counting loop runs the intended number of times and then exits, not forever.
+- **A program produces correct results.** A short hand-assembled program (like the addition above) yields the right answer in the result location.
+
+## Common Mistakes
+
+- **Confusing instructions with data.** Pointing the program counter at data, or treating instructions as numbers to compute on, causes chaos. Keep their roles clear.
+- **Off-by-one in loops.** Miscounting causes a loop to run one too many or too few times. Check loop counters carefully.
+- **Forgetting to advance or set the program counter.** A jump to the wrong address or a missing advance derails execution.
+- **Wrong operand addresses.** Loading or storing from the wrong location silently corrupts data. Track addresses meticulously.
+- **Ignoring that everything is binary numbers.** Machine code has no built-in meaning beyond what the processor's wiring gives it; the same bits mean different things in different contexts.
+- **Infinite loops from bad conditions.** A conditional jump whose condition never becomes false loops forever. Ensure loop conditions eventually end.
+
+## Cross-References
+
+- **Vol 44: Computing — Assembly Language and Programming** for the human-readable layer just above machine code.
+- **Vol 44: Computing — The Processor** for the hardware that executes these instructions.
+- **Vol 44: Computing — Operating Systems Basics** for how programs are managed and run.
+- **Vol 44: Computing — Binary and Logic** for the number system underneath it all.
+
+Machine code is the bedrock of all software: the simple, numbered commands that a processor fetches and obeys in an endless cycle. There is no magic beneath it, only binary numbers interpreted by wired-in logic. Grasp the fetch-decode-execute cycle and the handful of instruction types, and you understand what a computer truly does — and the foundation on which every program in existence is built.

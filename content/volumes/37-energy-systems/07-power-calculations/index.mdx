@@ -1,0 +1,393 @@
+---
+title: "Power Calculations: Measuring and Computing Electrical Power"
+volume: 34
+chapter: 7
+difficulty: intermediate
+prerequisites:
+  - "Vol 34: Energy Systems, Ch 1 — Energy Fundamentals"
+  - "Vol 34: Energy Systems, Ch 4 — Generators and Alternating Current"
+  - "Vol 12: Electrical Engineering, Ch 1 — Circuits and Signals"
+  - "Vol 12: Electrical Engineering, Ch 2 — AC Circuits and Impedance"
+unlocks:
+  - "energy-systems/power-distribution-and-transmission"
+  - "energy-systems/power-factor-correction"
+  - "engineering/electrical-load-analysis"
+tags: [power, electricity, measurement, watts, voltage, current, efficiency]
+summary: "Power is the rate at which energy is transferred or consumed. Calculating power accurately is essential for designing generators, transformers, distribution systems, and loads. This chapter teaches power computation for DC and AC systems."
+---
+
+## Overview
+
+Energy is the capacity to do work. Power is the rate at which work is done.
+
+A light bulb consuming 100 joules in 1 second has a power of 100 watts.
+
+The same bulb consuming 100 joules in 10 seconds has a power of 10 watts.
+
+In electrical systems, power is the product of voltage and current. But calculating power in alternating current (AC) systems is more subtle than in direct current (DC) systems.
+
+This chapter teaches power calculations: how to measure power, how to compute power for various system types, how to account for power losses, and how to verify energy balance.
+
+## Prerequisites
+
+- Understanding of energy and power (from Vol 34, Ch 1)
+- Knowledge of alternating current and generators (from Vol 34, Ch 4)
+- Familiarity with circuits, voltage, and current (from Vol 12, Ch 1)
+- Understanding of AC impedance and phase (from Vol 12, Ch 2)
+- Ability to perform algebraic calculations with real and complex numbers
+
+## Materials & Tools
+
+**For measuring power:**
+
+- Multimeter (voltmeter and ammeter functions)
+- True RMS voltmeter (for accurate AC measurements)
+- True RMS ammeter or current clamp (for measuring current)
+- Power meter (measures watts directly)
+- Oscilloscope (for analyzing waveforms)
+- Data logger (for recording power over time)
+
+**For calculations:**
+
+- Calculator or spreadsheet
+- AC circuit analysis software (SPICE, circuit simulators)
+- Power analysis tools (if available in your region)
+
+**For verification:**
+
+- Calibrated reference meters (for checking accuracy)
+- Load banks (for testing power delivery)
+
+## Part 1: DC Power
+
+### Basic Power Calculation
+
+In a DC circuit, power is straightforward:
+
+**P = V × I**
+
+Where P is power in watts, V is voltage in volts, and I is current in amperes.
+
+**Example:**
+
+A 12-volt battery supplying 5 amperes of current delivers:
+P = 12 V × 5 A = 60 watts
+
+### Resistive Loads
+
+For a load with resistance R, power can be calculated using Ohm's Law:
+
+**P = V² / R = I² × R**
+
+**Example:**
+
+A 100-ohm resistor with 2 amperes of current:
+P = I² × R = (2)² × 100 = 4 × 100 = 400 watts
+
+Alternatively:
+V = I × R = 2 × 100 = 200 volts
+P = V × I = 200 × 2 = 400 watts (same result)
+
+### Power in a Series Circuit
+
+Each component consumes power according to its resistance:
+
+**P_total = P_1 + P_2 + P_3 + ...**
+
+**Example:**
+
+A series circuit with:
+- Battery: 24 V
+- Resistor 1: 10 ohms
+- Resistor 2: 15 ohms
+- Resistor 3: 25 ohms
+
+Total resistance: R_total = 10 + 15 + 25 = 50 ohms
+Current: I = V / R = 24 / 50 = 0.48 A
+
+Power in each resistor:
+- P_1 = (0.48)² × 10 = 2.3 watts
+- P_2 = (0.48)² × 15 = 3.5 watts
+- P_3 = (0.48)² × 25 = 5.8 watts
+- Total: 11.6 watts (or check: P_total = 24 × 0.48 = 11.5 watts, accounting for rounding)
+
+---
+
+## Part 2: AC Power and Real vs. Reactive Power
+
+### Why AC Power is More Complex
+
+In AC circuits, voltage and current are sinusoidal (they oscillate). At some moments, they increase together; at others, one increases while the other decreases.
+
+**The phase angle (φ):** The shift between voltage and current waveforms.
+
+- **Phase angle = 0°:** Voltage and current are in phase (both peak simultaneously)
+- **Phase angle = 90°:** Voltage and current are 90° out of phase (one leads the other)
+
+The phase angle depends on whether the load is resistive, inductive, or capacitive.
+
+### Real Power (Watts)
+
+Real power is the power actually consumed by the load (converted to heat, light, mechanical work).
+
+**P = V_rms × I_rms × cos(φ)**
+
+Where:
+- V_rms is root-mean-square voltage
+- I_rms is root-mean-square current
+- cos(φ) is the power factor
+
+**Example:**
+
+An AC circuit with:
+- V_rms = 120 V (standard household voltage in North America)
+- I_rms = 5 A
+- Power factor = 0.9 (typical for many loads)
+
+Real power: P = 120 × 5 × 0.9 = 540 watts
+
+### Reactive Power (VAR)
+
+Reactive power is the power that oscillates between the source and the load, not consumed but stored in inductors or capacitors.
+
+**Q = V_rms × I_rms × sin(φ)**
+
+Where sin(φ) is derived from the phase angle.
+
+**Example (using the same circuit):**
+
+If cos(φ) = 0.9, then sin(φ) ≈ 0.436
+
+Reactive power: Q = 120 × 5 × 0.436 ≈ 262 VAR (volt-amperes-reactive)
+
+### Apparent Power (VA)
+
+Apparent power is the vector sum of real and reactive power:
+
+**S = √(P² + Q²) = V_rms × I_rms**
+
+This is also called the "burden" on the generator—the total power the source must supply.
+
+**Example (continuing):**
+
+Apparent power: S = √(540² + 262²) = √(291,600 + 68,600) = √360,200 ≈ 600 VA
+
+Or directly: S = V_rms × I_rms = 120 × 5 = 600 VA
+
+### Power Factor
+
+The power factor (PF) is the ratio of real power to apparent power:
+
+**PF = P / S = cos(φ)**
+
+**Example:**
+
+PF = 540 / 600 = 0.9 (or 90%)
+
+A power factor of 1.0 means all power is real power (purely resistive load). A power factor less than 1.0 means some power is reactive (inductive or capacitive components).
+
+---
+
+## Part 3: Three-Phase AC Power
+
+### Three-Phase Systems
+
+Large generators and industrial loads use three-phase AC, where three voltage signals are phase-shifted 120° apart.
+
+**Advantages:**
+
+- Generates power more evenly (no dips like single-phase)
+- More efficient transmission (smaller conductors)
+- Simpler, more reliable motors
+- Higher power density
+
+### Voltage in Three-Phase Systems
+
+Three-phase voltage from a generator:
+
+**V_A(t) = V_peak × sin(ωt)**
+**V_B(t) = V_peak × sin(ωt - 120°)**
+**V_C(t) = V_peak × sin(ωt - 240°)**
+
+The three voltages are 120° apart in time. Together, they deliver constant power to the load.
+
+### Three-Phase Power Calculation (Balanced Load)
+
+For a balanced three-phase load (all three phases have equal resistance/impedance):
+
+**P = √3 × V_line × I_line × cos(φ)**
+
+Where:
+- V_line is the voltage between any two phase lines
+- I_line is the current in any phase
+- √3 ≈ 1.732
+
+**Example:**
+
+A three-phase system with:
+- Line voltage: 480 V (common in industrial settings)
+- Line current: 100 A per phase
+- Power factor: 0.95 (nearly ideal)
+
+Real power: P = 1.732 × 480 × 100 × 0.95 ≈ 78,900 watts ≈ 79 kW
+
+Reactive power: Q = 1.732 × 480 × 100 × sin(arccos(0.95)) ≈ 26,300 VAR ≈ 26 kVAR
+
+Apparent power: S = √(79² + 26.3²) ≈ 83.3 kVA
+
+Or directly: S = 1.732 × V_line × I_line = 1.732 × 480 × 100 ≈ 83.1 kVA
+
+---
+
+## Part 4: Power Losses and Efficiency
+
+### I²R Losses
+
+When current flows through resistance (like transmission lines or transformer windings), power is lost as heat:
+
+**P_loss = I² × R**
+
+This is independent of voltage—only current and resistance matter.
+
+**Example:**
+
+A transmission line with:
+- Current: 1000 A
+- Resistance: 0.5 ohms per 100 km
+- Distance: 100 km
+- Total resistance: 0.5 ohms
+
+Power loss: P_loss = (1000)² × 0.5 = 500,000 watts = 500 kW
+
+If the transmission line carries 100 MW, the loss is 0.5% (acceptable).
+
+### Reducing Transmission Losses
+
+**Increase voltage:** P_loss ∝ (P/V)². Doubling voltage reduces losses 4-fold.
+
+**Example:**
+
+Transmitting 100 MW:
+- At 100 kV: P_loss = (100 MW / 100 kV)² × R = 100² × R (in appropriate units)
+- At 200 kV: P_loss = (100 MW / 200 kV)² × R = 25² × R
+
+Doubling voltage from 100 kV to 200 kV reduces losses by a factor of 4.
+
+This is why long-distance transmission uses very high voltages (100+ kV).
+
+### Power Efficiency
+
+Efficiency is the ratio of useful output power to input power:
+
+**η = P_out / P_in**
+
+**Example:**
+
+A power transformer with:
+- Input power: 1000 kW
+- Loss (I²R): 15 kW
+- Output power: 985 kW
+
+Efficiency: η = 985 / 1000 = 0.985 = 98.5%
+
+---
+
+## Worked Example: Calculating Power for a Factory Load
+
+**Scenario:** A factory is connected to a three-phase 480 V grid. The factory has several loads:
+
+| Load | Type | Power (kW) | Power Factor |
+|------|------|-----------|--------------|
+| Motor 1 | Inductive | 50 | 0.85 |
+| Motor 2 | Inductive | 75 | 0.85 |
+| Lighting | Resistive | 20 | 1.0 |
+| Heater | Resistive | 30 | 1.0 |
+
+**Step 1 — Calculate real power:**
+
+Total real power:
+P_total = 50 + 75 + 20 + 30 = 175 kW
+
+**Step 2 — Calculate reactive power for inductive loads:**
+
+For the motors (PF = 0.85):
+- cos(φ) = 0.85
+- sin(φ) = √(1 - 0.85²) = √(1 - 0.7225) ≈ 0.527
+
+Motor 1 reactive power: Q_1 = 50 × (0.527 / 0.85) ≈ 31 kVAR
+Motor 2 reactive power: Q_2 = 75 × (0.527 / 0.85) ≈ 46.5 kVAR
+Lighting and heater: Q = 0 (resistive, no reactive power)
+
+Total reactive power: Q_total = 31 + 46.5 = 77.5 kVAR
+
+**Step 3 — Calculate apparent power:**
+
+S = √(P² + Q²) = √(175² + 77.5²) = √(30,625 + 6006.25) ≈ √36,631 ≈ 191.4 kVA
+
+**Step 4 — Calculate line current:**
+
+S = √3 × V_line × I_line
+191.4 kVA = 1.732 × 480 × I_line
+I_line = 191,400 / (1.732 × 480) ≈ 231 A per phase
+
+**Step 5 — Calculate power factor:**
+
+PF = P / S = 175 / 191.4 ≈ 0.914 (or 91.4%)
+
+**Interpretation:**
+
+The factory requires a three-phase generator capable of delivering 191.4 kVA at 231 A per phase. The power factor of 0.914 indicates that reactive power (from the motors) accounts for 77.5 / 191.4 ≈ 40% of the burden, but only 175 kW is useful work.
+
+If this factory operates 24 hours per day, the average power consumption is 175 kW, and the energy consumed is 175 kWh per hour × 24 hours = 4200 kWh per day.
+
+---
+
+## Verification
+
+**Understanding power calculations means:**
+
+1. You can calculate power for DC resistive circuits using P = V × I and P = I² × R
+2. You understand the difference between real, reactive, and apparent power in AC systems
+3. You can calculate power factor and interpret its meaning
+4. You can compute three-phase power using the √3 formula
+5. You can estimate transmission losses and understand how voltage affects them
+6. You can calculate efficiency for generators, transformers, and motors
+7. You can analyze a mixed load (resistive and inductive) to determine total power, current, and power factor
+8. You can verify energy conservation: input power = output power + losses
+
+If you can analyze an electrical system (single-phase or three-phase, DC or AC) and predict the power consumed, current required, and losses, you understand power calculations.
+
+---
+
+## Common Mistakes
+
+1. **Using average voltage instead of RMS voltage.** AC voltages must be RMS for correct power calculation. Never use peak voltage in power equations.
+
+2. **Assuming power factor = 1 for all AC loads.** Motors and inductors have PF &lt; 1. Account for reactive power.
+
+3. **Forgetting the √3 factor in three-phase calculations.** Three-phase power is √3 times single-phase power. It's easy to omit and get the wrong answer by a factor of 1.732.
+
+4. **Confusing real power (watts) with apparent power (VA).** A 100 VA load with PF = 0.8 consumes only 80 watts. The other 20 VA is reactive.
+
+5. **Using instantaneous power instead of average power.** Instantaneous power oscillates; for practical purposes, always use average (real) power. P_avg = V_rms × I_rms × cos(φ).
+
+6. **Not accounting for transmission losses.** Long-distance power delivery loses 5–15% due to I²R losses. Don't assume 100% efficiency.
+
+7. **Ignoring power factor correction.** A low power factor (say, 0.6) requires much larger generators and transmission lines. Capacitors can improve power factor.
+
+8. **Mixing single-phase and three-phase calculations.** They are different. Be clear which system you're analyzing.
+
+9. **Assuming reactive power is "wasted."** Reactive power is not consumed; it oscillates. But it does require larger equipment, so it should be minimized.
+
+10. **Not measuring actual power.** Calculations assume ideal conditions. Real circuits have harmonics, imbalances, and other non-idealities. Use a power meter to verify.
+
+---
+
+## Cross-References
+
+- See Vol 34: Energy Systems, Ch 1 — Energy Fundamentals (power definition)
+- See Vol 34: Energy Systems, Ch 4 — Generators and AC Power (source of AC power)
+- See Vol 12: Electrical Engineering, Ch 1 — Circuits and Signals (voltage and current)
+- See Vol 12: Electrical Engineering, Ch 2 — AC Circuits and Impedance (phase relationships)
+- See Vol 12: Electrical Engineering, Ch 6 — Transformers (power transmission at different voltages)
+- See Vol 34: Energy Systems, Ch 8 — Power Distribution (delivering power to loads)

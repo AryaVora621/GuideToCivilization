@@ -1,0 +1,122 @@
+---
+title: "Operating System Basics: The Manager of the Machine"
+volume: 44
+chapter: 7
+difficulty: advanced
+prerequisites:
+  - "Vol 44: Computing — machine code and how programs run"
+  - "Vol 44: Computing — memory and storage"
+unlocks:
+  - "computing/file-systems-and-data-management"
+  - "computing/networking-and-communication"
+tags: [computing, operating-system, software, processes, memory, resources]
+summary: "An operating system is the master program that manages the computer's hardware and runs all other programs. It shares the processor, memory, and devices among many tasks. This chapter explains what an OS does and how it keeps a computer usable."
+---
+
+## Overview
+
+A bare computer, with only its processor and memory, can run a single program from start to finish. But a useful computer must do far more: run many programs, manage files, handle a keyboard and screen and storage devices, and protect programs from interfering with one another. Coordinating all of this is the job of the operating system — the master program that sits between the raw hardware and every other program, managing the machine's resources and providing services that applications rely on. Without an operating system, every program would have to control the hardware directly and could not coexist with others. With one, a computer becomes a flexible, shareable, multi-purpose tool.
+
+The operating system is the most important piece of software on any computer because it governs everything else. It decides which program gets to use the processor and when. It parcels out memory so programs do not overwrite each other. It manages files on storage so data can be saved and found. It handles the devices — keyboard, display, printers, network — so applications do not each need to know the intimate details of every piece of hardware. And it enforces protection, keeping a misbehaving or malicious program from crashing the whole machine or corrupting others.
+
+This chapter explains the core responsibilities of an operating system: managing processes, memory, files, and devices, and providing the protection and services that make a computer practical.
+
+## Prerequisites
+
+- Understanding how programs run as machine code on a processor (Vol 44)
+- Familiarity with memory and storage (Vol 44)
+- The idea that a computer can switch between tasks rapidly
+- Basic grasp of hardware devices (keyboard, display, disk)
+
+## Part 1: What an Operating System Is
+
+### The Layer in the Middle
+
+Picture the computer in layers. At the bottom is the hardware: processor, memory, storage, and devices. At the top are the applications people actually use. In between sits the operating system, presenting a clean, consistent interface upward to applications while controlling the messy hardware below. Applications ask the OS for services — "save this file," "read a key," "give me more memory" — and the OS handles the hardware details.
+
+### The Kernel
+
+At the heart of an operating system is the **kernel**, the core that always runs and has full control of the hardware. The kernel manages the processor, memory, and devices, and enforces the rules. Other parts of the OS — file utilities, user interfaces — build on top of the kernel. The kernel runs in a privileged mode with full hardware access; ordinary programs run in a restricted mode and must ask the kernel for privileged operations. This division is the basis of protection.
+
+## Part 2: Process Management
+
+### Programs and Processes
+
+A program is a stored set of instructions; a **process** is a program actually running, with its own memory, its place in execution, and its resources. The OS creates a process when you launch a program and cleans it up when the program finishes.
+
+### Sharing the Processor
+
+A processor can truly execute only one (or a few) instructions at a time, yet a computer appears to run many programs at once. The OS achieves this illusion by **multitasking**: it rapidly switches the processor among processes, giving each a small slice of time before moving to the next. Switches happen so fast — many per second — that all the programs appear to run simultaneously.
+
+The part of the OS that decides which process runs next and for how long is the **scheduler**. A good scheduler keeps the system responsive, gives fair shares to competing programs, and prioritizes urgent tasks. When it switches processes, it must save the exact state of the outgoing process (its registers and position) and restore the incoming one — a maneuver called a context switch.
+
+## Part 3: Memory Management
+
+### Dividing the Memory
+
+Many processes share one pool of memory, and the OS must give each what it needs without letting them collide. The OS tracks which regions of memory are free and which are in use, allocates memory to processes when they ask, and reclaims it when they finish.
+
+### Protection and Isolation
+
+Crucially, the OS keeps each process's memory separate, so one program cannot read or overwrite another's data. If a program tries to access memory it does not own, the hardware and OS catch the violation and stop that program rather than letting it corrupt the system. This isolation is what allows untrusted programs to run without bringing down the whole machine.
+
+### Virtual Memory
+
+A powerful technique, virtual memory, lets the OS give each process the illusion of a large, private, continuous memory space, even when physical memory is smaller or fragmented. The OS maps each program's virtual addresses to real physical locations and can even move rarely used data out to storage temporarily, making the computer behave as if it had more memory than it physically does.
+
+## Part 4: File and Storage Management
+
+Storage devices hold raw blocks of data, but people think in terms of named files organized in folders. The OS provides the **file system**: it organizes storage into files and directories, tracks where each file's data physically lives, and lets programs create, read, write, and delete files by name without knowing the physical layout. It also manages permissions — who may read or change which files — and tries to keep data safe and consistent even if power is lost. (The file system is detailed in its own chapter.)
+
+## Part 5: Device Management
+
+A computer connects to many devices — keyboards, displays, storage, printers, network hardware — each with its own quirks. The OS uses **device drivers**: specialized modules that know how to talk to each specific device and present a uniform interface to the rest of the system. An application says "print this" or "read a key" through the OS, and the appropriate driver handles the device-specific details. This means applications work with many different devices without being rewritten for each one.
+
+The OS also manages **interrupts**: signals from devices that need attention (a key was pressed, data arrived). When an interrupt occurs, the processor pauses what it is doing, the OS handles the event, and then execution resumes. Interrupts let the computer respond promptly to the world without constantly checking every device.
+
+## Part 6: Protection and Services
+
+Beyond managing resources, the OS protects the system and provides services:
+
+- **Protection:** keeping processes isolated, controlling access to files and devices, and stopping misbehaving programs from harming others or the system.
+- **System calls:** the controlled gateway through which programs request OS services (open a file, allocate memory, start a process). A program cannot touch hardware directly; it must ask through these calls, which the kernel checks and performs safely.
+- **User interface:** the means by which people interact, whether a text command line or a graphical interface, both built on the OS's services.
+
+## Worked Example: What Happens When You Run a Program
+
+You launch a text editor. Behind the scenes:
+
+1. **Load:** The OS finds the program file on storage, allocates memory for it, and loads its instructions in.
+2. **Create a process:** The OS sets up a process for the editor with its own protected memory and initial state.
+3. **Schedule:** The scheduler gives the editor slices of processor time, interleaved with other running programs.
+4. **Service requests:** When you press keys, interrupts notify the OS, which delivers the input to the editor. When you save, the editor makes a system call and the OS writes the file through the storage driver.
+5. **Protect:** Throughout, the OS keeps the editor's memory separate from other programs; a bug in the editor cannot corrupt them.
+6. **Clean up:** When you quit, the OS frees the editor's memory and resources for reuse.
+
+All of this coordination, invisible to you, is the operating system doing its job.
+
+## Verification Criteria
+
+- **Multiple programs run together.** Several programs operate at once and remain responsive, proving multitasking and scheduling work.
+- **Programs stay isolated.** A crash in one program does not take down others or the system, showing memory protection holds.
+- **Files persist and are found.** Data saved to files can be reliably retrieved later by name through the file system.
+- **Devices respond.** Keyboard, display, and storage all work through the OS without applications managing hardware directly.
+- **Resources are reclaimed.** When programs finish, their memory and resources become available again, with no steady leak.
+
+## Common Mistakes
+
+- **No memory protection.** Without isolation, one buggy program can corrupt others and crash the whole system. Enforce separation.
+- **Poor scheduling.** A scheduler that lets one program hog the processor makes the system unresponsive. Share time fairly and prioritize sensibly.
+- **Letting programs touch hardware directly.** Bypassing the OS for hardware access breaks protection and coordination. Route everything through system calls.
+- **Ignoring resource cleanup.** Failing to reclaim memory and resources from finished processes slowly exhausts the system. Always clean up.
+- **Mishandling interrupts.** Lost or badly handled interrupts make devices unresponsive or data corrupt. Handle interrupts promptly and correctly.
+- **Weak permissions.** Without access controls on files and devices, any program can read or damage anything. Enforce permissions.
+
+## Cross-References
+
+- **Vol 44: Computing — File Systems and Data Management** for how the OS organizes storage.
+- **Vol 44: Computing — Networking and Communication** for how the OS connects machines.
+- **Vol 44: Computing — Machine Code** for the instructions the OS schedules and runs.
+- **Vol 44: Computing — Memory and Storage** for the resources the OS manages.
+
+The operating system is the indispensable manager that turns a heap of hardware into a usable computer. It shares the processor among many tasks, parcels out and protects memory, organizes storage into files, and tames the devices — all while keeping programs from harming one another. Understand process scheduling, memory protection, and the system-call gateway, and you understand how a modern computer juggles everything it does at once.

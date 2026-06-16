@@ -1,0 +1,95 @@
+---
+title: "Cryptography: Keeping Secrets and Proving Identity"
+volume: 44
+chapter: 8
+difficulty: advanced
+prerequisites:
+  - "Vol 44: Computing — binary, algorithms, and basic number theory"
+  - "Vol 2: Mathematics — arithmetic, modular arithmetic, prime numbers"
+unlocks:
+  - "computing/secure-communications"
+  - "trade-money-markets/digital-payments-and-trust"
+  - "telecommunications/secure-messaging"
+tags: [computing, cryptography, security, encryption, mathematics, privacy]
+summary: "Cryptography lets two parties communicate secretly even when others can intercept their messages, and lets a recipient verify who really sent a message. This chapter explains ciphers, keys, the symmetric and public-key approaches, and the principles of secure communication."
+---
+
+## Overview
+
+Cryptography is the art and science of secret communication. Its goal is to let two people exchange messages that an eavesdropper, even one who intercepts every word, cannot read; and, just as importantly, to let the recipient be sure who really sent a message and that it has not been altered. For as long as people have had secrets worth keeping — military plans, trade negotiations, private correspondence, money — they have needed cryptography, and for just as long others have tried to break it.
+
+In a connected society, cryptography is not a luxury but infrastructure. Trade, banking, governance, and private life all depend on being able to send information that stays confidential and on being able to trust that a message truly came from who it claims. Without cryptography there can be no secure commerce at a distance, no private communication over shared channels, no way to prove a document is authentic. Understanding its principles is essential to building any society that communicates electronically.
+
+By the end of this chapter you will understand the core ideas of cryptography: ciphers and keys, the crucial principle that secrecy must rest in the key and not the method, the difference between symmetric and public-key cryptography, and how cryptography provides not just secrecy but authentication and integrity.
+
+## Prerequisites
+
+You should already understand:
+
+- Binary and basic algorithms from this volume: how information is represented and processed step by step.
+- Basic number theory from the mathematics volume: arithmetic, especially modular arithmetic (working with remainders) and the special role of prime numbers, which underlie modern cryptography.
+- The idea that some mathematical operations are easy to perform but very hard to reverse, which is the foundation of much of cryptography.
+
+## Ciphers, Keys, and the Cardinal Principle
+
+A **cipher** is a method for transforming a readable message (the *plaintext*) into a scrambled form (the *ciphertext*) and back again. The transformation is controlled by a **key**, a piece of secret information that determines exactly how the scrambling is done. To **encrypt** is to turn plaintext into ciphertext using the key; to **decrypt** is to reverse it back to plaintext using the appropriate key. Someone who intercepts the ciphertext but does not have the key should be unable to recover the message.
+
+The single most important principle in all of cryptography is this: **the security must depend entirely on the secrecy of the key, never on the secrecy of the method.** Assume your enemy knows exactly what cipher you are using — only the key is secret. This seems counterintuitive; would it not be safer to keep the method secret too? But methods leak, get reverse-engineered, or are guessed, and a system whose security depends on a hidden method collapses the moment it is discovered. A system whose security depends only on the key can be published, studied, and attacked openly, and if it survives that scrutiny, you can trust it. Worse, a secret method has never been tested by anyone but its creator, who is the person least able to see its flaws. Public methods with secret keys are the only trustworthy foundation. Any system that relies on "no one knowing how it works" is not secure; it is merely untested.
+
+## Why Simple Ciphers Fail
+
+The history of cryptography is a long contest between code-makers and code-breakers, and the early rounds teach an essential lesson. The simplest ciphers shift or substitute letters by a fixed rule — replace each letter with another according to a scrambled alphabet. These feel secure because the number of possible scrambled alphabets is astronomically large. Yet they are easily broken, because they leave the structure of the language intact. In any language some letters and combinations occur far more often than others. By counting how often each symbol appears in the ciphertext and matching those frequencies to the known patterns of the language, an analyst can deduce the substitution without ever guessing the key directly. This is **frequency analysis**, and it shattered simple substitution ciphers centuries ago.
+
+The lesson is profound: a cipher is only as strong as its resistance to clever analysis, not the raw count of its possible keys. A vast keyspace is necessary but never sufficient. A good cipher must thoroughly scramble the statistical structure of the message so that the ciphertext reveals nothing about the plaintext's patterns. This drove cryptography toward methods that mix and diffuse the message so completely that no residue of its structure survives for an analyst to grasp.
+
+## Symmetric Cryptography: One Shared Secret
+
+In **symmetric cryptography**, the same key is used to both encrypt and decrypt. Two parties who share a secret key can communicate securely: the sender encrypts with the key, the recipient decrypts with the same key, and an eavesdropper without the key sees only scrambled noise. Strong modern symmetric ciphers scramble data so thoroughly, through many rounds of mixing and substitution, that they resist all known analysis, and the only attack left is to try every possible key — which a large enough key makes hopeless, because the number of keys to try is beyond any possible effort.
+
+Symmetric cryptography is efficient and strong, but it has one great practical weakness: **the key distribution problem.** Before two parties can communicate secretly, they must both already possess the same secret key — and how do they share that key securely in the first place? If they can already send the key safely, why not just send the message that way? For two people who can meet in person beforehand, this is solvable; but for parties who have never met and can only communicate over channels that may be watched, sharing a secret key first seems impossible. For most of history this was cryptography's fundamental limitation, and it is what public-key cryptography brilliantly overcame.
+
+## Public-Key Cryptography: The Breakthrough
+
+The revolutionary idea of **public-key cryptography** is to use not one key but a matched *pair*: a **public key** and a **private key**. They are mathematically linked, but in a special way — what one key locks, only the other can unlock, and crucially, knowing the public key does not let you figure out the private key. This rests on mathematical operations that are easy to perform in one direction but practically impossible to reverse, such as multiplying two large prime numbers together (easy) versus finding those primes again from the product (effectively impossible for large enough numbers).
+
+This pairing solves the key distribution problem completely. Each person generates a key pair and publishes their public key for all the world to see, keeping their private key utterly secret. Now anyone can send them a secret message: encrypt it with the recipient's public key, and only the recipient's matching private key can decrypt it. The public key, freely shared, can lock but not unlock; only the private key, never shared, can unlock. Two parties who have never met and share no prior secret can now communicate securely over a completely open channel, simply by looking up each other's public keys. This was one of the great conceptual breakthroughs in the history of information, and it underpins essentially all secure communication at a distance.
+
+## Beyond Secrecy: Authentication and Integrity
+
+Cryptography does more than hide messages. Public-key methods also let you prove who sent a message and that it was not tampered with, through a **digital signature**. The trick runs the key pair in reverse: the sender encrypts (signs) something with their own *private* key. Anyone can then verify it using the sender's *public* key. Because only the holder of the private key could have produced something that the matching public key unlocks, a successful verification proves the message genuinely came from that person and was not altered in transit. This provides **authentication** (proof of who sent it) and **integrity** (proof it was not changed) — guarantees as valuable as secrecy itself.
+
+Closely related is the idea of a **hash**: a process that condenses a message of any size into a short fixed fingerprint, such that any change to the message, however tiny, produces a completely different fingerprint, and such that you cannot work backward from the fingerprint to the message. Hashes let you detect tampering and are the practical basis of efficient digital signatures, since one signs the small fingerprint rather than the whole message. Together, encryption, signatures, and hashes provide the full toolkit: secrecy, authentication, and integrity.
+
+## Worked Reasoning: Two Strangers Communicating Securely
+
+Imagine two people, far apart, who have never met and can only send messages over a channel an adversary fully monitors. They want to communicate secretly and be sure of each other's identity. Each generates a key pair and publishes their public key openly; the adversary sees both public keys but this does not help. To send a confidential message, the first person encrypts it with the second's public key — now only the second's private key can read it, so the watching adversary sees only ciphertext. To prove the message truly came from the first person, the first also signs it with their own private key, and the second verifies the signature with the first's public key. The second now has a message that is secret (only they could decrypt it), authenticated (the signature proves the sender), and intact (any tampering would break the signature) — all achieved between strangers over a fully exposed channel, with no shared secret ever transmitted. This is the everyday miracle that secures modern communication and commerce.
+
+## Verification Criteria
+
+You understand cryptography when:
+
+- You can explain the roles of plaintext, ciphertext, key, encryption, and decryption.
+- You can state and justify the cardinal principle that security rests in the secret key, not the secret method.
+- You can explain why simple substitution ciphers fall to frequency analysis, and why a large keyspace alone is not security.
+- You can explain the difference between symmetric and public-key cryptography, and why public-key solves the key distribution problem.
+- You can explain how digital signatures provide authentication and integrity, and how a hash detects tampering.
+- You recognize that secrecy, authentication, and integrity are distinct goals that cryptography addresses together.
+
+## Common Mistakes
+
+- **Relying on a secret method ("security through obscurity")** instead of a secret key, building a system that collapses once the method is discovered.
+- **Confusing a large keyspace with real security,** when a flawed cipher can be broken by analysis without trying every key.
+- **Reusing keys carelessly or transmitting a symmetric key over an insecure channel,** undermining otherwise strong cryptography.
+- **Confusing the public and private keys' roles,** for example by treating a published public key as if it could decrypt incoming secret messages.
+- **Assuming encryption alone proves identity;** secrecy and authentication are separate, and authentication requires signatures.
+- **Inventing your own cipher and trusting it,** when only methods that have survived broad public scrutiny should be relied upon.
+
+## Cross-References
+
+- Binary, algorithms, and number theory from this volume supply the computational and mathematical machinery of cryptography.
+- Secure communications applies these primitives to build complete protected channels.
+- Digital payments and trust in the trade volume depend on cryptographic signatures and integrity to make distant commerce safe.
+- Secure messaging in the telecommunications volume carries encrypted traffic over open networks.
+- Modular arithmetic and prime numbers from the mathematics volume are the foundation of public-key methods.
+
+Cryptography turns an open, hostile channel into a private, trustworthy one. By placing all secrecy in a key rather than a method, by scrambling messages beyond any analysis, and above all by the breakthrough of paired public and private keys, it lets strangers keep secrets, prove their identities, and detect tampering across any distance. It is the quiet mathematics that makes trust possible between people who have never met, and without it no connected civilization can be secure.
