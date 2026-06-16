@@ -31,6 +31,39 @@
     "chapter": 2
   },
   {
+    "title": "Shelter Construction",
+    "summary": "Shelter protects from weather, wind, cold, and predators — often the difference between survival and hypothermia. Five methods ranked by time, materials, and durability.",
+    "tags": [
+      "survival",
+      "shelter",
+      "protection",
+      "insulation",
+      "weather"
+    ],
+    "volumeSlug": "01-survival",
+    "volumeTitle": "Survival",
+    "volumeNumber": 1,
+    "chapterSlug": "03-shelter-construction",
+    "chapter": 3
+  },
+  {
+    "title": "Food Preservation: Extending Survival Through Storage",
+    "summary": "Food spoils. Preservation methods—drying, salt-curing, fermenting, smoking, cool storage—stop spoilage and create nutrient-dense foods that sustain you through seasons when fresh food is scarce.",
+    "tags": [
+      "survival",
+      "food",
+      "preservation",
+      "storage",
+      "fermentation",
+      "drying"
+    ],
+    "volumeSlug": "01-survival",
+    "volumeTitle": "Survival",
+    "volumeNumber": 1,
+    "chapterSlug": "04-food-preservation",
+    "chapter": 4
+  },
+  {
     "title": "Hunting & Trapping",
     "summary": "Passive trap construction and active hunting techniques to acquire protein—from deadfall traps to field dressing.",
     "tags": [
@@ -76,6 +109,23 @@
     "volumeNumber": 1,
     "chapterSlug": "07-first-aid",
     "chapter": 7
+  },
+  {
+    "title": "Rope & Knots: Essential Lashing and Binding Techniques",
+    "summary": "Rope holds your shelter together, secures your cargo, creates traps, and saves your life. Master ten essential knots and you can build, bind, and survive.",
+    "tags": [
+      "survival",
+      "knots",
+      "rope",
+      "binding",
+      "lashing",
+      "cordage"
+    ],
+    "volumeSlug": "01-survival",
+    "volumeTitle": "Survival",
+    "volumeNumber": 1,
+    "chapterSlug": "08-rope-knots",
+    "chapter": 8
   },
   {
     "title": "Primitive Tool Making",
@@ -140,6 +190,352 @@
     "volumeNumber": 3,
     "chapterSlug": "01-arithmetic",
     "chapter": 1
+  },
+  {
+    "title": "Geometry",
+    "summary": "Practical geometry: measuring angles, calculating areas and volumes, using triangulation for surveying, and building straight walls and true angles.",
+    "tags": [
+      "geometry",
+      "mathematics",
+      "building",
+      "surveying",
+      "long-term"
+    ],
+    "volumeSlug": "03-mathematics",
+    "volumeTitle": "Mathematics",
+    "volumeNumber": 3,
+    "chapterSlug": "02-geometry",
+    "chapter": 2
+  },
+  {
+    "title": "Trigonometry",
+    "summary": "Using trigonometry to find distances and heights: sine, cosine, tangent, and practical applications for surveying and navigation.",
+    "tags": [
+      "trigonometry",
+      "mathematics",
+      "angles",
+      "surveying",
+      "long-term"
+    ],
+    "volumeSlug": "03-mathematics",
+    "volumeTitle": "Mathematics",
+    "volumeNumber": 3,
+    "chapterSlug": "04-trigonometry",
+    "chapter": 4
+  },
+  {
+    "title": "Analytic Geometry",
+    "summary": "Using coordinate systems to map land and locate positions: coordinate grids, distance calculation, slope, and practical surveying applications.",
+    "tags": [
+      "geometry",
+      "coordinates",
+      "surveying",
+      "navigation",
+      "long-term"
+    ],
+    "volumeSlug": "03-mathematics",
+    "volumeTitle": "Mathematics",
+    "volumeNumber": 3,
+    "chapterSlug": "05-analytic-geometry",
+    "chapter": 5
+  },
+  {
+    "title": "Calculus Concepts",
+    "summary": "Practical calculus concepts: rates of change, optimization, and accumulation. Foundation for engineering and resource management.",
+    "tags": [
+      "calculus",
+      "mathematics",
+      "rates",
+      "optimization",
+      "long-term"
+    ],
+    "volumeSlug": "03-mathematics",
+    "volumeTitle": "Mathematics",
+    "volumeNumber": 3,
+    "chapterSlug": "06-calculus-concepts",
+    "chapter": 6
+  },
+  {
+    "title": "Atomic Theory: Understanding Matter and Elements",
+    "summary": "All matter is made of atoms. Understanding atoms explains why materials behave as they do and how to work with them for survival.",
+    "tags": [
+      "chemistry",
+      "atoms",
+      "elements",
+      "matter",
+      "atomic-structure"
+    ],
+    "volumeSlug": "05-chemistry",
+    "volumeTitle": "Chemistry",
+    "volumeNumber": 5,
+    "chapterSlug": "01-atomic-theory",
+    "chapter": 1
+  },
+  {
+    "title": "Chemical Reactions: Making and Breaking Bonds",
+    "summary": "Chemical reactions rearrange atoms, releasing or absorbing energy. Understanding reactions helps you control fire, preserve food, produce materials, and avoid hazards.",
+    "tags": [
+      "chemistry",
+      "reactions",
+      "energy",
+      "combustion",
+      "acid-base"
+    ],
+    "volumeSlug": "05-chemistry",
+    "volumeTitle": "Chemistry",
+    "volumeNumber": 5,
+    "chapterSlug": "02-chemical-reactions",
+    "chapter": 2
+  },
+  {
+    "title": "Acids and Bases: Properties, Reactions, and Practical Applications",
+    "summary": "Acids and bases are opposites that neutralize each other. Understanding them helps you preserve food, make soap, manage soil pH, and avoid chemical hazards.",
+    "tags": [
+      "chemistry",
+      "acids",
+      "bases",
+      "pH",
+      "neutralization"
+    ],
+    "volumeSlug": "05-chemistry",
+    "volumeTitle": "Chemistry",
+    "volumeNumber": 5,
+    "chapterSlug": "03-acids-and-bases",
+    "chapter": 3
+  },
+  {
+    "title": "Electrochemistry: Electricity from Chemistry, Chemistry from Electricity",
+    "summary": "Chemical reactions can produce electricity, and electricity can drive chemical reactions. Understanding this helps you generate power, refine metals, and protect against corrosion.",
+    "tags": [
+      "chemistry",
+      "electrochemistry",
+      "electricity",
+      "batteries",
+      "electrolysis"
+    ],
+    "volumeSlug": "05-chemistry",
+    "volumeTitle": "Chemistry",
+    "volumeNumber": 5,
+    "chapterSlug": "04-electrochemistry",
+    "chapter": 4
+  },
+  {
+    "title": "Making Soap: Chemistry, Process, and Practical Application",
+    "summary": "Soap is made by reacting fats with bases (lye). Understanding soap chemistry helps you produce hygiene products essential for health and survival.",
+    "tags": [
+      "chemistry",
+      "soap",
+      "saponification",
+      "hygiene",
+      "production"
+    ],
+    "volumeSlug": "05-chemistry",
+    "volumeTitle": "Chemistry",
+    "volumeNumber": 5,
+    "chapterSlug": "05-making-soap",
+    "chapter": 5
+  },
+  {
+    "title": "Glassmaking Chemistry: Creating Transparent Materials",
+    "summary": "Glass is made by heating silica with fluxes and stabilizers. Understanding glassmaking helps you produce containers, windows, and optical instruments.",
+    "tags": [
+      "chemistry",
+      "glass",
+      "silica",
+      "fusion",
+      "materials"
+    ],
+    "volumeSlug": "05-chemistry",
+    "volumeTitle": "Chemistry",
+    "volumeNumber": 5,
+    "chapterSlug": "06-glassmaking-chemistry",
+    "chapter": 6
+  },
+  {
+    "title": "Producing Sulfuric Acid: Industrial Chemistry at Scale",
+    "summary": "Sulfuric acid is the most important industrial chemical. Understanding its production helps you process metals, treat water, and manufacture other chemicals.",
+    "tags": [
+      "chemistry",
+      "sulfuric-acid",
+      "industrial",
+      "pyrite",
+      "oxidation"
+    ],
+    "volumeSlug": "05-chemistry",
+    "volumeTitle": "Chemistry",
+    "volumeNumber": 5,
+    "chapterSlug": "07-producing-sulfuric-acid",
+    "chapter": 7
+  },
+  {
+    "title": "Producing Fertilizers: Sustaining Agriculture",
+    "summary": "Plant growth depends on nutrients (nitrogen, phosphorus, potassium). Understanding fertilizer production helps you sustain high agricultural yields post-collapse.",
+    "tags": [
+      "chemistry",
+      "fertilizers",
+      "nitrogen",
+      "phosphate",
+      "potassium",
+      "agriculture"
+    ],
+    "volumeSlug": "05-chemistry",
+    "volumeTitle": "Chemistry",
+    "volumeNumber": 5,
+    "chapterSlug": "08-producing-fertilizers",
+    "chapter": 8
+  },
+  {
+    "title": "Organic Chemistry Basics: Understanding Carbon Compounds",
+    "summary": "Organic chemistry is the chemistry of carbon compounds. Understanding organic chemistry helps you produce alcohol, preserve food, and work with biological materials.",
+    "tags": [
+      "chemistry",
+      "organic",
+      "carbon",
+      "hydrocarbons",
+      "fermentation"
+    ],
+    "volumeSlug": "05-chemistry",
+    "volumeTitle": "Chemistry",
+    "volumeNumber": 5,
+    "chapterSlug": "09-organic-chemistry-basics",
+    "chapter": 9
+  },
+  {
+    "title": "Mechanics: Motion, Forces, and Simple Machines",
+    "summary": "Mechanics is the study of motion and forces. Understanding mechanics helps you use tools effectively, design structures, and create useful machines.",
+    "tags": [
+      "physics",
+      "mechanics",
+      "forces",
+      "motion",
+      "work",
+      "energy",
+      "machines"
+    ],
+    "volumeSlug": "06-physics",
+    "volumeTitle": "Physics",
+    "volumeNumber": 6,
+    "chapterSlug": "01-mechanics",
+    "chapter": 1
+  },
+  {
+    "title": "Heat and Thermodynamics: Energy Transformation",
+    "summary": "Thermodynamics is the study of heat and its transformation. Understanding heat helps you manage fire, generate power, and use energy efficiently.",
+    "tags": [
+      "physics",
+      "thermodynamics",
+      "heat",
+      "temperature",
+      "efficiency",
+      "engines"
+    ],
+    "volumeSlug": "06-physics",
+    "volumeTitle": "Physics",
+    "volumeNumber": 6,
+    "chapterSlug": "02-heat-and-thermodynamics",
+    "chapter": 2
+  },
+  {
+    "title": "Waves and Sound: Understanding Vibration and Propagation",
+    "summary": "Sound is a wave; understanding waves helps you communicate, navigate, and predict how sound behaves in different environments.",
+    "tags": [
+      "physics",
+      "waves",
+      "sound",
+      "vibration",
+      "frequency",
+      "propagation"
+    ],
+    "volumeSlug": "06-physics",
+    "volumeTitle": "Physics",
+    "volumeNumber": 6,
+    "chapterSlug": "03-waves-and-sound",
+    "chapter": 3
+  },
+  {
+    "title": "Optics: Light, Lenses, and Vision",
+    "summary": "Light is a wave and a particle. Understanding optics helps you make lenses, correct vision, and create optical instruments.",
+    "tags": [
+      "physics",
+      "optics",
+      "light",
+      "lenses",
+      "refraction",
+      "vision"
+    ],
+    "volumeSlug": "06-physics",
+    "volumeTitle": "Physics",
+    "volumeNumber": 6,
+    "chapterSlug": "04-optics",
+    "chapter": 4
+  },
+  {
+    "title": "Static Electricity: Charge, Force, and Lightning",
+    "summary": "Static electricity is the buildup of electric charge. Understanding it helps you predict and protect against lightning, understand electrical phenomena, and work with electrical systems.",
+    "tags": [
+      "physics",
+      "electricity",
+      "static",
+      "charge",
+      "lightning",
+      "electrical-safety"
+    ],
+    "volumeSlug": "06-physics",
+    "volumeTitle": "Physics",
+    "volumeNumber": 6,
+    "chapterSlug": "05-static-electricity",
+    "chapter": 5
+  },
+  {
+    "title": "Magnetism and Electromagnetism: Fields and Motion",
+    "summary": "Magnetism is created by moving electrical charges. Understanding magnetism helps you generate electricity, power motors, and navigate using compass.",
+    "tags": [
+      "physics",
+      "magnetism",
+      "electromagnetism",
+      "fields",
+      "induction",
+      "motors"
+    ],
+    "volumeSlug": "06-physics",
+    "volumeTitle": "Physics",
+    "volumeNumber": 6,
+    "chapterSlug": "06-magnetism",
+    "chapter": 6
+  },
+  {
+    "title": "Electromagnetism: Unified Theory of Electricity and Magnetism",
+    "summary": "Electricity and magnetism are two aspects of one phenomenon. Understanding electromagnetism helps you work with electromagnetic waves and understand energy transmission.",
+    "tags": [
+      "physics",
+      "electromagnetism",
+      "waves",
+      "fields",
+      "radiation",
+      "maxwell"
+    ],
+    "volumeSlug": "06-physics",
+    "volumeTitle": "Physics",
+    "volumeNumber": 6,
+    "chapterSlug": "07-electromagnetism",
+    "chapter": 7
+  },
+  {
+    "title": "Nuclear Physics Basics: Understanding the Nucleus",
+    "summary": "The nucleus contains most of an atom's mass. Understanding nuclear physics helps you understand energy sources, radiation safety, and detection.",
+    "tags": [
+      "physics",
+      "nuclear",
+      "radioactivity",
+      "radiation",
+      "fission",
+      "fusion"
+    ],
+    "volumeSlug": "06-physics",
+    "volumeTitle": "Physics",
+    "volumeNumber": 6,
+    "chapterSlug": "08-nuclear-physics-basics",
+    "chapter": 8
   },
   {
     "title": "Cell Theory: Understanding Life at Its Foundation",
@@ -220,6 +616,54 @@
     "volumeNumber": 7,
     "chapterSlug": "05-human-anatomy",
     "chapter": 5
+  },
+  {
+    "title": "Microbiology: Bacteria, Viruses, and Microscopic Life",
+    "summary": "Invisible organisms cause disease, spoil food, and enable fermentation. Understanding microorganisms helps you prevent disease, preserve food, and manage health.",
+    "tags": [
+      "microbiology",
+      "bacteria",
+      "viruses",
+      "disease",
+      "microorganisms"
+    ],
+    "volumeSlug": "07-biology",
+    "volumeTitle": "Biology",
+    "volumeNumber": 7,
+    "chapterSlug": "06-microbiology",
+    "chapter": 6
+  },
+  {
+    "title": "Taxonomy: Classifying and Identifying Organisms",
+    "summary": "Organisms are classified in a hierarchical system. Understanding classification helps you identify organisms, understand relationships, and make decisions about what is safe to eat or dangerous to avoid.",
+    "tags": [
+      "taxonomy",
+      "classification",
+      "identification",
+      "species",
+      "organisms"
+    ],
+    "volumeSlug": "07-biology",
+    "volumeTitle": "Biology",
+    "volumeNumber": 7,
+    "chapterSlug": "07-taxonomy",
+    "chapter": 7
+  },
+  {
+    "title": "Botany in Depth: Plant Structure, Function, and Cultivation",
+    "summary": "Plants are the foundation of post-collapse survival. Understanding plant structure, reproduction, and growth helps you grow food, identify plants, and maximize productivity.",
+    "tags": [
+      "botany",
+      "plants",
+      "photosynthesis",
+      "plant-structure",
+      "plant-reproduction"
+    ],
+    "volumeSlug": "07-biology",
+    "volumeTitle": "Biology",
+    "volumeNumber": 7,
+    "chapterSlug": "08-botany-depth",
+    "chapter": 8
   },
   {
     "title": "Soil Science",
@@ -334,6 +778,111 @@
     "chapter": 7
   },
   {
+    "title": "Livestock Integration",
+    "summary": "Integrate livestock into your farm system. Animals provide draft power, manure, food, and fiber. Well-managed animals multiply the productivity of your land.",
+    "tags": [
+      "livestock",
+      "integration",
+      "draft-power",
+      "manure",
+      "cycling"
+    ],
+    "volumeSlug": "08-agriculture",
+    "volumeTitle": "Agriculture",
+    "volumeNumber": 8,
+    "chapterSlug": "08-livestock-integration",
+    "chapter": 8
+  },
+  {
+    "title": "Geology Basics",
+    "summary": "Understand rocks, minerals, and geological structures. Geology reveals where resources are located. Post-collapse survival depends on reading the land.",
+    "tags": [
+      "geology",
+      "rocks",
+      "minerals",
+      "resources",
+      "landscape-reading"
+    ],
+    "volumeSlug": "09-natural-resources",
+    "volumeTitle": "Natural Resources",
+    "volumeNumber": 9,
+    "chapterSlug": "01-geology-basics",
+    "chapter": 1
+  },
+  {
+    "title": "Ore Identification",
+    "summary": "How to identify 20 economically important ores in the field using visual characteristics, streak tests, hardness tests, and acid reactivity without laboratory equipment.",
+    "tags": [
+      "ore",
+      "minerals",
+      "identification",
+      "field-test",
+      "geology",
+      "metallurgy",
+      "streak",
+      "hardness",
+      "acid"
+    ],
+    "volumeSlug": "09-natural-resources",
+    "volumeTitle": "Natural Resources",
+    "volumeNumber": 9,
+    "chapterSlug": "02-ore-identification",
+    "chapter": 2
+  },
+  {
+    "title": "Groundwater Finding",
+    "summary": "How to locate groundwater using geology and field observation, not dowsing rods. Understanding aquifers, springs, seeps, and artesian wells allows you to find water reliably without luck.",
+    "tags": [
+      "water",
+      "groundwater",
+      "geology",
+      "wells",
+      "dowsing",
+      "springs",
+      "artesian",
+      "water-finding"
+    ],
+    "volumeSlug": "09-natural-resources",
+    "volumeTitle": "Natural Resources",
+    "volumeNumber": 9,
+    "chapterSlug": "03-groundwater-finding",
+    "chapter": 3
+  },
+  {
+    "title": "Coal and Peat",
+    "summary": "How to identify coal and peat deposits, extract them sustainably, and convert coal into coke for metalworking—the foundation of heavy industry.",
+    "tags": [
+      "coal",
+      "peat",
+      "fossil-fuel",
+      "energy",
+      "coke",
+      "mining",
+      "identification"
+    ],
+    "volumeSlug": "09-natural-resources",
+    "volumeTitle": "Natural Resources",
+    "volumeNumber": 9,
+    "chapterSlug": "04-coal-and-peat",
+    "chapter": 4
+  },
+  {
+    "title": "Anatomy Overview: Understanding the Human Body",
+    "summary": "You cannot treat what you do not understand. This chapter maps the major systems of the human body—skeletal, muscular, cardiovascular, respiratory, nervous, digestive, and reproductive—so you can recognize injury, infection, and disease.",
+    "tags": [
+      "medicine",
+      "anatomy",
+      "body-systems",
+      "health",
+      "survival"
+    ],
+    "volumeSlug": "14-medicine",
+    "volumeTitle": "Medicine",
+    "volumeNumber": 14,
+    "chapterSlug": "01-anatomy-overview",
+    "chapter": 1
+  },
+  {
     "title": "Wound Care",
     "summary": "Step-by-step wound cleaning, closure, and infection prevention using available materials and no modern equipment.",
     "tags": [
@@ -381,6 +930,40 @@
     "chapter": 4
   },
   {
+    "title": "Fractures & Dislocations: Recognizing and Managing Broken Bones",
+    "summary": "Broken bones and dislocated joints are common in survival situations. Recognizing the type of fracture and immobilizing it properly prevents disability and life-threatening complications like fat embolism or compartment syndrome.",
+    "tags": [
+      "medicine",
+      "fracture",
+      "dislocation",
+      "bone",
+      "injury",
+      "trauma"
+    ],
+    "volumeSlug": "14-medicine",
+    "volumeTitle": "Medicine",
+    "volumeNumber": 14,
+    "chapterSlug": "05-fractures-dislocations",
+    "chapter": 5
+  },
+  {
+    "title": "Childbirth: Assisting Pregnancy and Delivery",
+    "summary": "Pregnancy and childbirth are normal processes but carry risks, especially without modern medical care. Understanding labor, recognizing complications, and assisting delivery ensures both mother and baby survive.",
+    "tags": [
+      "medicine",
+      "childbirth",
+      "pregnancy",
+      "midwifery",
+      "reproduction",
+      "maternal-health"
+    ],
+    "volumeSlug": "14-medicine",
+    "volumeTitle": "Medicine",
+    "volumeNumber": 14,
+    "chapterSlug": "06-childbirth",
+    "chapter": 6
+  },
+  {
     "title": "Field Surgery",
     "summary": "When you must cut to save a life: amputation, abscess drainage, and emergency surgery without anesthesia or modern equipment. Last-resort interventions that separate survivors from corpses.",
     "tags": [
@@ -411,6 +994,54 @@
     "volumeNumber": 14,
     "chapterSlug": "09-herbal-pharmacopoeia",
     "chapter": 9
+  },
+  {
+    "title": "The Celestial Sphere: Understanding the Night Sky",
+    "summary": "The night sky appears as a sphere surrounding Earth. Understanding this celestial sphere helps you navigate, predict seasons, and locate celestial objects.",
+    "tags": [
+      "astronomy",
+      "celestial-sphere",
+      "stars",
+      "navigation",
+      "observation"
+    ],
+    "volumeSlug": "17-astronomy-navigation",
+    "volumeTitle": "Astronomy & Navigation",
+    "volumeNumber": 17,
+    "chapterSlug": "01-celestial-sphere",
+    "chapter": 1
+  },
+  {
+    "title": "Star Identification: Finding and Reading the Sky",
+    "summary": "The night sky contains recognizable patterns. Learning to identify key stars and constellations helps you navigate, track time, and understand the cosmos.",
+    "tags": [
+      "astronomy",
+      "stars",
+      "constellations",
+      "navigation",
+      "observation"
+    ],
+    "volumeSlug": "17-astronomy-navigation",
+    "volumeTitle": "Astronomy & Navigation",
+    "volumeNumber": 17,
+    "chapterSlug": "02-star-identification",
+    "chapter": 2
+  },
+  {
+    "title": "Latitude from Observation: Finding Your Position",
+    "summary": "Celestial objects' positions reveal your latitude. Understanding this helps you find your location without maps or instruments—or with simple handmade tools.",
+    "tags": [
+      "astronomy",
+      "navigation",
+      "latitude",
+      "position-finding",
+      "instruments"
+    ],
+    "volumeSlug": "17-astronomy-navigation",
+    "volumeTitle": "Astronomy & Navigation",
+    "volumeNumber": 17,
+    "chapterSlug": "03-latitude-from-observation",
+    "chapter": 3
   },
   {
     "title": "Property Systems: Commons vs. Private Ownership",
@@ -461,6 +1092,25 @@
     "chapter": 3
   },
   {
+    "title": "Taxation and Labor",
+    "summary": "How to fund collective projects (defense, infrastructure, administration) through fair taxation systems that do not bankrupt individuals or create resentment.",
+    "tags": [
+      "governance",
+      "taxation",
+      "labor",
+      "corvée",
+      "tithe",
+      "public-works",
+      "economics",
+      "fairness"
+    ],
+    "volumeSlug": "18-society-governance",
+    "volumeTitle": "Society & Governance",
+    "volumeNumber": 18,
+    "chapterSlug": "04-taxation-and-labor",
+    "chapter": 4
+  },
+  {
     "title": "Record-Keeping and Archives: Preserving Information for the Future",
     "summary": "Keep written records of property, laws, decisions, and knowledge. Without archives, history is forgotten, disputes return, and civilizations restart from scratch.",
     "tags": [
@@ -493,6 +1143,38 @@
     "chapter": 6
   },
   {
+    "title": "How to Use This Guide",
+    "summary": "Guide structure, learning paths, how to find information, and recommended reading orders for different situations.",
+    "tags": [
+      "guide",
+      "structure",
+      "navigation",
+      "reference",
+      "quick"
+    ],
+    "volumeSlug": "19-civilization-roadmap",
+    "volumeTitle": "Civilization Roadmap",
+    "volumeNumber": 19,
+    "chapterSlug": "01-how-to-use-this-guide",
+    "chapter": 1
+  },
+  {
+    "title": "The 16-Step Progression",
+    "summary": "16 stages of civilization development: from survival to advanced society. Know what stage you are at and what comes next.",
+    "tags": [
+      "roadmap",
+      "progression",
+      "stages",
+      "planning",
+      "quick"
+    ],
+    "volumeSlug": "19-civilization-roadmap",
+    "volumeTitle": "Civilization Roadmap",
+    "volumeNumber": 19,
+    "chapterSlug": "02-the-16-step-progression",
+    "chapter": 2
+  },
+  {
     "title": "Failure Modes",
     "summary": "How civilizations historically fail, the warning signs to watch for, and the structural vulnerabilities that cause collapse.",
     "tags": [
@@ -509,6 +1191,239 @@
     "chapter": 3
   },
   {
+    "title": "Knowledge Preservation",
+    "summary": "How to keep critical technical and survival information alive through copying, teaching, and reliable archiving systems that survive material decay and loss of educated people.",
+    "tags": [
+      "knowledge",
+      "preservation",
+      "teaching",
+      "archiving",
+      "copying",
+      "literacy"
+    ],
+    "volumeSlug": "19-civilization-roadmap",
+    "volumeTitle": "Civilization Roadmap",
+    "volumeNumber": 19,
+    "chapterSlug": "04-knowledge-preservation",
+    "chapter": 4
+  },
+  {
+    "title": "Nutrition Requirements",
+    "summary": "Understand human nutritional requirements post-collapse. Adequate nutrition prevents disease and maintains strength for physical labor. Know caloric needs, macronutrient ratios, and essential micronutrients.",
+    "tags": [
+      "nutrition",
+      "calories",
+      "macronutrients",
+      "micronutrients",
+      "deficiency"
+    ],
+    "volumeSlug": "20-food-science-fermentation",
+    "volumeTitle": "Food Science & Fermentation",
+    "volumeNumber": 20,
+    "chapterSlug": "01-nutrition-requirements",
+    "chapter": 1
+  },
+  {
+    "title": "Lacto-Fermentation",
+    "summary": "Ferment vegetables using salt and time. Lacto-fermentation preserves vitamin C, creates probiotics, and requires no heat or special equipment. Essential post-collapse vegetable preservation.",
+    "tags": [
+      "fermentation",
+      "vegetables",
+      "preservation",
+      "probiotics",
+      "vitamin-c"
+    ],
+    "volumeSlug": "20-food-science-fermentation",
+    "volumeTitle": "Food Science & Fermentation",
+    "volumeNumber": 20,
+    "chapterSlug": "02-lacto-fermentation",
+    "chapter": 2
+  },
+  {
+    "title": "Brewing",
+    "summary": "Brew beer and mead. Fermented beverages preserve grain and honey, provide calories, and were historical staples. Beer was safer than water pre-pasteurization. Post-collapse, brewing provides preserved nutrition and safe storage.",
+    "tags": [
+      "brewing",
+      "beer",
+      "mead",
+      "fermentation",
+      "alcohol",
+      "preservation"
+    ],
+    "volumeSlug": "20-food-science-fermentation",
+    "volumeTitle": "Food Science & Fermentation",
+    "volumeNumber": 20,
+    "chapterSlug": "03-brewing",
+    "chapter": 3
+  },
+  {
+    "title": "Vinegar Production",
+    "summary": "Make vinegar from fruit, grain, or wine. Vinegar preserves vegetables, flavors food, and has medicinal properties. Production requires only time and oxygen (opposite of beer brewing).",
+    "tags": [
+      "vinegar",
+      "acetic-acid",
+      "fermentation",
+      "preservation",
+      "flavoring"
+    ],
+    "volumeSlug": "20-food-science-fermentation",
+    "volumeTitle": "Food Science & Fermentation",
+    "volumeNumber": 20,
+    "chapterSlug": "04-vinegar-production",
+    "chapter": 4
+  },
+  {
+    "title": "Baking and Leavening",
+    "summary": "Make leavened bread post-collapse using sourdough starter or wild yeast. Fermented bread improves digestibility, texture, and nutrition. Master sourdough for staple grain conversion.",
+    "tags": [
+      "baking",
+      "bread",
+      "sourdough",
+      "yeast",
+      "leavening",
+      "fermentation"
+    ],
+    "volumeSlug": "20-food-science-fermentation",
+    "volumeTitle": "Food Science & Fermentation",
+    "volumeNumber": 20,
+    "chapterSlug": "05-baking-and-leavening",
+    "chapter": 5
+  },
+  {
+    "title": "Dairy Processing",
+    "summary": "Process fresh milk into preserved products. Cheese, butter, and yogurt extend milk's shelf life from days to months/years. Essential for converting perishable milk into stable storage.",
+    "tags": [
+      "dairy",
+      "cheese",
+      "butter",
+      "yogurt",
+      "milk-preservation",
+      "fermentation"
+    ],
+    "volumeSlug": "20-food-science-fermentation",
+    "volumeTitle": "Food Science & Fermentation",
+    "volumeNumber": 20,
+    "chapterSlug": "06-dairy-processing",
+    "chapter": 6
+  },
+  {
+    "title": "Salt Curing & Smoking",
+    "summary": "Preserve meat and fish using salt and smoke. These ancient methods eliminate water and pathogens, preserving protein for months/years. Essential post-collapse meat storage.",
+    "tags": [
+      "salt-curing",
+      "smoking",
+      "meat-preservation",
+      "fish-preservation"
+    ],
+    "volumeSlug": "20-food-science-fermentation",
+    "volumeTitle": "Food Science & Fermentation",
+    "volumeNumber": 20,
+    "chapterSlug": "07-salt-curing-and-smoking",
+    "chapter": 7
+  },
+  {
+    "title": "Spoilage Science",
+    "summary": "Understand what spoils food and how to prevent it. Bacteria, mold, oxidation, and enzyme action destroy food value. Know detection methods and prevention strategies.",
+    "tags": [
+      "spoilage",
+      "bacteria",
+      "mold",
+      "contamination",
+      "food-safety"
+    ],
+    "volumeSlug": "20-food-science-fermentation",
+    "volumeTitle": "Food Science & Fermentation",
+    "volumeNumber": 20,
+    "chapterSlug": "08-spoilage-science",
+    "chapter": 8
+  },
+  {
+    "title": "Plant Fiber Processing: From Plant to Usable Fiber",
+    "summary": "Plant fibers are the foundation of textile production. This chapter explains how to extract, prepare, and process fibers from common plants like flax, hemp, nettles, and grasses. Mastering these techniques enables rope-making, weaving, and fabric production in a post-collapse world where synthetic fibers are unavailable.",
+    "tags": [
+      "textiles",
+      "fibers",
+      "plants",
+      "processing",
+      "crafts",
+      "practical-skills"
+    ],
+    "volumeSlug": "21-textile-fiber-arts",
+    "volumeTitle": "Textile & Fiber Arts",
+    "volumeNumber": 21,
+    "chapterSlug": "01-plant-fiber-processing",
+    "chapter": 1
+  },
+  {
+    "title": "Animal Fiber Processing: Wool, Hair, and Silk",
+    "summary": "Animal fibers—wool, hair, and silk—produce some of the finest, warmest, and most durable textiles. This chapter explains how to process fiber from sheep, goats, other animals, and silkworms. Mastering these techniques provides clothing superior to plant fibers in warmth and durability, and creates valuable trade goods.",
+    "tags": [
+      "textiles",
+      "fibers",
+      "animals",
+      "wool",
+      "silk",
+      "processing",
+      "crafts"
+    ],
+    "volumeSlug": "21-textile-fiber-arts",
+    "volumeTitle": "Textile & Fiber Arts",
+    "volumeNumber": 21,
+    "chapterSlug": "02-animal-fiber-processing",
+    "chapter": 2
+  },
+  {
+    "title": "Spinning: Converting Fiber to Thread and Yarn",
+    "summary": "Spinning converts prepared fibers into thread and yarn suitable for weaving, knitting, and other textile work. This chapter explains the principles of twist, ply, and yarn structure, then teaches hand spinning using simple tools. Mastering spinning is essential for converting raw materials into finished textiles.",
+    "tags": [
+      "textiles",
+      "spinning",
+      "yarn",
+      "thread",
+      "crafts",
+      "hand-skills"
+    ],
+    "volumeSlug": "21-textile-fiber-arts",
+    "volumeTitle": "Textile & Fiber Arts",
+    "volumeNumber": 21,
+    "chapterSlug": "03-spinning",
+    "chapter": 3
+  },
+  {
+    "title": "Loom Construction: Building Weaving Equipment",
+    "summary": "A loom is a device that holds warp threads taut while weft threads are passed across them to create cloth. This chapter explains how looms work, describes different loom types, and provides step-by-step instructions for constructing functional looms from simple materials. Building your own loom enables textile production without dependence on external suppliers.",
+    "tags": [
+      "looms",
+      "weaving",
+      "construction",
+      "woodworking",
+      "textiles",
+      "crafts"
+    ],
+    "volumeSlug": "21-textile-fiber-arts",
+    "volumeTitle": "Textile & Fiber Arts",
+    "volumeNumber": 21,
+    "chapterSlug": "04-loom-construction",
+    "chapter": 4
+  },
+  {
+    "title": "Trauma and Crisis: Recognition and Psychological First Aid",
+    "summary": "During collapse and after, people experience severe trauma. Recognizing acute stress responses and providing psychological first aid prevents psychological breakdown and preserves group functioning.",
+    "tags": [
+      "psychology",
+      "trauma",
+      "crisis",
+      "first-aid",
+      "mental-health",
+      "stress"
+    ],
+    "volumeSlug": "25-psychology-education",
+    "volumeTitle": "Psychology & Education",
+    "volumeNumber": 25,
+    "chapterSlug": "01-trauma-and-crisis",
+    "chapter": 1
+  },
+  {
     "title": "Group Dynamics",
     "summary": "How groups form, achieve cohesion, differentiate roles, and manage in-group vs. out-group boundaries.",
     "tags": [
@@ -523,6 +1438,94 @@
     "volumeNumber": 25,
     "chapterSlug": "02-group-dynamics",
     "chapter": 2
+  },
+  {
+    "title": "Conflict Resolution: Mediation, Negotiation, and Restorative Justice",
+    "summary": "When two people or groups conflict, an untrained mediator often escalates the dispute into violence. Principled negotiation techniques, restorative justice, and structured mediation transform conflict into understanding and agreements.",
+    "tags": [
+      "psychology",
+      "conflict",
+      "mediation",
+      "negotiation",
+      "justice",
+      "restoration",
+      "decision-making"
+    ],
+    "volumeSlug": "25-psychology-education",
+    "volumeTitle": "Psychology & Education",
+    "volumeNumber": 25,
+    "chapterSlug": "03-conflict-resolution",
+    "chapter": 3
+  },
+  {
+    "title": "Child Development: Stages, Needs, and Growth",
+    "summary": "Children develop through predictable stages, with different cognitive, emotional, and physical abilities at each age. Meeting needs appropriate to a child's stage prevents developmental delay and psychological harm.",
+    "tags": [
+      "psychology",
+      "development",
+      "children",
+      "parenting",
+      "education",
+      "stages"
+    ],
+    "volumeSlug": "25-psychology-education",
+    "volumeTitle": "Psychology & Education",
+    "volumeNumber": 25,
+    "chapterSlug": "04-child-development",
+    "chapter": 4
+  },
+  {
+    "title": "Learning Theory: How Humans Learn and Retain Knowledge",
+    "summary": "Knowing how memory works and how learning is retained allows teachers and learners to study efficiently, master skills faster, and avoid wasting effort on ineffective methods.",
+    "tags": [
+      "psychology",
+      "learning",
+      "memory",
+      "retention",
+      "teaching",
+      "education",
+      "skill-building"
+    ],
+    "volumeSlug": "25-psychology-education",
+    "volumeTitle": "Psychology & Education",
+    "volumeNumber": 25,
+    "chapterSlug": "05-learning-theory",
+    "chapter": 5
+  },
+  {
+    "title": "School Design: Building Effective Education Systems",
+    "summary": "Effective schools are not replicas of pre-collapse institutions. Post-collapse schools must adapt to community needs, mixed-age groups, limited resources, and practical skill requirements while preserving academic knowledge.",
+    "tags": [
+      "education",
+      "school",
+      "curriculum",
+      "teaching",
+      "community",
+      "learning",
+      "multi-age-classrooms"
+    ],
+    "volumeSlug": "25-psychology-education",
+    "volumeTitle": "Psychology & Education",
+    "volumeNumber": 25,
+    "chapterSlug": "06-school-design",
+    "chapter": 6
+  },
+  {
+    "title": "Oral Tradition: Preserving Knowledge Through Stories and Memory Techniques",
+    "summary": "Before writing, humans preserved knowledge through oral tradition—memorized stories, poems, and mnemonics. Mastering these techniques ensures knowledge survives even without writing.",
+    "tags": [
+      "oral-tradition",
+      "memory",
+      "storytelling",
+      "knowledge-preservation",
+      "culture",
+      "teaching"
+    ],
+    "volumeSlug": "25-psychology-education",
+    "volumeTitle": "Psychology & Education",
+    "volumeNumber": 25,
+    "chapterSlug": "07-oral-tradition",
+    "chapter": 7
   },
   {
     "title": "Ethical Frameworks",
@@ -555,6 +1558,23 @@
     "volumeNumber": 27,
     "chapterSlug": "02-justice-and-rights",
     "chapter": 2
+  },
+  {
+    "title": "Resource Allocation",
+    "summary": "How to distribute food, medicine, labor, and other critical resources fairly under scarcity when you cannot give everyone everything they need.",
+    "tags": [
+      "ethics",
+      "scarcity",
+      "fairness",
+      "rationing",
+      "allocation",
+      "distribution"
+    ],
+    "volumeSlug": "27-ethics-philosophy",
+    "volumeTitle": "Ethics, Philosophy & Decision-Making",
+    "volumeNumber": 27,
+    "chapterSlug": "03-resource-allocation",
+    "chapter": 3
   },
   {
     "title": "Social Contracts",
@@ -601,6 +1621,101 @@
     "volumeTitle": "Ethics, Philosophy & Decision-Making",
     "volumeNumber": 27,
     "chapterSlug": "06-leadership-and-authority",
+    "chapter": 6
+  },
+  {
+    "title": "Soil Conservation",
+    "summary": "Prevent soil loss and maintain soil structure. Erosion destroys productivity within years. Conservation practices sustain agriculture for generations post-collapse.",
+    "tags": [
+      "soil",
+      "erosion",
+      "conservation",
+      "structure",
+      "sustainability"
+    ],
+    "volumeSlug": "30-environmental-science-conservation",
+    "volumeTitle": "Environmental Science & Conservation",
+    "volumeNumber": 30,
+    "chapterSlug": "01-soil-conservation",
+    "chapter": 1
+  },
+  {
+    "title": "Water Catchment",
+    "summary": "Capture and store rainfall. Post-collapse water security depends on effective catchment systems. Cisterns, ponds, and springs enable agriculture during dry seasons.",
+    "tags": [
+      "water",
+      "catchment",
+      "harvesting",
+      "storage",
+      "sustainability"
+    ],
+    "volumeSlug": "30-environmental-science-conservation",
+    "volumeTitle": "Environmental Science & Conservation",
+    "volumeNumber": 30,
+    "chapterSlug": "02-water-catchment",
+    "chapter": 2
+  },
+  {
+    "title": "Forest Management",
+    "summary": "Manage forests for food, fuel, and timber without depletion. Sustainable harvesting maintains forest productivity for generations. Post-collapse civilization depends on forest resources.",
+    "tags": [
+      "forest",
+      "management",
+      "timber",
+      "food",
+      "sustainability"
+    ],
+    "volumeSlug": "30-environmental-science-conservation",
+    "volumeTitle": "Environmental Science & Conservation",
+    "volumeNumber": 30,
+    "chapterSlug": "03-forest-management",
+    "chapter": 3
+  },
+  {
+    "title": "Carrying Capacity",
+    "summary": "Calculate how many people your land can support. Carrying capacity determines settlement viability. Exceed it, and collapse is certain.",
+    "tags": [
+      "carrying-capacity",
+      "sustainability",
+      "settlement-planning",
+      "resources"
+    ],
+    "volumeSlug": "30-environmental-science-conservation",
+    "volumeTitle": "Environmental Science & Conservation",
+    "volumeNumber": 30,
+    "chapterSlug": "04-carrying-capacity",
+    "chapter": 4
+  },
+  {
+    "title": "Ecosystem Restoration",
+    "summary": "Restore degraded ecosystems to productivity and health. Restoration rebuilds soil, water, biodiversity, and climate resilience. Post-collapse survival depends on restoring productive land.",
+    "tags": [
+      "restoration",
+      "ecosystem",
+      "degradation",
+      "recovery",
+      "sustainability"
+    ],
+    "volumeSlug": "30-environmental-science-conservation",
+    "volumeTitle": "Environmental Science & Conservation",
+    "volumeNumber": 30,
+    "chapterSlug": "05-ecosystem-restoration",
+    "chapter": 5
+  },
+  {
+    "title": "Pollution Prevention",
+    "summary": "Prevent pollution of water, soil, and food. Post-collapse settlements have no environmental agencies. Pollution control depends on knowledge and prevention. Contamination means illness, starvation, or death.",
+    "tags": [
+      "pollution",
+      "water-quality",
+      "soil-contamination",
+      "prevention",
+      "safety"
+    ],
+    "volumeSlug": "30-environmental-science-conservation",
+    "volumeTitle": "Environmental Science & Conservation",
+    "volumeNumber": 30,
+    "chapterSlug": "06-pollution-prevention",
     "chapter": 6
   },
   {
@@ -698,6 +1813,104 @@
     "volumeTitle": "Military History & Defense",
     "volumeNumber": 31,
     "chapterSlug": "06-lessons-from-history",
+    "chapter": 6
+  },
+  {
+    "title": "Cattle and Draft Animals",
+    "summary": "Understand cattle anatomy, recognize disease signs, treat common illnesses, and work draft animals safely. Healthy cattle are the foundation of post-collapse agriculture.",
+    "tags": [
+      "cattle",
+      "veterinary",
+      "anatomy",
+      "diseases",
+      "draft-animals"
+    ],
+    "volumeSlug": "33-veterinary-medicine",
+    "volumeTitle": "Veterinary Medicine",
+    "volumeNumber": 33,
+    "chapterSlug": "01-cattle-and-draft-animals",
+    "chapter": 1
+  },
+  {
+    "title": "Pigs and Poultry",
+    "summary": "Manage pig and poultry health. Recognize common diseases, prevent parasite infestations, and keep small livestock productive. Pigs and chickens are efficient converters of scraps to food.",
+    "tags": [
+      "pigs",
+      "poultry",
+      "chickens",
+      "disease",
+      "husbandry"
+    ],
+    "volumeSlug": "33-veterinary-medicine",
+    "volumeTitle": "Veterinary Medicine",
+    "volumeNumber": 33,
+    "chapterSlug": "02-pigs-and-poultry",
+    "chapter": 2
+  },
+  {
+    "title": "Goats and Sheep",
+    "summary": "Manage goat and sheep health. Both are hardy, productive animals. Recognize breed-specific issues, prevent parasites, and maintain reproductive health. These are ideal secondary livestock post-collapse.",
+    "tags": [
+      "goats",
+      "sheep",
+      "veterinary",
+      "disease",
+      "husbandry"
+    ],
+    "volumeSlug": "33-veterinary-medicine",
+    "volumeTitle": "Veterinary Medicine",
+    "volumeNumber": 33,
+    "chapterSlug": "03-goats-and-sheep",
+    "chapter": 3
+  },
+  {
+    "title": "Field Surgery",
+    "summary": "Perform basic surgical procedures on livestock: castration, dehorning, castration, and wound care. These procedures improve animal welfare and productivity.",
+    "tags": [
+      "surgery",
+      "castration",
+      "dehorning",
+      "wound-care",
+      "animals"
+    ],
+    "volumeSlug": "33-veterinary-medicine",
+    "volumeTitle": "Veterinary Medicine",
+    "volumeNumber": 33,
+    "chapterSlug": "04-field-surgery",
+    "chapter": 4
+  },
+  {
+    "title": "Parasite Control",
+    "summary": "Manage parasite infestations in livestock. Parasites cause poor growth, anemia, disease, and death. Prevention (rotation, sanitation) is far more effective than treatment post-collapse.",
+    "tags": [
+      "parasites",
+      "worms",
+      "internal",
+      "external",
+      "lice",
+      "mites",
+      "fleas"
+    ],
+    "volumeSlug": "33-veterinary-medicine",
+    "volumeTitle": "Veterinary Medicine",
+    "volumeNumber": 33,
+    "chapterSlug": "05-parasite-control",
+    "chapter": 5
+  },
+  {
+    "title": "Quarantine Protocols",
+    "summary": "Quarantine new and sick animals. Isolation is the most powerful tool post-collapse to prevent disease spread. A 2-4 week isolation period catches most infections before they enter your herd.",
+    "tags": [
+      "quarantine",
+      "isolation",
+      "biosecurity",
+      "disease-prevention",
+      "new-animals"
+    ],
+    "volumeSlug": "33-veterinary-medicine",
+    "volumeTitle": "Veterinary Medicine",
+    "volumeNumber": 33,
+    "chapterSlug": "06-quarantine-protocols",
     "chapter": 6
   },
   {
@@ -811,6 +2024,39 @@
     "chapter": 7
   },
   {
+    "title": "Latrine Design: Pit, Vault, and VIP Systems",
+    "summary": "A latrine safely contains human waste in a way that protects groundwater, prevents smell, and works in various soil and water table conditions.",
+    "tags": [
+      "sanitation",
+      "latrines",
+      "waste-management",
+      "water-protection",
+      "soil-science"
+    ],
+    "volumeSlug": "36-sanitation-engineering",
+    "volumeTitle": "Sanitation Engineering",
+    "volumeNumber": 36,
+    "chapterSlug": "01-latrine-design",
+    "chapter": 1
+  },
+  {
+    "title": "Sewage Treatment: Wastewater Processing Without Sewer Lines",
+    "summary": "Large settlements produce waste faster than latrines can handle. Sewage treatment systems use biology to break down waste and remove pathogens, allowing treated water to be reused or safely returned to the environment.",
+    "tags": [
+      "sanitation",
+      "sewage",
+      "wastewater",
+      "treatment",
+      "decomposition",
+      "pathogens"
+    ],
+    "volumeSlug": "36-sanitation-engineering",
+    "volumeTitle": "Sanitation Engineering",
+    "volumeNumber": 36,
+    "chapterSlug": "02-sewage-treatment",
+    "chapter": 2
+  },
+  {
     "title": "Composting Toilets: Design and Operation",
     "summary": "A composting toilet converts human waste into safe, nutrient-rich soil amendment. No water, no sewage pipes, no smell — just controlled decomposition that produces fertilizer.",
     "tags": [
@@ -887,6 +2133,38 @@
     "volumeNumber": 36,
     "chapterSlug": "07-greywater-systems",
     "chapter": 7
+  },
+  {
+    "title": "Aspirin Synthesis: Producing a Essential Pain Reliever",
+    "summary": "Aspirin is one of the oldest and most useful drugs. Understanding how to synthesize it from salicylic acid helps you produce essential medicine post-collapse.",
+    "tags": [
+      "pharmacology",
+      "chemistry",
+      "aspirin",
+      "pain-relief",
+      "synthesis"
+    ],
+    "volumeSlug": "38-pharmacology-drug-production",
+    "volumeTitle": "Pharmacology & Drug Production",
+    "volumeNumber": 38,
+    "chapterSlug": "01-aspirin-synthesis",
+    "chapter": 1
+  },
+  {
+    "title": "Antiseptics: Preventing and Treating Infections",
+    "summary": "Antiseptics kill or inhibit microorganisms on skin and surfaces. Producing and using antiseptics is critical for post-collapse infection prevention.",
+    "tags": [
+      "pharmacology",
+      "antiseptics",
+      "infection-prevention",
+      "medicine",
+      "chemistry"
+    ],
+    "volumeSlug": "38-pharmacology-drug-production",
+    "volumeTitle": "Pharmacology & Drug Production",
+    "volumeNumber": 38,
+    "chapterSlug": "02-antiseptics",
+    "chapter": 2
   },
   {
     "title": "Silicon from Sand: Carbothermic Reduction",
