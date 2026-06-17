@@ -27,7 +27,14 @@ each marked complete in tasks.db.
 - 16-computing/05-machine-code (1648w)
 - 16-computing/07-operating-system-basics (1764w)
 
+## Appendices (second assignment)
+
+Wrote 2 reference appendices, frontmatter preserved, dense GFM tables:
+- I-units-standards.mdx (1744w) — SI units, conversion tables, constants
+- J-instrument-construction.mdx (1595w) — instrument build quick-reference tables
+
+Both verified >1200w, no `<digit` MDX-breakers.
+
 ## Next action
 
-Awaiting orchestrator. Offered to verify MDX builds / assist reconcile. Will
-resume claim-next loop if new pending chapters appear.
+Awaiting orchestrator. All assigned content (16 chapters + 2 appendices) complete.

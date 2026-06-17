@@ -5,8 +5,168 @@ id: "H-engineering-drawings"
 
 ## Engineering Drawings & Blueprints
 
-*This appendix is being written. It will contain reference material to support all 39 volumes.*
+A reference for reading and creating the technical drawings that let one person specify a part precisely enough for another to build it. An engineering drawing is a universal language: it communicates exact shape, size, and tolerance without words, so a machinist, mason, or smith can reproduce a designer's intent. This appendix gives the conventions, symbols, line types, and projection methods at a glance. Master these tables and you can both read existing drawings and produce your own.
 
-## Status
+## Why Drawings Exist
 
-Ready for content. This appendix follows the reference format: visual guides, tables, charts, and identification aids designed to be useful at a glance.
+Prose cannot specify a physical object without ambiguity. A drawing fixes every dimension, angle, surface, and tolerance in a standardized form that any trained reader interprets identically. The conventions below are arbitrary but agreed: their value is precisely that everyone follows the same ones. A drawing that violates convention is worse than useless — it misleads.
+
+## Line Types (The Alphabet of Lines)
+
+Every line on a drawing has a defined meaning based on its weight and style. Reading a drawing starts with reading its lines.
+
+| Line type | Appearance | Meaning |
+|-----------|------------|---------|
+| Visible (object) line | Thick, solid | Edges and outlines you can see |
+| Hidden line | Thin, dashed | Edges hidden behind the part |
+| Center line | Thin, long-short-long dashes | Axis of symmetry, center of holes/circles |
+| Dimension line | Thin, solid, with arrowheads | Shows the measured distance |
+| Extension line | Thin, solid | Projects from the part to the dimension line |
+| Leader line | Thin, angled, with arrow | Points to a feature for a note |
+| Section line (hatching) | Thin, parallel diagonal | Shows cut (sectioned) solid material |
+| Cutting-plane line | Thick, long dashes with arrows | Where a section view is cut |
+| Phantom line | Thin, long-short-short-short | Alternate positions, adjacent parts |
+| Break line | Thin wavy, or thick zigzag | Indicates a shortened/broken-out view |
+
+**Rule of weight:** visible and cutting-plane lines are thick (heavy); everything else is thin. When lines overlap, priority is: visible line, then hidden line, then center line.
+
+## Orthographic Projection: The Standard Views
+
+A three-dimensional object is shown by several flat (orthographic) views, each looking straight at one face, so every dimension appears true-size in at least one view. The standard set is the **six principal views**, though most parts need only two or three.
+
+| View | Looks at the | Typically shows |
+|------|--------------|-----------------|
+| Front | Front face | The most descriptive shape (chosen as the primary view) |
+| Top (plan) | From above | Width and depth |
+| Bottom | From below | Underside features |
+| Right side | From the right | Height and depth |
+| Left side | From the left | Mirror of right |
+| Rear | From behind | Back features |
+
+**Standard arrangement (third-angle, common in much of the world):** the top view sits above the front view; the right view sits to the right of the front view; each view is aligned so dimensions line up between them. (First-angle projection, used elsewhere, places them oppositely — always check which system a drawing uses; a small symbol in the title block states it.)
+
+**Choosing views:** use the fewest views that fully describe the part. A flat plate may need one view plus a thickness note; a cube-like part needs three. Never draw a view that adds no information.
+
+## Pictorial Views (3D Representations)
+
+For visualization (not precise measurement), pictorial views show the object in three dimensions on one drawing.
+
+| Type | Description | Use |
+|------|-------------|-----|
+| Isometric | Three axes at 120° apart, equal scale | Most common 3D sketch; clear and easy |
+| Oblique | Front face true, depth at an angle | Quick sketches of parts with one important face |
+| Perspective | Lines converge to vanishing points | Realistic look; architecture, presentation |
+
+Isometric is the workhorse for a quick clear 3D view; orthographic remains the authority for actual dimensions.
+
+## Dimensioning Conventions
+
+Dimensions state size and location. Rules that prevent ambiguity:
+
+- **Dimension to visible lines,** never to hidden lines.
+- **Place dimensions outside the view** where possible, between views if helpful.
+- **Do not duplicate** a dimension; state each exactly once (avoids contradictions if one is changed).
+- **Chain vs. baseline:** chain dimensioning runs point-to-point (errors accumulate); baseline dimensioning measures every feature from one reference edge (datum), keeping errors independent. Prefer baseline for precision.
+- **Smaller dimensions nearest the part,** larger ones farther out, so dimension and extension lines do not cross.
+- **Diameters** are marked with the symbol ⌀ (or "DIA"); **radii** with "R"; the value follows.
+
+## Common Symbols
+
+| Symbol / mark | Meaning |
+|---------------|---------|
+| ⌀ or DIA | Diameter |
+| R | Radius |
+| □ | Square (side dimension) |
+| × | "By" (e.g., a hole pattern or thread, 6 × means six of) |
+| ° | Degrees (angle) |
+| ± | Plus or minus (bilateral tolerance) |
+| ⌀ before a number | That number is a diameter |
+| THRU | Feature passes entirely through |
+| CSK / ⌵ | Countersink (cone-shaped recess) |
+| C'BORE / ⌴ | Counterbore (flat-bottomed recess) |
+| DEEP or ↧ | Depth of a feature |
+| TYP | Typical — applies to all similar features |
+| SCALE 1:2 | The drawing is half actual size |
+
+## Tolerances
+
+No part can be made perfectly; a **tolerance** states the allowable variation. A dimension without a usable tolerance is incomplete.
+
+| Notation | Meaning | Example |
+|----------|---------|---------|
+| Bilateral | Varies both ways | 25 ±0.1 means 24.9 to 25.1 |
+| Unilateral | Varies one way only | 25 +0.2 / -0 means 25.0 to 25.2 |
+| Limit dimensions | States the two extremes | 24.9 / 25.1 written directly |
+| General tolerance | Title-block default for unmarked dims | "Unless noted, ±0.5" |
+
+**Tighter tolerances cost more** — they demand better tools, more time, more rejected parts. Specify the loosest tolerance that still works. Mating parts (a shaft in a hole) need matched tolerances: a "fit" can be **clearance** (loose, slides freely), **interference** (tight, pressed together), or **transition** (between).
+
+## Scale
+
+Drawings rarely show parts at true size. The scale states the ratio of drawing to reality.
+
+| Scale notation | Meaning |
+|----------------|---------|
+| 1:1 | Full size (drawing = real) |
+| 1:2 | Half size (real is twice the drawing) |
+| 1:10, 1:100 | Reductions (large objects, buildings) |
+| 2:1, 5:1 | Enlargements (tiny parts) |
+
+Always read the scale before scaling a dimension off a drawing — and prefer stated dimensions over measured ones, since prints can stretch or shrink.
+
+## Section Views
+
+To show internal features, a **section view** imagines the part cut open. The cut solid material is marked with **hatching** (evenly spaced diagonal lines); voids and holes are left blank. A **cutting-plane line** on another view shows where the cut was taken, with arrows giving the viewing direction.
+
+| Section type | Use |
+|--------------|-----|
+| Full section | Cut entirely through the part |
+| Half section | Quarter removed; shows inside and outside at once |
+| Offset section | Cutting plane steps to catch several features |
+| Broken-out section | Small local cut, irregular break line |
+
+## The Title Block
+
+Every formal drawing carries a **title block** (usually lower-right) holding the metadata needed to identify and trust the drawing.
+
+| Field | Contents |
+|-------|----------|
+| Title / part name | What the part is |
+| Drawing / part number | Unique identifier |
+| Scale | Drawing ratio |
+| Material | What it is made from |
+| Tolerance (general) | Default for unmarked dimensions |
+| Units | mm, inches, etc. |
+| Projection symbol | First-angle or third-angle |
+| Revision | Version letter/number and change record |
+| Drawn by / date | Author and authority |
+
+## How to Read a Drawing (Procedure)
+
+1. **Read the title block:** part, material, units, scale, projection system, general tolerance.
+2. **Identify the views** present and how they relate (which is front, top, side).
+3. **Build the 3D shape in your mind** by reading the views together — a feature appears in multiple views; correlate them.
+4. **Read hidden lines** to understand internal/back features.
+5. **Read sections** for interior detail.
+6. **Read every dimension and its tolerance,** noting datums and fits.
+7. **Read notes and symbols** (threads, finishes, holes, "TYP").
+8. **Check the revision** to be sure you have the current version.
+
+## Common Mistakes
+
+- **Dimensioning to hidden lines** — always dimension to visible features.
+- **Duplicate or contradictory dimensions** — state each once.
+- **Ignoring the projection system** — first- vs. third-angle reverses view placement; misreading it builds a mirror-image part.
+- **Over-tight tolerances** — they waste effort and money; loosen wherever function allows.
+- **Scaling a dimension off the paper** instead of reading the stated value — prints distort.
+- **Omitting the title block** — material, units, and tolerance are part of the specification, not optional.
+
+## Cross-References
+
+- **Vol 33: Mechanical Engineering** — designing the parts these drawings specify.
+- **Vol 38: Manufacturing** — turning drawings into machined, cast, and formed parts.
+- **Vol 18: Architecture & Structural Engineering** — building plans and structural drawings.
+- **Vol 24: Cartography & Surveying** — scale, projection, and measured drawing on a large scale.
+- **Appendix I: Units & Standards** — the units and tolerances drawings depend on.
+
+An engineering drawing is a contract written in lines and symbols: follow the conventions exactly and any builder, anywhere, reproduces the part the designer intended. Learn the alphabet of lines, the standard views, dimensioning, tolerances, and the title block, and you can both read the accumulated designs of a civilization and add your own to them.

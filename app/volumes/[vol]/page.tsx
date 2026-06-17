@@ -71,6 +71,15 @@ export default async function VolumePage({ params }: Props) {
             >
               Print Volume
             </Link>
+            {chapters.length > 0 && (
+              <a
+                href={`/download/volume/${vol}`}
+                download
+                className="rounded-full border border-current px-3 py-1 text-xs font-semibold opacity-60 hover:opacity-100 transition-opacity print:hidden"
+              >
+                Download .zip
+              </a>
+            )}
           </div>
         </div>
 

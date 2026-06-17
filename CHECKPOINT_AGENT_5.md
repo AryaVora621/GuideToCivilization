@@ -33,6 +33,16 @@ Pinged orchestrator (7113f2ib) that queue is empty. Now IDLE / standing by.
 - DB throws transient "database is locked (5)" under concurrent agents — wrapped
   complete/claim-next in a 5x retry loop; works fine.
 
+## Follow-on work — APPENDICES (assigned 2026-06-17)
+Wrote dense reference content into both assigned appendix stubs (frontmatter +
+id preserved, overwritten in place, MDX-clean):
+- content/appendices/G-ore-mineral-identification.mdx (1696w) — Mohs scale,
+  streak/luster/cleavage/density tables, ore-mineral table, pyrite-vs-gold,
+  identification key, geology + safety.
+- content/appendices/H-engineering-drawings.mdx (1681w) — line types, orthographic
+  & pictorial views, dimensioning, symbols, tolerances, scale, sections, title
+  block, read procedure.
+Both verified >1200w and clean of `<digit`. Pinged orchestrator.
+
 ## Next action
-Idle. Await further instruction from orchestrator (build/deploy verification,
-fixing any MDX build-breakers, or release if a stuck claim needs re-doing).
+Idle / standing by post-appendices. Await further instruction.

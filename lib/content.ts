@@ -92,7 +92,7 @@ export function getAllChaptersForSearch(): (ChapterMeta & { volumeSlug: string }
 
 // Total chapters planned across all 45 volumes (source: scripts/tasks.db seed).
 // Used as the denominator for content-progress display.
-export const TOTAL_CHAPTERS_PLANNED = 316;
+export const TOTAL_CHAPTERS_PLANNED = 317;
 
 // Number of fully-written chapters in a volume (counts index.mdx files on disk).
 export function getWrittenChapterCount(volumeSlug: string): number {

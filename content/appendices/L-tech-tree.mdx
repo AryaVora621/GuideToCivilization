@@ -5,8 +5,119 @@ id: "L-tech-tree"
 
 ## The Tech Tree
 
-*This appendix is being written. It will contain reference material to support all 39 volumes.*
+This appendix is the textual dependency reference for the entire guide: every one of the 45 volumes, the phase it belongs to, the volumes it depends on, and what it unlocks downstream. Use it to plan a rebuilding effort, to check that you have the prerequisites before attempting a volume, and to see at a glance where any single technology sits in the long chain from survival to electronics. An interactive graph version of this same data exists elsewhere; this is the at-a-glance written record.
 
-## Status
+The guiding rule of the whole tree: **you cannot skip phases.** Each phase rests on the one before it. A community that reaches for electrical engineering before it has secured calories, materials, and the scientific method will fail, not because the later knowledge is wrong, but because the foundation to use it does not exist. Read this tree as a sequence of locks and keys: each volume is a lock opened by the volumes before it, and a key to the volumes after.
 
-Ready for content. This appendix follows the reference format: visual guides, tables, charts, and identification aids designed to be useful at a glance.
+## The Five Phases at a Glance
+
+| Phase | Name | Volumes | Timeframe | Theme |
+|-------|------|---------|-----------|-------|
+| 1 | Immediate Survival | 1–8 | Days 1–30 | Stay alive; organize the survivors |
+| 2 | Community & Food Security | 9–20 | Months 1–24 | Reliable food, materials, shelter, defense |
+| 3 | Knowledge & Craft | 21–32 | Years 1–10 | Recover science, math, and the core disciplines |
+| 4 | Technology & Industry | 33–40 | Years 10–50 | Machines, power, manufacture, precision |
+| 5 | Modern Era | 41–45 | Years 50–100+ | Electronics, computing, semiconductors |
+
+**Phase 1 — Immediate Survival.** The non-negotiables. Water, fire, shelter, food, basic medicine, sanitation, and the social glue (ethics, psychology, governance) that keeps a group of survivors from destroying itself. Nothing else matters if this phase fails.
+
+**Phase 2 — Community & Food Security.** Move from surviving to settling. Reliable agriculture and animal husbandry, food preservation, the first materials and crafts (ceramics, textiles, metals), permanent structures, water infrastructure, defense, and the beginnings of culture.
+
+**Phase 3 — Knowledge & Craft.** Rebuild the intellectual engine. The scientific method and mathematics come first because every later discipline depends on them. Then language, mapping, trade, the natural sciences, and the precision crafts (pharmacology, optics) that let knowledge compound.
+
+**Phase 4 — Technology & Industry.** Turn knowledge into machines. Mechanical engineering, energy systems, transportation, electricity, manufacturing, synthetic materials, and the precision metrology that makes interchangeable parts possible.
+
+**Phase 5 — Modern Era.** The electronic age. Telecommunications, vacuum tubes, recording and storage, computing, and finally semiconductors — the summit that depends on nearly everything below it.
+
+## Full Dependency Table
+
+The table lists all 45 volumes. "Prerequisite volumes" are the volumes whose content you should hold before attempting this one. "Unlocks / enables" lists the major downstream volumes that depend on it. Foundational survival volumes have no prerequisites; the deepest technology volumes depend on long chains.
+
+| Vol | Title | Phase | Prerequisite volumes | Unlocks / enables |
+|-----|-------|-------|----------------------|-------------------|
+| 1 | Civilization Roadmap | 1 | none (read first) | Orientation for all volumes |
+| 2 | Wilderness Survival & Tracking | 1 | none | 3, 10 |
+| 3 | Survival | 1 | 2 | 4, 5, 10, 14 |
+| 4 | Medicine | 1 | 3 | 11, 27, 31 |
+| 5 | Sanitation Engineering | 1 | 3, 4 | 19, 27 |
+| 6 | Ethics, Philosophy & Decision-Making | 1 | none | 8, 9 |
+| 7 | Psychology & Education | 1 | 6 | 8, 23 |
+| 8 | Society & Governance | 1 | 6, 7 | 9, 25 |
+| 9 | Military History & Defense | 2 | 6, 8 | Secures all later phases |
+| 10 | Agriculture | 2 | 3, 2 | 11, 12, 13 |
+| 11 | Veterinary Medicine | 2 | 4, 10 | 10 (sustains), 15 |
+| 12 | Food Science & Fermentation | 2 | 10 | 28 (applied chemistry), 31 |
+| 13 | Environmental Science & Conservation | 2 | 10 | 14, 26 |
+| 14 | Natural Resources | 2 | 3, 13 | 17, 28, 34 |
+| 15 | Ceramics & Pottery | 2 | 14 | 17, 28, 32 |
+| 16 | Textile & Fiber Arts | 2 | 10 | 25, 39 |
+| 17 | Materials | 2 | 14, 15 | 18, 33, 37, 38 |
+| 18 | Architecture & Structural Engineering | 2 | 17 | 19, 33, 35 |
+| 19 | Hydraulics & Water Engineering | 2 | 5, 18 | 34, 38 |
+| 20 | Music, Art & Cultural Preservation | 2 | 7 | 23 |
+| 21 | Scientific Method | 3 | 7 | 22–45 (all science & tech) |
+| 22 | Mathematics | 3 | 21 | 24, 28, 29, 44 |
+| 23 | Language & Communication | 3 | 7, 20 | 24, 44 |
+| 24 | Cartography & Surveying | 3 | 22, 23 | 25, 30, 35, 36 |
+| 25 | Trade, Money & Markets | 3 | 8, 16, 24 | Funds all later industry |
+| 26 | Meteorology & Earth Sciences | 3 | 13, 21 | 30, 36 |
+| 27 | Biology | 3 | 4, 5, 21 | 28, 31 |
+| 28 | Chemistry | 3 | 22, 14, 15 | 31, 37, 39, 45 |
+| 29 | Physics | 3 | 22 | 32, 33, 34, 37, 42 |
+| 30 | Astronomy & Navigation | 3 | 24, 26 | 36 |
+| 31 | Pharmacology & Drug Production | 3 | 27, 28 | Sustains health at scale |
+| 32 | Optics & Instrument Making | 3 | 15, 29 | 40, 42, 44, 45 |
+| 33 | Mechanical Engineering | 4 | 17, 18, 29 | 34, 35, 38 |
+| 34 | Energy Systems | 4 | 14, 19, 29, 33 | 35, 37, 38 |
+| 35 | Transportation | 4 | 18, 24, 33, 34 | 36, broader reach |
+| 36 | Seafaring & Oceanography | 4 | 24, 30, 35 | Ocean trade & territory |
+| 37 | Electrical Engineering | 4 | 28, 29, 34 | 38, 41, 42, 45 |
+| 38 | Manufacturing | 4 | 17, 33, 34, 37 | 40, 39, all mass production |
+| 39 | Polymers & Synthetic Materials | 4 | 16, 28 | 41, 45 (insulation, components) |
+| 40 | Precision Metrology | 4 | 32, 38 | 42, 44, 45 |
+| 41 | Telecommunications | 5 | 37, 39 | 42, 44 |
+| 42 | Vacuum Tubes & Early Electronics | 5 | 29, 32, 37, 40 | 43, 44 |
+| 43 | Magnetic & Analog Recording | 5 | 37, 42 | 44 |
+| 44 | Computing | 5 | 22, 23, 32, 42, 43 | 45 |
+| 45 | Semiconductor Technology | 5 | 28, 32, 37, 40, 44 | The modern electronic age |
+
+## Reading the Dependencies
+
+A few structural facts stand out from the table and are worth internalizing:
+
+- **Volume 21, the Scientific Method, is the single most load-bearing node in the tree.** Almost every volume from 22 onward depends on it. It is placed at the head of Phase 3 deliberately: without a reliable way to test claims, separate what works from what merely sounds true, and build knowledge cumulatively, the later disciplines cannot advance. If you rebuild only one intellectual tool, rebuild this one.
+- **Materials (17) and Chemistry (28) are the two great industrial hubs.** Materials feeds construction, mechanical engineering, electricity, and manufacturing. Chemistry feeds pharmacology, electrical engineering, polymers, and semiconductors. A weakness in either starves whole branches of the tree.
+- **Energy Systems (34) and Electrical Engineering (37) are the gateway to Phase 5.** Nothing in the electronic era is reachable until you can generate and control power reliably. These two volumes are the bridge between the industrial and the modern.
+- **Semiconductor Technology (45) is the deepest leaf in the tree.** It depends, directly or indirectly, on chemistry, optics, electricity, precision metrology, and computing — which themselves depend on mathematics, physics, materials, and the scientific method. It is the summit precisely because it sits atop the longest chain of prerequisites in the entire guide.
+
+## The Critical Path: Survival to Electronics
+
+If you trace the single longest chain of strict dependencies, from the first day of survival to a working transistor, you get the **critical path** — the spine of the whole rebuild. Every link is required; remove any one and the chain breaks. Walk it in order:
+
+1. **Survival (3).** Secure water, fire, shelter, and food. Without calories and safety, nothing else begins. This is day one.
+2. **Agriculture (10).** Move from foraging to farming so that food becomes reliable and a surplus can feed people who do work other than finding food. Surplus is what frees hands for everything that follows.
+3. **Natural Resources (14).** Find the ores, clays, fuels, and raw stocks the later crafts consume. You cannot make what you cannot first locate and extract.
+4. **Materials (17).** Turn raw resources into usable substances — worked metals, fired ceramics, refined stocks. This is where civilization, in the words of the volume itself, "starts accelerating."
+5. **Scientific Method (21).** Recover the discipline of testing, measuring, and building knowledge cumulatively. From here progress stops being luck and becomes deliberate.
+6. **Mathematics (22).** Acquire the language all the sciences speak. Every quantitative discipline downstream depends on it.
+7. **Chemistry (28).** Understand and control reactions. Chemistry unlocks acids, refined materials, medicines, and eventually the purified substances electronics demand.
+8. **Physics (29).** Grasp force, energy, electricity, and light — the principles every machine and circuit obeys.
+9. **Mechanical Engineering (33).** Build machines: the gears, engines, and mechanisms that convert energy into useful work.
+10. **Energy Systems (34).** Generate power at scale to drive those machines and the industry to come.
+11. **Electrical Engineering (37).** Generate and control electricity — the first generator, motors, and circuits. This is the true threshold of the modern era.
+12. **Manufacturing (38).** Make machine tools and interchangeable parts, so that complex devices can be built reliably and repeatedly rather than one painstaking piece at a time.
+13. **Precision Metrology (40).** Measure to fine tolerances. You cannot make what you cannot measure, and electronics demand extreme precision.
+14. **Vacuum Tubes & Early Electronics (42).** Build the first amplifying and switching devices — the dawn of electronics.
+15. **Computing (44).** Assemble logic and memory into programmable machines.
+16. **Semiconductor Technology (45).** From purified materials, optics, and precision, fabricate transistors — the foundation of the entire modern electronic world.
+
+This sixteen-step spine is the heart of the tech tree. The other volumes branch off it and feed back into it: medicine and sanitation keep the population alive to do the work; governance, ethics, and defense keep the society stable enough to sustain a century-long effort; trade funds it; language and education transmit it across generations. But the spine itself is the irreducible sequence. Skip a step and the steps above it have nothing to stand on.
+
+## How to Use This Tree in Practice
+
+- **Before starting any volume, check its prerequisite column.** If you do not yet hold the prerequisites, work on those first; attempting a volume without its foundations wastes effort and breeds dangerous half-knowledge.
+- **Plan by phase, not by ambition.** Decide which phase your community is actually in and complete it before reaching forward. The temptation to leap ahead to exciting technology is the most common failure mode of recovery.
+- **Protect the hubs.** Materials, Chemistry, Energy, and Electrical Engineering each unlock many downstream volumes. Concentrate your best people and resources on these chokepoints; progress there multiplies everywhere.
+- **Guard the spine.** The sixteen-step critical path is your long-term map. Know where you are on it, know the next link, and keep the support volumes (health, governance, trade, education) strong enough that the spine never stalls for lack of people, peace, or purpose.
+
+The tech tree is not a constraint imposed on you; it is the accumulated map of how civilization was actually built, presented so you need not rediscover the order by trial and catastrophe. Follow it, and a hundred years of progress becomes a path you can walk one deliberate step at a time.

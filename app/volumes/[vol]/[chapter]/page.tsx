@@ -114,8 +114,8 @@ export default async function ChapterPage({ params }: Props) {
               </p>
             )}
 
-            {/* Metadata pills */}
-            <div className="mt-4 flex flex-wrap gap-2">
+            {/* Metadata pills + actions */}
+            <div className="mt-4 flex flex-wrap items-center gap-2">
               {ch.tags.map((tag) => (
                 <span
                   key={tag}
@@ -124,6 +124,13 @@ export default async function ChapterPage({ params }: Props) {
                   {tag}
                 </span>
               ))}
+              <a
+                href={`/download/chapter/${vol}/${chapter}`}
+                download
+                className="ml-auto rounded-full border border-gray-200 dark:border-gray-700 px-3 py-0.5 text-xs font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors print:hidden"
+              >
+                Download .md
+              </a>
             </div>
 
             {/* Prerequisites */}

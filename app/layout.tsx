@@ -49,7 +49,7 @@ export default function RootLayout({
                   Guide to Civilization
                 </span>
                 <span className="hidden text-xs text-gray-500 dark:text-gray-400 sm:block">
-                  39 volumes
+                  45 volumes
                 </span>
               </Link>
               <nav className="flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
@@ -72,6 +72,18 @@ export default function RootLayout({
                   Tech Tree
                 </Link>
                 <Link
+                  href="/graph"
+                  className="hover:text-gray-900 dark:hover:text-white transition-colors"
+                >
+                  Graph
+                </Link>
+                <Link
+                  href="/downloads"
+                  className="hover:text-gray-900 dark:hover:text-white transition-colors"
+                >
+                  Downloads
+                </Link>
+                <Link
                   href="/search"
                   className="hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
@@ -85,7 +97,7 @@ export default function RootLayout({
         <footer className="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-sm text-gray-500 dark:text-gray-400 print:hidden">
           <div className="mx-auto max-w-7xl px-4">
             <p>
-              Guide to Civilization — 39 volumes, 12 appendices. Built for
+              Guide to Civilization — 45 volumes, 12 appendices. Built for
               redundancy.
             </p>
           </div>
