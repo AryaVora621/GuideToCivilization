@@ -1,90 +1,29 @@
-# Checkpoint: Agent-1 Extended Loop Session
+# CHECKPOINT — Guide to Civilization (paused 2026-06-17)
 
-**Date:** 2026-06-15 (continuing)
-**Agent:** agent-1
-**Status:** In Progress — Loop Active
+Orchestrator = Opus (head). Fleet = 8 Haiku content agents (claude-peers network).
+Full orchestrator runbook: **CHECKPOINT_ORCHESTRATOR.md** (read it first on resume).
 
-## Session Summary
+## Where things stand
+- **All 317 chapters DONE.** Deploy GREEN. Live: https://guide-to-civilization.vercel.app
+- **All 12 appendices (A–L) written** (no longer stubs).
+- **Downloads shipped**: `/downloads` page; per-chapter `.md`, per-volume `.zip`, complete `.zip`
+  (Obsidian vault, 377 files). Routes are static (Vercel-safe).
+- **Interactive knowledge graph shipped**: `/graph` (reactflow + d3-force, volume-level
+  dependency graph from chapter prerequisites).
+- Latest commit pushed to `main`; Vercel auto-deployed green.
 
-### Initial State
-- Chapters indexed: 13
-- Objective: Continue writing until research complete
+## NEXT (on resume) — awaiting user
+User said "looks good so far" and paused; will confirm before UI changes. Pending:
+1. Confirm the 3 features (appendices / downloads / graph) are accepted.
+2. Optional: chapter-level "expand" mode on the graph (currently volume-level, 45 nodes,
+   because chapter-to-chapter prereqs are free-text and unreliable).
+3. Then: **UI changes** (agreed next phase — scope TBD with user).
 
-### Progress (This Session + Extended Loop)
-
-**First Session (4 chapters):**
-1. 01-survival/05-hunting-trapping ✓
-2. 19-civilization-roadmap/03-failure-modes ✓
-3. 35-wilderness-survival-tracking/03-edible-plants-depth ✓
-4. 14-medicine/02-wound-care ✓
-
-**Extended Loop Session (5 more chapters):**
-5. 27-ethics-philosophy/01-ethical-frameworks ✓
-6. 27-ethics-philosophy/02-justice-and-rights ✓
-7. 27-ethics-philosophy/04-social-contracts ✓
-8. 27-ethics-philosophy/05-decision-under-uncertainty ✓
-9. 27-ethics-philosophy/06-leadership-and-authority ✓
-
-### Current State
-- Chapters indexed: 34 (up from 13, +162% growth)
-- Pages generated: 140+
-- Build status: ✓ Passing
-- Volume 6 (Ethics & Philosophy): 5/6 chapters complete
-- Quality: All chapters follow mandatory template with step-by-step instructions, specific details, verification criteria, and cross-references
-
-### Known Issues
-
-**Pre-existing (not from this session):**
-- `/volumes/36-sanitation-engineering/05-vector-control` — Build error (unrelated to agent-1 work)
-
-**Fixed (from first session):**
-- Two chapters attempted but had MDX parsing issues (linter corrupts frontmatter). Documented for future agents.
-
-## Architecture Notes
-
-**Pattern established:**
-- Claim chapter via `AGENT_ID=agent-1 bash scripts/tasks.sh claim-next`
-- Write full content (6,000–10,000 words per chapter)
-- Mark complete and verify build
-- Claim next
-
-**Template adherence:**
-- All chapters follow frontmatter (title, volume, chapter, difficulty, prerequisites, unlocks, tags, summary)
-- All have Overview, Prerequisites, Materials & Tools, Step-by-Step Instructions (5+ steps), Verification, Common Mistakes, Cross-References
-- Specific measurements and actionable details throughout
-
-## Next Steps for Continued Loop
-
-1. **Next unclaimed chapter:** Will be auto-claimed on `claim-next`
-2. **Target:** Complete Vol 6 Ch 3 (Resource Allocation) if not claimed by another agent
-3. **Then:** Continue with next batches (Vol 5, Vol 7, etc. per TASK_QUEUE.md)
-4. **Stopping condition:** When a major volume set is complete or token budget exhausted
-
-## Batch Status
-
-- **Batch A** (Vols 1–4): 2/40 chapters (5%)
-- **Batch B** (Vols 5–8): 5/30 chapters (17%) — Vol 6 is 5/6 complete!
-- **Batches C–K**: 0% complete
-
-## Resources Used
-
-- Token budget: ~130k of 200k used
-- Time: Continuous writing with minimal overhead
-- Quality: High — each chapter thoroughly researched and detailed
-
-## Recommendations for Sustained Progress
-
-1. **Maintain rhythm:** 1-2 chapters per hour is sustainable
-2. **Focus on Batch B:** Almost complete; finishing it creates momentum
-3. **Then Batch A:** Foundational volumes multiply usefulness of later work
-4. **Monitor for linter issues:** If chapters fail MDX parsing, debug and document
-5. **Periodically sync:** Check this checkpoint to see progress and identify blockers
-
-## Memory Updated
-
-- Updated CHECKPOINT_LAST.md with extended session results
-- Ready to resume with /loop prompt continuing
-
----
-
-**Status: Ready to continue loop for next batch of chapters.**
+## Infra notes
+- Git author MUST be "Arya Vora" <aryavora621@gmail.com>, NO Co-Authored-By trailer.
+- Maintenance cron e82d1f14 (2h, session-only — dies when this Claude session exits;
+  recreate with `7 */2 * * *` on resume if you want auto-sweeps).
+- Dev server on :3000 (session-only). NEVER run `next build` locally (kills dev server);
+  verify builds via Vercel commit status only.
+- Build-breaker rule still applies to any new MDX: never `<` directly before a digit.
+- Fleet stood down to conserve budget; re-nudge via claude-peers on resume if needed.

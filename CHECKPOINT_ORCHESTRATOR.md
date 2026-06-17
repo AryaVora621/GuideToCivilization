@@ -61,6 +61,17 @@ Phase 1 (Vols 1-8) ✓ DONE. Then Vols 14-20, then 21-33, then Phase 4-5 (33-45)
 When a lane is exhausted, agent runs `claim-next` with no arg to take anything left.
 
 ## CURRENT STATE (update each sweep)
+- 2026-06-17 02:4x UTC: **POST-LAUNCH FEATURE WAVE shipped (commit 797b1d9, deploy GREEN).**
+  - (1) **12 appendices A–L written** by fleet (agents 2/3/4/5/6/7/8), all 1361–2866w, MDX-clean. No longer stubs.
+  - (2) **Downloads**: route handlers (force-static + generateStaticParams, Vercel-safe) +
+        `lib/download.ts` (jszip). `/download/chapter/[vol]/[chapter]` → .md; `/download/volume/[vol]` → .zip;
+        `/download/all` → full Obsidian-vault .zip (377 files). New `/downloads` page + buttons on chapter/volume pages.
+  - (3) **Interactive knowledge graph** at `/graph`: reactflow + d3-force volume dependency graph (edges parsed from
+        chapter prerequisites "Vol N"), phase-colored, hover-to-trace, click-to-open. `lib/graph.ts` (server) +
+        `lib/graph-types.ts` (client-safe — split to keep `fs` out of client bundle) + `components/GraphView.tsx`.
+  - Nav updated (added Graph + Downloads), fixed "39 volumes" → 45, TOTAL_CHAPTERS_PLANNED 316→317.
+  - **AWAITING USER CONFIRMATION** before moving to UI changes (per user instruction). Next: UI polish pass.
+
 - 2026-06-16 21:5x UTC: **🎉 PROJECT COMPLETE — 317 / 317 done, 0 pending, 0 claimed. Final deploy GREEN (commit 40ea8aa).**
   - 317 = 316-chapter plan + 1 bonus (17-astronomy/07-telescope-mounts). Live: https://guide-to-civilization.vercel.app
   - Finalized: deleted 13-min burst cron f2b45d55, restored 2h maintenance cron **e82d1f14** (7 */2 * * *).
