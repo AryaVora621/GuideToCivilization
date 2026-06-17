@@ -61,7 +61,12 @@ Phase 1 (Vols 1-8) ✓ DONE. Then Vols 14-20, then 21-33, then Phase 4-5 (33-45)
 When a lane is exhausted, agent runs `claim-next` with no arg to take anything left.
 
 ## CURRENT STATE (update each sweep)
-- 2026-06-16 21:47 UTC: **315 / 317 done, 0 pending, 2 active** (agent-4: 37-energy/07-power-calculations, 40-semiconductor/12-ic-design-basics). Build GREEN. (317 total = 316 plan + 1 bonus telescope-mounts.)
+- 2026-06-16 21:5x UTC: **🎉 PROJECT COMPLETE — 317 / 317 done, 0 pending, 0 claimed. Final deploy GREEN (commit 40ea8aa).**
+  - 317 = 316-chapter plan + 1 bonus (17-astronomy/07-telescope-mounts). Live: https://guide-to-civilization.vercel.app
+  - Finalized: deleted 13-min burst cron f2b45d55, restored 2h maintenance cron **e82d1f14** (7 */2 * * *).
+  - All 8 agents stood down (budget conserved). Session contributions roughly: a1=15, a5=14, a7=13, a6=16, a8=11, plus a2/a3/a4 + earlier batches.
+  - Maintenance mode: 2h cron now only fixes stray MDX breakers, folds in any late agent edits, keeps deploy green. No active writing needed.
+- 2026-06-16 21:47 UTC: 315 / 317 done, 0 pending, 2 active (agent-4 finishing). Build GREEN. (317 = 316 plan + 1 bonus telescope-mounts.)
   - Agents 5,6,7,8 finished their pools and stood down (budget conserved). Agent-1 stood down earlier (budget). Agent-4 finishing last 2.
   - NEXT sweep: once those 2 land → reconcile, commit, push, verify green, then COMPLETE: delete cron f2b45d55, recreate 2h cron (7 */2 * * *), mark done.
 - 2026-06-16 21:34 UTC: 266 / 316 done, 50 pending, 1 active. Build GREEN. Burst cron f2b45d55 (13-min) running.
